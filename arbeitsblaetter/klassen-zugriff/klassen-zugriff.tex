@@ -1,0 +1,67 @@
+\begin{exercise}{Zugriffsrechte}
+\begin{body}
+Betrachten Sie die nachfolgenden Definitionen der Klassen \code|Basis| und \code|Ableitung|:
+\medskip
+\begin{displaycode}
+public class Basis {
+    private void methode1() { }
+    protected void methode2() { }
+    public void methode3() { }
+}
+\end{displaycode}
+\medskip
+\begin{displaycode}
+public class Ableitung extends Basis {
+    private void methode4() { }
+    protected void methode5() { }
+    public void methode6() { }
+}
+\end{displaycode}
+\medskip
+In der \code|main|-Methode eines Java-Programms findet man die Zeilen
+\medskip
+\begin{displaycode}
+    Basis instanz1 = new Basis();
+    Ableitung instanz2 = new Ableitung();
+\end{displaycode}
+\medskip
+Die Klasse, in der die \code|main|-Methode definiert ist, gehöre dabei zu einem anderen Paket als die Klassen \code|Basis| und \code|Ableitung|. Sie sei weiterhin weder von der Klasse \code|Basis| noch von der Klasse \code|Ableitung| abgeleitet.
+\begin{parts}
+\item
+Geben Sie die Bezeichner aller Methoden an, auf die innerhalb der Klasse \code|Basis| mittels \code|this| zugegriffen werden kann.
+
+\item
+Geben Sie die Bezeichner aller Methoden an, auf die innerhalb der Klasse \code|Ableitung| mittels \code|this| zugegriffen werden kann.
+
+\item
+Geben Sie die Bezeichner aller Methoden an, auf die innerhalb der Klasse \code|Ableitung| mittels \code|super| zugegriffen werden kann.
+
+\item
+Geben Sie die Bezeichner aller Methoden der Instanz \code|instanz1| an, auf die innerhalb der \code|main|-Methode zugegriffen werden kann.
+
+\item
+Geben Sie die Bezeichner aller Methoden der Instanz \code|instanz2| an, auf die innerhalb der \code|main|-Methode zugegriffen werden kann.
+\end{parts}
+\end{body}
+
+
+\begin{solution}
+Private Elemente (Variablen und Methoden) sind nur innerhalb einer Klasse sichtbar. Das bedeutet, man kann nur innerhalb solcher Methoden auf das Element zugreifen, die innerhalb derselben Klasse wie das private Element definiert sind. Geschützte Elemente sind nur innerhalb einer Klasse und innerhalb abgeleiteter Klassen sichtbar. Öffentliche Element sind global sichtbar. Daher ergeben sich die folgenden Lösungen:
+\begin{parts}
+\item
+Innerhalb der Klasse \code|Basis| kann auf folgende Methoden mittels \code|this| zugegriffen werden: \code|methode1|, \code|methode2|, \code|methode3|.
+
+\item
+Innerhalb der Klasse \code|Ableitung| kann auf folgende Methoden mittels \code|this| zugegriffen werden: \code|methode2|, \code|methode3|, \code|methode4|, \code|methode5|, \code|methode6|.
+
+\item
+Innerhalb der Klasse \code|Ableitung| kann auf folgende Methoden mittels \code|super| zugegriffen werden: \code|methode2|, \code|methode3|.
+
+\item
+Innerhalb der \code|main|-Methode kann auf folgende Methoden der Instanz \code|instanz1| zugegriffen werden: \code|methode3|.
+
+\item
+Innerhalb der \code|main|-Methode kann auf folgende Methoden der Instanz \code|instanz2| zugegriffen werden: \code|methode3|, \code|methode6|.
+\end{parts}
+\end{solution}
+\end{exercise}

@@ -1,0 +1,40 @@
+\begin{exercise}{Exponentialreihe}
+\description{Berechnung der Exponentialreihe}
+
+\begin{body}
+Schreiben Sie ein kompilierbares Java-Programm zur Bestimmung der Funktionswerte der Exponentialfunktion $e^x$.
+Hierzu soll die Reihendarstellung
+\[
+  e^x = \sum_{i=0}^{\infty} \frac{x^i}{i!}=
+  1+x+\frac{x^2}{2}+\frac{x^3}{6}+\ldots
+\]
+verwendet werden.
+Die Funktionswerte sollen durch endliche Summen
+\[
+  e^x \approx S(N):=\sum_{i=0}^{N} \frac{x^i}{i!}=
+  1+x+\frac{x^2}{2}+\frac{x^3}{6}+\ldots+\frac{x^N}{N!}
+\]
+angen"ahert werden.
+Die einzelnen Summanden $y_i := x^i/i! $ lassen sich dabei wie folgt berechnen:
+\begin{eqnarray*}
+  y_0 & := & 1 \\
+  y_i & := & \frac{x}{i}\,y_{i-1}, \quad i = 1,2,\ldots \ .
+\end{eqnarray*}
+Gehen Sie dabei wie folgt vor:
+\begin{itemize}
+  \item Schreiben Sie das Hauptprogramm.
+        Lesen Sie dabei erst den Wert $x$ von der Konsole ein und speichern Sie diesen in einem geeigneten Datentyp ab.
+  \item Verwenden Sie zur Summation eine \code+do-while+-Schleife.
+        Brechen Sie die Summation ab, wenn sich zwei aufeinanderfolgende Summen $S(N)$ und $S(N+1)$ um weniger als $\varepsilon=10^{-12}$ voneinander unterscheiden.
+  \item Geben Sie den berechneten Wert und die Anzahl der zur Berechnung ben\"otigten Summanden auf dem Bildschirm aus.
+        Vergleichen Sie den gen\"aherten Wert mit dem Wert der Standardfunktion, vgl. \code{Math.exp()}.
+\end{itemize}
+
+\end{body}
+
+\begin{solution}
+  \inputcode{\filename{src/Expo.java}}
+  \newpage
+\end{solution}
+
+\end{exercise}

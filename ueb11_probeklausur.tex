@@ -1,0 +1,255 @@
+\documentclass[9pt,german]{beamer}%
+\usepackage{master/templates/beamerthemeKIT}
+\usepackage{master/templates/exercises}
+\usepackage[java]{code}
+\usepackage{pgfplots}
+\usepackage{fontawesome}
+\usepackage{ulem}
+
+\input{master/master}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle%
+\addtocounter{framenumber}{-1}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{Probeklausur, Altklausur 2017}%
+\tableofcontents
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Matrixpotenz}
+\section{\stitle}\label{S:matrix}
+\begin{frame}[t]%
+  \frametitle{\ref{S:matrix} \stitle}
+In der Vorlesung und der "Ubung haben Sie den Algorithmus von Pingala kennengelernt. Dieser erm"oglicht die
+effiziente Berechnung einer Potenz $x^e, e\in\mathbb N, x\in\mathbb R$ oder $x\in\mathbb C$. Analog dazu
+l"asst sich auch die Potenz $A^e, e\in\mathbb N$ einer Matrix $A\in\mathbb R^{n \times n}$ effizient
+berechnen:
+\begin{align}
+ \label{eq_pingala}
+ A^e =
+  \begin{cases}
+   I, & \text{falls } e=0,\\
+   (A^2)^{\frac{e}{2}}, & \text{falls $e>0$ gerade},\\
+   A\,A^{e-1}, & \text{falls $e>0$ ungerade}.
+  \end{cases}
+\end{align}
+Hierbei bezeichnet $I\in\mathbb R^{n \times n}$ die Einheits-- bzw. Identit"atsmatrix. Die Diagonaleintr"age dieser
+Matrix sind eins, w"ahrend alle anderen Eintr"age null sind, d.h.
+\begin{align*}
+ I_{i,j} =
+ \begin{cases}
+   1, &\text{falls } i=j,\\
+   0, &\text{falls } i\neq j.\\
+ \end{cases}
+\end{align*}
+Schreiben Sie ein kompilier-- und ausf"uhrbares Java--Programm, das die Potenz einer Matrix mithilfe des
+Pingala--Algorithmus \eqref{eq_pingala} \textbf{rekursiv} berechnet. Gehen Sie wie folgt vor:\\[1em]
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+Erstellen Sie eine Klasse \code{Matrixpotenz} die folgende Elemente enth"alt:
+\begin{itemize}
+  \item Eine Klassenmethode \code{matrixEinlesen} ohne formale Parameter.\\
+  Diese soll zun"achst die Anzahl der Zeilen und Spalten $n$ einer Matrix $A\in\mathbb R^{n \times n}$ von
+  der Konsole einlesen. Anschlie\ss end sollen die Komponenten $A_{ij}$ der Matrix zeilenweise eingelesen
+  werden. Geben Sie die Matrix als Variable vom Typ \code{double[][]} zur\"uck.
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+Schl\"usselw\"orter
+\begin{itemize}
+  \item Eine Klassenmethode \code{matrixEinlesen} \underline{ohne formalen Parameter}.\\
+  Diese soll zun"achst die Anzahl der Zeilen und Spalten $n$ einer Matrix $A\in\mathbb R^{n \times n}$ von
+  der Konsole einlesen. Anschlie\ss end sollen die Komponenten $A_{ij}$ der Matrix zeilenweise eingelesen
+  werden. Geben Sie die Matrix als Variable vom Typ \underline{\code{double[][]} zur\"uck.}
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+Fortsetzung
+\begin{itemize}
+  \item Eine Klassenmethode \code{matrixMult} mit zwei \underline{formalen Parametern \code{matrixA} und \code{matrixB}
+  vom Typ \code{double[][]}.}\\
+  Hierbei bezeichnen \code{matrixA} und \code{matrixB} zwei "ubergebene Matrizen
+  $A,B\in\mathbb R^{n\times n}$. Schreiben Sie einen Methodenrumpf, in dem das Matrixprodukt $AB$ berechnet
+  wird und das Ergebnis in einer Variablen vom Typ \underline{\code{double[][]} zur"uck} gegeben wird.
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+Fortsetzung
+\begin{itemize}
+  \item Eine Klassenmethode \code{matrixPow} mit einem \underline{formalen Parameter \linebreak \code{matrixA} vom Typ \code{double[][]} }
+  und einem \underline{ganzzahligen formalen Parameter \code{e}.}\\
+  Hierbei bezeichnet \code{matrixA} eine Matrix $A\in\mathbb R^{n\times n}$
+  und \code{e} einen Exponenten $e\in\mathbb N$. Berechnen Sie innerhalb des Methodenrumpfs die Potzenz $A^e$ der
+  "ubergebenen Matrix $A$ nach dem Pingala--Algorithmus \eqref{eq_pingala}. Rufen Sie dazu die Klassenmethode
+  \code{matrixPow} \textbf{rekursiv} auf und verwenden Sie die Klassenmethode \code{matrixMult}, um das Produkt zweier
+  Matrizen zu berechnen. Geben Sie das Ergebnis in einer Variablen vom Typ \underline{\code{double[][]} zur"uck.}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+Fortsetzung
+\begin{itemize}
+  \item Das Hauptprogramm.\\
+  Lesen Sie zu Beginn eine Matrix $A\in\mathbb R^{n\times n}$ und einen Exponenten $e\in\mathbb N$ von der Konsole ein.
+  Berechnen Sie anschlie\ss end die Matrixpotenz $A^e$. Verwenden dabei Sie die zuvor erstellten Klassenmethoden.
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Mobilfunk}
+\section{\stitle}\label{S:mobil}
+\begin{frame}[t]%
+  \frametitle{\ref{S:mobil} \stitle}
+Schreiben Sie ein kompilier-- und ausf"uhrbares Java--Programm, das ein einfaches Mobil\-funk\-netz
+modelliert.
+
+
+Verwenden Sie dazu die folgenden Klassen:
+\begin{itemize}
+\item
+Eine Klasse \code{Teilnehmer}, die die einzelnen Teilnehmer
+eines Betreibers simuliert. Diese k"onnen Textnachrichten
+an andere Teilnehmer versenden sowie die zuletzt empfangene
+Textnachricht im Speicher ihres Mobilfunkger"ates ablegen.
+\item
+Eine Klasse \code{Betreiber}, die den Betreiber
+eines Mobilfunknetzes simuliert.
+Der Betreiber verwaltet die Teilnehmer des Mobilfunknetzes.
+\item
+Eine Klasse \code{Mobilfunk}, die einen Markt mit einem
+Mobilfunkbetreiber simuliert.
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+
+Schreiben Sie eine Klasse \code{Teilnehmer}, welche die folgenden
+Elemente enth"alt:
+\begin{itemize}
+\item
+Eine ganzzahlige Variable \code{nummer}
+f"ur die Rufnummer des Teilnehmers und zwei Zeichenketten \code{name} und \code{speicher} vom Typ \code{String}
+f"ur den Namen des Teilnehmers und den Inhalt der zuletzt
+empfangenen Textnachricht. Au\ss erdem eine Variable \code{bt}
+vom Typ \code{Betreiber}  f"ur den Betreiber des Mobilfunknetzes, welches der Teilnehmer nutzt. \\
+Hierbei soll die Variable \code{nummer} als "offentliche Instanz--Variable deklariert werden,
+w"ahrend alle anderen Variablen als private Instanz--Variablen deklariert werden.
+\item
+Einen "offentlichen Konstruktor mit zwei Parametern f"ur die
+ganzzahlige Rufnummer des Teilnehmers und den Betreiber des
+Mobilfunknetzes vom Typ \code{Betreiber}. Initialisieren Sie
+die Instanz--Variablen mit den "ubergebenen Werten bzw.\ belegen
+Sie diese mit sinnvollen Werten.
+Lesen Sie dabei den Namen des Teilnehmers von der Konsole ein.
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+Fortsetzung:
+\begin{itemize}
+\item
+Eine "offentliche Instanz--Methode \code{sendeNachricht}
+mit zwei formalen Parametern f"ur die ganzzahlige Rufnummer des Empf"angers sowie
+f"ur den Mobilfunkbetreiber des Empf"angers vom Typ \code{Betreiber}.
+Lesen Sie dazu die Textnachricht von der Konsole ein. Geben Sie dabei
+eine Meldung auf dem Bildschirm aus, aus der ersichtlich wird,
+wer Sender und Empf"anger der Nachricht ist.
+Speichern Sie die Textnachricht in der Komponente \code{speicher} des Empf"angers ab.
+
+\emph{"Uber die Variable \code{bt} k"onnen Sie auf alle gespeicherten Teilnehmer \code{tn} des gleichen Betreibers zugreifen.}
+
+\item
+Eine "offentliche Instanz--Methode \code{toString} ohne formale Parameter mit einem
+R"uckgabe--Parameter vom Typ \code{String} zur Ausgabe eines
+Objektes vom Typ \code{Teilnehmer}.
+Geben Sie dabei den Namen des Teilnehmers,
+seine Rufnummer und die zuletzt empfangene
+Textnachricht in einem \code{String} an die aufrufende Methode zur"uck.
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+Schreiben Sie eine weitere Klasse \code{Betreiber}, welche die folgenden
+Elemente enth"alt:
+\begin{itemize}
+\item
+Eine ganzzahlige Variable \code{anzahlTN} in der die Anzahl der Teilnehmer
+des Betreibers gespeichert werden. Des Weiteren ein eindimensionales Feld
+\code{tn} vom Typ \code{Teilnehmer[]},
+in dem alle Teilnehmer des Betreibers gespeichert werden.
+Deklarieren Sie diese Variablen als "offentliche Instanz--Variablen.
+\item
+Einen "offentlichen Konstruktor mit einem formalen Parameter f"ur die ganzzahlige Anzahl
+der Teilnehmer des Betreibers, in dem die Instanz--Variablen mit
+dem "ubergebenenen Wert sinnvoll initialisiert werden.
+Iterieren Sie anschlie\ss end in einer Schleife "uber die Anzahl aller Teilnehmer und
+legen Sie im $i$-ten Schleifendurchlauf den $i$-ten Teilnehmer
+explizit durch Aufruf des entsprechenden Konstruktors an. Speichern Sie dabei die Instanzen
+der Klasse \code{Teilnehmer} im Feld \code{tn} ab.
+\emph{
+Die Teilnehmer eines Betreibers werden,
+beginnend mit der Zahl Null, fortlaufend durchnummeriert.
+Die Nummer entspricht dabei gleichzeitig der Rufnummer
+des Teilnehmers.}
+\item
+Eine "offentliche Instanz--Methode
+\code{bericht} ohne formale Parameter, in der der aktuelle Status des Betreibers
+und aller Teilnehmer auf der Konsole ausgegeben wird. Dieser besteht aus
+der Anzahl der Teilnehmer und den Informationen jedes Teilnehmers, die mithilfe
+der \code{toString} Methode der Klasse \code{Teilnehmer} ausgegeben werden k"onnen.
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+Fortsetzung:
+Schreiben Sie eine Klasse \code{Mobilfunk}, welche nur das Hauptprogramm enth"alt:
+\begin{itemize}
+\item
+Erstellen Sie zu Beginn einen Betreiber \code{fminus} mit drei Teilnehmern und f"uhren
+Sie anschlie{\ss}end die folgenden Aktionen aus:
+\begin{itemize}
+\item[(1)]
+Teilnehmer 1 sendet eine Textnachricht an Teilnehmer 2,
+\item[(2)]
+Teilnehmer 2 sendet eine Textnachricht an Teilnehmer 0.
+\end{itemize}
+Geben Sie im Anschlu{\ss} daran den aktuellen Status des Betreibers
+mithilfe der Methode \code{bericht} auf dem Bildschirm aus.
+\end{itemize}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\centering
+\Huge\GREEN{Fragen?}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

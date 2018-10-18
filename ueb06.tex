@@ -1,0 +1,52 @@
+\documentclass[9pt,german]{beamer}%
+\usepackage{master/templates/beamerthemeKIT}
+\usepackage{master/templates/exercises}
+\usepackage[java]{code}
+\usepackage{pgfplots}
+\usepackage{fontawesome}
+\usepackage{ulem}
+
+\input{master/master}
+
+\makeatletter
+\def\input@path{{uebungsfolien/}}
+\graphicspath{{uebungsfolien/}}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle%
+\addtocounter{framenumber}{-1}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{Arbeitsblatt 6}%
+\tableofcontents
+\end{frame}
+\setcounter{exercise}{23}
+
+\section{Aufgabe 24}
+\input{funktionen-grundl/funktionen-grundl}
+\section{Aufgabe 25}
+\input{funktionen-trapez/funktionen-trapez}
+\section{Aufgabe 26}
+\input{felder-sideEff/felder-sideEff}
+
+
+\begin{frame}
+\centering
+\Huge\GREEN{Fragen?}
+\vspace{2cm}
+
+{\LARGE
+N\"achste \"Ubung: 04. Dezember\\
+Besprechung Arbeitsblatt 7
+}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

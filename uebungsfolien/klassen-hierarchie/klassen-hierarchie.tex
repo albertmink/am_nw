@@ -1,0 +1,117 @@
+\def\stitle{\theexercise\ - Klassenhierarchien}
+\section{\stitle}
+
+\begin{frame}[t]%
+  \frametitle{\stitle}%
+Betrachten Sie die nachfolgenden Klassendefinitionen:
+\smallskip
+
+\codeblock{\noindent
+\tab public class Wal \{ \}\\
+\tab public class Zahnwal extends Wal \{ \}\\
+\tab public class Pottwal extends Zahnwal \{ \}\\
+\tab public class Delphin extends Zahnwal \{ \}\\
+\tab public class Bartenwal extends Wal \{ \}\\
+\tab public class Grauwal extends Bartenwal \{ \}\\
+}
+\smallskip
+
+In der \codeblock{main}-Methode eines Java-Programms findet man die Zeilen
+\smallskip
+
+\codeblock{\noindent
+\tab Wal w;\\
+\tab Zahnwahl z;\\
+}
+\medskip
+Entscheiden Sie, welche der folgenden Ausdr\"ucke g\"ultig sind.
+\begin{center}
+\begin{minipage}{0.49\textwidth}
+\begin{enumerate}
+\item \codeblock{z = new Zahnwal();}
+\item \codeblock{z = new Delphin();}
+\item \codeblock{w = new Bartenwal();}
+\item \codeblock{z = new Bartenwal();}
+\item \codeblock{w = new Grauwal();}
+\end{enumerate}
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
+\begin{enumerate}
+\setcounter{enumi}{5}
+\item \codeblock{z = new Wal();}
+\item \codeblock{z = (Zahnwal) new Wal();}
+\item \codeblock{z = (Zahnwal) new Pottwal();}
+\item \codeblock{z = (Zahnwal) new Grauwal();}
+\item \codeblock{z = (Zahnwal) null;}
+\end{enumerate}
+\end{minipage}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[t]%
+\begin{solution}
+F\"ur die L\"osung dieser Aufgabe ist das folgende Klassendiagramm hilfreich.
+Jeder Pfeil zeigt von einer Klasse auf deren Basisklasse.
+\begin{center}
+\includegraphics[height=4cm]{klassen-hierarchie/wale}
+\end{center}
+\end{solution}
+\end{frame}
+
+\begin{frame}[t]%
+\begin{solution}
+
+\begin{enumerate}
+\item
+  Der Ausdruck ist g\"ultig.
+  Der Variable \codeblock{z} vom Typ \codeblock{Zahnwal} wird eine Instanz der Klasse \codeblock{Zahnwal} zugewiesen.
+\item
+  Der Ausdruck ist g\"ultig.
+  Die Klasse \codeblock{Delphin} ist von der Klasse \codeblock{Zahnwal} abgeleitet.
+  Daher ist jede Instanz der Klasse \codeblock{Delphin} auch eine Instanz der Klasse \codeblock{Zahnwal} (\glqq Delphine sind Zahnwale.\grqq).
+\item
+  Der Ausdruck ist g\"ultig.
+  Die Klasse \codeblock{Bartenwal} ist von der Klasse \codeblock{Wal} abgeleitet.
+  Daher ist jede Instanz der Klasse \codeblock{Bartenwal} auch eine Instanz der Klasse \codeblock{Wal} (\glqq Bartenwale sind Wale.\grqq).
+\item
+  Der Ausdruck ist ung\"ultig.
+  Die Klasse \codeblock{Bartenwal} und die Klasse \codeblock{Zahnwal} sind zwar beide von der Klasse \codeblock{Wal} abgeleitet.
+  Die Klasse \codeblock{Bartenwal} ist jedoch nicht von der Klasse \codeblock{Zahnwal} abgeleitet.
+  Aus diesem Grund sind Instanzen der Klasse \codeblock{Bartenwal} keine Instanzen der Klasse \codeblock{Zahnwal} (\glqq Bartenwale sind keine Zahnwale.\grqq).
+\item
+  Der Ausdruck ist g\"ultig.
+  Die Klasse \codeblock{Grauwal} ist \"uber die Klasse \codeblock{Bartenwal} von der Klasse \codeblock{Wal} abgeleitet.
+  Jede Instanz der Klasse \codeblock{Grauwal} ist daher auch eine Instanz der Klasse \codeblock{Wal} (\glqq Grauwale sind Wale.\grqq).
+\end{enumerate}
+\end{solution}
+\end{frame}
+
+\begin{frame}[t]%
+\begin{solution}
+
+\begin{enumerate}
+\setcounter{enumi}{5}
+\item
+  Der Ausdruck ist ung\"ultig.
+  Die Klasse \codeblock{Wal} ist Basisklasse der Klasse \codeblock{Zahnwal}.
+  Daher ist ein Instanz der Klasse \codeblock{Wal} keine Instanz der Klasse \codeblock{Zahnwal} (\glqq Nicht jeder Wal ist ein Zahnwal.\grqq).
+\item
+  Der Ausdruck ist ung\"ultig.
+  Die Klasse \codeblock{Wal} ist Basisklasse der Klasse \codeblock{Zahnwal}.
+  Die Typumwandlung von einer Basisklasse zu einer abgeleiteten Klasse ist nicht m\"oglich.
+\item
+  Der Ausdruck ist g\"ultig.
+  Die Klasse \codeblock{Pottwal} ist von der Klasse \codeblock{Zahnwal} abgeleitet.
+  Die Typumwandlung von einer abgeleiteten Klasse zur entsprechenden Basisklasse ist m\"oglich.
+  Man beachte, dass die Typumwandlung auf die Instanz selbst keinen Einfluss hat, d.h{.} nach der Initialisierung ist in der Variable \codeblock{z} eine Instanz der Klasse \codeblock{Pottwal} gespeichert.
+\item
+  Der Ausdruck ist ung\"ultig.
+  Die Klasse \codeblock{Grauwal} ist nicht von der Klasse \codeblock{Zahnwal} abgeleitet.
+  Die Typumwandlung ist daher nicht m\"oglich.
+\item
+  Der Ausdruck ist g\"ultig. Die leere Referenz \codeblock{null} verweist auf keine Instanz.
+  Die Typumwandlung wird ohne jeden Effekt durchgef\"uhrt.
+\end{enumerate}
+\end{solution}
+\end{frame}

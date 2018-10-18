@@ -1,0 +1,138 @@
+\documentclass[9pt,german]{beamer}%
+\usepackage{master/templates/beamerthemeKIT}
+\usepackage{master/templates/exercises}
+\usepackage[java]{code}
+\usepackage{pgfplots}
+\usepackage{fontawesome}
+\usepackage{ulem}
+
+\input{master/master}
+
+\makeatletter
+\def\input@path{{uebungsfolien/}}
+\graphicspath{{uebungsfolien/}}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle%
+\addtocounter{framenumber}{-1}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Arbeitsblatt 5}%
+\tableofcontents
+\end{frame}
+\setcounter{exercise}{20}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Wiederholung}\label{K:wdh}
+\begin{frame}
+  \frametitle{\ref{K:wdh} Wiederholung}%
+\tableofcontents[current]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Erzeugen von Feldern}
+\subsection{\stitle}\label{S:Erzeugen}
+\begin{frame}[t]%
+  \frametitle{\ref{K:wdh}.\ref{S:Erzeugen} \stitle}
+\medskip
+
+Ein Feld kann mehrere Variablen vom selben Datentyp enthalten, hier \code{int}.
+\lstinputlisting[style=JAVAlines]{wdh-felder/FelderErzeugen.java}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Zugreifen auf Felder}
+\subsection{\stitle}\label{S:Zugreifen}
+\begin{frame}[t]%
+  \frametitle{\ref{K:wdh}.\ref{S:Zugreifen} \stitle}
+\medskip
+
+Mit dem Operator \code{[]} wird auf bestimmte Feldkomponenten zugegriffen.
+\lstinputlisting[style=JAVAlines]{wdh-felder/FelderZugreifen.java}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Felder Bibliothek in Java}
+\subsection{\stitle}\label{S:bequem}
+\begin{frame}[t]%
+  \frametitle{\ref{K:wdh}.\ref{S:bequem} \stitle}
+\medskip
+
+In \code{java.util.Arrays} werden n\"utzliche Funktion der Java Bibliothek bereit gestellt.
+\lstinputlisting[style=JAVAlines]{wdh-felder/FelderAdv.java}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Felder Beispiel Anwengung, Ger\"ust}
+\subsection{\stitle}\label{S:BeispielG}
+\begin{frame}[t]%
+  \frametitle{\ref{K:wdh}.\ref{S:BeispielG} \stitle}
+\medskip
+
+Lese Vektor ein und berechne die Norm.
+\lstinputlisting[style=JAVAsmalllines]{wdh-felder/FelderAnwBare.java}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Felder Beispiel Anwengung}
+\subsection{\stitle}\label{S:Beispiel}
+\begin{frame}[t]%
+  \frametitle{\ref{K:wdh}.\ref{S:Beispiel} \stitle}
+\medskip
+
+Lese Vektor ein und berechne die Norm.
+\lstinputlisting[style=JAVAsmalllines]{wdh-felder/FelderAnw.java}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Aufgabe 21}
+\input{felder-grundl/felder-grundl}
+\section{Aufgabe 22}
+\input{felder-binsearch/felder-binsearch}
+\section{Aufgabe 23}
+\input{felder-felder/felder-felder}
+
+\begin{frame}
+\centering
+\Huge\GREEN{Fragen?}
+\vspace{2cm}
+
+{\LARGE
+N\"achste \"Ubung: 27. November\\
+Besprechung Arbeitsblatt 6
+}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

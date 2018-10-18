@@ -1,0 +1,88 @@
+\begin{exercise}{Felder}
+\begin{body}
+Betrachten Sie die folgenden Ausschnitte eines Java-Programms:
+\begin{parts}
+\item 
+\begin{displaycode}
+    int[] feld = {1, 2, 3, 4, 5};
+    for (int i = 1; i < feld.length; i++) {
+         feld[i] += feld[i-1];
+    }
+\end{displaycode}
+
+\item
+\begin{displaycode}
+    int[] feld = {1, 4, 9, 16, 25};
+    for (int i = feld.length-1; i > 0; i--) {
+        feld[i] -= feld[i-1];
+    }
+\end{displaycode}
+
+
+\item
+\begin{displaycode}
+    int[] feld = {5, 4, 3, 2, 1};
+    for (int i = 0; i < feld.length; i++) {
+        feld[i] = feld[feld.length-i-1];
+    }
+\end{displaycode}
+
+\item
+\begin{displaycode}
+    int[] feld = {1, 0, 4, 2, 3};
+    for (int i = 0; i < feld.length; i++) {
+        feld[i] = feld[feld[i]];
+    }
+\end{displaycode}
+
+\item
+\begin{displaycode}
+    int[] feld = {1, 2, 3, 4, 5};
+    for (int i = 0; i < feld.length; i++) {
+        feld[i] *= (i+1);
+    }
+\end{displaycode}
+
+\item
+\begin{displaycode}
+    int[] feld = {5, 4, 3, 2, 1};
+    for (int i = feld.length-1; i >= 0; i--) {
+        int k = feld[i];
+        feld[i] = feld[feld.length-i-1];
+        feld[feld.length-i-1] = k;
+    }
+\end{displaycode}
+\end{parts}
+Was wird jeweils auf der Konsole ausgegeben, wenn unmittelbar nach jedem Programmausschnitt die folgenden Zeilen
+ausgeführt werden?
+\medskip
+\begin{displaycode}
+    for (int i = 0; i < feld.length; i++) {
+        System.out.print(feld[i] + ", ");
+    }
+\end{displaycode}
+\end{body}
+
+
+\begin{solution}
+\begin{parts}
+\item
+Es wird \glqq 1, 3, 6, 10, 15, \grqq\ auf der Konsole ausgegeben.
+
+\item
+Es wird \glqq 1, 3, 5, 7, 9, \grqq\ auf der Konsole ausgegeben.
+
+\item
+Es wird \glqq 1, 2, 3, 2, 1, \grqq\ auf der Konsole ausgegeben.
+
+\item
+Es wird \glqq 0, 0, 3, 3, 3, \grqq\ auf der Konsole ausgegeben.
+
+\item
+Es wird \glqq 1, 4, 9, 16, 25, \grqq\ auf der Konsole ausgegeben.
+
+\item
+Es wird \glqq 5, 4, 3, 2, 1, \grqq\ auf der Konsole ausgegeben.
+\end{parts}
+\end{solution}
+\end{exercise}

@@ -1,0 +1,48 @@
+\begin{exercise}{Rekursion}
+\begin{body}
+Nachfolgend ist die Definition einer Klassenmethode gegeben, die zu einer Zahl $n \in \mathbb{N}$ die Fakultät $n! := n (n-1) (n-2)  \dotsm 1$ rekursiv berechnet.
+\medskip
+\begin{displaycode}
+    static int fakultaet(int n) {
+        if (n <= 1) {
+            return 1;
+        } else {
+            return n * (fakultaet(n-1));
+        }
+    }
+\end{displaycode}
+\medskip
+\noindent
+\begin{parts}
+\item
+Wie oft wird die Methode durch den Aufruf \code|fakultaet(4);| aufgerufen?
+
+\item
+Geben Sie eine äquivalente Definition der Methode ohne rekursiven Aufruf an.
+\end{parts}
+\end{body}
+
+\begin{solution}
+\begin{parts}
+\item
+Die Methode wird viermal aufgerufen.
+
+\item
+Eine mögliche Klassendefinition ohne rekursiven Aufruf lautet
+\medskip
+\begin{displaycode}
+    static int fakultaet(int n) {   
+        if (n <= 1) {
+            return 1;
+        } else {
+            int fak = 1;
+            for (int i = 2; i <= n; i++) {
+                fak *= i;
+            }
+            return fak;
+        }
+    }
+\end{displaycode}
+\end{parts}
+\end{solution}
+\end{exercise}

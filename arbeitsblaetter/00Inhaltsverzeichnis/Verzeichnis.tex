@@ -1,0 +1,52 @@
+\documentclass[a4paper,11pt,german]{book}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\usepackage[catalog]{exercises}
+\usepackage{code}
+
+\renewcommand{\rmdefault}{phv}
+\renewcommand{\ttdefault}{pcr}
+
+\allowdisplaybreaks
+\geometry{inner=24mm,outer=24mm}
+\hypersetup{%
+colorlinks,%
+urlcolor=black,%
+urlbordercolor={1 1 1},%
+linkcolor=black,%
+linkbordercolor={1 1 1},%
+bookmarksopen=false}
+
+
+\title{Aufgabensammlung f�r Arbeitsbl�tter zur Vorlesung\\\glqq Einf�hrung in die Informatik mit Java\grqq}
+\author{Markus Richter, Markus Feist, Florian Keller, Fabian B�low}
+
+
+\begin{document}
+\exercisespath{../}
+\atendexercise{\newpage}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\input{list}
+
+\appendix
+
+\part{Anhang}
+
+\chapter{Das Paket \texttt{exercises}}
+\input{dok-exercises}
+
+
+\end{document}

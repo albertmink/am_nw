@@ -1,0 +1,432 @@
+% Copyright Tobias Dussa <tobias.dussa@kit.edu>
+%
+% $Id: beamerouterthemeKIT.sty 56 2008-04-29 11:01:03Z tdussa $
+% $Revision: 56 $
+% $Author: tdussa $
+% $Date: 2008-04-29 13:01:03 +0200 (Tue, 29 Apr 2008) $
+% $URL: svn+sdhs://sdhs.homedns.org/home/svn/talks/beamer-KIT/beamerouterthemeKIT.sty $
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+\ProvidesPackage{master/templates/beamerouterthemeKIT}
+\RequirePackage{graphicx}
+\RequirePackage{master/templates/KIT-Logo}
+
+\mode<presentation>
+
+\newlength{\KIT@margin}
+\setlength{\KIT@margin}{\paperwidth} % 3/254ths of the paperwidth
+\divide\KIT@margin by 254
+\multiply\KIT@margin by 3
+
+\newlength{\KIT@originalheadmargin}
+\setlength{\KIT@originalheadmargin}{\paperwidth} % 3/254ths of the paperwidth by default
+\divide\KIT@originalheadmargin by 254
+\multiply\KIT@originalheadmargin by 3
+
+\newlength{\KIT@headmargin}
+\setlength{\KIT@headmargin}{\KIT@originalheadmargin}
+
+\newlength{\KIT@headlinemargin}
+\setlength{\KIT@headlinemargin}{\paperwidth} % 5/254ths of the paperwidth by default
+\divide\KIT@headlinemargin by 254
+\multiply\KIT@headlinemargin by 5
+
+\newlength{\KIT@footmargin}
+\setlength{\KIT@footmargin}{\paperwidth} % 6/254ths of the paperwidth
+\divide\KIT@footmargin by 254
+\multiply\KIT@footmargin by 6
+
+\newlength{\KIT@textmargin}
+\setlength{\KIT@textmargin}{\paperwidth} % 12/254ths of the paperwidth
+\divide\KIT@textmargin by 254
+\multiply\KIT@textmargin by 12
+
+\newlength{\KIT@paperwidth}
+\setlength{\KIT@paperwidth}{\paperwidth}
+\addtolength{\KIT@paperwidth}{-2\KIT@margin}
+
+\newlength{\KIT@framewidth}
+\setlength{\KIT@framewidth}{\paperwidth}
+\addtolength{\KIT@framewidth}{-2\KIT@margin}
+
+\newlength{\KIT@textwidth}
+\setlength{\KIT@textwidth}{\paperwidth}
+\addtolength{\KIT@textwidth}{-2\KIT@margin}
+\addtolength{\KIT@textwidth}{-2\KIT@textmargin}
+
+\newlength{\KIT@textheight}
+\setlength{\KIT@textheight}{\paperheight}
+\addtolength{\KIT@textheight}{-\KIT@headmargin}
+\addtolength{\KIT@textheight}{-\KIT@footmargin}
+
+\newlength{\KIT@bottomskip}
+\setlength{\KIT@bottomskip}{0.05\textheight}
+
+\newlength{\KIT@KITlogoheight}
+\setlength{\KIT@KITlogoheight}{\paperwidth} % 13/254ths of the paperwidth
+\divide\KIT@KITlogoheight by 254
+\multiply\KIT@KITlogoheight by 13
+
+\newlength{\KIT@FZKlogoheight}
+\setlength{\KIT@FZKlogoheight}{\paperwidth} % 11/253ths of the paperwidth
+\divide\KIT@FZKlogoheight by 253
+\multiply\KIT@FZKlogoheight by 11
+
+\newlength{\KIT@UKAlogoheight}
+\setlength{\KIT@UKAlogoheight}{\paperwidth} % 9/253ths of the paperwidth
+\divide\KIT@UKAlogoheight by 253
+\multiply\KIT@UKAlogoheight by 9
+
+\newlength{\KIT@rectangleheight}
+\setlength{\KIT@rectangleheight}{\paperwidth} % 15/253ths of the paperwidth
+\divide\KIT@rectangleheight by 253
+\multiply\KIT@rectangleheight by 15
+
+\newlength{\KIT@rectanglewidth}
+\setlength{\KIT@rectanglewidth}{\paperwidth} % 3/254ths of the paperwidth
+\divide\KIT@rectanglewidth by 254
+\multiply\KIT@rectanglewidth by 3
+
+\newlength{\KIT@cornerradius}
+\setlength{\KIT@cornerradius}{\paperwidth} % 2/254ths of the paperwidth
+\divide\KIT@cornerradius by 254
+\multiply\KIT@cornerradius by 2
+
+\newlength{\KIT@titleKITlogoheight}
+\setlength{\KIT@titleKITlogoheight}{\paperwidth} % 14/254ths of the paperwidth
+\divide\KIT@titleKITlogoheight by 254
+\multiply\KIT@titleKITlogoheight by 14
+
+\newlength{\KIT@titlelineposition}
+\setlength{\KIT@titlelineposition}{\paperwidth} % 87/254ths of the paperwidth
+\divide\KIT@titlelineposition by 254
+\multiply\KIT@titlelineposition by 87
+
+\newlength{\KIT@titlelineheight}
+\setlength{\KIT@titlelineheight}{\paperwidth} % 0.5/254ths of the paperwidth
+\divide\KIT@titlelineheight by 508
+\multiply\KIT@titlelineheight by 1
+
+\newlength{\KIT@titlebarheight}
+\setlength{\KIT@titlebarheight}{\paperwidth} % 12/254ths of the paperwidth
+\divide\KIT@titlebarheight by 254
+\multiply\KIT@titlebarheight by 12
+
+\newlength{\KIT@titlebarwidth}
+\setlength{\KIT@titlebarwidth}{\paperwidth} % 248/253ths of the paperwidth
+\divide\KIT@titlebarwidth by 254
+\multiply\KIT@titlebarwidth by 248
+
+\newlength{\KIT@titlebarcolorheight}
+\setlength{\KIT@titlebarcolorheight}{\paperwidth} % 19/253ths of the paperwidth
+\divide\KIT@titlebarcolorheight by 254
+\multiply\KIT@titlebarcolorheight by 2
+
+\newlength{\KIT@titlefooter}
+\setlength{\KIT@titlefooter}{\paperwidth} % 9/253ths of the paperwidth
+\divide\KIT@titlefooter by 254
+\multiply\KIT@titlefooter by 9
+
+\newlength{\KIT@titlefooterfontsmall}
+\setlength{\KIT@titlefooterfontsmall}{\paperwidth} % 3/253ths of the paperwidth
+\divide\KIT@titlefooterfontsmall by 254
+\multiply\KIT@titlefooterfontsmall by 3
+
+\newlength{\KIT@titlefooterfontlarge}
+\setlength{\KIT@titlefooterfontlarge}{\paperwidth} % 9/253ths of the paperwidth
+\divide\KIT@titlefooterfontlarge by 254
+\multiply\KIT@titlefooterfontlarge by 6
+
+\newlength{\KIT@titlegraphicheight}
+\setlength{\KIT@titlegraphicheight}{\KIT@titlelineposition}
+\addtolength{\KIT@titlegraphicheight}{-\KIT@headmargin}
+\addtolength{\KIT@titlegraphicheight}{-\KIT@titlefooter}
+
+\newlength{\KIT@titlegraphicwidth}
+\setlength{\KIT@titlegraphicwidth}{\paperwidth}
+\addtolength{\KIT@titlegraphicwidth}{-2\KIT@margin}
+
+\newlength{\KIT@titletitlelinesep}
+\setlength{\KIT@titletitlelinesep}{\paperwidth} % 40/254ths of the paperwidth
+\divide\KIT@titletitlelinesep by 254
+\multiply\KIT@titletitlelinesep by 40
+
+% Height of title bottom line base line from lower edge of title picture
+\newlength{\KIT@titlebottom}
+\setlength{\KIT@titlebottom}{\paperwidth} % 130/254ths of the paperwidth
+\divide\KIT@titlebottom by 254
+\multiply\KIT@titlebottom by 117
+
+% distance between title bottom line base line and top edge of subtitle/author box
+\newlength{\KIT@titlesubtitlesep}
+\setlength{\KIT@titlesubtitlesep}{\paperwidth} % 6/254ths of the paperwidth
+\divide\KIT@titlesubtitlesep by 254
+\multiply\KIT@titlesubtitlesep by 6
+
+% distance between title bottom line base line and institute line middle
+\newlength{\KIT@titleinstitutesep}
+\setlength{\KIT@titleinstitutesep}{\paperwidth} % 32/254ths of the paperwidth
+\divide\KIT@titleinstitutesep by 254
+\multiply\KIT@titleinstitutesep by 32
+
+% distance between logo and left/top margin
+\newlength{\KIT@logosep}
+\setlength{\KIT@logosep}{\paperwidth} % 5/254ths of the paperwidth
+\divide\KIT@logosep by 254
+\multiply\KIT@logosep by 5
+
+
+\newcommand{\KIT@pagenumberlabel}{}
+\newcommand{\KITsetpagenumberlabel}[1]{\renewcommand{\KIT@pagenumberlabel}{#1}}
+
+\newcommand{\KIT@pageoflabel}{/}
+\newcommand{\KITsetpageoflabel}[1]{\renewcommand{\KIT@pageoflabel}{#1}}
+
+\newcommand{\KIT@headline}{}
+
+\newcommand{\KIT@navigation}{}
+
+\let\KIT@maketitle=\maketitle
+\renewcommand{\maketitle}{%
+  \setbeamertemplate{background canvas}[KITTitle]
+  \setbeamertemplate{footline}[KITTitle]
+  \KIT@maketitle
+  \setbeamertemplate{background canvas}[KIT]
+  \setbeamertemplate{footline}[KIT]
+}
+
+\DeclareOption{headline}{%
+  \typeout{beamerouterthemeKIT: Using standard beamer headline.}%
+  \renewcommand{\KIT@headline}{%
+    \defbeamertemplate*{headline}{KIT}
+    {%
+      \ifnum\thesection>0%
+      \begin{beamercolorbox}{section in head/foot}%
+        \vskip2pt%
+        \hskip\KIT@margin\insertnavigation{\KIT@framewidth}%
+      \end{beamercolorbox}%
+      \fi%
+    }%
+  }%
+  \setlength{\KIT@headmargin}{\KIT@originalheadmargin}%
+  \addtolength{\KIT@headmargin}{\KIT@headlinemargin}%
+  \setlength{\KIT@textheight}{\paperheight}%
+  \addtolength{\KIT@textheight}{-\KIT@headmargin}%
+  \addtolength{\KIT@textheight}{-\KIT@footmargin}%
+}
+
+\DeclareOption{noHeadline}{%
+  \typeout{beamerouterthemeKIT: Disabling headline.}%
+  \renewcommand{\KIT@headline}{}%
+  \setlength{\KIT@headmargin}{\KIT@originalheadmargin}%
+  \setlength{\KIT@textheight}{\paperheight}%
+  \addtolength{\KIT@textheight}{-\KIT@headmargin}%
+  \addtolength{\KIT@textheight}{-\KIT@footmargin}%
+}
+
+\defbeamertemplate*{KIT navigation symbols}{default}
+{%
+  \hbox{%
+    \hbox{\insertframenavigationsymbol}%
+    \hbox{\insertsectionnavigationsymbol}%
+%    \hbox{\insertdocnavigationsymbol}%
+    \hbox{\insertbackfindforwardnavigationsymbol}%
+  }%
+}
+
+\DeclareOption{navigation}{%
+  \typeout{beamerouterthemeKIT: Using standard beamer navigation symbols.}%
+  \renewcommand{\KIT@navigation}{\usebeamertemplate***{KIT navigation symbols}}%
+}
+
+\DeclareOption{noNavigation}{%
+  \typeout{beamerouterthemeKIT: Disabling navigation symbols.}%
+  \renewcommand{\KIT@navigation}{}%
+}
+
+\defbeamertemplate{background canvas}{KITTitle}
+{%
+  \begin{pgfpicture}
+    % Dark footer rectangle
+    \pgfsetcolor{KIT@darkgray}
+    \pgfpathrectangle{\pgfpoint{\KIT@margin}{\KIT@margin}}{\pgfpointadd{\pgfpoint{\paperwidth}{\KIT@titlefooter}}{\pgfpoint{-2\KIT@margin}{0pt}}}
+    \pgfusepath{fill}
+
+    % Backdrop rectangle
+    \pgfsetcolor{KIT@gray}
+    \pgfpathrectangle{\pgfpoint{0pt}{0pt}}{\pgfpoint{\KIT@margin}{\paperheight}}
+    \pgfusepath{fill}
+    \pgfpathrectangle{\pgfpoint{0pt}{0pt}}{\pgfpoint{\paperwidth}{\KIT@margin}}
+    \pgfusepath{fill}
+    \pgfpathrectangle{\pgfpoint{\paperwidth}{\paperheight}}{\pgfpoint{-\KIT@margin}{-\paperheight}}
+    \pgfusepath{fill}
+    \pgfpathrectangle{\pgfpoint{0pt}{\paperheight}}{\pgfpoint{\paperwidth}{-\KIT@margin}}
+    \pgfusepath{fill}
+
+    % Round corner, bottom left
+    \pgfpathmoveto{\pgfpointadd{\pgfpoint{\KIT@margin}{\KIT@margin}}{\pgfpoint{0pt}{\KIT@cornerradius}}}
+    \pgfpatharc{180}{270}{\KIT@cornerradius}
+    \pgfpathlineto{\pgfpoint{\KIT@margin}{\KIT@margin}}
+    \pgfpathlineto{\pgfpointadd{\pgfpoint{\KIT@margin}{\KIT@margin}}{\pgfpoint{0pt}{\KIT@cornerradius}}}
+    \pgfusepath{fill}
+
+    % Round corner, top right
+    \pgfpathmoveto{\pgfpointadd{\pgfpointadd{\pgfpoint{\paperwidth}{\paperheight}}{\pgfpoint{-\KIT@margin}{-\KIT@margin}}}{\pgfpoint{0pt}{-\KIT@cornerradius}}}
+    \pgfpatharc{0}{90}{\KIT@cornerradius}
+    \pgfpathlineto{\pgfpointadd{\pgfpoint{\paperwidth}{\paperheight}}{\pgfpoint{-\KIT@margin}{-\KIT@margin}}}
+    \pgfpathlineto{\pgfpointadd{\pgfpointadd{\pgfpoint{\paperwidth}{\paperheight}}{\pgfpoint{-\KIT@margin}{-\KIT@margin}}}{\pgfpoint{0pt}{-\KIT@cornerradius}}}
+    \pgfusepath{fill}
+
+    % Horizontal line, middle, left to right
+    \pgfpathrectangle{\pgfpoint{0pt}{\KIT@titlelineposition}}{\pgfpoint{\paperwidth}{\KIT@titlelineheight}}
+    \pgfusepath{fill}
+
+    % Horizontal bar, gray, right middle
+    \pgfsetcolor{KIT@darkgray}
+    \pgfpathrectangle{\pgfpointadd{\pgfpoint{0pt}{\KIT@titlelineposition}}{\pgfpoint{\KIT@margin}{\KIT@titlelineheight}}}{\pgfpoint{\KIT@titlebarwidth}{\KIT@titlebarheight}}
+    \pgfusepath{fill}
+    %\pgfpathmoveto{\pgfpointadd{\pgfpoint{\paperwidth}{\KIT@titlelineposition}}{\pgfpoint{-\KIT@margin}{\KIT@titlelineheight}}}
+    %\pgfpathlineto{\pgfpointadd{\pgfpointadd{\pgfpoint{\paperwidth}{\KIT@titlelineposition}}{\pgfpoint{-\KIT@margin}{\KIT@titlelineheight}}}{\pgfpoint{-\KIT@titlebarwidth}{0pt}}}
+    %\pgfpathlineto{\pgfpointadd{\pgfpointadd{\pgfpointadd{\pgfpoint{\paperwidth}{\KIT@titlelineposition}}{\pgfpoint{-\KIT@margin}{\KIT@titlelineheight}}}{\pgfpoint{-\KIT@titlebarwidth}{-4\KIT@cornerradius}}}{\pgfpoint{0pt}{\KIT@titlebarheight}}}
+    %\pgfpatharc{180}{90}{4\KIT@cornerradius}
+    %\pgfpathlineto{\pgfpointadd{\pgfpointadd{\pgfpoint{\paperwidth}{\KIT@titlelineposition}}{\pgfpoint{-\KIT@margin}{\KIT@titlelineheight}}}{\pgfpoint{0pt}{\KIT@titlebarheight}}}
+    %\pgfpathclose
+    %\pgfusepath{fill}
+
+    % FZK/UKA Logos, on bar
+    %\pgftext[at={\pgfpointadd{\pgfpointadd{\pgfpoint{\paperwidth}{\KIT@titlelineposition}}{\pgfpoint{-\KIT@margin}{\KIT@titlelineheight}}}{\pgfpoint{-0.5\KIT@titlebarwidth}{0.5\KIT@titlebarheight}}}]{\FZKLogo[\KIT@FZKlogoheight]{}\hspace{0.75\KIT@FZKlogoheight}\raisebox{0.2\KIT@FZKlogoheight}{\UKALogo[\KIT@UKAlogoheight]{}}}
+
+    % Color bar across horizontal bar
+    %\pgfsetcolor{KIT@green}
+    %\pgfpathrectangle{\pgfpointadd{\pgfpoint{\paperwidth}{\KIT@titlelineposition}}{\pgfpoint{-\KIT@margin}{\KIT@titlelineheight}}}{\pgfpoint{-\KIT@titlebarwidth}{\KIT@titlebarcolorheight}}
+    %\pgfusepath{fill}
+
+    % KIT Logo, top left
+    \pgftext[top, left, at={\pgfpointadd{\pgfpointadd{\pgfpoint{\KIT@margin}{\paperheight}}{\pgfpoint{0pt}{-\KIT@margin}}}{\pgfpoint{\KIT@logosep}{-\KIT@logosep}}}]{\KITLogo[\KIT@titleKITlogoheight]{}}
+
+   % OpenLB Logo, top right
+    %\begin{textblock*}{20mm}(104mm,4mm)
+%\includegraphics[width=20mm]{logos/openlb}
+%\end{textblock*}
+
+    % Background image, scaled properly
+    \pgftext[bottom, left, at={\pgfpointadd{\pgfpoint{\KIT@margin}{\KIT@margin}}{\pgfpoint{0pt}{\KIT@titlefooter}}}]{\includegraphics[width=\KIT@titlegraphicwidth, %height=\KIT@titlegraphicheight]{KIT-Titelgrafik}}
+height=\KIT@titlegraphicheight]{master/logos/wiredframe_vel.png}}
+
+\pgftext[top, right, at={\pgfpointadd{\pgfpoint{\paperwidth}{59.\KIT@margin}}{\pgfpoint{-0.75\KIT@textmargin}{0.5\KIT@titlefooter}}}]{\includegraphics[height=\KIT@titleKITlogoheight]{master/logos/lbrg_logo}}
+
+
+    % Dump-ass footers
+    \pgftext[left, at={\pgfpointadd{\pgfpoint{\KIT@margin}{\KIT@margin}}{\pgfpoint{\KIT@textmargin}{0.5\KIT@titlefooter}}}]{\textcolor{white}{\fontsize{\KIT@titlefooterfontsmall}{\KIT@titlefooterfontsmall}\selectfont{}KIT -- Die Forschungsuniversit\"at in der Helmholtz-Gesellschaft}}
+    \pgftext[right, at={\pgfpointadd{\pgfpoint{\paperwidth}{\KIT@margin}}{\pgfpoint{-0.75\KIT@textmargin}{0.5\KIT@titlefooter}}}]{\textcolor{white}{\fontsize{\KIT@titlefooterfontlarge}{\KIT@titlefooterfontlarge}\selectfont{}www.kit.edu}}
+
+    %% Some help lines added by Tilo Arens
+    %\pgfsetcolor{KIT@darkgray}
+    %\pgfpathrectangle{\pgfpointadd{\pgfpoint{0pt}{\KIT@titlelineposition}}{\pgfpoint{0pt}{\KIT@titletitlelinesep}}}{\pgfpoint{\paperwidth}{\KIT@titlelineheight}}
+    %\pgfusepath{fill}
+  \end{pgfpicture}
+}
+
+\defbeamertemplate*{background canvas}{KIT}
+{%
+  \begin{pgfpicture}
+    \pgfsetcolor{KIT@gray}
+
+    % Backdrop rectangle
+    \pgfpathrectangle{\pgfpoint{0pt}{0pt}}{\pgfpoint{\KIT@margin}{\paperheight}}
+    \pgfusepath{fill}
+    \pgfpathrectangle{\pgfpoint{0pt}{0pt}}{\pgfpoint{\paperwidth}{\KIT@footmargin}}
+    \pgfusepath{fill}
+    \pgfpathrectangle{\pgfpoint{\paperwidth}{\paperheight}}{\pgfpoint{-\KIT@margin}{-\paperheight}}
+    \pgfusepath{fill}
+    \pgfpathrectangle{\pgfpoint{0pt}{\paperheight}}{\pgfpoint{\paperwidth}{-\KIT@headmargin}}
+    \pgfusepath{fill}
+
+    % Round corner, bottom left
+    \pgfpathmoveto{\pgfpointadd{\pgfpoint{\KIT@margin}{\KIT@footmargin}}{\pgfpoint{0pt}{\KIT@cornerradius}}}
+    \pgfpatharc{180}{270}{\KIT@cornerradius}
+    \pgfpathlineto{\pgfpoint{\KIT@margin}{\KIT@footmargin}}
+    \pgfpathlineto{\pgfpointadd{\pgfpoint{\KIT@margin}{\KIT@footmargin}}{\pgfpoint{0pt}{\KIT@cornerradius}}}
+    \pgfusepath{fill}
+
+    % Round corner, top right
+    \pgfpathmoveto{\pgfpointadd{\pgfpointadd{\pgfpoint{\paperwidth}{\paperheight}}{\pgfpoint{-\KIT@margin}{-\KIT@headmargin}}}{\pgfpoint{0pt}{-\KIT@cornerradius}}}
+    \pgfpatharc{0}{90}{\KIT@cornerradius}
+    \pgfpathlineto{\pgfpointadd{\pgfpoint{\paperwidth}{\paperheight}}{\pgfpoint{-\KIT@margin}{-\KIT@headmargin}}}
+    \pgfpathlineto{\pgfpointadd{\pgfpointadd{\pgfpoint{\paperwidth}{\paperheight}}{\pgfpoint{-\KIT@margin}{-\KIT@headmargin}}}{\pgfpoint{0pt}{-\KIT@cornerradius}}}
+    \pgfusepath{fill}
+
+    % Green rectangle, top left
+    \pgfsetcolor{KIT@green}
+    \pgfpathrectangle{\pgfpointadd{\pgfpoint{0pt}{\paperheight}}{\pgfpoint{\KIT@margin}{-\KIT@headmargin}}}{\pgfpoint{\KIT@rectanglewidth}{-\KIT@rectangleheight}}
+    \pgfusepath{fill}
+
+    % KIT Logo, top right
+    \pgftext[top, right, at={\pgfpointadd{\pgfpoint{\paperwidth}{\paperheight}}{\pgfpointadd{\pgfpoint{-2.5\KIT@margin}{-\KIT@headmargin}}{\pgfpoint{0pt}{-0.25\KIT@rectangleheight}}}}]{\KITLogo[\KIT@KITlogoheight]{}}
+
+    % FZK/UKA Logos, bottom right
+    % \pgftext[right, at={\pgfpointadd{\pgfpoint{\paperwidth}{0.5\KIT@footmargin}}{\pgfpoint{-\KIT@margin}{0pt}}}]{\FZKLogo[\KIT@FZKlogoheight]{}\hspace{0.75\KIT@FZKlogoheight}\raisebox{0.2\KIT@FZKlogoheight}{\UKALogo[\KIT@UKAlogoheight]{}}}
+  \end{pgfpicture}
+}
+
+\defbeamertemplate*{frametitle}{KIT}
+{%
+  \nointerlineskip%
+  \vskip\KIT@headmargin%
+  \vskip\KIT@rectangleheight%
+  \begin{beamercolorbox}[wd=\KIT@textwidth, sep=0pt, ht=0pt, vmode]{frametitle}%
+    \strut%
+    \usebeamerfont*{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle%
+  \end{beamercolorbox}%
+  \vskip-0.5ex%
+  \ifx\insertframesubtitle\@empty%
+  \else%
+  \begin{beamercolorbox}[wd=\KIT@textwidth, sep=0pt, vmode]{frametitle}%
+    \usebeamerfont*{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle%
+  \end{beamercolorbox}%
+  \fi%
+  \nointerlineskip%
+}
+
+\defbeamertemplate*{footline}{KITTitle}
+{%
+  \leavevmode%
+}
+
+\defbeamertemplate*{footline}{KIT}
+{%
+  \hskip\KIT@margin%
+  \begin{beamercolorbox}[wd=1.08\KIT@textwidth, sep=0.2\KIT@margin, vmode]{footline}
+    %\begin{tabular}{@{}c@{}}%
+    %  \smash{\raisebox{-0.25ex}{\KIT@navigation{}}} \\[0.5ex]
+    %  \usebeamercolor[fg]{page number in head/foot}\KIT@pagenumberlabel{} \insertframenumber{}\KIT@pageoflabel\inserttotalframenumber{}
+    %\end{tabular}
+    %\hfill%
+    %\begin{tabular}{@{}c@{}}%
+    %  \usebeamerfont{title in head/foot}\usebeamercolor[fg]{title in head/foot}\insertshorttitle{}\\[0.5ex]
+    %  \usebeamerfont{author in head/foot}\usebeamercolor[fg]{author in head/foot}\insertshortauthor{} %\textbullet{}
+    %  \usebeamerfont{date in head/foot}\usebeamercolor[fg]{date in head/foot}\insertshortdate{}
+    %\end{tabular}
+    %\hfill%
+    %\hfill%
+    \rule{\KIT@margin}{0ex}
+    \usebeamerfont{title in head/foot}\usebeamercolor[fg]{title in head/foot}\insertshorttitle{}
+    \hfill%
+    \usebeamercolor[fg]{page number in head/foot}\KIT@pagenumberlabel{} \insertframenumber{}\KIT@pageoflabel\inserttotalframenumber{}
+  \end{beamercolorbox}
+  %\vskip0.5\KIT@margin%
+}
+
+\defbeamertemplate*{sidebar right}{KIT}{}
+
+\setbeamersize{text margin left=\KIT@textmargin, text margin right=\KIT@textmargin}
+
+\ExecuteOptions{noHeadline,navigation}
+\ProcessOptions
+
+\KIT@headline
+
+\mode
+<all>

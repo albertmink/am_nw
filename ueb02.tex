@@ -1,0 +1,120 @@
+\documentclass[9pt,german]{beamer}%
+\usepackage{master/templates/beamerthemeKIT}
+\usepackage{master/templates/exercises}
+\usepackage[java]{code}
+\usepackage{pgfplots}
+\usepackage{fontawesome}
+\usepackage{ulem}
+
+\input{master/master}
+
+\makeatletter
+\def\input@path{{uebungsfolien/}}
+\graphicspath{{uebungsfolien/}}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle%
+\addtocounter{framenumber}{-1}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Wiederholung}\label{K:wdh}
+\begin{frame}
+  \frametitle{\ref{K:wdh} Wiederholung}%
+\tableofcontents[current]
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Arbeitsblatt 2}%
+\tableofcontents
+\end{frame}
+\setcounter{exercise}{4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Aufgabe 5}
+\input{zahldarst-binaereaddition/zahldarst-binaereaddition}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]%
+  \frametitle{Aufgabe 5, L\"osungsweg}%
+\medskip
+
+\input{zahldarst-binaereaddition/zahldarst-binaereaddition-lsg.tex}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{exercise}{6}
+\input{zahldarst-ganzzahl/zahldarst-ganzzahl}
+
+\def\stitle{Rechnerdemo}
+\section{\stitle}
+\begin{frame}[fragile]%
+  \frametitle{\stitle}%
+\medskip
+
+\"Uberlauf
+\lstinputlisting[style=JAVAsmall]
+{range-integer/RangeInt.java}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{exercise}{7}
+\input{zahldarst-gleitkomma/zahldarst-gleitkomma}
+
+\def\stitle{Rechnerdemo}
+\section{\stitle}
+\begin{frame}[fragile]%
+  \frametitle{\stitle}%
+\medskip
+
+Range float
+\lstinputlisting[style=JAVAsmall]
+{RangeFloat.java}
+\end{frame}
+
+
+
+\def\stitle{Rechnerdemo}
+\section{\stitle}
+\begin{frame}[fragile]%
+  \frametitle{\stitle}%
+\medskip
+
+Ausl"oschung
+\lstinputlisting[style=JAVAsmall]
+{Ausloesung.java}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{exercise}{8}
+\input{zahldarst-bias/zahldarst-bias}
+
+\setcounter{exercise}{9}
+\input{grundl-boolalg/grundl-boolalg}
+
+\begin{frame}
+\centering
+\Huge\GREEN{Fragen?}
+\vspace{2cm}
+
+{\LARGE
+N\"achste \"Ubung: 06. November\\
+Besprechung Arbeitsblatt 3
+}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

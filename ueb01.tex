@@ -1,0 +1,202 @@
+\documentclass[9pt,german]{beamer}%
+\usepackage{master/templates/beamerthemeKIT}
+\usepackage{master/templates/exercises}
+\usepackage[java]{code}
+\usepackage{pgfplots}
+\usepackage{fontawesome}
+\usepackage{ulem}
+
+\input{master/master}
+
+\makeatletter
+\def\input@path{{uebungsfolien/}}
+\graphicspath{{uebungsfolien/}}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle%
+\addtocounter{framenumber}{-1}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{Arbeitsblatt 1}%
+\tableofcontents[hideallsubsections]
+\end{frame}
+%TODO listings add linerange
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Wiederholung}\label{K:wdh}
+\begin{frame}
+  \frametitle{\ref{K:wdh} Wiederholung}%
+\tableofcontents[current]
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Stellenwertsystem}
+\subsection{\stitle}\label{S:Stellenwertsystem}
+\begin{frame}[fragile]%
+  \frametitle{\ref{K:wdh}.\ref{S:Stellenwertsystem} \stitle}%
+\medskip
+
+Eine Zahl l\"asst sich in einem Stellenwertsystem zu einer Basis $b$ durch eine Ziffernfolge darstellen, die Basis wird dabei in der Regel als Index gegeben.
+Zum Beispiel die Zahl $426_8$, gegeben im Oktalsystem:
+\begin{equation*}
+426_8 = 4*8^2 + 2*8^1 + 6*8^0 = 256 + 16 + 6 = 278_{10} = 278
+\end{equation*}
+M\"ochte man nicht in oder von dem Dezimalsystem umrechnen, ist oft dennoch ein Umweg dar\"uber notwendig, au\ss er die Basis des einen Systems ist eine Potenz der Basis eines anderen Systems ($b_1 = b_2^n$).
+In diesem Fall lassen sich die Zahlen in Bl\"ocke unterteilen.
+Beispiel Bin\"arsystem und Oktalsystem:
+\begin{align*}
+426_8 \rightarrow \quad & \quad   4 & | & \quad   2 & | & \quad   6 & \\
+                        & \quad 100 & | & \quad 010 & | & \quad 110 & \quad \rightarrow 100010110_2
+\end{align*}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Grundlagen in Java}
+\subsection{\stitle}\label{S:Grundlagen in Java}
+\begin{frame}[fragile]%
+  \frametitle{\ref{K:wdh}.\ref{S:Grundlagen in Java} \stitle}%
+\medskip
+
+\begin{description}[leftmargin=*,style=nextline]
+\item[\BLACK{\textbf{Datentypen}}]
+\item[Ganzzahlige Typen]  \code{byte, short, int, long}
+\item[Gleitkomma Typen]   \code{float, double}
+\item[Zeichen]            \code{char, String}
+\item[Boolscher Typen]    \code{boolean}
+\end{description}
+\medskip
+
+\begin{description}[leftmargin=*,style=nextline]
+\item[\BLACK{\textbf{Variablen}}]
+\item[Deklaration] \code{double x;}
+\item[Definition] \code{int n = -1;}
+\item[Wertzuweisung] \code{int a = n;}
+\end{description}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Compilieren und Ausf\"uhren}
+\subsection{\stitle}\label{S:Compilieren und Ausf\"uhren}
+\begin{frame}%
+  \frametitle{\ref{K:wdh}.\ref{S:Compilieren und Ausf\"uhren} \stitle}%
+\medskip
+
+%\begin{lstlisting}[style=BASH,title={Um das Programm Hello World auszuf\"uhren werden folgende Schritte auf dem Terminal durchgef\"uhrt.}]
+%$ javac HelloWorld.java
+%$ java HelloWorld
+%Hello World!
+%\end{lstlisting}
+
+%TODO being{lisings} geht nur bei input{...}
+Um das Programm Hello World auszuf\"uhren werden folgende Schritte auf dem Terminal durchgef\"uhrt.
+\medskip
+
+\code{\$ javac HelloWorld.java}
+
+\code{\$ java HelloWorld}
+
+\code{Hello World!}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Aufgabe 1}
+\input{grundl-java/grundl-java}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Aufgabe 2}
+\input{grundl-literale/grundl-literale}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]%
+  \frametitle{Aufgabe 2, Beispielprogramm}%
+\medskip
+
+\lstinputlisting[style=JAVAsmall]
+{grundl-literale/Literale.java}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Aufgabe 3}
+\input{grundl-ausdruecke/grundl-ausdruecke} %% Java Bsp Code
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]%
+  \frametitle{Aufgabe 3, Beispielprogramm (1)}%
+\medskip
+
+\lstinputlisting[style=JAVAsmall]
+{grundl-ausdruecke/Ausdruecke1.java}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]%
+  \frametitle{Aufgabe 3, Beispielprogramm (2)}%
+\medskip
+
+\lstinputlisting[style=JAVAsmall]
+{grundl-ausdruecke/Ausdruecke2.java}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Aufgabe 4}
+\input{zahldarst-stellenwertsystem/zahldarst-stellenwertsystem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]%
+  \frametitle{Aufgabe 4, L\"osungsweg}%
+\medskip
+
+\input{zahldarst-stellenwertsystem/zahldarst-stellenwertsystem-lsg.tex}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\kap{7}%
+\input{guterStartInsPraktikum/kapitel}
+
+
+\begin{frame}
+  \frametitle{Zusammenfassung}%
+\tableofcontents[current]
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\centering
+\Huge\GREEN{Fragen?}
+\vspace{2cm}
+
+{\LARGE
+N\"achste \"Ubung: 30. November\\
+Besprechung Arbeitsblatt 2
+}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

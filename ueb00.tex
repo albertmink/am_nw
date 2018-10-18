@@ -1,0 +1,59 @@
+\documentclass[9pt,german]{beamer}%
+\usepackage{master/templates/beamerthemeKIT}
+\usepackage{master/templates/exercises}
+\input{master/master}
+
+\makeatletter
+\def\input@path{{uebungsfolien/}}
+\graphicspath{{uebungsfolien/}}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle%
+\addtocounter{framenumber}{-1}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{Arbeitsblatt 0}%
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\def\kap{1}%
+\input{einfuehrung/einfuehrung}
+\def\kap{2}%
+\input{praktikumSCC/praktikumSCC}
+\def\kap{3}%
+\input{installationEditor/installationEditor}
+\def\kap{4}%
+\input{helloWorld/helloWorld}
+%% TODO kompilieren, mit Fehlern
+
+\def\kap{5}%
+\input{kugelVolumen/kugelVolumen}
+\def\kap{6}%
+\input{javaDokumentation/javaDokumentation}
+
+
+\begin{frame}
+  \frametitle{Zusammenfassung}%
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\begin{frame}
+\centering
+\Huge\GREEN{Fragen?}
+\vspace{2cm}
+
+{\LARGE
+N\"achste \"Ubung: 23. Oktober\\
+Besprechung Arbeitsblatt 1
+}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

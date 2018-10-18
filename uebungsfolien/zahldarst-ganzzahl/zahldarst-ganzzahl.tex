@@ -1,0 +1,77 @@
+\def\stitle{\theexercise\ - Ganzzahl-Datentypen}
+\section{\stitle}
+\begin{frame}[t]
+  \frametitle{\stitle}
+
+In Java besitzen die Ganzzahl-Datentypen die folgenden Größen
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Datentyp} & \textbf{Größe} \\
+\hline
+\code{byte}       &  8 Bit         \\
+\code{short}      & 16 Bit         \\
+\code{int}        & 32 Bit         \\
+\code{long}       & 64 Bit         \\
+\hline
+\end{tabular}
+\end{center}
+Das führende Bit jedes Datentyps gibt das Vorzeichen der Zahl an:
+Ein 0-Bit zeigt eine nichtnegative Zahl an, ein 1-Bit eine negative Zahl.
+Jedem Bitmuster entspricht genau eine ganze Zahl.
+Ist das führende Bit ein 0-Bit (nichtnegative Zahl), repräsentieren die übrigen Bits die Ziffern der Binärdarstellung dieser Zahl.
+\begin{itemize}
+\item Wie viele verschiedene ganze Zahlen können mit den Datentypen \code{byte}, \code{short}, \code{int} und \code{long} dargestellt werden?
+
+\item[Lsg]
+jedes Bitmuster eines Datentyps entspricht genau einer ganzen Zahl.
+Jedes Bit kann genau zwei Werte annehmen.
+Daher können mit den Datentypen \code{byte}, \code{short}, \code{int} und \code{long} jeweils $2^8$, $2^{16}$, $2^{32}$, bzw. $2^{64}$ verschiedene ganze Zahlen dargestellt werden.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]%
+  \frametitle{Fortsetzung}%
+\centering
+\medskip
+
+\begin{itemize}
+\item
+Welches sind jeweils die größten positiven, ganzen Zahlen, die mit den Datentypen \code{byte}, \code{short}, \code{int} und \code{long} dargestellt werden können?
+\item[Lsg]
+Der Datentyp \code{byte} mit 8 Bit kann maximal siebenstellige, positive Binärzahlen darstellen, das führende Bit bei solchen Zahlen ein 0-Bit sein muss.
+Die größte positive, ganze Zahl lautet daher $1111111_2 = 127 = 128 - 1 = 2^7 - 1$.
+Für die Datentypen \code{short}, \code{int} und \code{long} erhält man in gleicher Weise $2^{15} - 1$, $2^{31} - 1$ bzw. $2^{63} - 1$ als größte darstellbare positive, ganze Zahl.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]%
+  \frametitle{Fortsetzung}%
+\centering
+\medskip
+
+\begin{itemize}
+\item
+Betrachten Sie den folgenden Quelltextausschnitt:
+\begin{verbatim}
+byte a = 100;
+a += 100;
+\end{verbatim}
+Stellt der Wert der Variable \code{a} nach Ausführung dieser Zeilen die Zahl $200$ dar?
+Begründen Sie Ihre Antwort.
+
+\item[Lsg]
+Nein, der Wert der Variable a stellt nach Ausführung der Quelltextzeilen die Zahl $200$ nicht dar.
+Der Datentyp der Variable ist \code{byte}.
+Die größte positive, ganze Zahl, die von diesem Datentyp dargestellt werden kann, ist $2^7 - 1 = 127$. Die Zahl $200$ ist somit nicht darstellbar.
+Man kann die Antwort noch weiter erläutern: Die Binärdarstellung der Zahl $100 = 64 + 32 + 4$ lautet $1100100_2$.
+Der Datentyp \code{byte} stellt sie als das Bitmuster $01100100$ dar.
+Das führende 0-Bit zeigt an, dass die Zahl nichtnegativ ist.
+Addiert man nun $100$ zu der Zahl hinzu, so erhält man $200 = 2 \cdot 100 = 128 + 64 + 8$, in Binärdarstellung $11001000_2$.
+Dem entspricht das Bitmuster $11001000$.
+Da das führende Bit ein 1-Bit ist, stellt dieses Bitmuster im Datentyp \code{byte} eine negative Zahl dar.
+\end{itemize}
+\end{frame}

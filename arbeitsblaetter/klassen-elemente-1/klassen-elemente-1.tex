@@ -1,0 +1,58 @@
+\begin{exercise}{Klassen- und Instanzelemente}
+
+\begin{body}
+Die Klasse \code|Klasse| sei folgendermaßen definiert
+\medskip
+\begin{displaycode}
+public class Klasse {
+    public static int variable1 = 1;
+    public int variable2 = 2;
+}
+\end{displaycode}
+\medskip
+In der \code|main|-Methode eines Java-Programms findet man die Zeile
+\medskip
+\begin{displaycode}
+        Klasse instanz = new Klasse();
+\end{displaycode}
+\medskip
+Entscheiden Sie, welche der nachfolgenden Ausdrücke gültig sind. Begründen Sie Ihre Entscheidung.
+\begin{center}
+\begin{minipage}{0.45\textwidth}
+\begin{parts}
+\item[(a)]
+\code|Klasse.variable1 += 1;|
+
+\item[(b)]
+\code|instanz.variable2 += 1;|
+\end{parts}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{parts}
+\item[(c)]
+\code|Klasse.variable2 += 1;|
+
+\item[(d)]
+\code|instanz.variable1 += 1;|
+\end{parts}
+\end{minipage}
+\end{center}
+\end{body}
+
+\begin{solution}
+Klassenelemente (d.h{.} Klassenvariablen und -methoden) existieren unabhängig von möglichen Instanzen einer Klasse. Instanzelemente (d.h{.} Instanzvariablen und -methoden) existieren nur für einzelne Instanzen einer Klasse. Daher ergeben sich folgende Lösungen:
+\begin{parts}
+\item
+Der Ausdruck ist gültig.
+
+\item
+Der Ausdruck ist gültig. 
+
+\item
+Der Ausdruck ist ungültig.
+
+\item
+Der Ausdruck ist gültig. 
+\end{parts}
+\end{solution}
+\end{exercise}

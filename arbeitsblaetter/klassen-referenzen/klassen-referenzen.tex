@@ -1,0 +1,108 @@
+\begin{exercise}{Klassenreferenzen}
+\source{Florian Eheim}
+\begin{body}
+\noindent
+Wird ein Objekt als Argument an eine Methode "ubergeben, so geschieht das in Java auf unterschiedliche Weise. W"ahrend die Methode
+bei Grundtypen (z.B. \code{int}, \code{double} oder \code{char}) eine einfache Kopie benutzt, wird bei zusammengesetzten Datentypen
+(Feldern, Strings, Klassen,...) eine \emph{Referenz} "ubergeben, welche auf das urspr"ungliche Feld bzw. die urspr"ungliche Klasse verweist.
+Ziel dieser Aufgabe ist es, zu sehen, wie sich "Anderungen innerhalb einer Methode auf das urspr"ungliche Objekt auswirken.
+
+\noindent
+Betrachten Sie die folgende Klasse:
+\medskip
+
+\begin{displaycode}
+class MeineKlasse {
+  public int zahl;
+} 
+\end{displaycode}
+\medskip
+
+\noindent
+Au\ss erdem ist die folgende \code{main}-Methode eines Java-Programms gegeben:
+\begin{displaycode}
+public static void main(String[] args) {
+  /*** Grunddatentypen: ***/ 
+  int zahl_a = 0;
+  int zahl_b = 0;
+  
+  zahl_b = ErhoeheZahl(zahl_a);
+  System.out.println(zahl_a + " : " + zahl_b);
+  zahl_b = ErhoeheZahlEintrag(zahl_a);
+  System.out.println(zahl_a + " : " + zahl_b);
+  
+  /*** Felder: ***/
+  int[] feld_a = new int[1];
+  feld_a[0] = 0;
+  int[] feld_b;
+  
+  feld_b = ErhoeheFeld(feld_a);
+  System.out.println(feld_a[0] + " : " + feld_b[0]);	
+  feld_b = ErhoeheFeldEintrag(feld_a);
+  System.out.println(feld_a[0] + " : " + feld_b[0]);	
+  
+  /*** Klassen: ***/
+  MeineKlasse Klasse_a = new MeineKlasse();
+  MeineKlasse Klasse_b;
+  Klasse_a.zahl = 0;
+  
+  Klasse_b = ErhoeheKlasse(Klasse_a);
+  System.out.println(Klasse_a.zahl + " : " + Klasse_b.zahl);
+  Klasse_b = ErhoeheKlassenEintrag(Klasse_a);
+  System.out.println(Klasse_a.zahl + " : " + Klasse_b.zahl);
+}
+\end{displaycode}
+\newpage
+
+\noindent
+Dabei werden die folgenden Methoden aufgerufen:
+\begin{displaycode}
+static int ErhoeheZahl(int zahl) {
+  int hilfsZahl = 0;
+  hilfsZahl = zahl + 1;
+  return hilfsZahl;
+}
+  
+static int ErhoeheZahlEintrag(int zahl) {
+  zahl = zahl + 1;
+  return zahl;
+}
+
+static int[] ErhoeheFeld(int[] feld) {
+  int[] hilfsFeld = new int[1];
+  hilfsFeld[0] = feld[0] + 1;
+  return hilfsFeld;
+}
+
+static int[] ErhoeheFeldEintrag(int[] feld) {
+  feld[0] = feld[0] + 1;
+  return feld;
+}
+
+static MeineKlasse ErhoeheKlasse(MeineKlasse Klasse) {
+  MeineKlasse HilfsKlasse = new MeineKlasse();
+  HilfsKlasse.zahl = Klasse.zahl + 1;
+  return HilfsKlasse;
+}
+
+static MeineKlasse ErhoeheKlassenEintrag(MeineKlasse Klasse) {
+  Klasse.zahl = Klasse.zahl + 1;
+  return Klasse;
+}
+\end{displaycode}
+Wie lautet die Ausgabe des Programms? Geben Sie beim Aufruf jeder Methode an, ob eine Referenz oder Kopie "ubergeben wird.
+
+\end{body}
+\begin{solution}
+Die Ausgabe lautet:
+ \begin{itemize}
+  \item \code{0 : 1} ``Kopie''
+  \item \code{0 : 1} ``Kopie''
+  \item \code{0 : 1} ``Referenz''
+  \item \code{1 : 1} ``Referenz''
+  \item \code{0 : 1} ``Referenz''
+  \item \code{1 : 1} ``Referenz''
+ \end{itemize}
+
+\end{solution}
+\end{exercise}

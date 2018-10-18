@@ -1,0 +1,60 @@
+
+\begin{exercise}{Schleifen}
+\begin{body}
+Gegeben sei der folgende Ausschnitt eines Java-Programms:
+\begin{displaycode}
+int n = 0;
+for (int i=0; i < 7; i++) {
+    if (i == 4) {
+        i = i + 1;
+        n = n + i;
+    } else {
+        n += i;
+    }
+}
+System.out.println(n);
+\end{displaycode}
+\begin{parts}
+\item[(a)] Welche Zahl wird auf dem Bildschirm ausgegeben?
+\item[(b)] Realisieren Sie diesen Programmausschnitt mit einer \code|while|-Schleife.
+\end{parts}
+\end{body}
+
+\begin{solution}
+\begin{parts}
+\item[(a)] Für die einzelnen Schleifendurchläufe ergeben sich
+\begin{center}
+\begin{tabular}{|c|c||c|c|c|c|c|c|}
+\hline
+\code|i| & \code|n| & \code|i < 7|  & \code|i == 4| & \code|i = i + 1| & \code|n = n + i| & \code|n += i| & \code|i++|\\
+\hline
+$0$      & $0$      & \emph{wahr}   & \emph{falsch} & --               & --               & $0$           & $1$ \\
+$1$      & $0$      & \emph{wahr}   & \emph{falsch} & --               & --               & $1$           & $2$ \\
+$2$      & $1$      & \emph{wahr}   & \emph{falsch} & --               & --               & $3$           & $3$ \\
+$3$      & $3$      & \emph{wahr}   & \emph{falsch} & --               & --               & $6$           & $4$ \\
+$4$      & $6$      & \emph{wahr}   & \emph{wahr}   & $5$              & $11$             & --            & $6$ \\
+$6$      & $11$     & \emph{wahr}   & \emph{falsch} & --               & --               & $17$          & $7$ \\
+$7$      & $17$     & \emph{falsch} & --            & --               & --               & --            & --  \\
+\hline
+\end{tabular}
+\end{center}
+Es wird also die Zahl $17$ auf der Konsole ausgegeben.
+
+\item[(b)] Realisation mit einer \code|while|-Schleife:
+\begin{displaycode}
+int n;
+int i = 0;
+while (i < 7) {
+    if (i == 4) {
+        i = i + 1;
+        n = n + i;
+    } else {
+        n += i;
+    }
+    i++;
+}
+System.out.println(n);
+\end{displaycode}
+\end{parts}
+\end{solution}
+\end{exercise}

@@ -1,0 +1,38 @@
+\begin{exercise}{Funktionen-Trapezregel}
+\begin{body}
+Berechnen Sie numerisch das Integral der Funktion~$f$ definiert als $f(x) = -x^2+4$ in den Grenzen~$0$ und~$3$.
+
+\begin{parts}
+\item[(a)] Verwenden Sie die Trapezregel mit zwei St\"utzstellen
+\[
+I_1
+= \int_a^b f(x)dx
+\simeq (b-a)\frac{f(a)+f(b)}{2}
+.\]
+Hier soll $a=0$ und $b=3$ sein.
+\item[(b)] Verwenden Sie die zusammengesetzte Trapezregel f\"ur $N$ St\"utzstellen
+\[
+I_2
+= \int_a^b f(x)dx
+\simeq h \left[\frac{1}{2}f(a)+\frac{1}{2}f(b)+\sum_{n=1}^{N-1}f\left(a+nh \right)\right]
+,\]
+mit Gewicht $h = \frac{b-a}{N}$ und Integrationsgrenzen $a=0$ und $b=3$.
+\hint{Implementieren Sie eine Java-Funktion}
+
+\begin{displaycode}
+public static function(double x) {
+  return -x*x + 4;
+}
+\end{displaycode}
+\end{parts}
+
+\end{body}
+
+
+\begin{solution}
+Analytische Berechnung von Integral liefert $\int_0^3 -x^2 +4 \; dx = 3$.
+Beispiel Implementierung.
+\inputcode[frame=lines,title=Trapez.java]{\filename{Trapez.java}}
+\end{solution}
+
+\end{exercise}

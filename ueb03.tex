@@ -1,0 +1,160 @@
+\documentclass[9pt,german]{beamer}%
+\usepackage{master/templates/beamerthemeKIT}
+\usepackage{master/templates/exercises}
+\usepackage[java]{code}
+\usepackage{pgfplots}
+\usepackage{fontawesome}
+\usepackage{ulem}
+
+\input{master/master}
+
+\makeatletter
+\def\input@path{{uebungsfolien/}}
+\graphicspath{{uebungsfolien/}}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle%
+\addtocounter{framenumber}{-1}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Arbeitsblatt 3}%
+\tableofcontents[hideallsubsections]
+\end{frame}
+\setcounter{exercise}{12}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Wiederholung}\label{K:wdh}
+\begin{frame}
+  \frametitle{\ref{K:wdh} Wiederholung}%
+\tableofcontents[current]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Beachtung der Priorit\"at}
+\subsection{\stitle}\label{S:Priorit\"at}
+\begin{frame}[fragile]%
+  \frametitle{\ref{K:wdh}.\ref{S:Priorit\"at} \stitle}%
+\medskip
+
+Gegeben sei der folgende Java--Ausdruck:
+\begin{center}
+\code{a || b \&\& c}
+\end{center}
+Dabei seien \code{a, b, c} Variablen vom Typ \code{boolean}.
+\medskip
+
+Wie wird dieser Ausdruck abgearbeitet (engl. \emph{operator precedence})?
+\begin{itemize}
+  \item [a)] \code{(a || b) \&\& c}
+  \item[b)] \code{a || b( \&\& c)}
+\end{itemize}
+
+Welche der folgenden Ausdr\"ucke ist die korrekte \textbf{Negation}?
+\begin{itemize}
+  \item [a)] \code{!a \&\& (!b || !c)}
+  \item [b)] \code{!a \&\& \ !b || !c}
+\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Offizielle Dokumentation}
+\subsection{\stitle}\label{S:Dokumentation}
+\begin{frame}[fragile]%
+  \frametitle{\ref{K:wdh}.\ref{S:Dokumentation} \stitle}%
+%%source
+\url{docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{grundl-boolalgnegation/operatorPrecedence}
+\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{De Morgansche Gesetze}
+\subsection{\stitle}\label{S:Morgansche}
+\begin{frame}[fragile]%
+  \frametitle{\ref{K:wdh}.\ref{S:Morgansche} \stitle}%
+Vergleich Analysis I
+\medskip
+
+\begin{description}
+  \item[und bzw. oder]
+  \item $\neg \neg A = A$
+  \item $\neg (A \wedge B) = \neg A \vee \neg B$
+  \item $\neg (A \vee B) = \neg A \wedge \neg B$
+\end{description}
+\medskip
+
+\begin{description}
+  \item[Schnittmenge bzw. Vereinigung]
+  \item $(A^{\mathsf{c}})^{\mathsf{c}} = A$
+  \item $(A \cap B)^{\mathsf{c}} = A^{\mathsf{c}} \cup B^{\mathsf{c}}$
+  \item $(A \cup B)^{\mathsf{c}} = A^{\mathsf{c}} \cap B^{\mathsf{c}}$
+\end{description}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Aufgabe 13}
+\input{grundl-boolalgnegation/grundl-boolalgnegation}
+\section{Aufgabe 14}
+\input{anweis-1/anweis-1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Wdh. Typumwandlung}
+\subsection{\stitle}\label{S:Typumwandlung}
+\begin{frame}[fragile]%
+  \frametitle{\ref{K:wdh}.\ref{S:Morgansche} \stitle}%
+\medskip
+
+Allgemein \code{(Datentyp)(Ausdruck)}.
+\lstinputlisting[style=JAVAlines]{typumwandung/Typumwandlung.java}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Aufgabe 15}
+\input{anweis-2/anweis-2}
+\section{Aufgabe 16}
+\input{schleifen-1/schleifen-1}
+% TODO fix for loop
+\section{Aufgabe 17}
+\input{schleifen-2/schleifen-2}
+
+
+\begin{frame}
+\centering
+\Huge\GREEN{Fragen?}
+\vspace{2cm}
+
+{\LARGE
+N\"achste \"Ubung: 13. November\\
+Besprechung Arbeitsblatt 4
+}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

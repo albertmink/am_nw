@@ -1,0 +1,52 @@
+\begin{frame}[t]%
+\medskip
+
+\begin{exercise}{Boolsche Algebra}
+\begin{body}
+Unter der Negation eines Boolschen Ausdrucks $A$ versteht man den Ausdruck $\neg A$. Dieser ist genau dann wahr, wenn $A$ falsch ist. Seien $A$ und $B$ Boolsche Ausdrücke, so gelten die folgenden Negationsregeln
+\begin{align*}
+\neg \neg A &= A,\\
+\neg (A \wedge B) &= \neg A \vee \neg B,\\
+\neg (A \vee B)   &= \neg A \wedge \neg B. \\
+\end{align*}
+Geben Sie die \textbf{Negation} der nachfolgenden Java--Ausdrücke jeweils als Java--Ausdruck an. Hierbei seien \code{a} und \code{b} Variablen vom Typ \code{int}.\\[1em]
+\begin{center}
+\begin{minipage}{0.35\textwidth}
+\begin{itemize}
+\item[(a)] \code{a == 1}
+\item[(b)] \code{(a == 1) || (b == 2)}
+\item[(c)] \code{(a >= 0) \&\& (a <= 1)}
+\end{itemize}
+\end{minipage}
+\quad
+\begin{minipage}{0.6\textwidth}
+\begin{itemize}
+\item[(d)] \code{(a != 1) || (b == 4)}
+\item[(e)] \code{(a != 0) \&\& (a != 1) \&\& (a != 2)}
+\item[(f)] \code{(b < -1) || (b > 1) || (a == 0)}
+\end{itemize}
+\end{minipage}
+\end{center}
+\end{body}
+\end{exercise}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% solution %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{solution}
+% \begin{center}
+% \begin{minipage}{0.45\textwidth}
+% \begin{itemize}
+% \item[(a)] a!=1
+% \item[(b)] \code{(a != 1) && (b != 2)}
+% \item[(c)] \code{(a < 0) || (a > 1)}
+% \end{itemize}
+% \end{minipage}
+% \begin{minipage}{0.45\textwidth}
+% \begin{itemize}
+% \item[(d)] \code{(a == 1) && (b != 4)}
+% \item[(e)] \code{(a == 0)||(a == 1)||(a == 2)}
+% \item[(f)] \code{(b >= -1) && (b <= 1) && (a != 0)}
+% \end{itemize}
+% \end{minipage}
+% \end{center}
+% \end{solution}

@@ -1,0 +1,135 @@
+\AtBeginSection{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Beispiel Kugelvolumen}
+\begin{frame}
+  \frametitle{\kap. Beispiel Kugelvolumen}%
+\tableofcontents[current]
+\end{frame}
+% \setcounter{section}{0}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Definition Kugelvolumen}%
+\subsection{\stitle}\label{S:Beispiel Kugelvolumen}
+\begin{frame}[t]%
+  \frametitle{\kap.\ref{S:Beispiel Kugelvolumen} \stitle}%
+\medskip
+
+Das Kugelvolumen $V$ ist der Rauminhalt einer Kugel und abh"angig vom Kugelradius $r>0$ und ist beschrieben durch
+$$ V(r) := \frac{4}{3} \pi r^3. $$
+\begin{itemize}
+  \item Schreiben Sie ein Java-Programm, welches das Kugelvolumen einer beliebigen Kugel berechnet.
+\end{itemize}
+\medskip
+
+Vorgehen:
+\begin{itemize}
+\item Lese Variable $r$ ein
+\item W\"ahle geeigneten Datentyp f"ur Volumen $V$
+\item Lade Wert von $\pi$ aus Bibliothek
+\item Berechne Volumen
+\item Gebe berechneten Wert auf Konsole aus
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Beispiel Programm}%
+\subsection{\stitle}\label{S:Beispiel Programm}
+\begin{frame}[t]%
+  \frametitle{\kap.\ref{S:Beispiel Programm} \stitle}%
+\medskip
+
+\lstinputlisting[style=JAVA,title={Beispiel Implementierung f\"ur die Berechnung des Kugelvolumens bei gegebenem Radius.}]
+{kugelVolumen/KugelVolumen.java}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Schritt f\"ur Schritt}%
+\subsection{\stitle}\label{S:Schritt f\"ur Schritt}
+\begin{frame}[t]%
+  \frametitle{\kap.\ref{S:Schritt f\"ur Schritt} \stitle}%
+\medskip
+
+\lstinputlisting[style=JAVAlines,title={Die Klasse hei\ss t \code{KugelVolumen} und besitzt eine \code{main} Funktion.}]
+{kugelVolumen/KugelVolumen.java}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Schritt f\"ur Schritt}%
+\begin{frame}[t]%
+  \frametitle{\kap.\ref{S:Schritt f\"ur Schritt} \stitle}%
+\medskip
+
+\lstinputlisting[style=JAVAlines,title={Nun\"achst werden der Kugelradius $r$ und das Kugelvolumen $v$ als \code{double} deklariert.}]
+{kugelVolumen/KugelVolumen.java}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Schritt f\"ur Schritt}%
+\begin{frame}[t]%
+  \frametitle{\kap.\ref{S:Schritt f\"ur Schritt} \stitle}%
+\medskip
+
+\lstinputlisting[style=JAVAlines,title={Nun wird das Objekt \code{in} von der Klasse \code{Scanner} definiert, daf\"ur importieren wir auf eine fertige Bibilothek.} ]
+{kugelVolumen/KugelVolumen.java}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Schritt f\"ur Schritt}%
+\begin{frame}[t]%
+  \frametitle{\kap.\ref{S:Schritt f\"ur Schritt} \stitle}%
+\medskip
+
+\lstinputlisting[style=JAVAlines,title={Im n\"achsten Schritt fordern wir die Eingabe des Kugelradius $r$ \"uber die Konsole.}]
+{kugelVolumen/KugelVolumen.java}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Schritt f\"ur Schritt}%
+\begin{frame}[t]%
+  \frametitle{\kap.\ref{S:Schritt f\"ur Schritt} \stitle}%
+\medskip
+
+\lstinputlisting[style=JAVAlines,title={Dannach wird das Kugelvolumen $v$ berechnet, beachte $\pi$ entspricht hier \code{Math.PI} .}]
+{kugelVolumen/KugelVolumen.java}
+
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Schritt f\"ur Schritt}%
+\begin{frame}[t]%
+  \frametitle{\kap.\ref{S:Schritt f\"ur Schritt} \stitle}%
+\medskip
+
+\lstinputlisting[style=JAVAlines,title={Abschlie\ss end wird das Ergebnis auf der Konsole ausgegeben. Hierbei bitte beachten das verschiedene Datentypen mittels \code{+} verkn\"upft werden.}]
+{kugelVolumen/KugelVolumen.java}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Schritt f\"ur Schritt}%
+\begin{frame}[fragile]%
+  \frametitle{\kap.\ref{S:Schritt f\"ur Schritt} \stitle}%
+\medskip
+
+\begin{lstlisting}[title={Um das Programm \code{KugelVolumen} auszuf\"uhren werden folgende Schritte auf dem Terminal durchgef\"uhrt.},style=BASH]
+$ javac KugelVolumen.java
+$ java KugelVolumen
+Bitte Kugelradius eingeben: 1
+Das Volumen betraegt v = 4.1887902047863905
+\end{lstlisting}
+
+\end{frame}

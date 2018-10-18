@@ -1,0 +1,64 @@
+\begin{exercise}{Gleitkomma-Datentypen}
+
+\begin{body}
+In Java stellen die Gleitkomma-Datentypen Bruchzahlen dar, indem sie die Nachkommastellen und den Exponenten der normalisierten Binärbruchdarstellung abspeichern. Für die Speicherung der Nachkommastellen steht folgender Speicherplatz bereit.
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Datentyp} & \textbf{Nachkommastellen} \\
+\hline
+\code|float|       & 23 Bit                   \\
+\code|double|      & 52 Bit                   \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{itemize}
+\item 
+Welches ist die nächstgrößere Bruchzahl oberhalb der Eins, die vom Datentyp \code|float| bzw. vom Datentyp  \code|double| exakt dargestellt werden kann?
+
+\item
+Was versteht man im Zusammenhang mit Gleitkomma-Datentypen unter Rundungsfehlern? Wodurch entstehen sie?
+
+\item
+Welche Maschinengenauigkeit erzielt man mit dem Datentyp \code|float|, welche mit dem Datentyp \code|double|?
+
+\item
+Was versteht man unter Absorption im Zusammenhang mit Gleitkomma-Arithmetik?
+
+\item
+Was versteht man unter Auslöschung im Zusammenhang mit Gleitkomma-Arithmetik?
+\end{itemize}
+
+\end{body}
+
+\begin{solution}
+\begin{itemize}
+\item 
+Die nächstgrößere, exakt darstellbare Bruchzahl oberhalb der Eins ist $1 + 2^{-23}$ für den Datentyp \code|float| und $1 + 2^{-52}$ für den Datentyp \code{double}.
+
+\item
+Unter dem Begriff Rundungsfehler versteht man Fehler, die auftreten, wenn eine Bruchzahl vom jeweiligen Datentyp nicht exakt dargestellt wird. Rundungsfehler entstehen dadurch, dass jeder Datentyp nur eine begrenzte Anzahl von Nachkommastellen der normalisierten Binärbruchdarstellung speichern kann.
+
+\item
+Die Maschinengenauigkeit des Datentyps \code|float| beträgt $2^{-23} \approx 10^{-7}$, die des Datentyps 
+\code|double| beträgt $2^{-52} \approx 2 \cdot 10^{-16}$.
+
+\item
+Unter Absorption versteht man die Entstehung von Rundungsfehlern bei der Addition zweier Gleitkommazahlen, deren Beträge unterschiedliche Größenordnungen haben.
+
+\emph{Beipiel}: Mit dem Datentyp \code|float| können ca{.} $8$ Dezimalstellen dargestellt werden. Die Addition von 
+$1{,}0000001 \cdot 10^7$ ($8$ Stellen) und $1 \cdot 10^{-1}$ ($1$ Stelle) ergibt $1{,}00000011 \cdot 10^7$ ($9$ Stellen). Dieses Ergebnis kann mit dem Datentyp \code|float| nicht exakt dargestellt werden und wird 
+auf $1{,}0000001 \cdot 10^7$ gerundet. 
+
+\item
+Unter Auslöschung versteht man die Entstehung von Rundungsfehlern bei der Subtraktion zweier fast gleicher Gleitkommazahlen.
+
+\emph{Beispiel}: Subtrahiert man von der Zahl $1{,}0000011$ die Zahl $1{,}0000010$, so erwartet man das Ergebnis 
+$1 \cdot 10^{-7}$. Führt man diese Subtraktion in Gleitkomma-Arithmetik mit dem Datentyp \code|float| durch, so erhält man das Ergebnis $1{,}1920929 \cdot 10^{-7}$. Nur eine einzige Stelle dieses Wertes ist exakt.
+
+\end{itemize}
+\end{solution}
+
+\end{exercise}

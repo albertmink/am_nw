@@ -1,0 +1,102 @@
+\def\stitle{\theexercise\ - Artikelverwaltung}
+\section{\stitle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}%
+  \frametitle{\stitle}%
+Schreiben Sie ein Java-Programm, welches die Verkaufsartikel eines Fachbuchhandlung verwaltet.
+
+\begin{enumerate}
+\item[(a)] Definieren Sie eine \"offentlichen Klasse namens \code{Artikel}, und definieren Sie für die Klasse die folgenden Elemente:
+  \begin{itemize}
+    \item Eine Instanzvariable \code{anzahl} vom Typ \code{int} für die Anzahl der vorhandenen Einheiten des Artikels.
+    \item Eine Instanzvariable \code{preis} vom Typ \code{double} für den Preis einer Einheit.
+    \item Eine Instanzvariable \code{bezeichnung} vom Typ \code{String} für die Bezeichnung des Artikels.
+  \end{itemize}
+\end{enumerate}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}%
+  \frametitle{\stitle}%
+\lstinputlisting[style=JAVA]{strukt-artikel/Artikel.java}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}%
+  \frametitle{\stitle}%
+Definieren Sie eine \"offentlichen Klasse namens \code{Artikelverwaltung}.
+\begin{enumerate}
+\item[(b)]
+  Definieren für diese Klasse eine Klassenmethode namens \code{liesArtikel} ohne Parameter, in der die Bezeichnung, die Anzahl der vorhandenen Einheiten und der Preis eines Artikels mit begleitendem Text von der Konsole eingelesen werden und diese in Form einer Instanz der Klasse \code{Artikel} zur\"uck gegeben werden.
+\end{enumerate}
+\pause
+\lstinputlisting[style=JAVA]{strukt-artikel/Artikelverwaltung21.java}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}%
+  \frametitle{\stitle}%
+\begin{enumerate}
+\item[(c)]
+  Definieren Sie eine \"offentlichen Klasse namens \code{liesListe} mit einem Parameter vom Typ \code{int} für die Anzahl $n$ der einzulesenden Artikel.
+  Die Klassenmethode soll $n$ Artikel mit Hilfe der Methode \code{liesArtikel} von der Konsole eingelesen.
+  Die eingelesenen Artikel sollen als Feld vom Typ \code{Artikel} zur\"uck gegeben werden.
+\end{enumerate}
+\pause
+\lstinputlisting[style=JAVA]{strukt-artikel/Artikelverwaltung22.java}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}%
+  \frametitle{\stitle}%
+\begin{enumerate}
+\item[(d)]
+  Definieren Sie eine Klassenmethode namens \code{zeigeArtikel} mit einem Parameter vom Typ \code{Artikel}.
+  Die Methode soll die Bezeichnung des übergebene Artikels, die Anzahl der vorhandenen Einheiten sowie den Preis einer Einheit und den Gesamtwert des Artikels auf der Konsole ausgeben.
+\end{enumerate}
+\pause
+\lstinputlisting[style=JAVA]{strukt-artikel/Artikelverwaltung23.java}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}%
+  \frametitle{\stitle}%
+\begin{enumerate}
+\item[(e)]
+  Definieren Sie eine \"offentlichen Klasse namens \code{Artikelverwaltung}.
+  Definieren Sie eine Klassenmethode namens \code{zeigeListe} mit einem Parameter vom Typ \code{Artikel[]}.
+  Die Methode soll alle Artikel, die im übergebenen Feld gespeichert sind mittels \code{zeigeArtikel} auf der Konsole ausgeben.
+  Ferner soll der Gesamtwert aller Artikel berechnet und auf der Konsole ausgegeben werden.
+\end{enumerate}
+\pause
+\lstinputlisting[style=JAVA]{strukt-artikel/Artikelverwaltung24.java}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}%
+  \frametitle{\stitle}%
+\begin{enumerate}
+\item[(f)]
+  Definieren Sie eine \code{main}-Methode, in der die Anzahl der einzulesenden Artikel und die Artikel selber von der Konsole eingelesen und anschließend als Liste auf der Konsole ausgegeben werden.
+  Testen Sie die Klasse mit folgenden Daten: Es sollen
+\begin{itemize}
+\item 25 Einheiten vom Artikel \glqq Mathematik-Lehrbuch\grqq\ (Preis 29{,}95 Euro),
+\item 30 Einheiten vom Artikel \glqq Java-Lehrbuch\grqq\ (Preis 24{,}95 Euro),
+\item sowie 15 Einheiten vom Artikel \glqq Physik-Lehrbuch\grqq\ (Preis 34{,}95 Euro),
+\end{itemize}
+vorhanden sein. Der Gesamtwert aller Artikel betr\"agt für dieses Beispiel 2021{,}50 Euro.
+\end{enumerate}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}%
+  \frametitle{\stitle\ - L\"osungsvorschlag}%
+\lstinputlisting[style=JAVA]{strukt-artikel/Artikelverwaltung3.java}
+\end{frame}

@@ -1,0 +1,42 @@
+\def\stitle{\theexercise\ - Vorw\"artseinsetzen}
+\section{\stitle}
+\begin{frame}%
+  \frametitle{\stitle}%
+Sei folgendes Gleichungssystem gegeben
+\[
+\begin{pmatrix}
+A_{11} & 0  &  0 \\
+A_{21} & A_{22}  &  0 \\
+A_{31} & A_{32}  &  A_{33} \\
+\end{pmatrix}
+\begin{pmatrix}
+y_{1} \\
+y_{2} \\
+y_{3} \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+b_{1} \\
+b_{2} \\
+b_{3} \\
+\end{pmatrix}
+,
+\]
+für eine gegebene untere Dreiecksmatrix $ A \in \mathbb{R}^{3\times 3} $ und Vektor $ b \in \mathbb{R}^3 $.
+\medskip
+
+Durch Vorw\"artseinsetzen k\"onnen nun der Reihe nach die Komponenten des unbekannten Vektors $y$ berechnet werden.
+Durch sukzessives Einsetzen folgt
+\[
+y_i=\frac{1}{A_{ii}}\left(b_i-\sum_{k=1}^{i-1}A_{ik}y_k\right).
+\]
+\begin{enumerate}
+\item Erstellen Sie eine Funktion \code{vorwaertseinsetzen}, die eine untere Dreiecksmatrix $ A $ und einen Vektor $ b $ erh\"alt und den L\"osungsvektor $ y $ zur\"uck gibt.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}%
+  \frametitle{\stitle\ - L\"osungsvorschlag}%
+\lstinputlisting[style=JAVA]{vorwaertseinsetzen/Vorwaerts.java}
+\end{frame}

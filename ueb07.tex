@@ -1,0 +1,108 @@
+\documentclass[9pt,german]{beamer}%
+\usepackage{master/templates/beamerthemeKIT}
+\usepackage{master/templates/exercises}
+\usepackage[java]{code}
+\usepackage{pgfplots}
+\usepackage{fontawesome}
+\usepackage{ulem}
+
+\input{master/master}
+
+\makeatletter
+\def\input@path{{uebungsfolien/}}
+\graphicspath{{uebungsfolien/}}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle%
+\addtocounter{framenumber}{-1}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{Arbeitsblatt 7}%
+\tableofcontents
+\end{frame}
+
+\def\kap{0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ank\"undigung}\label{K:ank}
+\begin{frame}
+  \frametitle{\ref{K:ank} Ank\"undigung}%
+
+\begin{itemize}
+\item Am Dienstag den 05.12.2017 findet die Evaluation der \"Ubung statt.
+\item Im Januar 2018 findet eine 90 min\"utige Probeklausur statt, in der Sie die M\"oglichkeit haben unter realen Bedingungen eine Altklausur zu l\"osen.
+\item In der darauf folgenden Woche wird die L\"osung besprochen.
+\end{itemize}
+
+\end{frame}
+
+
+\def\kap{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Wiederholung}\label{K:wdh}
+\begin{frame}
+  \frametitle{\ref{K:wdh} Wiederholung}%
+\tableofcontents[current]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Erzeugen von mehrdimensionalen Feldern}
+\subsection{\stitle}\label{S:Erzeugen}
+\begin{frame}[t]%
+  \frametitle{\ref{K:wdh}.\ref{S:Erzeugen} \stitle}
+\medskip
+
+Ein Feld kann mehrere Variablen vom selben Datentyp enthalten, hier \code{int} und \code{char}.
+\lstinputlisting[style=JAVA]{wdh-felderMehrdim/FelderErzeugen.java}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Zugreifen auf mehrdimensionale Felder}
+\subsection{\stitle}\label{S:Zugreifen}
+\begin{frame}[t]%
+  \frametitle{\ref{K:wdh}.\ref{S:Zugreifen} \stitle}
+\medskip
+
+Mit dem Operator \code{[]} wird auf bestimmte Feldkomponenten zu gegriffen.
+\lstinputlisting[style=JAVA]{wdh-felderMehrdim/FelderZugreifen.java}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{exercise}{27}
+\input{felder-matrix/felder-matrix}
+\setcounter{exercise}{28}
+\input{rekursion-1/rekursion-1}
+\setcounter{exercise}{29}
+\input{komplexitaet-eff/komplexitaet-eff}
+\setcounter{exercise}{30}
+\input{komplexitaet-1/komplexitaet-1}
+
+
+\begin{frame}
+\centering
+\Huge\GREEN{Fragen?}
+\vspace{2cm}
+
+{\LARGE
+N\"achste \"Ubung: 11. Dezember\\
+Besprechung Arbeitsblatt 8
+}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

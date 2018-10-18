@@ -1,0 +1,49 @@
+\begin{exercise}{Funktionen}
+\begin{body}
+Es seien die folgenden Java-Funktionen f1 und f2 gegeben:
+\begin{verbatim}
+static int f1(int x, int y)
+{
+   if (y <= 0) return 1;
+   if (y % 2 == 0)
+      return f1(x*x, y/2);
+   else
+      return x*f1(x, y-1);
+}
+\end{verbatim}
+\begin{verbatim}
+static int f2(int x, int y)
+{
+   if (y <= 0) return 1;
+   int result = 1;
+   while(...){
+     if(y % 2 == 0){
+        x *= x;
+        y /= 2;
+     }
+     else{
+        result *= x;
+        y--;
+     }
+   }  
+   return result;
+}
+\end{verbatim}
+\begin{itemize}
+	\item[a)] Welche Funktion wird in f1 berechnet?
+	\item[b)] Wieviele Multiplikationen werden f"ur den Aufruf f1(3, 4) ben"otigt?
+	\item[c)] Die (noch unvollst"andige) Funktion f2 soll f"ur alle Eingaben exakt das gleiche Ergebnis 
+	          zur"uckgeben wie f1. Welche Bedingung ist in der while--Schleife einzusetzen?
+\end{itemize}
+\end{body}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% solution %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{solution}
+\begin{itemize}
+	  \item[(a)] $f(x)=x^{y}, \quad y\geq0$.
+	  \item[(b)] 3
+	  \item[(c)] $while(y>=1)$
+  \end{itemize}
+\end{solution}
+
+\end{exercise}

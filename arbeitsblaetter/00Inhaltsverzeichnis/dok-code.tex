@@ -1,0 +1,192 @@
+\section{Einf�hrung}
+Das Paket \verb|code| definiert Makros und Umgebungen, mit denen Quelltext mit automatischer Syntaxhervorhebung in \LaTeX--Dokumente eingef�gt werden kann. Das Paket basiert vollst�ndig auf dem Paket \verb|listings|. Das Paket wird mittels
+\begin{verbatim}
+  \usepackage{code}
+\end{verbatim}
+in ein \LaTeX--Dokument eingebunden.
+
+
+\section{Die Programmiersprache festlegen}
+Mit dem Makros \verb|\selectcodelanguage| kann bestimmt werden, welcher Programmiersprache der nachfolgende Quelltext zuzuordnen ist. Dies beeinflusst die automatische Syntaxhervorhebung. Mit der Befehlszeile
+\begin{verbatim}
+  \selectcodelanguage{c++}
+\end{verbatim}
+wird beispielsweise festgelegt, dass es sich bei dem nachfolgenden Quelltext um Quelltext der Programmiersprache C++ handelt. Desweiteren k�nnen beispielsweise die Programmiersprachen C++, Java, MATLAB und Fortran mit den Bezeichnern \verb|java|, \verb|matlab|, \verb|matlab| und \verb|fortran| gew�hlt werden. Das Paket \verb|listings| unterst�tzt dar�ber hinaus weitere Programmiersprachen. 
+
+Die Programmiersprachen C++, Java, MATLAB und Fortran k�nnen auch beim Einbinden des Paketes gew�hlt werden. Man �bergibt dazu den entsprechenden Bezeichner als optionales Argument an das Makro \verb|\usepackage|. So wird durch die Quelltextzeile
+\begin{verbatim}
+  \usepackage[java]{code}
+\end{verbatim}
+beispielsweise die Programmiersprache Java ausgew�hlt. Um die Programmiersprache C++ zu w�hlen muss bei dieser Variante der Bezeichner \verb|cpp| verwendet werden. Wird keine Programmiersprache explizit gew�hlt, so wird von der Programmiersprache C++ ausgegangen. Mit dem Befehl
+\begin{verbatim}
+  \selectcodelanguage{}
+\end{verbatim}
+wird jedwede Syntaxhervorhebung im nachfolgenden Quelltext verhindert. 
+
+
+
+
+\section{Quelltext einf�gen}
+
+Einzelne Quelltextausdr�cke wie beispielsweise Variablennamen oder Schl�sselw�rter k�nnen mit dem Makro \verb|\code| in einen normalen Text direkt eingef�gt werden. Das Makro \verb|\code| verh�lt sich dabei wie das Makro \verb|\verb|, d.h.
+der Quelltext muss in zwei gleiche Maskierungszeichen eingefasst werden. Man betrachte dazu das folgende Beispiel. Der Quelltext
+
+\begin{quote}
+\begin{verbatim}
+Definieren Sie eine Variable namens 
+\code|zahl| vom Typ \code|int|.
+\end{verbatim}
+\end{quote}
+
+\noindent
+erzeugt die Ausgabe
+
+\vspace*{2em}
+\hrule
+\begin{quote}
+Definieren Sie eine Variable namens 
+\code|zahl| vom Typ \code|int|.
+\end{quote}
+\hrule
+\vspace*{2em}
+
+\noindent
+Als Maskierungszeichen wurde hier zweimal der Vertikalstrich \glqq\verb/|/\grqq\ gew�hlt. Wie man sieht, wurde das Schl�sselwort \glqq int\grqq\ automatisch fett gedruckt. 
+
+Das Makro \verb|\code| eignet sich zum Einf�gen von kleinen Quelltextelementen. Gr��ere Quelltextfragmente sollten mit der Umgebung \verb|displaycode| eingef�gt werden. Diese Umgebung verh�lt sich wie die \verb|verbatim|--Umgebung. Man betrache dazu das folgende Beispiel: Der Quelltext
+
+\begin{quote}
+\begin{verbatim}
+Die Summe der ersten zehn nat�rlichen Zahlen kann 
+beispielsweise durch
+\begin{displaycode}
+  int s = 0;
+  for (int i=1; i <= 10; i++) {
+    s += i;
+  }
+\end{displaycode}
+berechnet werden.
+\end{verbatim}
+\end{quote}
+
+\noindent
+erzeugt die Ausgabe
+
+\vspace*{2em}
+\hrule
+\begin{quote}
+Die Summe der ersten zehn nat�rlichen Zahlen kann 
+beispielsweise durch
+\begin{displaycode}
+  int s = 0;
+  for (int i=1; i <= 10; i++) {
+    s += i;
+  }
+\end{displaycode}
+berechnet werden.
+\end{quote}
+\hrule
+\vspace*{2em}
+
+\noindent
+Wie man sieht, erzeugt die \verb|displaycode|--Umgebung einen neuen Absatz. Schl�sselw�rter werden durch Fettdruck hervorgehoben.
+
+
+
+\section{Quelltext aus Dateien einf�gen}
+
+Mit dem Makro \verb|\inputcode| kann Quelltext aus einer Datei in ein \LaTeX--Dokument eingef�gt werden. Das Makro besitzt ein Argument, �ber den der Pfade der Quelltextdatei �bergeben wird.
+
+
+
+\section{Quelltext formatieren}
+
+Die Makros \verb|\code| und \verb|\inputcode| sowie die Umgebung \verb|displaycode| akzeptieren dieselben optionalen Argumente wie die Makros, die im Paket \verb|listings| definiert sind. Einige wichtige Bespiele seien hier aufgef�hrt:
+
+
+\subsection{Rahmen}
+
+Mit dem optionalen Argument \verb|frame| kann Quelltext mit einem Rahmen versehen werden. So wird durch
+
+\begin{quote}
+\begin{verbatim}
+\begin{displaycode}[frame=single]
+void swap(int& a, int& b);
+\end{displaycode}
+\end{verbatim}
+\end{quote}
+
+\noindent
+beispielsweise die Ausgabe
+
+\begin{quote}
+\begin{displaycode}[frame=single]
+void swap(int& a, int& b);
+\end{displaycode}
+\end{quote}
+
+\noindent
+erzeugt. Weitere Rahmenbezeichnet sind \verb|leftline|, \verb|topline|, \verb|bottomline| oder \verb|lines|.
+
+
+
+\subsection{Zeilennumerierung}
+
+Mit dem optionalen Argument \verb|numbers| kann ein Quelltext mit einer Zeilennumerierung versehen werden. Man betrachte dazu das Beispiel
+
+\begin{quote}
+\begin{verbatim}
+\begin{displaycode}[numbers=left]
+  int a = 1;
+  int b = 1;
+  for (int i=2; i < 10; i++) {
+    int c = a + b;
+    b = a;
+    a = c;
+  }
+\end{displaycode}
+\end{verbatim}
+\end{quote}
+
+\noindent
+Die Ausgabe ist in diesem Fall
+
+\begin{quote}
+\begin{displaycode}[numbers=left]
+  int a = 1;
+  int b = 1;
+  for (int i=2; i < 10; i++) {
+    int c = a + b;
+    b = a;
+    a = c;
+  }
+\end{displaycode}
+\end{quote}
+
+
+
+
+\subsection{�berschriften}
+
+Mit dem optionalen Argument \verb|title| kann ein Quelltext mit einer �berschrift versehen werden dies ist insbesondere dann sinnvoll, wenn der Quelltext aus einer Datei eingef�gt wurde. Als �berschrift sollte in diesem Fall der Dateiname verwendet werden. Man betrachte dazu das Beispiel
+
+\begin{quote}
+\begin{verbatim}
+  \inputcode[title=hanoi.cpp,frame=lines]{hanoi.cpp}
+\end{verbatim}
+\end{quote}
+
+\noindent
+Die Ausgabe k�nnte folgenderma�en aussehen
+
+\begin{quote}
+\begin{displaycode}[title=hanoi.cpp,frame=lines]
+  void hanoi(int n, int a, int b, int c) {
+    if (n > 0) {
+      hanoi(n-1,a,c,b);
+      std::cout << a " to " b << std::endl;
+      hanoi(n-1,c,b,a);
+    }
+  }
+\end{displaycode}
+\end{quote}

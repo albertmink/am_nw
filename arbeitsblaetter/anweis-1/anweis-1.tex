@@ -1,0 +1,57 @@
+\begin{exercise}{Anweisungen}
+\begin{body}
+Gegeben sei der folgende Ausschnitt eines Java-Programms. Dabei sei \code|n| eine Variable vom Typ \code|int|.
+\begin{displaycode}
+if ( n < 3 ) {
+    if ( n > 1 ) {
+        System.out.println("A");
+    } else {
+        System.out.println("B");
+    }
+} else {
+    if ( n <= 3 ) {
+        System.out.println("C");
+    } else {
+        System.out.println("D");
+    }
+}
+\end{displaycode}
+\begin{parts}
+\item[(a)] Welcher Buchstabe wird auf dem Bildschirm ausgegeben, falls \code|n| den Wert $1$, $2$, $3$ bzw. $4$ besitzt?
+\item[(b)] Welcher Buchstabe wird auf dem Bildschirm ausgegeben, falls \code|n| den Wert $1$, $2$, $3$ bzw. $4$ besitzt und \textbf{jeder} Boolsche Ausdruck in dem Programmabschnitt durch seine Negation ersetzt wurde?
+\end{parts}
+\end{body}
+
+
+\begin{solution}
+\begin{parts}
+\item[(a)] Für den vorliegenden Programmausschnitt erhält man
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+$\quad$\code|n|$\quad$  & \textbf{Ausgabe} \\
+\hline
+$1$ & B \\
+$2$ & A \\
+$3$ & C \\
+$4$ & D \\
+\hline
+\end{tabular}
+\end{center}
+
+\item[(b)] Ersetzt man die Ausdrücke \code|(n < 3)|, \code|(n > 1)| und \code|(n <= 3)| durch ihre Negationen \code|(n >= 3)|, \code|(n <= 1)| und \code|(n > 3)|, so erhält man
+\begin{center} 
+\begin{tabular}{|c|c|}
+\hline
+$\quad$\code|n|$\quad$  & \textbf{Ausgabe} \\
+\hline
+$1$ & D \\
+$2$ & D \\
+$3$ & B \\
+$4$ & B \\
+\hline
+\end{tabular}
+\end{center}
+\end{parts}
+\end{solution}
+\end{exercise}

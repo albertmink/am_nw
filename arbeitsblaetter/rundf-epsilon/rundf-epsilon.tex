@@ -1,0 +1,62 @@
+\begin{exercise}{Maschinengenauigkeit}
+
+\description{Berechnung der Maschinengenauigkeiten für \code|double| und \code|float|}
+
+\source{Markus Richter}
+
+\difficulty{leicht}
+
+\utilization{WS 2009 (Praktikum)}
+
+
+\begin{body}
+Eine reelle Zahl $x \in \mathbb{R}$ wird im Rechner durch eine so genannte \emph{Maschinenzahl} oder \emph{Gleitkomma-Darstellung} $fl(x)$ eines bestimmen Datentyps (z.B. \code|double|, \code|float|, \code|int|) dargestellt. Bedingt durch Rundungsfehler stimmen $x$ und $fl(x)$ im allgemeinen nicht überein. Der \emph{relative Rundungsfehler}, der bei der Abbildung 
+$x \mapsto fl(x)$ entsteht, ist durch
+\[ e(x) := \frac{\lvert x - fl(x) \rvert }{\lvert x \rvert}  \]
+definiert. Eine wichtige Kenngröße ist die so genannte \emph{Maschinengenauigkeit} $\epsilon$, die folgendermaßen definiert ist: $\epsilon$ ist die kleinste, positive Zahl, für die
+\[ e(x) \leq \epsilon \quad\text{für alle } x \in \mathbb{R} \text{ mit } x_{Min} \leq x \leq x_{Max} \]
+gilt. Hierbei bezeichnen $x_{Min}$ und $x_{Max}$ die kleinste und die größte Maschinenzahl des betreffenden Datentyps. Die Maschinengenauigkeit kann mit folgendem Algorithmus berechnet werden:
+\begin{center}
+\begin{minipage}{0.8\textwidth}
+\begin{enumerate}
+\item[(1)] Initialisiere $x$ mit $1$, und gehe zu (2).
+\item[(2)] Solange $x + 1 \neq 1$ gilt, halbiere $x$. Ansonsten gehe zu (3).
+\item[(3)] Die Maschinengenauigkeit $\epsilon$ ist $2x$.
+\end{enumerate}
+\end{minipage}
+\end{center}
+\bigskip
+Bearbeiten Sie die folgenden Aufgaben:
+\begin{parts}
+\item
+Schreiben Sie ein Java-Programm namens \code|EpsilonDouble|, welches die Maschinengenauigkeit für den Datentyp \code|double| berechnet und auf der Konsole ausgibt.
+
+\item
+Schreiben Sie ein Java-Programm namens \code|EpsilonInt|, welches die Maschinengenauigkeit für den Datentyp 
+\code|int| berechnet und auf der Konsole ausgibt.
+\end{parts}
+Orientieren Sie sich an dem oben angegebenen Algorithmus. Definieren Sie für $x$ eine Variable vom Typ \code|double|,
+und setzen Sie den Schritt (2) des Algorithmus mit einer \code|while|-Schleife um. Achten Sie in den Aufgabenteilen (b) und (c) darauf, die linke Seite der Ungleichung ${x + 1} \neq 1$ in den jeweils richtigen Datentyp zu konvertieren. Verwenden Sie dazu die expliziten Typenkonvertierung \code|(int)|.
+\end{body}
+
+\begin{solution}
+\begin{small}
+\inputcode[frame=lines,title=EpsilonDouble.java]{\filename{src/EpsilonDouble.java}}
+\inputcode[frame=lines,title=EpsilonInt.java]{\filename{src/EpsilonInt.java}}
+\end{small}
+
+\bigskip
+\noindent
+\paragraph{Hinweise}
+\begin{itemize}
+\item
+Die Maschinengenauigkeit für \code|double| ist $2{,}220446049250313\cdot 10^{-16}$.
+
+\item
+Die Maschinengenauigkeit für \code|float| ist $1{,}1920928955078125\cdot 10^{-7}$.
+
+\item
+Die Maschinengenauigkeit für \code|int| ist $1$. 
+\end{itemize}
+\end{solution}
+\end{exercise}

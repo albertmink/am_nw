@@ -1,0 +1,35 @@
+\begin{exercise}{Taylorreihen}
+\begin{body}
+Differenzierbare Funktionen k"onnen innerhalb bestimmter Bereiche durch ihre Taylorreihen angen"ahert werden.
+Die Taylor\-reihe f"ur den nat"urlichen Logarithmus lautet
+\begin{align*}
+T_N(x) := \sum_{k=1}^N \frac{(-1)^{k+1}}{k}\, x^k
+        =x-\frac{1}{2}x^2+\frac{1}{3}x^3- \ldots +  \frac{(-1)^{N+1}}{N}\, x^N
+        \approx \log(1+x),
+\end{align*}
+f"ur $x\in (-1,1]$.
+Die G"ute der N"aherung h"angt dabei von der Wahl von $N$ ab.
+
+Erstellen Sie ein Java-Programm, welches die Taylorreihen des Logarithmus f"ur gegebenes~$x$ und $N$ mittels einer \verb+for+-Schleife auswertet.
+Benutzen Sie dabei die Hilfsdefinition
+\begin{align*}
+y_k&:=(-1)^{k+1} x^k \quad      &&\mbox{f"ur } k=1,\ldots,N,
+\end{align*}
+und verwenden Sie
+\begin{align*}
+y_1&=x,\quad && y_k=-x\cdot y_{k-1}   \quad &&\mbox{f"ur } k=2,\ldots,N,
+\end{align*}
+Die Verwendung der Funktion {\tt Math.pow}  ist nicht gestattet!
+Lesen Sie jeweils die Werte f"ur~$N$ und~$x$ ein, bestimmen Sie den Wert $T_N(x)$ und geben Sie diesen auf dem Bildschirm aus.
+Bestimmen Sie zus"atzlich dazu den absoluten Fehler
+\begin{align*}
+e_N(x)&:=\left|\log(1+x)-T_N(x)\right|,
+\end{align*}
+und geben Sie diese aus.
+Verwenden Sie die Standardfunktionen \verb+Math.log+ und \verb+Math.abs+ (f"ur den Betrag).
+\end{body}
+
+\begin{solution}
+  \inputcode[frame=lines,title=taylor.java]{\filename{taylor.java}}
+\end{solution}
+\end{exercise}

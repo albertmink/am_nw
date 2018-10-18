@@ -1,0 +1,106 @@
+
+\begin{exercise}{Klassenhierarchien}
+\begin{body}
+Betrachten Sie die nachfolgenden Klassendefinitionen:
+\medskip
+\begin{displaycode}
+public class Wal { }
+
+public class Zahnwal extends Wal { }
+
+public class Pottwal extends Zahnwal { }
+
+public class Delphin extends Zahnwal { }
+
+public class Bartenwal extends Wal { }
+
+public class Grauwal extends Bartenwal { }
+\end{displaycode}
+\medskip
+In der \code|main|-Methode eines Java-Programms findet man die Zeilen
+\medskip
+\begin{displaycode}
+        Wal w;
+        Zahnwahl z;
+\end{displaycode}
+\medskip
+Entscheiden Sie, welche der folgenden Ausdrücke gültig sind. Begründen Sie Ihre Entscheidung.
+\begin{center}
+\begin{minipage}{0.45\textwidth}
+\begin{parts}
+\item[(a)]
+\code|z = new Zahnwal();|
+
+\item[(b)]
+\code|z = new Delphin();|
+
+\item[(c)]
+\code|w = new Bartenwal();|
+
+\item[(d)]
+\code|z = new Bartenwal();|
+
+\item[(e)]
+\code|w = new Grauwal();|
+\end{parts}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{parts}
+\item[(f)]
+\code|z = new Wal();|
+
+\item[(g)]
+\code|z = (Zahnwal) new Wal();|
+
+\item[(h)]
+\code|z = (Zahnwal) new Pottwal();|
+
+\item[(i)]
+\code|z = (Zahnwal) new Grauwal();|
+
+\item[(j)]
+\code|z = (Zahnwal) null;|
+\end{parts}
+\end{minipage}
+\end{center}
+\end{body}
+
+
+\begin{solution}
+Für die Lösung dieser Aufgabe ist das folgende Klassendiagramm hilfreich. Jeder Pfeil zeigt von einer Klasse auf deren Basisklasse.
+\begin{center}
+\includegraphics[height=4cm]{\filename{wale}}
+\end{center}
+\begin{parts}
+\item
+Der Ausdruck ist gültig. Der Variable \code|z| vom Typ \code|Zahnwal| wird eine Instanz der Klasse \code|Zahnwal| zugewiesen.
+
+\item
+Der Ausdruck ist gültig. Die Klasse \code|Delphin| ist von der Klasse \code|Zahnwal| abgeleitet. Daher ist jede Instanz der Klasse \code|Delphin| auch eine Instanz der Klasse \code|Zahnwal| (\glqq Delphine sind Zahnwale.\grqq).
+
+\item
+Der Ausdruck ist gültig. Die Klasse \code|Bartenwal| ist von der Klasse \code|Wal| abgeleitet. Daher ist jede Instanz der Klasse \code|Bartenwal| auch eine Instanz der Klasse \code|Wal| (\glqq Bartenwale sind Wale.\grqq).
+
+\item
+Der Ausdruck ist ungültig. Die Klasse \code|Bartenwal| und die Klasse \code|Zahnwal| sind zwar beide von der Klasse \code|Wal| abgeleitet. Die Klasse \code|Bartenwal| ist jedoch nicht von der Klasse \code|Zahnwal| abgeleitet. Aus diesem Grund sind Instanzen der Klasse \code|Bartenwal| keine Instanzen der Klasse \code|Zahnwal| (\glqq Bartenwale sind keine Zahnwale.\grqq).
+
+\item
+Der Ausdruck ist gültig. Die Klasse \code|Grauwal| ist über die Klasse \code|Bartenwal| von der Klasse \code|Wal| abgeleitet. Jede Instanz der Klasse \code|Grauwal| ist daher auch eine Instanz der Klasse \code|Wal| (\glqq Grauwale sind Wale.\grqq).
+
+\item
+Der Ausdruck ist ungültig. Die Klasse \code|Wal| ist Basisklasse der Klasse \code|Zahnwal|. Daher ist ein Instanz der Klasse \code|Wal| keine Instanz der Klasse \code|Zahnwal| (\glqq Nicht jeder Wal ist ein Zahnwal.\grqq).
+
+\item
+Der Ausdruck ist ungültig. Die Klasse \code|Wal| ist Basisklasse der Klasse \code|Zahnwal|. Die Typumwandlung von einer Basisklasse zu einer abgeleiteten Klasse ist nicht möglich.
+
+\item
+Der Ausdruck ist gültig. Die Klasse \code|Pottwal| ist von der Klasse \code|Zahnwal| abgeleitet. Die Typumwandlung von einer abgeleiteten Klasse zur entsprechenden Basisklasse ist möglich. Man beachte, dass die Typumwandlung auf die Instanz selbst keinen Einfluss hat, d.h{.} nach der Initialisierung ist in der Variable \code|z| eine Instanz der Klasse \code|Pottwal| gespeichert.
+
+\item
+Der Ausdruck ist ungültig. Die Klasse \code|Grauwal| ist nicht von der Klasse \code|Zahnwal| abgeleitet. Die Typumwandlung ist daher nicht möglich.
+
+\item
+Der Ausdruck ist gültig. Die leere Referenz \code|null| verweist auf keine Instanz. Die Typumwandlung wird ohne jeden Effekt durchgeführt.
+\end{parts}
+\end{solution}
+\end{exercise}

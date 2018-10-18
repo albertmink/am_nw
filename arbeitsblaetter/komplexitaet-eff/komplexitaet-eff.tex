@@ -1,0 +1,61 @@
+\begin{exercise}{Effizienz}
+
+\begin{body}
+\begin{parts}
+  \item[(a)] Gegeben ist folgender Programmausschnitt.
+  \begin{parts}
+  \item[1)] Beschreiben Sie das Ergebnis der Rechnung.
+  \item[2)] Z\"ahlen Sie die zur Berechnung n\"otige Anzahl an Rechenoperationen.
+            Im weiteren sei \code{n} eine beliebige nat\"urliche Zahl.
+            Charakterisieren Sie den Rechenaufwand des Ausschnittes mit Hilfe eines Ausdrucks in der Landau-Notation.
+
+  \end{parts}
+\end{parts}
+
+\inputcode[frame=lines,title=Effizienz.java,numbers=left]{\filename{Effizienz.java}}
+
+\begin{parts}
+  \item [(b)] Vereinfachen Sie die folgenden Ausdr\"ucke zur Komplexit\"at durch geeignetes Runden zu jeweils einen Ausdruck in der Landau-Notation, z.B. $\mathcal{O}(n^3+n) = \mathcal{O}(n^3)$:
+  \begin{parts}
+    \item [1)] $\mathcal{O}(10n^3/(2n^2)+n^2)$
+    \item [2)] $\mathcal{O}(n(n^3+n)-n^2)$
+    \item [3)] $\mathcal{O}(e^{1000}+ln (n))$
+    \item [4)] $\mathcal{O}(-1+e+(ln(n))*n +1/n )$
+  \end{parts}
+\end{parts}
+
+\end{body}
+\begin{solution}
+\begin{small}
+\begin{itemize}
+  \item [(a)]
+  \begin{itemize}
+    \item[(1)]
+    \begin{itemize}
+      \item Mit Hilfe von einer \code{for}-Schleife werden die Elemente des neuen Vektors \code{res} berechnet.
+      \item Dabei wird mit der Hilfsvariablen \code{skp} und einer weiteren \code{for}-Schleife das Skalarprodukt der \code{mu}-ten Spalte der Matrix \code{a} und des Vektors \code{b} berechnet.
+      \item Zum Schluss wird noch das jeweilige Element des Vektors \code{c} addiert.
+      \item Das enstpricht der Berechnung \code{d = a * b + c},
+    \end{itemize}
+    \item[(2)]
+    \begin{itemize}
+      \item Die \"au\ss ere Schleife wird \code{n}-mal durchgelaufen, das entspicht $n$-mal die Anzahl der Operationen in der inneren Schleife.
+      \item Die innere Schleife wird auch \code{n}-mal durchgelaufen.
+            Dort wird eine Addition und eine  Multiplikation durchgef\"uhrt.
+            Dazu kommt noch eine Addition.
+            Das ergibt $2n+1$ Operationen.
+      \item Insgesamt sind  das wegen der Schachtelung der Schleifen $n(2n+1)=2n^2+n$ Operationen.
+            Das Entspricht einer Komplexit\"at von $\mathcal{O}(n^2)$.
+    \end{itemize}
+  \end{itemize}
+  \item[(b)]
+  \begin{itemize}
+    \item [1)] $\mathcal{O}(10n^3/(2n^2)+n^2) = \mathcal{O}(5n + n^2) = \mathcal{O}(n^2)$
+    \item [2)] $\mathcal{O}(n(n^3+n)-n^2) = \mathcal{O}(n^4 + n^2 - n^2) = \mathcal{O}(n^4)$
+    \item [3)] $\mathcal{O}(e^{1000}+ln (n)) = \mathcal{O}(ln (n))$
+    \item [4)] $\mathcal{O}(-1+e+(ln(n))*n +1/n) = \mathcal{O}((ln(n)) * n + 1/n) = \mathcal{O}((ln(n)) * n)$
+  \end{itemize}
+\end{itemize}
+\end{small}
+\end{solution}
+\end{exercise}

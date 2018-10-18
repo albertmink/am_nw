@@ -1,0 +1,30 @@
+\def\stitle{\theexercise\ - Rekursion}
+\section{\stitle}
+\begin{frame}%
+  \frametitle{\stitle}%
+
+
+Die Folge der \emph{Fibonacci--Zahlen} $a_0, a_1, a_2, \dotsc$ ist folgenderma\ss en definiert:
+\begin{equation*}
+a_0 := 1,\qquad
+a_1 := 1,\qquad
+a_n := a_{n-1} + a_{n-2}\quad\text{f\"ur } n = 2,3,\dotsc
+\end{equation*}
+\medskip
+
+\begin{enumerate}
+\item Implementieren Sie eine Klassenmethode die die Fibonacci--Zahlen rekursion berechnet.
+\item Geben Sie die ersten zehn Folgenglieder der Folge der Fibonacci--Zahlen an.
+\item Wie oft wird die Methode durch den Aufruf \code{fibonacci(4)} aufgerufen?
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}%
+  \frametitle{\stitle\ - L\"osungsvorschlag}%
+\begin{enumerate}
+\item \lstinputlisting[style=JAVA]{rekursion-3/RekursionFib.java}
+\item Die ersten zehn Folgenglieder lauten 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+\item Methode \code{fibonacci} wird f\"ur den \"Ubergabeparamter $4$ neunmal gerufen
+\end{enumerate}
+\end{frame}

@@ -1,0 +1,69 @@
+\begin{exercise}{Literale}
+
+\begin{body}
+Nachfolgend finden Sie Beispiele von Java-\emph{Literalen}, d.h. von Zeichenfolgen die in einem Java-Quelltext konstante Werte repräsentieren. Geben Sie jeweils den Datentyp des Literals an. Mögliche Datentypen sind
+\code|int|, \code|long|, \code|double|, \code|float|, \code|bool|, \code|char| und \code|String|.
+\begin{center}
+\begin{minipage}{0.3\textwidth}
+\begin{itemize}
+\item[(a)] \code|"Hello!"|
+\item[(b)] \code|-156|
+\item[(c)] \code|1E6|
+\item[(d)] \code|""|
+\item[(e)] \code|0.5|
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{itemize}
+\item[(f)] \code|'0'|
+\item[(g)] \code|1.5e-1|
+\item[(h)] \code|124f|
+\item[(i)] \code|0341|
+\item[(j)] \code|"13"|
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{itemize}
+\item[(k)] \code|true|
+\item[(l)] \code|'a'|
+\item[(m)] \code|0xABC|
+\item[(n)] \code|.2|
+\item[(o)] \code|0xCEL|
+\end{itemize}
+\end{minipage}
+\end{center}
+\end{body}
+
+\begin{solution}
+\begin{center}
+\begin{minipage}{0.3\textwidth}
+\begin{itemize}
+\item[(a)] \code|String| \\ (Hello!)
+\item[(b)] \code|int|    \\ ($-156$)
+\item[(c)] \code|double| \\ ($1000000$)
+\item[(d)] \code|String| \\ (leere Zeichenkette)
+\item[(e)] \code|double| \\ ($0{,}5$)
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{itemize}
+\item[(f)] \code|char|   \\ (Das Zeichen \glqq 0\grqq)
+\item[(g)] \code|double| \\ ($0{,}15$)
+\item[(h)] \code|float|  \\ ($124$)
+\item[(i)] \code|int|    \\ ($341_8 = 225$)
+\item[(j)] \code|String| \\ (die Zeichenkette \glqq 13\grqq)
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{itemize}
+\item[(k)] \code|bool| \\ (\code|true|)
+\item[(l)] \code|char|    \\ (a)
+\item[(m)] \code|int|     \\ ($\mathrm{ABC}_{16} = 2748$)
+\item[(n)] \code|double|  \\ ($0{,}2$)
+\item[(o)] \code|long|    \\ ($\mathrm{CE}_{16} = 206$)
+\end{itemize}
+\end{minipage}
+\end{center}
+\end{solution}
+
+\end{exercise}

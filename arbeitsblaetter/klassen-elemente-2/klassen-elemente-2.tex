@@ -1,0 +1,85 @@
+
+\begin{exercise}{Klassen- und Instanzelemente}
+\begin{body}
+Die Klasse \code|Klasse| sei folgendermaßen definiert
+\medskip
+\begin{displaycode}
+public class Klasse {
+    private static int variable1 = 1;
+    private int variable2 = 2;
+    
+    /* Methodendefinitionen */ 
+}
+\end{displaycode}
+\medskip
+Entscheiden Sie, welche der folgenden Methodendefinitionen für die Klasse gültig sind. Begründen Sie Ihre Entscheidung.
+\medskip
+\begin{parts}
+\item
+\begin{displaycode}
+    public static int methode1() {
+        return variable1;
+    }
+\end{displaycode}
+
+\item
+\begin{displaycode}
+    public int methode2() {
+        return variable1;
+    }
+\end{displaycode}
+
+\item
+\begin{displaycode}
+    public int methode3() {
+        return variable2;
+    }
+\end{displaycode}
+
+\item
+\begin{displaycode}
+    public static int methode4() {
+        return variable2;
+    }
+\end{displaycode}
+
+\item
+\begin{displaycode}
+    public int methode5() {
+        return this.variable1;
+    }
+\end{displaycode}
+
+\item
+\begin{displaycode}
+    public static int methode6() {
+        return this.variable1;
+    }
+\end{displaycode}
+\end{parts}
+\end{body}
+
+
+\begin{solution}
+Klassenelemente (Klassenvariablen und -methoden) existieren unabhängig von Instanzen einer Klasse. Daher kann innerhalb einer Klassenmethode und innerhalb einer Instanzmethode auf andere Klassenelemente zugegriffen werden. Instanzelemente (d.h. Instanzvariablen und -methoden) existieren nur für Instanzen einer Klasse. Daher kann innerhalb einer Klassenmethode, die unabhängig von den Instanzen einer Klasse existiert, nicht auf Instanzelement zugegriffen werden. Innerhalb einer Instanzmethode ist dies möglich, da die Instanzmethode selbst nur für Instanzen der Klasse existiert. Auch die Selbstreferenz \code|this| existiert nur für die Instanzen einer Klasse. Daher ergeben sich folgende Lösungen:
+\begin{parts}
+\item
+Die Methodendefinition ist gültig.
+
+\item
+Die Methodendefinition ist gültig.
+
+\item
+Die Methodendefinition ist gültig.
+
+\item
+Die Methodendefinition ist ungültig.
+
+\item
+Die Methodendefinition ist gültig.
+
+\item
+Die Methodendefinition ist ungültig.
+\end{parts}
+\end{solution}
+\end{exercise}

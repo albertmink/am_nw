@@ -1,0 +1,73 @@
+\begin{exercise}{Komplexe Zahlen}
+
+\description{Darstellung komplexer Zahlen durch eine Klasse.}
+
+
+\begin{body}
+Unter einer \emph{komplexen Zahl} $z$ versteht man eine Zahl der Form $z = a + b\mathrm{i}$, wobei $a$ und $b$ zwei reelle Zahlen und $\mathrm{i}$ die sogenannte \emph{imaginäre Einheit} ist.
+Die imaginäre Einheit ist durch $\mathrm{i}^2 = -1$ definiert.
+Die Zahl $a$ heißt \emph{Realteil}, die Zahl $b$ \emph{Imaginärteil} von $z$.
+Die Menge der komplexen Zahlen wird mit $\mathbb{C}$ bezeichnet und kann als algebraische Erweiterung der reellen Zahlen $\mathbb{R}$ verstanden werden.
+Der \emph{Betrag} $\lvert z\rvert$ einer komplexen Zahl $z = a + b\mathrm{i}$ ist wie folgt definiert:
+\begin{equation*}
+\lvert z \rvert = \sqrt{a^2 + b^2}.
+\end{equation*}
+Für die \emph{Addition} zweier komplexer Zahlen $z = a + b\mathrm{i}$ und $w = c + d\mathrm{i}$ gilt: 
+\begin{equation*}
+z + w =(a+c) + (b+d)\mathrm{i}.
+\end{equation*}
+Für die \emph{Multiplikation} gilt entsprechend
+\begin{equation*}
+z w =(ac - bd) + (ad + bc)\mathrm{i}.
+\end{equation*}
+Diese Formel folgt nach Ausmultiplizieren direkt aus der Definition $\mathrm{i}^2 = -1$.
+Schreiben Sie ein Java--Programm, welches das Rechnen mit komplexen Zahlen ermöglicht.
+
+\begin{enumerate}
+\item Erstellen Sie eine öffentliche Klasse namens \code{Komplex} die eine komplexe Zahl repräsentiert.
+Definieren Sie für diese Klasse zwei private Instanzvariablen namens \code{real} und \code{imag} vom Typ \code{double}, die den Realteil bzw. den Imaginärteil einer komplexen Zahl speichern.
+
+\item Definieren Sie einen öffentlichen Konstruktor mit zwei formalen Parametern namens \code{real} und \code{imag} vom Typ \code{double}.
+Weisen Sie in diesem Konstruktor die Parameterwerte den gleichnamigen Instanzvariablen zu.
+Verwenden Sie dazu das Schlüsselwort \code{this}.
+
+\item Definieren Sie für die Klasse \code{Komplex} eine öffentliche Instanzmethode namens \code{toString}, ohne formale Parameter.
+Die Methode soll die Zeichenkette \glqq $a$ + i$b$\grqq\ als Wert vom Typ \code{String} zurück geben, wobei $a$ und $b$ durch die Werte der Instanzvariablen \code{real} und \code{imag} zu ersetzen sind.
+Wenn Sie nun den Befehl \code{System.out.println(z);} für eine Instanz \code{z} der Klasse \code{Komplex} aufrufen, wird die von der Methode \code{toString} zurückgegebene Zeichenkette auf der Konsole ausgegeben.
+
+\item Definieren Sie für die Klasse \code{Komplex} eine öffentliche Instanzmethode namens \code{betrag} ohne formale Parameter, welche den Betrag der komplexen Zahl berechnet und als Wert vom Typ \code{double} zurückgibt.
+
+\item Definieren Sie für die Klasse \code{Komplex} zwei öffentliche Klassenmethoden mit den Namen \code{addieren} und \code{multiplizieren}.
+Versehen Sie beide Methoden mit zwei formalen Parametern vom Typ \code{Komplex}.
+Berechnen Sie in den Methoden die Summe bzw{.} das Produkt der übergebenen komplexen Zahlen und geben Sie das Ergebnis jeweils als Wert vom Typ \code{Komplex} zurück.
+
+\item Erstellen Sie eine öffentliche Klasse namens \code{KomplexeArithm} mit der \code{main}-Methode des Programms.
+Lesen Sie in der \code{main}-Methode den Real- und Imaginärteil zweier komplexer Zahlen von der Konsole ein und erzeugen Sie zwei entsprechende Instanzen der Klasse \code{Komplex}.
+Geben Sie die Beträge beider komplexer Zahlen, sowie deren Summe und Produkt auf der Konsole aus.
+
+\item Testen Sie Ihr Programm mit den folgenden Daten:
+\begin{align*}
+  z &= 1 + 1\mathrm{i}, 
+& w &= 2 + 2\mathrm{i}, 
+& \lvert z \rvert &= \sqrt{2}, 
+& \lvert w \rvert &= \sqrt{8},
+& z + w &= 3 + 3\mathrm{i},
+& zw    &= 4\mathrm{i}; \\
+  u &= 2\mathrm{i}, 
+& v &= 4\mathrm{i}, 
+& \lvert u \rvert &= 2, 
+& \lvert v \rvert &= 4,
+& u + v &= 6\mathrm{i},
+& uv    &= -8.
+\end{align*}
+\end{enumerate}
+\end{body}
+
+
+\begin{solution}
+\begin{small}
+\inputcode[frame=lines,title=Komplex.java]{\filename{src/Komplex.java}}
+\inputcode[frame=lines,title=KomplexeArithm.java]{\filename{src/KomplexeArithm.java}}
+\end{small}
+\end{solution}
+\end{exercise}

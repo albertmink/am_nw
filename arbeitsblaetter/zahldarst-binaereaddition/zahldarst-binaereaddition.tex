@@ -1,0 +1,132 @@
+\begin{exercise}{Addition von Binärzahlen}
+\begin{body}
+Die Addition von Binärzahlen kann wie bei Dezimalzahlen stellenweise durchgeführt werden. Stellen, bei denen kein Übertrag vorliegt, werden folgendermaßen addiert (fettgedruckte Zahlen stellen Ergebnisse dar):
+\medskip
+\begin{center}
+\begin{tabular}{l}
+\textbf{Summand 1} \\
+\textbf{Summand 2} \\
+{\footnotesize\ } \\
+\textbf{Summe}
+\end{tabular}
+\hspace{2em}
+\begin{tabular}{rrr}
+$\dotsb$   & $0$ & $\dotsb$  \\
+$\dotsb$   & $0$ & $\dotsb$  \\
+{\footnotesize\ } & {\footnotesize\ } & {\footnotesize\ } \\
+\hline
+           & $\boldsymbol{0}$ & $\dotsb$
+\end{tabular}
+\hspace{1.5em}
+\begin{tabular}{rrr}
+$\dotsb$   & $1$ & $\dotsb$  \\
+$\dotsb$   & $0$ & $\dotsb$  \\
+{\footnotesize\ } & {\footnotesize\ } & {\footnotesize\ } \\
+\hline
+           & $\boldsymbol{1}$ & $\dotsb$
+\end{tabular}
+\hspace{1.5em}
+\begin{tabular}{rrr}
+$\dotsb$   & $0$ & $\dotsb$  \\
+$\dotsb$   & $1$ & $\dotsb$  \\
+{\footnotesize\ } & {\footnotesize\ } & {\footnotesize\ } \\
+\hline
+           & $\boldsymbol{1}$ & $\dotsb$
+\end{tabular}
+\hspace{1.5em}
+\begin{tabular}{rrr}
+$\dotsb$     & $1$ & $\dotsb$  \\
+$\dotsb$     & $1$ & $\dotsb$  \\
+{\footnotesize $\boldsymbol{1}$} & {\footnotesize\ } & {\footnotesize\ } \\
+\hline
+             & $\boldsymbol{0}$ & $\dotsb$
+\end{tabular}
+\end{center}
+\medskip
+Für Stellen, bei denen Überträge vorliegen, gilt:
+\medskip
+\begin{center}
+\begin{tabular}{l}
+\textbf{Summand 1} \\
+\textbf{Summand 2} \\
+{\footnotesize\ } \\
+\textbf{Summe}
+\end{tabular}
+\hspace{2em}
+\begin{tabular}{rrr}
+$\dotsb$     & $0$          & $\dotsb$   \\
+$\dotsb$     & $0$          & $\dotsb$   \\
+{\footnotesize\ }   & {\footnotesize $1$} & {\footnotesize\ } \\
+\hline
+             & $\boldsymbol{1}$ & $\dotsb$
+\end{tabular}
+\hspace{1.5em}
+\begin{tabular}{rrr}
+$\dotsb$     & $1$ & $\dotsb$  \\
+$\dotsb$     & $0$ & $\dotsb$  \\
+{\footnotesize $\boldsymbol{1}$} & {\footnotesize $1$} & {\footnotesize\ } \\
+\hline
+             & $\boldsymbol{0}$ & $\dotsb$
+\end{tabular}
+\hspace{1.5em}
+\begin{tabular}{rrr}
+$\dotsb$     & $0$          & $\dotsb$  \\
+$\dotsb$     & $1$          & $\dotsb$  \\
+{\footnotesize $\boldsymbol{1}$} & {\footnotesize $1$} & {\footnotesize\ } \\
+\hline
+             & $\boldsymbol{0}$ & $\dotsb$
+\end{tabular}
+\hspace{1.5em}
+\begin{tabular}{rrr}
+$\dotsb$     & $1$ & $\dotsb$   \\
+$\dotsb$     & $1$ & $\dotsb$   \\
+{\footnotesize $\boldsymbol{1}$} & {\footnotesize $1$} & {\footnotesize\ } \\
+\hline
+             & $\boldsymbol{1}$ & $\dotsb$
+\end{tabular}
+\end{center}
+\medskip
+Berechnen Sie die folgenden Binärzahlsummen, ohne eine Umrechung in ein anderes Stellenwertsystem (wie beispielsweise das der Dezimalzahlen) vorzunehmen.
+\begin{center}
+\begin{minipage}{0.45\textwidth}
+\begin{itemize}
+\item[(a)] $1010_2 +   11_2$
+\item[(b)] $1101_2 + 1010_2$
+\item[(c)] $1010_2 +  101_2$
+\item[(d)] $1000_2 + 1000_2$
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{itemize}
+\item[(e)] $10010000_2 + 1111_2$
+\item[(f)] $10001111_2 + 1_2$
+\item[(g)] $10101010_2 + 11101_2$
+\item[(h)] $10010001_2 + 1010011_2$
+\end{itemize}
+\end{minipage}
+\end{center}
+\end{body}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% solution %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{solution}
+\begin{center}
+\begin{minipage}{0.45\textwidth}
+\begin{itemize}
+\item[(a)] $1010_2 +   11_2 = 1101_2$
+\item[(b)] $1101_2 + 1010_2 = 10111_2$
+\item[(c)] $1010_2 +  101_2 = 1111_2$
+\item[(d)] $1000_2 + 1000_2 = 10000_2$
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{itemize}
+\item[(e)] $10010000_2 + 1111_2 = 10011111_2$
+\item[(f)] $10001111_2 + 1_2 = 10010000_2$
+\item[(g)] $10101010_2 + 11101_2 = 11000111_2$
+\item[(h)] $10010001_2 + 1010011_2 = 11100100_2$
+\end{itemize}
+\end{minipage}
+\end{center}
+\end{solution}
+
+\end{exercise}

@@ -1,0 +1,54 @@
+\begin{exercise}{Vektorrechnung}
+
+\begin{body}
+Im Praktikum haben Sie die Implementation grundlegender Vektoroperationen im $\mathbb R^n$ f"ur $n>0$ kennengelernt (Aufgabenblatt 4, Aufgabe 8).
+Diese wurden direkt auf zwei eingelesene Vektoren $x=[x_1,\ldots,x_n]\in\mathbb R^n$ und $y=[y_1,\ldots,y_n]\in\mathbb R^n$ angewendet.
+In vielen Anwendungen werden Vektoroperationen allerdings so h"aufig verwendet, dass es sich lohnt diese in Methoden auszulagern. Dadurch
+wird Programmieraufwand eingespart und die "Ubersichtlichkeit erh"oht. Außerdem k"onnen Methoden seperat getestet werden. Dieses Vorgehen
+vermeidet Fehler und erleichtert die Fehlersuche.
+\bigskip
+
+\noindent
+Entwickeln Sie Methoden für die folgenden Vektoroperationen:
+\begin{itemize}
+ \item Die {\em Addition} und {\em komponentenweise Multiplikation} zweier Vektoren
+    \mbox{\boldmath $x=[x_1,\ldots,x_n]\in \mathbb{R}^n$} und
+    \mbox{\boldmath $y=[y_1,\ldots,y_n]\in \mathbb{R}^n$} ist definiert gem"a{\ss}
+    \begin{eqnarray*}        
+      \mbox{\boldmath $x$} + \mbox{\boldmath $y$} &:=&  \bigl[ x_1 + y_1, \ldots, x_n + y_n \bigr], \\
+      \mbox{\boldmath $x$}  * \mbox{\boldmath $y$} &:=&  \bigl[ x_1 y_1,\ldots, x_n y_n \bigr].
+    \end{eqnarray*}
+\item Das {\em Skalarprodukt} zweier Vektoren
+\mbox{\boldmath $x$} und  \mbox{\boldmath $y$} ist gegeben 
+    durch
+    \begin{eqnarray*}          
+      \mbox{\boldmath $x$}   \cdot         \mbox{\boldmath $y$} &:=&	 \sum_{i=1}^n x_i y_i.
+    \end{eqnarray*}
+\item Die {\em skalare Multiplikation} eines Vektors \mbox{\boldmath $x$} 
+    mit einer reellen Zahl $\lambda$ ist gegeben durch 
+    \begin{eqnarray*}        
+      \lambda \cdot \mbox{\boldmath $x$} &:=&  \bigl[ \lambda  x_1, \ldots, \lambda  x_n       \bigr].
+    \end{eqnarray*}
+\end{itemize}
+\newpage
+
+\noindent
+Gehen Sie dabei wie folgt vor:
+\begin{itemize}
+\item [(a)] Erstellen Sie eine Methode \code{Einlesen} die dazu dienen soll, einen neuen Vektor zu erstellen und dessen Werte einzugeben.
+      Als Argument soll die Methode die Dimension \code{n} vom Typ \code{int} erhalten und den R"uckgabetyp \code{double[]} besitzen.
+\item [(b)] Erstellen Sie eine Methode \code{Ausgeben} ohne R"uckgabewert, welche als Argument ein \code{double}-Feld \code{x} erh"alt.
+      Die einzelnen Eintr"age des Feldes sollen beim Aufruf dieser Methode nacheinander auf der Konsole ausgegeben werden. Die L"ange eines
+      Feldes \code{Feld} k"onnen Sie im Allgemeinen durch den Ausdruck \code{Feld.length} erhalten.
+\item [(c)] Erstellen Sie die Methoden \code{Addition}, \code{Multiplikation} und \code{Skalarprodukt} denen jeweils zwei Felder \code{x} und \code{y} als Argumente "ubergeben werden.
+      Auch hier soll das Ergebnis nach obigen Formeln berechnet und zur"uckgegeben werden. Achten Sie darauf dass die Methoden den passenden R"uckgabetyp besitzen.
+\item [(d)] Erstellen Sie die Methode \code{SkalareMultiplikation} der eine Zahl \code{skalar} vom Typ \code{double} und ein Feld \code{x} als Argumente "ubergeben wird.
+      Das Ergebnis soll nach obiger Formel berechnet und zur"uckgegeben werden. Welcher R"uckgabetyp muss verwendet werden?
+\end{itemize}
+
+\end{body}
+
+\begin{solution}
+\inputcode[frame=lines,title=Vektorrechnung.java]{\filename{src/Vektorrechnung.java}}
+\end{solution}
+\end{exercise}

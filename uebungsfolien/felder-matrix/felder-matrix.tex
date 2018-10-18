@@ -1,0 +1,52 @@
+\def\stitle{\theexercise\ - Matrixrechnung}
+\section{\stitle}
+\begin{frame}%
+  \frametitle{\stitle}%
+
+Betrachten Sie das folgende Java-Programm in dem Matrizen als mehrdimensionale Felder implementiert sind.
+Beachten Sie, dass Java nach dem \emph{row-major} Prinzip arbeitet (vergleich Vorlesung Abschnitt 14.4.)
+\medskip
+
+\lstinputlisting[style=JAVAsmall]{felder-matrix/FelderMatrixBare.java}
+\end{frame}
+
+
+\begin{frame}%
+  \frametitle{\stitle\ - Aufgabenstellung}%
+\medskip
+
+\begin{enumerate}
+\item Implementieren Sie zun\"achst die Klassenmethode \code{getIdentity} die eine $3\times 3$~Einheitsmatrix zur\"uck geben soll.
+\item Implementieren Sie die Klassenmethode \code{getTrace} die zu einer gegebenen Matrix die Spur als Feld zur\"uck gibt.
+\item Berechnen Sie in der Klassenmethode \code{getMaxValue} den betragsm\"a\ss ig gr\"o\ss ten Eintrag einer gegebenen Matrix.
+\item Berechnen Sie in der Klassenmethode \code{getSpaltensummennorm} die Spaltensummennorm $||\cdot||_1$  $$||A||_1 := \max_{\nu=1,\ldots,n} \sum_{\mu=1}^m |a_{\mu,\nu}| $$ f\"ur eine gegebene Matrix $A\in\mathbf{R}^{m\times n}$ und $m=n=3$.
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}%
+  \frametitle{\stitle\ - L\"osungsvorschlag}%
+\medskip
+
+L\"osung durch Implementierung, \code{getIdentity, getTrace}.
+\lstinputlisting[style=JAVA]{felder-matrix/FelderMatrixA.java}
+\end{frame}
+
+
+\begin{frame}%
+  \frametitle{\stitle\ - L\"osungsvorschlag}%
+\medskip
+
+L\"osung durch Implementierung, \code{getMaxValue}.
+\lstinputlisting[style=JAVA]{felder-matrix/FelderMatrixB.java}
+\end{frame}
+
+
+\begin{frame}%
+  \frametitle{\stitle\ - L\"osungsvorschlag}%
+\medskip
+
+L\"osung durch Implementierung, \code{getSpaltensummennorm}.
+\lstinputlisting[style=JAVA]{felder-matrix/FelderMatrixC.java}
+\end{frame}

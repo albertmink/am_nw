@@ -1,0 +1,107 @@
+
+\begin{exercise}{Komplexität}
+\begin{body}
+Betrachten Sie die nachfolgenden Methodendefinitionen. Jede Methode besitzt einen formalen Parameter vom Typ \code|int|, über den eine natürliche Zahl $n \in \mathbb{N}$ an die Methode übergeben werden kann. Geben Sie jeweils den \emph{asymptotischen Rechenaufwand} (hier: Anzahl der Multiplikationen) der Methoden in Abhängigkeit von $n$ als \emph{Landau-Symbol} an. M\"ogliche Landau-Symbole sind $\mathcal{O}(1)$, $\mathcal{O}(\log n)$, $\mathcal{O}(n)$, $\mathcal{O}(n \log n)$, $\mathcal{O}(n^2)$, $\mathcal{O}(n^3)$, $\mathcal{O}(b^n)$, $\mathcal{O}(n!)$.
+\begin{parts}
+\item
+\begin{displaycode}
+    static int methode(int n) {
+        int s = 1;
+        for (int i=1; i <= n; i++) {
+            s *= i;
+        }
+        return s;
+    }
+\end{displaycode}
+
+\item
+\begin{displaycode}
+    static int methode(int n) {
+        if ( n <= 0 ) {
+            return 1;
+        } else {
+            return methode(n-1) * methode(n-1);
+        }
+    }
+\end{displaycode}
+
+\item
+\begin{displaycode}
+    static int methode(int n) {
+        int s = 1;
+        for (int i = 0; i < n; i++) {
+            for (int j = 1; j <= n; j++) {
+            	s *= j;
+            }
+        }
+        return s;
+    }
+\end{displaycode}
+
+\item
+\begin{displaycode}
+    static int methode(int n) {
+        if ( n <= 0 ) {
+            return 1;
+        } else {
+            return n * methode(n/2);
+        }
+    }
+\end{displaycode}
+
+
+\item
+\begin{displaycode}
+    static int methode(int n) {
+        if (n <= 0) {
+            return 1;
+        } else {
+            int s = 1;
+            for (int i = 0; i < n; i++) {
+            	s *= methode(n-1);
+            }
+            return s;
+        }
+    }
+\end{displaycode}
+
+
+\item
+\begin{displaycode}
+    static int methode(int n) {
+        if ( n <= 0 ) {
+            return 1;
+        } else {
+            return n * methode(n-1);
+        } 
+    }
+\end{displaycode}
+\end{parts}
+\end{body}
+
+
+\begin{solution}
+\begin{parts}
+\item
+$O(n)$ (lineare Komplexität). Die Multiplikationen werden in einer Schleife ausgeführt, die $n$-mal durchlaufen wird. Pro Schleifendurchlauf wird genau eine Multiplikation ausgeführt. Also ergeben sich für $n$ Schleifendurchläufe genau $n$ Multiplikationen. 
+
+\item
+$O(2^n)$ (exponentielle Komplexität). Die Multiplikationen werden in einer rekursiv definierten Methode ausgeführt. Ein Methodenaufruf für einen Parameter $n > 0$ führt zu einer Multiplikation sowie zu zwei Methodenaufrufen für den Parameter $n-1$.
+Für $n \leq 0$ wird keine Multiplikation ausgeführt und keine weitere Methode aufgerufen. Daher ergeben sich insgesamt $2^{n}$ Methodenaufrufe mit jeweils einer Multiplikation.
+
+
+\item
+$O(n^2)$ (quadratische Komplexität). Die Multiplikationen werden in einer geschachtelten Schleife ausgeführt.
+Die äußere Schleife wird $n$-mal durchlaufen. Bei jedem Durchlauf der äußeren Schleife wird die innere Schleife $n$-mal Durchlaufen. Bei jedem Durchlauf der inneren Schleife wird genau eine Multiplikation ausgeführt. Also ergeben sich insgesamt $n\cdot n = n^2$ Multiplikationen.
+
+\item
+$O(\log n)$ (logarithmische Komplexität). Die Multiplikationen werden in einer rekursiv definierten Methode ausgeführt. Ein Methodenaufruf für einen Parameter $n > 0$ führt zu einer Multiplikation sowie zu einem Methodenaufruf für den Parameter $\lfloor n/2\rfloor$. Für $n \leq 0$ wird keine Multiplikation ausgeführt und keine weitere Methode aufgerufen. Daher ergeben sich insgesamt $\lfloor\log_2(n)\rfloor + 1$ Methodenaufrufe mit jeweils einer Multiplikation. 
+
+\item
+$O(n!)$ (faktorielle Komplexität). Die Multiplikationen werden in einer Schleife innerhalb einer rekursiv definierten Methode ausgeführt. Ein Methodenaufruf für einen Parameter $n > 0$ führt zu $n$ Schleifendurchläufen mit jeweils einer Multiplikation sowie zu $n$ Methodenaufrufen für den Parameter $n-1$. Für $n \leq 0$ wird keine Multiplikation ausgeführt und keine weitere Methode aufgerufen. Daher ergeben sich insgesamt $n \cdot (n-1) \dotsm 1 = n!$ Multiplikationen.
+
+\item
+$O(n)$ (lineare Komplexität). Die Multiplikationen werden in einer rekursiv definierten Methode ausgeführt. Ein Methodenaufruf mit für einen Parameter $n > 0$ führt zu einer Multiplikation sowie zu einem Methodenaufruf für den Parameter $n-1$. Für $n = 0$ wird keine Multiplikation ausgeführt und keine weitere Methode aufgerufen. Daher ergeben sich insgesamt $n$ Methodenaufrufe mit jeweils einer Multiplikation.
+\end{parts}
+\end{solution}
+\end{exercise}

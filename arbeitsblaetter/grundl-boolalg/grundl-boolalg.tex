@@ -1,0 +1,51 @@
+\begin{exercise}{Boolsche Algebra}
+
+\begin{body}Unter einer \emph{Boolschen Algebra} versteht man eine Menge, die aus den beiden Elementen $0$ (oder \glqq falsch\grqq) und $1$ (oder \glqq wahr\grqq) besteht, und auf der die binären Verknüpfungen $\wedge$ (\glqq und\grqq) und $\vee$ (\glqq oder\grqq) sowie die unäre Verknüpfung $\neg$ (\glqq nicht\grqq) definiert ist. Es gilt
+\begin{align*}
+0 \wedge 0 &= 0, & 1 \wedge 0 &= 0,  &  0 \vee 0 &= 0, & 1 \vee 0 &= 1,  &  \neg 0 &= 1, \\
+0 \wedge 1 &= 0, & 1 \wedge 1 &= 1,  &  0 \vee 1 &= 1, &  1 \vee 1 &= 1, &  \neg 1 &= 0. \\
+\end{align*}
+In Java repräsentiert der Basistyp \code|bool| eine Boolsche Algebra. Die Symbole $0, 1, \wedge, \vee$ und $\neg$ sind in Java als \code$false$, \code$true$, \code$&&$, \code$||$ und \code$!$ definiert. Geben Sie das Ergebnis der nachfolgenden Java-Ausdrücke an
+\begin{center}
+\begin{minipage}{0.49\textwidth}
+\begin{itemize}
+\item[(a)] \code$true && false$
+\item[(b)] \code$true || false$
+\item[(c)] \code$(0 == 1) || (1 < 2)$
+\item[(d)] \code$(0 != 1) && !(2 < 1)$
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
+\begin{itemize}
+\item[(e)] \code$!!!true$
+\item[(f)] \code$(5 == 1) || false$
+\item[(g)] \code$(a == 0) && (a != 0)$
+\item[(h)] \code$(a == 0) || !(a == 0)$
+\end{itemize}
+\end{minipage}
+\end{center}
+\end{body}
+
+\begin{solution}
+\begin{center}
+\begin{minipage}{0.49\textwidth}
+\begin{itemize}
+\item[(a)] \code|false| ($1 \wedge 0 = 0$)
+\item[(b)] \code|true|   ($0 \vee 1 = 1$)
+\item[(c)] \code|true|   ($0 \vee 1 = 1$)
+\item[(d)] \code|true|   ($1 \wedge \neg 0 = 1 \wedge 1 = 1$)
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
+\begin{itemize}
+\item[(e)] \code|false| ($\neg \neg \neg 1 = \neg \neg 0 = \neg 1 = 0$)
+\item[(f)] \code|false| ($0 \vee 0 = 0$)
+\item[(g)] \code|false|
+\item[(h)] \code|true|
+\end{itemize}
+\end{minipage}
+\end{center}
+Das Ergebnis in den Aufgabenteilen (g) und (h) ist unabhängig vom Wert, den die Variable \code|a| tatsächlich besitzt. Dies macht man sich klar, indem man die folgenden beiden Fälle unterscheidet. Erster Fall: Die Variable \code|a| besitzt den Wert Null. In diesem Fall ist das Ergebnis des Ausdrucks \code|(a == 0)| \code|true| und das des Ausdrucks \code|(a != 0)| \code|false|. Zweiter Fall: Die Variable \code|a| besitzt einen Wert ungleich Null. In diesem Fall ist das Ergebnis des Ausdrucks \code|(a == 0)| \code|false| und das des Ausdrucks \code|(a != 0)| \code|true|. Es werden also in beiden Fällen die Wahrheitswerte \code|true| und \code|false| miteinander Verknüpft. Im Aufgabenteil (g) ist daher $1 \wedge 0 = 0 \wedge 1 = 0$, im Aufgabenteil (b) ist $1 \vee 0 = 0 \vee 1 = 1$.
+\end{solution}
+
+\end{exercise}

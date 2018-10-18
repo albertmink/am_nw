@@ -1,0 +1,56 @@
+\begin{exercise}{Felder: Bin"are Suche}
+\begin{body}
+Gegeben sei untenstehende Implementierung der Bin"aren Suche. Das Feld \verb|feld| sei dabei ein aufsteigend geordnetes Feld aus ganzen Zahlen (z.B. 1, 3, 5, 8, 9, 100).
+\begin{verbatim}
+import java.util.*;
+
+class binsearch {
+  public static void main(String[] args){
+    Locale.setDefault(Locale.US);
+    Scanner sc = new Scanner(System.in);
+    
+    int[] feld = {2, 4, 6, 8, 10, 12, 14};
+    
+    System.out.println("Bitte Wert eingeben : ");
+    int wert=sc.nextInt();
+    
+    int min = 0;
+    int max = feld.length-1;
+    
+    while(min!=max){
+      int mid = (min+max)/2;
+      System.out.println(" feld("+mid+") = " + feld[mid]);
+    
+      if (wert < feld[mid])
+        max = mid-1;
+      if (wert > feld[mid])
+        min = mid+1;
+      if (wert == feld[mid] || min > max)
+        min = max = mid;
+    }
+    
+    if (wert != feld[min])
+      System.out.println("Der Wert "+wert+" ist nicht in feld gespeichert ");
+    else
+      System.out.println("Der Wert "+wert+" ist in feld("+min+") gespeichert ");
+  }
+}
+\end{verbatim}
+Welche Ausgabe liefert das Programm f"ur die Eingaben 9 bzw. 10 zur"uck?
+\end{body}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% solution %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{solution}
+
+Eingabe 9:\\
+ feld(3) = 8\\
+ feld(5) = 12\\
+Der Wert 9 ist nicht in feld gespeichert\\
+
+Eingabe 10:\\
+ feld(3) = 8\\
+ feld(5) = 12\\
+Der Wert 10 ist in feld(4) gespeichert
+\end{solution}
+
+\end{exercise}

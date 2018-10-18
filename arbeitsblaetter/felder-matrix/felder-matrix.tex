@@ -1,0 +1,24 @@
+\begin{exercise}{Matrixrechnung}
+\begin{body}
+Betrachten Sie das folgende Java-Programm in dem Matrizen als mehrdimensionale Felder implementiert sind.
+Beachten Sie, dass Java nach dem \emph{row-major} Prinzip arbeitet (vergleich Vorlesung Abschnitt 14.4.)
+\medskip
+
+\inputcode[frame=lines]{\filename{FelderMatrixBare.java}}
+
+Als Hilfestellung dient die Klassenmethode \code{printMatrix}, welche beliebige Matrizen auf dem Terminal ausgibt.
+\begin{parts}
+\item Implementieren Sie zun\"achst die Klassenmethode \code{getIdentity} die eine $3\times 3$~Einheitsmatrix zur\"uck geben soll.
+\item Implementieren Sie die Klassenmethode \code{getTrace} die zu einer gegebenen Matrix die Spur als Feld zur\"uck gibt.
+\item Berechnen Sie in der Klassenmethode \code{getMaxValue} den betragsm\"a\ss ig gr\"o\ss ten Eintrag einer gegebenen Matrix.
+\item Berechnen Sie in der Klassenmethode \code{getSpaltensummennorm} die Spaltensummennorm $||\cdot||_1$  $$||A||_1 := \max_{\nu=1,\ldots,n} \sum_{\mu=1}^m |a_{\mu,\nu}| $$ f\"ur eine gegebene Matrix $A\in\mathbf{R}^{m\times n}$ und $m=n=3$.
+\end{parts}
+\end{body}
+
+\begin{solution}
+%\begin{parts}
+L\"osung durch Implementierung.
+\inputcode[frame=lines,title=FelderFunktionen.java]{\filename{FelderMatrix.java}}
+%\end{parts}
+\end{solution}
+\end{exercise}

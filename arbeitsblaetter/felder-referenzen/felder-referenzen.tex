@@ -1,0 +1,58 @@
+\begin{exercise}{Referenzen}
+\begin{body}
+Betrachten Sie die folgende \code|main|-Methode eines Java-Programms.
+\medskip
+\begin{displaycode}
+    public static void main(String[] args) {
+        int[] feld1 = {1};
+        int[] feld2 = methode(feld1);
+        System.out.print(feld1[0] + ", " + feld2[0]);
+    }
+\end{displaycode}
+\medskip
+\noindent
+Die Klassenmethode \code|methode| wird im folgenden auf drei verschiedene Weisen definiert:
+\begin{parts}
+\item
+\begin{displaycode}
+    static int[] methode(int[] feld) {
+        feld[0] = feld[0] + 1;
+        return feld;
+    }
+\end{displaycode}
+
+\item
+\begin{displaycode}
+    static int[] methode(int[] feld) {
+        int[] hilfsfeld = feld;
+        hilfsfeld[0] = feld[0] + 1;
+        return hilfsfeld;
+    }
+\end{displaycode}
+
+\item
+\begin{displaycode}
+    static int[] methode(int[] feld) {
+        int[] hilfsfeld = new int [1];
+        hilfsfeld[0] = feld[0] + 1;
+        return hilfsfeld;
+    }
+\end{displaycode}
+\end{parts}
+Geben Sie für jede Methodendefinition an, was beim Ausführen des Programms auf der Konsole ausgegeben wird.
+\end{body}
+
+\begin{solution}
+\begin{parts}
+\item
+Es wird \glqq 2, 2\grqq\ auf der Konsole ausgegeben.
+
+\item
+Es wird \glqq 2, 2\grqq\ auf der Konsole ausgegeben.
+
+\item
+Es wird \glqq 1, 2\grqq\ auf der Konsole ausgegeben.
+
+\end{parts}
+\end{solution}
+\end{exercise}

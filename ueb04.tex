@@ -1,0 +1,124 @@
+\documentclass[9pt,german]{beamer}%
+\usepackage{master/templates/beamerthemeKIT}
+\usepackage{master/templates/exercises}
+\usepackage[java]{code}
+\usepackage{pgfplots}
+\usepackage{fontawesome}
+\usepackage{ulem}
+
+\input{master/master}
+
+\makeatletter
+\def\input@path{{uebungsfolien/}}
+\graphicspath{{uebungsfolien/}}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle%
+\addtocounter{framenumber}{-1}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Arbeitsblatt 4}%
+\tableofcontents[hideallsubsections]
+\end{frame}
+\setcounter{exercise}{17}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Wiederholung}\label{K:wdh}
+\begin{frame}
+  \frametitle{\ref{K:wdh} Wiederholung}%
+\tableofcontents[current]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%TODO auf VL abstimmen
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Rundungsfehler: Ausl\"oschung}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\stitle}\label{S:rund}
+\begin{frame}[t]%
+ \frametitle{\ref{K:wdh}.\ref{S:rund} \stitle}
+
+Der Fehler bei Subtraktion fast gleich gro\ss er Gleitkomma Zahlen wird \emph{Ausl\"oschung} genannt.
+\medskip
+
+\textbf{Wdh.: } Eine Gleitkommazahl $x$ wird wie folgt dargestellt
+$$x = 0.x_1 x_2 x_3 ... x_m \cdot B^e.$$
+F\"ur die einzelnen Ziffern $x_i$ gilt dabei $0 \leq x_i < B$ zu einer Basis $B$ mit Exponent $e$ und maximalen Mantissen-L\"ange $m$.
+\begin{exampleblock}{Beispiel f\"ur Ausl\"oschung}
+Betrachtet man eine Gleitkommazahl im Dezimalsystem ($B=10$) f\"ur welche $6$ Nachkommastellen dargestellt werden k\"onnen ($m=6$), so gilt:\\
+\begin{eqnarray*}
+0.239859 \cdot 10^0 - 0.239841 \cdot 10^0 &=& 0.000018 \cdot 10^0\\
+ &=& 0.180000 \cdot 10^{-4}
+\end{eqnarray*}
+Die letzten $4$ Nullen sind nur korrekt, falls $0.239859$ und $0.239841$ exakte Zahlen waren.
+Dabei k\"onnen Abweichungen in den letzten Nachkommastellen durch vorangegangene Rundungsfehler entstanden sein.
+Der Fehler ist hier ca. $40\%$!
+\medskip
+\end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Rundungsfehler: Maschinengenauigkeit}
+\subsection{\stitle}\label{S:Maschinengenauigkeit}
+\begin{frame}[t]%
+ \frametitle{\ref{K:wdh}.\ref{S:Maschinengenauigkeit} \stitle}
+\medskip
+
+Wann sind zwei Zahlen vom Datentyp \code{double} f\"ur den Rechner identisch?
+\lstinputlisting[style=JAVAlines]{rundungsfehler/MaschinenGenauigkeit_double.java}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Rundungsfehler: \code{int}-Maschinengenauigkeit}
+\subsection{\stitle}\label{S:Maschinengenauigkeit1}
+\begin{frame}[t]%
+ \frametitle{\ref{K:wdh}.\ref{S:Maschinengenauigkeit1} \stitle}
+\medskip
+
+Wann sind zwei Zahlen vom Datentyp \code{int} f\"ur den Rechner identisch?
+\lstinputlisting[style=JAVAlines]{rundungsfehler/MaschinenGenauigkeit_int.java}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Aufgabe 18}
+\input{rundf-epsilon/rundf-epsilon}
+\section{Aufgabe 19}
+\input{anweis-fehler/anweis-fehler}
+\section{Aufgabe 20}
+\input{schleifen-2/schleifen-2}
+
+\begin{frame}
+\centering
+\Huge\GREEN{Fragen?}
+\vspace{2cm}
+
+{\LARGE
+N\"achste \"Ubung: 20. November\\
+Besprechung Arbeitsblatt 5
+}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

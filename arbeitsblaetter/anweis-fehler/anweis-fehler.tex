@@ -1,0 +1,55 @@
+\begin{exercise}{Kompilerfehler}
+\description{Programmfehler anhand des Compilers finden}
+\difficulty{einfach}
+\source{unbekannt}
+\utilization{SS17}
+%%\tags{funktionen}
+\begin{body}
+Das Java-Program \code{Fehler.java} wurde kompiliert, wobei einige Fehler und Warnungen auftraten.
+Finden Sie mit Hilfe der Kompilerausgaben die Fehler und notieren Sie die eine Möglichkeit den Fehler zu verbessern.
+Jeder entdeckte Fehler soll in allen nachfolgenden Programmzeilen als korrigiert gelten, sodass keine
+Folgefehler auftreten können.
+\inputcode[frame=lines,title=Fehler.java,numbers=left]{\filename{src/Fehler.java}}
+
+Der Kompiler hat folgende Fehler ausgegeben:
+
+\begin{verbatim}
+Fehler.java:7: error: variable j might not have been initialized
+System.out.println(j);
+^
+Fehler.java:5: error: cannot assign a value to final variable c
+c++;
+^
+Fehler.java:8: error: ';' expected
+System.out.println(j)
+^
+
+Fehler.java:9: error: bad operand types for binary operator '+'
+j = a+1;
+^
+first type:  int[]
+second type: int
+
+Fehler.java:10: error: '.class' expected
+fo (int i = 0; i < j; i++) {
+^
+Fehler.java:10: error: > expected
+fo (int i = 0; i < j; i++) {
+^
+Fehler.java:10: error: not a statement
+fo (int i = 0; i < j; i++) {
+^
+Fehler.java:10: error: ';' expected
+fo (int i = 0; i < j; i++) {
+^
+required: double,double
+found: int
+reason: actual and formal argument lists differ in length
+Fehler.java:14: error: variable a is already defined in method main(String[])
+int a = 0;
+\end{verbatim}
+\end{body}
+\begin{solution}
+  \inputcode[frame=lines,title=fehler-korr.java]{\filename{src/Corr.java}}
+\end{solution}
+\end{exercise}

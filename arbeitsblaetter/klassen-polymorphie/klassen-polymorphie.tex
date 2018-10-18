@@ -1,0 +1,107 @@
+\begin{exercise}{Polymorphie}
+\begin{body}
+Betrachten Sie die nachfolgenden Definition der Klassen \code|Basis| und \code|Ableitung|:
+\medskip
+\begin{displaycode}
+public class Basis {
+    public static void methode1() {
+        System.out.println("A");
+    }        
+    public void methode2() {
+        System.out.println("B");
+    }
+}
+\end{displaycode}
+\medskip
+\begin{displaycode}
+public class Ableitung extends Basis {
+    public static void methode1() {
+        System.out.println("C");
+    }         
+    public void methode2() {
+        System.out.println("D");
+    }
+}
+\end{displaycode}
+\medskip
+In der \code|main|-Methode eines Java-Programms findet man die Zeilen
+\begin{displaycode}
+        Basis instanz1 = new Basis();
+        Basis instanz2 = new Ableitung();
+        Ableitung instanz3 = new Ableitung();
+        Basis instanz4 = (Basis) new Ableitung();
+\end{displaycode}
+Was wird bei den nachfolgenden Methodenaufrufen jeweils auf der Konsole ausgegeben?
+\medskip
+\begin{center}
+\begin{minipage}{0.45\textwidth}
+\begin{parts}
+\item[(a)]
+\code|instanz1.methode1();|
+
+\item[(b)]
+\code|instanz2.methode1();|
+
+\item[(c)]
+\code|instanz3.methode1();|
+
+\item[(d)]
+\code|instanz4.methode1();|
+\end{parts}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{parts}
+\item[(e)]
+\code|instanz1.methode2();|
+
+\item[(f)]
+\code|instanz2.methode2();|
+
+\item[(g)]
+\code|instanz3.methode2();|
+
+\item[(h)]
+\code|instanz4.methode2();|
+\end{parts}
+\end{minipage}
+\end{center}
+\end{body}
+
+
+\begin{solution}
+Klassenelemente (d.h. Klassenvariablen und -methoden) existieren unabhängig von etwaigen Instanzen einer Klasse. Daher ist bei der Definition einer Variable die Typendeklaration maßgebend dafür, welche Klassenelemente der Variable zugeordnet sind. Klassenmethoden werden bei Vererbung nicht überschrieben. Instanzelemente (d.h. Instanzvariablen und -methoden) existieren nur für einzelne Instanzen einer Klasse. Bei der Definition einer Variable wird daher durch die Initialisierung, d.h. durch den Aufruf des entsprechenden Konstruktors, festgelegt, welche Instanzelemente der Variable zugeordnet sind. Instanzvariablen können bei Vererbung überschrieben werden. Eine Typenkonvertierung hat keine Auswirkung auf die Instanz. Es ergeben sich demnach die folgenden Antworten:
+\begin{center}
+\begin{minipage}{0.45\textwidth}
+\begin{parts}
+\item[(a)]
+Es wird \glqq A\grqq\ ausgegeben. 
+
+\item[(b)]
+Es wird \glqq A\grqq\ ausgegeben. 
+
+\item[(c)]
+Es wird \glqq C\grqq\ ausgegeben. 
+
+\item[(d)]
+Es wird \glqq A\grqq\ ausgegeben. 
+\end{parts}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{parts}
+\item[(e)]
+Es wird \glqq B\grqq\ ausgegeben. 
+
+\item[(f)]
+Es wird \glqq D\grqq\ ausgegeben. 
+
+\item[(g)]
+Es wird \glqq D\grqq\ ausgegeben. 
+
+\item[(h)]
+Es wird \glqq D\grqq\ ausgegeben. 
+\end{parts}
+\end{minipage}
+\end{center}
+\end{solution}
+\end{exercise}
+

@@ -1,0 +1,50 @@
+\begin{exercise}{Artikelverwaltung}
+
+\begin{body}
+Schreiben Sie ein Java-Programm, welches die Verkaufsartikel eines Fachbuchhandlung verwaltet.
+Gehen Sie dabei folgenderma\ss en vor:
+\begin{parts}
+\part
+Definieren Sie eine \"offentlichen Klasse namens \code|Artikel|, und definieren Sie f\"ur die Klasse die folgenden Elemente:
+Eine Instanzvariable \code|anzahl| vom Typ \code|int| f\"ur die Anzahl der vorhandenen Einheiten des Artikels, eine Instanzvariable \code|preis| vom Typ \code|double| f\"ur den Preis einer Einheit und eine Instanzvariable \code|bezeichnung| vom Typ \code|String| f\"ur die Bezeichnung des Artikels.
+
+\part
+Definieren Sie eine \"offentliche Klasse namens \code|Artikelverwaltung|.
+Definieren f\"ur diese Klasse eine Klassenmethode namens \code|liesArtikel| ohne Parameter, in der die Bezeichnung, die Anzahl der vorhandenen Einheiten und der Preis eines Artikels mit begleitendem Text von der Konsole eingelesen werden und diese in Form einer Instanz der Klasse \code|Artikel| zur\"uck gegeben werden.
+
+\part
+Definieren Sie ferner eine Klassenmethode namens \code|liesListe| mit einem Parameter vom Typ \code|int| f\"ur die Anzahl $n$ der einzulesenden Artikel.
+Die Methode soll $n$ Artikel mit Hilfe der Methode \code|liesArtikel| von der Konsole eingelesen.
+Die eingelesenen Artikel sollen als Feld vom Typ \code|Artikel| zur\"uck gegeben werden.
+
+\part
+Definieren Sie eine Klassenmethode namens \code|zeigeArtikel| mit einem Parameter vom Typ \code|Artikel|.
+Die Methode soll die Bezeichnung des \"ubergebene Artikels, die Anzahl der vorhandenen Einheiten sowie den Preis einer Einheit und den Gesamtwert des Artikels auf der Konsole ausgeben.
+
+\part
+Definieren Sie eine Klassenmethode namens \code|zeigeListe| mit einem Parameter vom Typ \code|Artikel[]|.
+Die Methode soll alle Artikel, die im \"ubergebenen Feld gespeichert sind mittels \code|zeigeArtikel| auf der Konsole ausgeben.
+Ferner soll der Gesamtwert aller Artikel berechnet und auf der Konsole ausgegeben werden.
+
+\part
+Definieren Sie eine \code|main|-Methode, in der die Anzahl der einzulesenden Artikel und die Artikel selber von der Konsole eingelesen und anschlie\ss end als Liste auf der Konsole ausgegeben werden.
+Testen Sie die Klasse mit folgenden Daten:
+Es sollen
+\begin{itemize}
+\item 25 Einheiten vom Artikel \glqq Mathematik-Lehrbuch\grqq\ (Preis 29{,}95 Euro),
+\item 30 Einheiten vom Artikel \glqq Java-Lehrbuch\grqq\ (Preis 24{,}95 Euro),
+\item sowie 15 Einheiten vom Artikel \glqq Physik-Lehrbuch\grqq\ (Preis 34{,}95 Euro),
+\end{itemize}
+vorhanden sein.
+Der Gesamtwert aller Artikel betr\"agt f\"ur dieses Beispiel 2021{,}50 Euro.
+\end{parts}
+\end{body}
+
+\begin{solution}
+\begin{small}
+\inputcode[frame=lines,title=Artikel.java]{\filename{src/Artikel.java}}
+\inputcode[frame=lines,title=Artikelverwaltung.java]{\filename{src/Artikelverwaltung.java}}
+\end{small}
+\end{solution}
+
+\end{exercise}

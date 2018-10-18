@@ -1,0 +1,155 @@
+Fehler.java:9:
+error: '.class'
+expected
+fo (int i = 0; i < j; i++) {
+  ^
+Fehler.java:9:
+error:
+  > expected
+  fo (int i = 0; i < j; i++) {
+    ^
+Fehler.java:9:
+error:
+    not a statement
+    fo (int i = 0; i < j; i++) {
+      ^
+Fehler.java:9:
+error: ';'
+      expected
+      fo (int i = 0; i < j; i++) {
+        ^
+Fehler.java:1:
+error:
+        class Fehler is public, should be declared in a file named Fehler.java
+          public class Fehler {
+            ^
+          Fehler.java:12:
+          error:
+            variable a is already defined in method main()
+            int a = 0;
+            ^
+          Fehler.java:7:
+          error:
+            variable j might not have been initialized
+            System.out.println(j);
+            ^
+          mid.java:5:
+          error:
+            cannot assign a value to final variable c
+            c++;
+            ^
+          mid.java:12:
+          error:
+            method f in class mid cannot be applied to given types;
+            f(j);
+            ^
+          required:
+            double,double
+          found:
+            int
+          reason:
+            actual and formal argument lists differ in length
+          mid.java:6:
+          error: ']'
+            expected
+            int a[2];
+            ^
+          mid.java:6:
+          error:
+            illegal start of expression
+            int a[2];
+            ^
+          mid.java:7:
+          error:
+            illegal start of expression
+            a = {1};
+            ^
+          mid.java:7:
+          error:
+            not a statement
+            a = {1};
+            ^
+          mid.java:7:
+          error: ';'
+            expected
+            a = {1};
+            ^
+          mid.java:8:
+          error:
+            <identifier> expected
+            System.out.println(j);
+            ^
+          mid.java:8:
+          error:
+            <identifier> expected
+            System.out.println(j);
+            ^
+          mid.java:9:
+          error:
+            <identifier> expected
+            j = 4;
+            ^
+          mid.java:10:
+          error:
+            illegal start of type
+            for (int i = 0; i < j; i++) {
+              ^
+mid.java:10:
+error: ')'
+              expected
+              for (int i = 0; i < j; i++) {
+                ^
+mid.java:10:
+error:
+                illegal start of type
+                for (int i = 0; i < j; i++) {
+                  ^
+mid.java:10:
+error:
+                  <identifier> expected
+                  for (int i = 0; i < j; i++) {
+                    ^
+mid.java:10:
+error: ';'
+                    expected
+                    for (int i = 0; i < j; i++) {
+                      ^
+mid.java:10:
+error:
+                      > expected
+                      for (int i = 0; i < j; i++) {
+                        ^
+mid.java:10:
+error: '('
+                        expected
+                        for (int i = 0; i < j; i++) {
+                          ^
+mid.java:13:
+error:
+                          invalid method declaration;
+                          return type required
+                                 f(j);
+                          ^
+mid.java:13:
+error:
+                          <identifier> expected
+                          f(j);
+                          ^
+mid.java:16:
+error:
+                          class, interface, or enum expected
+                          double f(double a, double b) {
+                            ^
+                            mid.java:18:
+                              error:
+                              class, interface, or enum expected
+                            }
+                            ^
+
+
+
+Error:
+                            Main method not found in class Fehler, please define the main method as:
+                              public static void main(String[] args)
+                              or a JavaFX application class must extend javafx.application.Application
+

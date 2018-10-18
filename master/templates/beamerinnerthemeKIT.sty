@@ -1,0 +1,101 @@
+% Copyright Tobias Dussa <tobias.dussa@kit.edu>
+%
+% $Id: beamerinnerthemeKIT.sty 56 2008-04-29 11:01:03Z tdussa $
+% $Revision: 56 $
+% $Author: tdussa $
+% $Date: 2008-04-29 13:01:03 +0200 (Tue, 29 Apr 2008) $
+% $URL: svn+sdhs://sdhs.homedns.org/home/svn/talks/beamer-KIT/beamerinnerthemeKIT.sty $
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+\ProvidesPackage{master/templates/beamerinnerthemeKIT}
+\RequirePackage{master/templates/KIT-Bullet}
+
+\usepackage{beamerinnerthemerounded}
+
+\mode<presentation>
+
+\defbeamertemplate*{title page}{KIT}[1][]
+{
+  \begin{pgfpicture}
+    \pgfpathrectangle{\pgfpoint{0pt}{0pt}}{\pgfpointadd{\pgfpoint{\paperwidth}{\KIT@textheight}}{\pgfpoint{-2\KIT@textmargin}{0pt}}}
+    \pgfusepath{use as bounding box}
+
+    \pgftext[bottom, left,%
+      at={%
+        \pgfpoint{\KIT@margin}{\KIT@titlebottom}%
+      }]{%
+      \parbox{\paperwidth}{%
+        \textcolor{black}{\usebeamerfont{title}%\fontsize{\KIT@titlefooterfontsmall}{\KIT@titlefooterfontsmall}\selectfont{}
+      \inserttitle}}}
+
+    \pgftext[top, left, %
+       at={%
+         \pgfpointadd{%
+           \pgfpoint{\KIT@margin}{\KIT@titlebottom}}{%
+           \pgfpoint{0pt}{-\KIT@titlesubtitlesep}}%
+    }]{%
+     \parbox{\paperwidth}{%
+      \textcolor{black}{
+       \ifx\insertsubtitle\@empty%
+       \else%
+        \usebeamerfont{subtitle}\insertsubtitle\\[-0.5ex]
+       \fi%
+       \usebeamerfont{author}\insertauthor%
+       \ifx\insertdate\@empty%
+       \else%
+         \hspace{0.5ex}\raisebox{-0.3ex}{\rule{0.7pt}{2ex}}\hspace{0.5ex}\insertdate%
+       \fi%
+      }%
+     }%
+    }
+
+    \pgftext[left,%
+      at={%
+         \pgfpointadd{%
+           \pgfpoint{\KIT@margin}{\KIT@titlebottom}}{%
+           \pgfpoint{0pt}{-\KIT@titleinstitutesep}}%
+    }]{%
+     \parbox{\paperwidth}{%
+      \textcolor{white}{\usebeamerfont{institute}\insertinstitute}%
+     }%
+    }
+  \end{pgfpicture}
+%  \vskip1.25em%
+%  \begin{beamercolorbox}[sep=3pt,left,#1]{title}
+%    \ifx\insertsubtitle\@empty%
+%    \vskip0.25em%
+%    \usebeamerfont{title}\inserttitle
+%    \else%
+%    \usebeamerfont{title}\inserttitle\\
+%    \usebeamerfont{subtitle}\insertsubtitle
+%    \fi%
+%    \par
+%  \end{beamercolorbox}%
+%  \vskip0.25em%
+%  \begin{beamercolorbox}[sep=3pt,left,#1]{author}
+%    \ifx\insertinstitute\@empty%
+%    \vskip0.5em%
+%    \usebeamerfont{author}\insertauthor
+%    \else%
+%    \usebeamerfont{author}\insertauthor\\
+%    \usebeamerfont{institute}\insertinstitute
+%    \fi%     
+%  \end{beamercolorbox}
+%  \vskip0.25em%
+%  \begin{beamercolorbox}[sep=3pt,left,#1]{date}
+%    \usebeamerfont{date}\insertdate
+%  \end{beamercolorbox}
+%  \vspace*{\fill}
+}
+
+\defbeamertemplate*{itemize item}{KIT}{\raise0.1ex\hbox{\KITBullet[1.2ex]}}
+\defbeamertemplate*{itemize subitem}{KIT}{\raise0.2ex\hbox{\KITBullet[1.0ex]}}
+\defbeamertemplate*{itemize subsubitem}{KIT}{\raise0.3ex\hbox{\KITBullet[0.8ex]}}
+
+\setbeamertemplate{items}[KIT]
+\setbeamertemplate{sections/subsections in toc}[circle]
+
+\mode
+<all>

@@ -1,0 +1,50 @@
+\begin{exercise}{Rekursion}
+\begin{body}
+Betrachten Sie die nachfolgende Definition einer Klassenmethode in der Programmiersprache Java.
+\begin{displaycode}
+    static void schachtelung(double x, double a, double b) {
+        if ( b - a <= 0.25 ) {
+            System.out.println(a + "; " + b);
+        } else {
+            double c = 0.5 * (a + b);
+            if ( x < c ) {
+                schachtelung(x,a,c);
+            } else {
+                schachtelung(x,c,b);
+            }
+        }
+    }
+\end{displaycode}
+\begin{parts}
+\item
+Wie oft wird die Methode durch den Aufruf \code|schachtelung(0.6,0.0,1.0);| aufgerufen? Was wird in diesem Fall auf der Konsole ausgegeben?
+
+\item
+Geben Sie eine äquivalente Definition der Methode ohne rekursiven Aufruf an.
+\end{parts}
+\end{body}
+
+\begin{solution}
+\begin{parts}
+\item
+Die Methode wird dreimal aufgerufen. Es wird \glqq$0{,}5$; $0{,}75$\grqq\ auf der Konsole ausgegeben.
+
+\item
+Eine mögliche Klassendefinition ohne rekursiven Aufruf lautet
+\begin{displaycode}
+    static void schachtelung(double x, double a, double b) {
+        double c;
+        while ( b - a > 0.25  ) {
+            c = 0.5 * (a + b);
+            if ( x > c ) {
+                a = c;
+            } else {
+                b = c;
+            }
+        }
+        System.out.println(a + "; " + b);
+    }
+\end{displaycode}
+\end{parts}
+\end{solution}
+\end{exercise}

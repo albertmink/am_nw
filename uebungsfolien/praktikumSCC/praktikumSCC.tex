@@ -1,0 +1,158 @@
+\AtBeginSection{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Praktikum}
+\begin{frame}
+  \frametitle{\kap. Praktikum}%
+\tableofcontents[currentsection]
+\end{frame}
+% \setcounter{section}{0}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Bearbeitung der Praktikumsaufgaben}%
+\subsection{\stitle}\label{S:PraktikumSCC}
+\begin{frame}[t]%
+  \frametitle{\kap.\ref{S:PraktikumSCC} \stitle}%
+\medskip
+
+Praktikumsrechner des SCC
+\begin{itemize}
+  \item Verwendetes Betriebssystem: Linux
+  \item Ben\"otigte Software:
+  \begin{itemize}
+    \item Eingabefenster (Shell, Terminal oder Konsole)
+    \item Editor mit Syntax-Hervorhebung (z.B. Kate oder GEdit)
+    \item Internet-Browser (Firefox, Iceweasel oder Konquerer)
+    \item pdf-Betrachter (Adobe-Reader, Xpdf oder Okular)
+  \end{itemize}
+  \item Kurze Einf\"uhrung: \emph{Anleitung und Informationen zum Praktikum mit den Sprachen C++ und Java} (auf ILIAS)
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Grundlagen der Linux Konsole}%
+\subsection{\stitle}\label{S:Anleitung}
+\begin{frame}[t]%
+\frametitle{\kap.\ref{S:Anleitung} \stitle\ (1)}%
+\medskip
+
+\textbf{Generelle Bemerkungen zur Konsole}
+\begin{itemize}
+  \item Laufende Programme bzw. Befehlsausf\"uhrungen k\"onnen durch die Tastenkombination \textbf{Strg+c} abgebrochen werden
+  \item F\"ur Autovervollst\"andigung von Dateinamen und Pfaden in der Konsole zwei Mal \textbf{Tab}
+  \item F\"ur Hilfestellungen und Dokumentation \textbf{man} bzw. \textbf{-{}-help} und \textbf{google}
+\end{itemize}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]%
+\frametitle{\kap.\ref{S:Anleitung} \stitle\ (2)}%
+\medskip
+
+\textbf{Die wichtigsten UNIX-Kommandos zum navigieren}
+\begin{itemize}
+  \setlength{\itemsep}{4pt}
+  \item Aktuelles Verzeichnis ausgeben: \textbf{pwd (print working directory)}
+  \item Verzeichnis wechseln: \textbf{cd (change directory)}
+  \begin{itemize}
+    \setlength{\itemsep}{2pt}
+    \item \textbf{cd /tmp} Wechsel in das Verzeichnis /tmp (absoluter Pfad)
+    \item \textbf{cd work/dat} Wechsel in das Unterverzeichnis dat von work (relativer Pfad)
+    \item \textbf{cd} Wechsel in Ihr Home-Verzeichnis
+    \item \textbf{cd ..} Wechsel in das \"ubergeordnete Verzeichnis
+  \end{itemize}
+  \item Inhalt des aktuellen Verzeichnisses auflisten: \textbf{ls (list)}
+  \begin{itemize}
+    \setlength{\itemsep}{2pt}
+    \item \textbf{ls -{}- help} anzeigen der Dokumenation, alt. \textbf{man ls}
+    \item \textbf{ls -l} zeigt Inhalt als Liste an. Verzeichnisse, Archive und ausf\"uhrbare Dateien werden eingef\"arbt
+    \item \textbf{ls -lh} zeigt Inhalt zus\"atzlich als human readable an
+    \item \textbf{ls -lhS} zeigt Inhalt zus\"atzlich der Gr\"o\ss e nach geordnet an
+    \item $\ldots$
+  \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]%
+\frametitle{\kap.\ref{S:Anleitung} \stitle\ (3)}%
+\medskip
+
+\textbf{Die wichtigsten UNIX-Kommandos zum erstellen und l\"oschen von Verzeichnissen}
+\begin{itemize}
+  \setlength{\itemsep}{4pt}
+  \item Neues Verzeichnis anlegen: \textbf{mkdir (make directory)}
+  \begin{itemize}
+    \item \textbf{mkdir neu} legt das Verzeichnis neu im aktuellen Verzeichnis an
+  \end{itemize}
+  \item Neue Datei erstellen: \textbf{touch}
+  \begin{itemize}
+    \item \textbf{touch helloworld.java} erstellt die Datei helloworld.java
+  \end{itemize}
+  \item L\"oschen einer Datei: \textbf{rm (remove)}
+  \begin{itemize}
+    \setlength{\itemsep}{2pt}
+    \item \textbf{rm helloworld.java} l\"oscht die Datei helloworld.java
+    \item \textbf{rm -r helloworld.java} l\"oscht rekursiv, also auch gesamte Verzeichnisse
+    \item \textbf{rm -f helloworld.java} erzwingt das L\"oschen
+    \item \textbf{rm -v helloworld.java} aktiviert die Erkl\"arung was der Befehl bewirkt
+  \end{itemize}
+  \item Abrufen der Dokumentation: \textbf{man}
+  \begin{itemize}
+    \item \textbf{man rm} ruft die Dokumentation des Befehls \textbf{rm} auf. Mit \textbf{q (quit)} gelangt man zur\"uck.
+  \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]%
+\frametitle{\kap.\ref{S:Anleitung} \stitle\ (4)}%
+\medskip
+
+\textbf{Die wichtigsten UNIX-Kommandos zum kopieren}
+\begin{itemize}
+  \setlength{\itemsep}{4pt}
+  \item Befehl \textbf{cp (copy) [OPTION] <SOURCE> <DESTINATION>}
+  \begin{itemize}
+    \setlength{\itemsep}{2pt}
+    \item \textbf{cp work.tex final.tex} erstellt eine Kopie von work.tex die final.tex hei\ss t
+    \item \textbf{cp -r folderSource folderDest} kopiert rekursiv und damit auch Verzeichnisse
+    \item Optionen: \textbf{-v, --verbose; -r, --recursive; -f, --force}
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Programmentwicklung}%
+\subsection{\stitle}\label{S:Progentw}
+\begin{frame}[t]%
+\frametitle{\kap.\ref{S:Progentw} \stitle}%
+\medskip
+
+\textbf{\"Ubersetzen des Programms}
+\begin{itemize}
+  \item \textbf{Wichtig!:} Java Programme m\"ussen mit .java enden
+  \item Java-Quelltext wird durch Aufruf des Java-Compilers in Java-Bytecode \textbf{javac <Dateiname>.java} \"ubersetzt
+  \item Zur Ausf\"uhrung muss der Java-Interpreter ohne Angabe einer Extension aufgerufen werden
+  \item[] \textbf{java <Dateiname>}
+\end{itemize}
+\medskip
+
+\textbf{Beispiel: Kugelvolumen}
+\begin{itemize}
+  \item Das Programm wurde unter \textbf{KugelVolumen.java} abgespeichert
+  \item Befehl \textbf{javac KugelVolumen.java} kompiliert das Programm und \textbf{java KugelVolumen} f\"uhrt es aus
+  \item Auf dem Bildschirm erscheint folgende Ausgabe: \\
+  \code{Bitte Kugelradius eingeben:\\
+  > 1 \\
+  Das Volumen betr\"agt v = 4.1887902047863905}
+\end{itemize}
+\end{frame}

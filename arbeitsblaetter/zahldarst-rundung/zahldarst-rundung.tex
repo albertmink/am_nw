@@ -1,0 +1,66 @@
+\begin{exercise}{Rundungsregel nach IEEE*}
+
+\begin{body}
+Jeder Gleitkomma-Datentyp kann nur eine bestimmte Anzahl $N$ von Nachkommastellen eines Binärbruchs (in normalisierter Darstellung) darstellen. Kann ein Binärbruch nicht mit $N$ Nachkommastellen dargestellt werden, wird dieser auf $N$ Nachkommastellen gerundet. Dies geschieht nach der \emph{IEEE-Rundungsregel} (IEEE: Institute of Electrical and Electronics Engineers). Diese ist folgendermaßen definiert:
+\begin{itemize}
+\item
+Jeder Binärbruch wird auf den nächstgelegenen darstellbaren Binärbruch gerundet (\glqq round to nearest\grqq).
+
+\item
+Liegt der Binärbruch genau in der Mitte zwischen zwei darstellbaren Binärbrüchen, so wird er auf denjenigen darstellbaren Binärbruch gerundet, dessen letzte Stelle eine Null ist (\glqq round to nearest even\grqq).
+\end{itemize}
+Betrachten wir dazu das folgende Beispiel: Der Bruch $1{,}101_2 = 1{,}625$ soll nach der IEEE-Rundungsregel auf zwei darstellbare Nachkommastellen gerundet werden. Der Bruch liegt genau in der Mitte zwischen den darstellbaren Brüchen $1{,}10_2 = 1{,}5$ und $1{,}11_2 = 1{,}75$. Laut IEEE-Rundungsregel wird er auf den darstellbaren Bruch gerundet, dessen letzte Stelle eine Null ist. Dies ist der Bruch $1{,}10_2 = 1{,}5$.
+
+Runden Sie die nachfolgenden Binärbrüche nach der IEEE-Rundungsregel auf vier Nachkommastellen. Ein Querstrich bezeichnet sich periodisch wiederholende Nachkommastellen.
+\begin{center}
+\begin{minipage}{0.3\textwidth}
+\begin{parts}
+\item[(a)] $1{,}00001_2$
+\item[(b)] $1{,}00011_2$
+\item[(c)] $1{,}100011_2$
+\end{parts}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{parts}
+\item[(d)] $1{,}01111_2$
+\item[(e)] $1{,}0100101_2$
+\item[(f)] $1{,}01101_2$
+\end{parts}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{parts}
+\item[(g)] $1{,}\overline{01}_2$
+\item[(h)] $1{,}\overline{1100}_2$
+\item[(i)] $1{,}0\overline{1}_2$
+\end{parts}
+\end{minipage}
+\end{center}
+\end{body}
+
+
+\begin{solution}
+\begin{center}
+\begin{minipage}{0.3\textwidth}
+\begin{parts}
+\item[(a)] $1{,}0000_2 $
+\item[(b)] $1{,}0010_2$
+\item[(c)] $1{,}1001_2$
+\end{parts}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{parts}
+\item[(d)] $1{,}1000_2$
+\item[(e)] $1{,}0101_2$
+\item[(f)] $1{,}0110_2$
+\end{parts}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{parts}
+\item[(g)] $1{,}0101_2$
+\item[(h)] $1{,}1101_2$
+\item[(i)] $1{,}1000_2$
+\end{parts}
+\end{minipage}
+\end{center}
+\end{solution}
+\end{exercise}

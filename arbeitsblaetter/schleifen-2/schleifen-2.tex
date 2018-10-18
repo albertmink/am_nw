@@ -1,0 +1,52 @@
+
+\begin{exercise}{Schleifen}
+\begin{body}
+Gegeben sei der folgende Ausschnitt eines Java-Programms:
+\begin{displaycode}
+int k = 0;
+while (k < 8) {
+    if (k % 4 == 0) {
+        System.out.print("+");
+    } else {
+        System.out.print("//");
+    }
+    k += 2;
+}
+\end{displaycode}
+\begin{parts}
+\item Was wird auf dem Bildschirm ausgegeben?
+\item Realisieren Sie diesen Programmausschnitt mit einer \code|for|-Schleife.
+\end{parts}
+\end{body}
+
+\begin{solution}
+\begin{parts}
+\item[(a)] Für die einzelnen Schleifendurchläufe ergeben sich
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|}
+\hline
+\code|k| & \code|k < 8| & \code|k % 4 == 0|  & \textbf{Ausgabe} & \code|k += 2| \\
+\hline
+$0$      & \emph{wahr}   & \emph{wahr}        & \glqq +\grqq    & $2$ \\
+$2$      & \emph{wahr}   & \emph{falsch}      & \glqq //\grqq   & $4$ \\
+$4$      & \emph{wahr}   & \emph{wahr}        & \glqq +\grqq    & $6$ \\
+$6$      & \emph{wahr}   & \emph{wahr}        & \glqq //\grqq   & $8$ \\
+$8$      & \emph{falsch} & --                 & --              & --  \\
+\hline
+\end{tabular}
+\end{center}
+Es wird also die Zeichenkette \glqq +//+//\grqq\ auf der Konsole ausgegeben.
+
+\item[(b)] Realisation mit einer \code|for|-Schleife:
+\begin{displaycode}
+for (int k = 0; k < 8; k += 2) {
+    if (k % 4 == 0) {
+        System.out.print("+");
+    } else {
+        System.out.print("//");
+    }
+} 
+\end{displaycode}
+\end{parts}
+\end{solution}
+\end{exercise}

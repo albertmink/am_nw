@@ -1,0 +1,28 @@
+\def\stitle{Hello World}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\stitle}
+\begin{frame}
+  \frametitle{\kap. \stitle}%
+\tableofcontents[current]
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]%
+  \frametitle{\kap. \stitle\ - Quelltext}%
+
+\lstinputlisting[style=JAVA,title=Diese kleine minimal Beispiel hei\ss t HelloWorld und gibt "Hello World!"{} auf der Konsole aus.]
+{helloWorld/HelloWorld.java}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]%
+  \frametitle{\kap. \stitle\ - \"Ubersetzen und Ausf\"uhren}%
+
+\begin{lstlisting}[title={Um das Programm HelloWorld auszuf\"uhren werden folgende Schritte auf dem Terminal durchgef\"uhrt.},style=BASH]
+$ javac HelloWorld.java
+$ java HelloWorld
+Hello World!
+\end{lstlisting}
+\end{frame}

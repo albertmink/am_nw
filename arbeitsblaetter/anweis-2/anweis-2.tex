@@ -1,0 +1,51 @@
+\begin{exercise}{Anweisungen}
+\begin{body}
+Gegeben sei der folgende Ausschnitt eines Java-Programms. Dabei sei \code|i| eine Variable vom Typ \code|int|.
+\begin{displaycode}
+if ( i < 1 || i > 3 ) {
+    System.out.println("A");
+} else if ( i == 1 || i == 2  ) {
+    System.out.println("B");
+} else {
+    System.out.println("C");
+}
+\end{displaycode}
+\begin{parts}
+\item[(a)] Welcher Buchstabe wird auf dem Bildschirm ausgegeben, falls \code|i| den Wert $1$, $2$, $3$ bzw. $4$ besitzt?
+\item[(b)] Realisieren Sie diesen Programmausschnitt mit einer \code|switch|-Anweisung.
+\end{parts}
+\end{body}
+
+\begin{solution}
+\begin{parts}
+\item[(a)] Für den vorliegenden Programmausschnitt erhält man
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+$\quad$\code|n|$\quad$  & \textbf{Ausgabe} \\
+\hline
+$1$ & B \\
+$2$ & B \\
+$3$ & C \\
+$4$ & A \\
+\hline
+\end{tabular}
+\end{center}
+
+\item[(b)] Realisation mit einer \code|switch|-Anweisung:
+\begin{displaycode}
+switch ( i ) {
+    case 1:
+    case 2: 
+        System.out.println("B");
+        break;
+    case 3:
+        System.out.println("C");
+        break;
+    default:
+        System.out.println("A");
+}
+\end{displaycode}
+\end{parts}
+\end{solution}
+\end{exercise}

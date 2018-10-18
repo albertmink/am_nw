@@ -1,0 +1,56 @@
+\begin{exercise}{Rekursion}
+\begin{body}
+Die Folge der \emph{Fibonacci--Zahlen} $a_0, a_1, a_2, \dotsc$ ist folgenderma\ss en definiert:
+\begin{equation*}
+a_0 := 1,\qquad
+a_1 := 1,\qquad
+a_n := a_{n-1} + a_{n-2}\quad\text{für } n = 2,3,\dotsc
+\end{equation*}
+Die Klassenmethode \code{fibonacci} berechnet die Fibonacci--Zahlen rekursiv.
+Sie ist folgenderma\ss en definiert:
+\begin{displaycode}
+    static int fibonacci(int n) {
+        if ( n <= 1 ) {
+            return 1;
+        } else {
+            return fibonacci(n-1) + fibonacci(n-2);
+        }
+    }
+\end{displaycode}
+\begin{parts}
+\item Geben Sie die ersten zehn Folgenglieder der Folge der Fibonacci--Zahlen an.
+\item Wie oft wird die Methode durch den Aufruf \code|fibonacci(4)| aufgerufen?
+%\item Geben Sie eine Definition der Methode ohne rekursive Aufrufe an.
+\end{parts}
+\end{body}
+
+\begin{solution}
+\begin{parts}
+\item
+Die ersten zehn Folgenglieder lauten: $1$, $1$, $2$, $3$, $5$, $8$, $13$, $21$, $34$, $55$.
+
+\item
+Die Methode wird insgesamt neunmal aufgerufen.
+
+%\item
+%Eine mögliche Klassendefinition ohne rekursiven Aufruf lautet
+%\begin{displaycode}
+%    static int fibonacci(int n) {
+%        if ( n <= 1 ) {
+%            return 1;
+%        } else {
+%            int folgenglied = 1;
+%            int vorgaenger1 = 1;
+%            int vorgaenger2;
+%            for (int i = 2; i <= n; i++) {
+%                vorgaenger2 = vorgaenger1;
+%                vorgaenger1 = folgenglied;
+%                folgenglied = vorgaenger1 + vorgaenger2;
+%            }
+%            return folgenglied;
+%        }
+%    }
+%\end{displaycode}
+\end{parts}
+\end{solution}
+\end{exercise}

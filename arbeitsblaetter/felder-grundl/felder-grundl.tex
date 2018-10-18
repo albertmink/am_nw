@@ -1,0 +1,40 @@
+\begin{exercise}{Felder: Grundlagen}
+\begin{body}
+Felder k"onnen aus den Datentypen \code{double}, \code{int}, \code{char}, \code{String}, $\ldots$ bestehen.
+Der Index aller Felder beginnt mit '0', d.h. ein Feld mit 10 Elementen hat die Indizes von 0 bis 9.
+\\\\
+Gegeben sei der folgende Ausschnitt eines \code{Java}--Programms.
+\begin{verbatim}
+  int[] feld = new int[10];
+  for(int i=0; i<feld.length; i++){
+    feld[i]=1;
+    for(int j=0; j<i; j++){
+      feld[i]=feld[i]+feld[j];
+    }
+  }
+  for(int i=0; i<feld.length; i++){
+    System.out.println("feld("+i+") = "+feld[i]);
+  }
+\end{verbatim}
+Was wird auf dem Bildschirm ausgegeben?
+\end{body}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% solution %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{solution}
+Es wird
+\begin{verbatim}
+feld(0) = 1
+feld(1) = 2
+feld(2) = 4
+feld(3) = 8
+feld(4) = 16
+feld(5) = 32
+feld(6) = 64
+feld(7) = 128
+feld(8) = 256
+feld(9) = 512
+\end{verbatim}
+ausgegeben.
+\end{solution}
+
+\end{exercise}

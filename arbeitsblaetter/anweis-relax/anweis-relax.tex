@@ -1,0 +1,52 @@
+\begin{exercise}{Relaxationsverfahren}
+\begin{body}
+Erf"ullt die $n \times n$ Matrix $A=(a_{ij})$, des linearen Gleichungs\-systems $Ax = b$, das starke Zeilensummenkriterium
+\begin{equation}
+  \label{eq:zeilen}
+  |a_{ii}| > \sum_{\substack{k = 1 \\ k \neq i}}^{n} |a_{ik}|, \quad
+  \forall \; i \in \{ 1,\ldots, n\} \;,
+\end{equation}
+so konvergiert, ausgehend von einem gegebenen Startvektor
+\begin{equation*}
+  x^{(0)} = \left(x_i^{(0)}\right)_{i = 1,\ldots, n} := \left(\frac{b_i}{a_{ii}}\right)_{i = 1,\ldots, n} \;,
+\end{equation*}
+die Folge der durch die Iterationsvorschrift
+\begin{align}
+  \label{eq:itter}
+  x_i^{(k + 1)} : = (1 - \omega )x_i^{(k)}  - \frac{\omega }{{a_{ii} }}\left(
+  {\sum\limits_{j = 1}^{i - 1} {a_{ij} x_j^{(k + 1)}  +
+  \sum\limits_{j = i + 1}^n {a_{ij} x_j^{(k)}  - b_i } } } \right)
+\end{align}
+(f"ur $\; i = 1,\ldots, n; \; \omega \in (0,2) \subset \mathbb{R}; \; k = 0,1,\ldots\;$)
+bestimmten Vektoren $x^{(k)}$ gegen die L"osung dieses linearen Gleichungssystems (Relaxationsverfahren).
+
+\begin{enumerate}
+\item[a)] Schreiben Sie je eine Funktion \verb|Eingabe| vom Typ \verb|void| f"ur die zeilenweise Eingabe einer quadratischen Matrix $A$ (Typ \verb|double**|) und f"ur die Eingabe eines Vektors $b$ (Typ \verb|double*|).
+  Die Dimension $n$ wird dabei als zus"atzlicher Parameter an \verb|Eingabe| "ubergeben.
+  Innerhalb von \verb|Eingabe| soll davon ausgegangen werden, da"s der Speicherplatz f"ur $A$ bzw. $b$ bereits allokiert ist.
+\item[b)] Schreiben Sie eine Funktion \verb|Ausgabe| vom Typ \verb|void| f"ur die Ausgabe eines Vektors $b$ (Typ \verb|double*|).
+  Die Dimension $n$ wird dabei als zus"atzlicher Parameter an \verb|Ausgabe| "ubergeben.
+\item[c)] Schreiben Sie eine Funktion \verb|Krit| vom Typ \verb|int|, das die Bedingung \eqref{eq:zeilen} "uberpr"uft und, falls dieses
+  Kriterium nicht erf"ullt ist, {\grqq Kriterium verletzt\grqq} ausdruckt.
+  Als Argumente sind die Matrix $A$ (Typ \verb|double**|) und deren Dimension $n$ vorzusehen.
+\item[d)] Schreiben Sie eine Funktion \verb|Relaxit| vom Typ \verb|void|, die einen Schritt des Relaxationsverfahrens gem"a"s \eqref{eq:itter} durchf"uhrt, d.h. $x^{(k+1)}$ soll aus $A$, $b$, $n$, $\omega$ und $x^{(k)}$ berechnet werden.
+\item[e)] Schreiben Sie eine Funktion \verb|Abbruchkrit| vom Typ \verb|int|, die "uberpr"uft, ob das folgende Abbruchkriterium gilt:
+  \begin{equation}
+    \label{eq:abbruch}
+    \max\limits_{i = 1,\ldots,n} \left| {x_i^{(k + 1)}  - x_i^{(k)} } \right|
+    < \varepsilon \; .
+  \end{equation}
+\item[f)] Schreiben Sie ein Hauptprogramm, das zun"achst $n, \omega$ und $\varepsilon$ einliest und f"ur die $n \times n$ Matrix~$A$ (Typ \verb|double**|), f"ur die rechte Seite $b$ und f"ur die Iterierten $x^{(k)}$ und $x^{(k+1)}$ (alle vom Typ \verb|double*|) Speicherplatz bereitstellt.
+
+   Anschlie"send soll die Matrix $A$ und die rechte Seite $b$ mit Hilfe der oben bereitgestellten Funktionen eingelesen und der Startvektor $x^{(0)}$ berechnet werden.
+
+   Ist die Bedingung \eqref{eq:zeilen} verletzt, soll das Programm $x^{(k)},\; k=0,1,\ldots,10$, mit Hilfe der Funktion \verb|Relaxit| berechnen und mittels \verb|Ausgabe| ausgeben.
+
+   Ist die Bedingung \eqref{eq:zeilen} erf"ullt, soll solange iteriert werden bis das Abbruchkriterium \eqref{eq:abbruch} f"ur zwei aufeinanderfolgende Iterierte erf"ullt ist.
+   Die zuletzt berechnete Iterierte soll mit Hilfe von \verb|Ausgabe| ausgegeben werden.
+\end{enumerate}
+\end{body}
+\begin{solution}
+  \inputcode[frame=lines,title=relax.C]{\filename{Relaxation.java}}
+\end{solution}
+\end{exercise}

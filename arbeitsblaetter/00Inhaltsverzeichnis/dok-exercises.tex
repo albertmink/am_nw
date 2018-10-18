@@ -1,0 +1,377 @@
+\section{Einf�hrung}
+Das Paket \verb|exercises| definiert Makros und Umgebungen, mit denen Aufgaben erstellt und anschlie�end in Aufgabenbl�tter oder -verzeichnisse eingef�gt werden k�nnen. Das Paket erm�glicht es, Aufgaben als separaten Dateneinheiten zu verwalten, und sie bei Bedarf in andere \LaTeX--Dokumente einzubinden.
+
+
+
+\section{Aufgaben erstellen}
+
+In diesem Abschnitt wird anhand eines konkreten Beispiels gezeigt, wie man eine Aufgabe erstellt, die dann in Aufgabenbl�tter oder -verzeichnisse eingef�gt werden kann. In der Aufgabe soll es darum gehen, die quadratische Gleichung
+\[  x^2 - 7x + 12 = 0  \]
+mit der Mitternachts--Formel zu l�sen. Dazu m�ssen ein Aufgabentext und eine Musterl�sung formuliert werden. Ferner sollen zus�tzliche Informationen �ber die Aufgabe zur Verf�gung gestellt werden.
+
+Um eine Aufgabe zu erstellen muss zun�chst ein \emph{Aufgabenordner} angelegt werden. Der Name des Aufgabenordners dient als Bezeichner f�r die Aufgabe und darf \textbf{keine Umlaute oder Sonderzeichen au�er dem Minuszeichen} (\verb|-|) enthalten. Da im vorliegenden Beispiel eine quadratische Gleichung gel�st werden soll, erstellen wir einen Ordner mit dem Namen \verb|quadr-gleichung| im aktuellen Verzeichnis, so dass sich f�r den Aufgabenordner der relative Pfad
+\begin{verbatim}
+   ./quadr-gleichung
+\end{verbatim}
+ergibt. Als n�chstes wird dem angelegten Aufgabenorder die \emph{Aufgabendatei} erstellt. Die Aufgabendatei ist eine \LaTeX--Quelltextdatei, welche \textbf{denselben Namen wie der Aufgabenorder} tr�gt. Wir erstellen daher im Aufgabenorder eine Datei mit dem Namen \verb|quadr-gleichung.tex|. Der relative Pfad der Aufgabendatei ist dementsprechend durch
+\begin{verbatim}
+   ./quadr-gleichung/quadr-gleichung.tex
+\end{verbatim}
+gegeben. Die grundlegenden Syntax einer Aufgabendatei sieh folgenderma�en aus:
+
+\begin{quote}
+\begin{verbatim}
+\begin{exercise}{ �berschrift }
+  \description{ Kurze Beschreibung }
+  \difficulty{ Schwierigkeit }
+  \source{ Herkunft }
+  \utilization{ Verwendung }
+
+  \begin{comments}
+    Kommentare
+  \end{comments}
+   
+  \begin{body}
+    Aufgabentext
+  \end{body}
+    
+  \begin{solution}
+    Musterl�sung
+  \end{solution}
+\end{exercise}
+\end{verbatim}
+\end{quote}
+
+\noindent
+Die Umgebung \verb|exercise| fasst eine Aufgabe als Datenstruktur zusammen. Sie besitzt ein Argument, �ber welches die �berschrift der Aufgabe definiert wird. �hnlich zu den \LaTeX--Makros \verb|\section|, \verb|\subsection| oder
+\verb|\subsubsection| kann der Umgebung \verb|exercise| auch ein optionales Argument �bergeben werden, welches eine alternative �berschrift definiert. Die alternative �berschrift wird dann beispielsweise bei der Erstellung von Inhaltsverzeichnissen verwendet.
+
+Das Makro \verb|\description| definiert eine kurze Beschreibung der Aufgabe. Aus einer solchen Beschreibung sollte das Thema und/oder das Lernziel der Aufgabe hervorgehen. �ber das Makro \verb|\difficulty| kann eine Angabe zur Schwierigkeit der Aufgabe gemacht werden. �ber das Makro \verb|\source| kann angegeben werden, aus welcher Quelle die Aufgabe stammt. Mit dem Makro \verb|\utilization| k�nnen Angaben dar�ber gemacht werden, in welchen Semestern und in welchen Veranstaltungen die Aufgabe bereits gestellt wurden. Insbesondere ehemalige Klausuraufgaben k�nnen so kenntlich gemacht werden. Alle genannten Makros k�nnen optional angegeben werden, d.h. ihre Verwendung ist nicht zwingend erforderlich.
+
+Die Umgebung \verb|comments| dient dazu, Hinweise f�r den Dozenten oder �bungsleiter zu hinterlassen. So k�nnen beispielsweise eventuelle Fehler in der Musterl�sung vermerkt werden, die bei einer sp�teren �berarbeitung der Aufgabe zu korrigieren sind. Die Umgebung \verb|comments| kann optional angegeben werden. Die wichtigste Umgebung ist die Umgebung \verb|body|. Sie muss zwingend verwendet werden, und dient dazu, den Aufgabentext zu definieren. Schlie�lich kann in der Umgebung \verb|solution| optional eine Musterl�sung zur Aufgabe angegeben werden. 
+
+Wenden wir uns nun unserer Beispielaufgabe zu. F�r sie k�nnte der Quelltext der Aufgabendatei folgenderma�en aussehen:
+
+\begin{quote}
+\begin{verbatim}
+\begin{exercise}{Eine quadratische Gleichung}
+  \description{L�sen einer quadratischen Gleichung      
+  mit der Mitternachts--Formel}
+  \difficulty{leicht}
+  \source{unbekannt}
+  \utilization{WS06 (Arithmetik I)}
+
+  \begin{comments}
+    Der Umfang dieser Aufgabe ist zu gering und 
+    sollte erweitert werden.
+  \end{comments}
+
+  \begin{body}
+    F�r $x \in \mathbb{R}$ sei die folgende, 
+    quadratische Gleichung gegeben:
+      \[ x^2 - 7x + 12 = 0. \]
+    L�sen Sie diese Gleichung mit der
+    Mitternachts--Formel. 
+  \end{body}
+
+  \begin{solution}
+    Laut Mitternachts--Formel sind die L�sungen 
+    $x_1$ und $x_2$ der Gleichung durch
+      \[ x_{1,2} = \frac{7 \pm \sqrt{49 - 48}}{2} \]
+    gegeben. Man rechnet leicht nach dass
+      \[ x_1 = 4,\quad x_2 = 3. \]
+  \end{solution}
+\end{exercise}
+\end{verbatim}
+\end{quote}
+
+\noindent
+Die Beispielaufgabe wurde offenbar mit der �berschrift \glqq Eine quadratische Gleichung\grqq versehen. Die Beschreibung der Aufgabe lautet \glqq L�sen einer quadratischen Gleichung mit der Mitternachts--Formel\grqq. Die Aufgabe von der Schwierigkeit her als \glqq leicht\grqq\ eingestuft. Ihre Herkunkft ist nicht bekannt. Ferner wurde angegeben, dass die Aufgabe bereits im Wintersemester des Jahres 2006 im Rahmen der Vorlesung \glqq Arithmetik I\grqq\ gestellt wurde. Der Kommentar bezieht sich auf den Umfang der Aufgabe, der als zu gering eingestuft wird. Es folgen der Aufgabentext und die Musterl�sung.
+ 
+
+
+
+\section{Aufgabenbl�tter erstellen}
+
+Um ein Aufgabenblatt zu erstellen, legt man eine separates \LaTeX--Dokument an, in dessen Pr�ambel man das Paket \verb|exercises| durch die Quelltextzeile
+\begin{verbatim}
+  \usepackage{exercises}
+\end{verbatim}
+einbindet. Im Dokument (d.h. innerhalb der Umgebung \verb|document|) k�nnen einzelne Aufgaben dann mit dem Makro \verb|\inputexercise| eingef�gt werden. Dieses Makro besitzt ein Argument �ber das der \textbf{Bezeichner des Aufgabenordners} der jeweiligen Aufgabe �bergeben wird. Zuvor muss jedoch angegeben werden, in welchem Verzeichnis sich die einzelnen Aufgabenordner befinden. Dies geschieht mit dem Makro \verb|\exercisespath|. Wir erinnern uns, dass der Pfad des Aufgabenordners der Beispielaufgabe \verb|./quadr-gleichung| lautete. Der Aufgabenorder befindet sich also im lokalen Verzeichnis. Diese wird durch die Quelltextteile
+\begin{verbatim}
+  \exercisespath{./}
+\end{verbatim}  
+angegeben. Der Schr�gstrich (\verb|/|) muss in diesem Fall zwingend angegeben werden. Um nun die Beispielaufgabe in das Dokument einzuf�gen, verwendet man die Quelltextzeile
+\begin{verbatim}
+  \inputexercise{quadr-gleichung}
+\end{verbatim}
+Dadurch wird die folgende Ausgabe erzeugt:
+
+\vspace*{2em}
+\hrule
+  \atendexercise{}
+  \atendsolution{}
+  \atendbody{}
+  \worksheetmode
+  \nocontentsline
+  \setcounter{exercise}{0}
+  \begin{exercise}{Eine quadratische Gleichung}
+    \description{L�sen einer quadratischen Gleichung 
+      mit der Mitternachts--Formel}
+    \difficulty{leicht}
+    \source{unbekannt}
+    \utilization{WS06 (Arithmetik I)}
+
+    \begin{comments}
+      Der Umfang dieser Aufgabe ist zu gering und 
+      sollte erweitert werden.
+    \end{comments}
+
+    \begin{body}
+      F�r $x \in \mathbb{R}$ sei die folgende, 
+      quadratische Gleichung gegeben:
+        \[ x^2 - 7x + 12 = 0. \]
+      L�sen Sie diese Gleichung mit der
+      Mitternachts--Formel. 
+    \end{body}
+
+    \begin{solution}
+      Laut Mitternachts--Formel sind die L�sungen 
+      $x_1$ und $x_2$ der Gleichung durch
+        \[ x_{1,2} = \frac{7 \pm \sqrt{49 - 48}}{2} \]
+      gegeben. Man rechnet leicht nach dass
+        \[ x_1 = 4,\quad x_2 = 3. \]
+    \end{solution}
+  \end{exercise}
+\hrule
+\vspace*{2em}
+
+\noindent
+Wie man sieht, wurden lediglich die �berschrift und der Aufgabentext gedruckt. Die Musterl�sung sowie alle �brigen Information bleiben verborgen. Jede eingef�gte Aufgabe wird mit einer fortlaufenden Numerierung versehen. Die Numerierung wird �ber einen Z�hler namens \verb|exercise| realisiert. Dieser kann wie alle anderen Z�hler auch mittels \verb|\setcounter| manipuliert werden. Um das Format der Numerierung zu �ndern, kann man das Makro \verb|\theexercise| neu definieren. 
+
+Man kann eine Aufgabe auch direkt in einem \LaTeX--Dokument definieren. Dazu f�gt man an der Stelle, an der die Aufgabe erscheinen soll, eine entsprechende \verb|exercise|--Umgebung ein.
+
+
+
+\section{Aufgabenbl�tter mit Musterl�sung erstellen}
+
+Wird eine Aufgabe in ein Aufgabenblatt eingef�gt, so werden zun�chst nur die �berschrift und der Aufgabentext gedruckt. Um die Musterl�sung zu drucken, verwendet man das Makro
+\begin{verbatim}
+  \printsolutions
+\end{verbatim}
+Im Fall der Beispielaufgabe f�hrt dieser Befehl zur nachfolgenden Ausgabe:
+
+\vspace*{2em}
+\hrule
+\printsolutions
+\hrule
+\vspace*{2em}
+
+\noindent
+Das Makro \verb|\printsolutions| veranlasst, dass die Musterl�sungen \textbf{aller} zuvor eingef�gten Aufgaben nacheinander gedruckt werden.
+
+
+
+
+\section{Aufgaben anpassen}
+
+\subsection{Verrechnungspunkte festlegen}
+Verrechnungspunkte k�nnen mit dem Makro \verb|\scorepoints| f�r eine Aufgabe festgelegt werden. Das Makro besitzt ein Argument �ber das die Anzahl der Verrechnungspunkte �bergeben wird. Das Makro \verb|\scorepoints| wirkt dabei nur auf die unmittelbar nachfolgende Aufgabe. Die Quelltextzeile
+\begin{verbatim}
+  \scorepoints{4}\inputexercise{quadr-gleichung}
+\end{verbatim}
+f�hrt bespielsweise zu der folgenden Ausgabe:
+\vspace*{2em}
+\hrule
+  \setcounter{exercise}{0}
+  \nocontentsline
+  \scorepoints{4}
+  \begin{exercise}{Eine quadratische Gleichung}
+    \begin{body}
+      F�r $x \in \mathbb{R}$ sei die folgende, [$\dotsc$]
+    \end{body}
+  \end{exercise}
+\hrule
+\vspace*{2em}
+
+
+
+\subsection{Freiwillige Aufgabe und Pflichtaufgaben festlegen}
+Mit den Makros \verb|\mandatory| und \verb|\voluntary| k�nnen Aufgaben als Pflichtaufgabe bzw. als freiwillige Aufgabe gekennzeichnet werden. Beide Makros wirken nur auf die unmittelbar nachfolgende Aufgabe. Die Quelltextzeilen
+\begin{verbatim}
+  \mandatory\inputexercise{quadr-gleichung}
+\end{verbatim}
+und 
+\begin{verbatim}
+  \voluntary\inputexercise{quadr-gleichung}
+\end{verbatim}
+erzeugen beispielsweise die Ausgaben
+\vspace*{2em}
+\hrule
+  \setcounter{exercise}{0}
+  \nocontentsline
+  \mandatory
+  \begin{exercise}{Eine quadratische Gleichung}
+    \begin{body}
+      F�r $x \in \mathbb{R}$ sei die folgende, [$\dotsc$]
+    \end{body}
+  \end{exercise}
+\hrule
+\vspace*{2em}
+
+\noindent bzw.
+
+\vspace*{2em}
+\hrule
+  \setcounter{exercise}{0}
+  \nocontentsline
+  \voluntary
+  \begin{exercise}{Eine quadratische Gleichung}
+    \begin{body}
+      F�r $x \in \mathbb{R}$ sei die folgende, [$\dotsc$]
+    \end{body}
+  \end{exercise}
+\hrule
+\vspace*{2em}
+
+
+
+\subsection{Aufgabentypen spezifizieren}
+Mit dem \verb|\exercisetype| kann der Typ einer Aufgabe n�her spezifiziert werden. Das Makro besitzt ein Argument, �ber den die Spezifizierung �bergeben wird. Das Makro wirkt nur auf die unmittelbar nachfolgende Aufgabe. Die Quelltextzeile
+\begin{verbatim}
+  \exercisetype{Rechenaufgabe}\inputexercise{quadr-gleichung}
+\end{verbatim}
+erzeugt beispielsweise die Ausgabe
+\vspace*{2em}
+\hrule
+  \setcounter{exercise}{0}
+  \nocontentsline
+  \exercisetype{Rechenaufgabe}
+  \begin{exercise}{Eine quadratische Gleichung}
+    \begin{body}
+      F�r $x \in \mathbb{R}$ sei die folgende, [$\dotsc$]
+    \end{body}
+  \end{exercise}
+\hrule
+\vspace*{2em}
+
+
+\subsection{Musterl�sungen verbergen}
+Wird das Makro \verb|\nosolution| einer Aufgabe vorangestellt, so wird deren Musterl�sung nicht gedruckt, wenn das Makro \verb|\printsolutions| aufgerufen wird. Das Makro \verb|\nosolution| wirkt nur auf die unmittelbar nachfolgende Aufgabe.
+
+
+
+\subsection{Abst�nde anpassen}
+Mit den Makros \verb|\atendbody|, \verb|\atendsolution|, \verb|\atendexercise| kann festgelegt werden, was am Ende eines Aufgabentextes, eines Musterl�sung oder einer Aufgabe in den \LaTeX--Quelltext eingef�gt werden soll. Diese Makros k�nnen beispielsweise dazu verwendet werden, am Ende jeder Aufgabe einen Seitenumbruch zu erzwingen.
+
+
+
+\section{Weitere Makros und Umgebungen}
+
+\subsection{Aufgabenteile festlegen}
+Innerhalb einer \verb|exercise|--Umgebung ist die Aufz�hlungsumgebung \verb|parts| definiert. Diese dient dazu, Aufgabenteile aufzuz�hlen. Der Quelltext 
+\begin{verbatim}
+  \begin{parts}
+    \item Zeigen Sie: Die Funktion $f$ ist stetig.
+    \item Zeigen Sie: Die Funktion $f$ besitzt einen Fixpunkt.
+    \item Berechnen Sie einen N�herungswert f�r den Fixpunkt.
+  \end{parts}
+\end{verbatim}
+erzeugt beispielsweise die Ausgabe
+\vspace*{2em}
+\hrule
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+    \item Zeigen Sie: Die Funktion $f$ ist stetig.
+    \item Zeigen Sie: Die Funktion $f$ besitzt einen Fixpunkt.
+    \item Berechnen Sie einen N�herungswert f�r den Fixpunkt.
+\end{enumerate}
+\hrule
+\vspace*{2em}
+
+\noindent
+Anstelle von \verb|\item| kann innerhalb der \verb|parts|--Umgebung auch \verb|\part| verwendet werden. Dies sollte jedoch vermieden werden, da das Makro \verb|\part| bereits in \LaTeX\ definiert ist.
+
+
+
+\subsection{Hinweise einf�gen}
+Das Makro \verb|\hint| kann innerhalb einer \verb|exercise|--Umgebung dazu verwendet werden, Aufgabenhinweise kenntlich zu machen. Der Quelltext
+\begin{verbatim}
+Zeigen Sie: Alle Eigenwerte der Matrix $A$ 
+besitzen einen positiven Realteil.
+
+\hint Verwenden Sie den Satz von Gerschgorin.
+\end{verbatim}
+erzeugt beispielsweise die Ausgabe
+\vspace*{2em}
+\hrule
+\begin{quote}
+Zeigen Sie: Alle Eigenwerte der Matrix $A$ besitzen einen positiven Realteil.
+
+\par\medskip\noindent\textbf{Hinweis:}\hspace{1em} Verwenden Sie den Satz von Gerschgorin.
+\end{quote}
+\hrule
+\vspace*{2em}
+
+
+\subsection{Dateien und Grafiken in Aufgaben einbinden}
+M�chte man den Inhalt anderer Dateien oder Grafiken in den den Aufgabentext oder die Musterl�sung einer Aufgabe einf�gen, so sollten die entsprechenden Dateien im Aufgabenordner gespeichert werden. Mit den Quelltextzeilen
+\begin{verbatim}
+  \input{\filename{meineDatei.tex}}
+\end{verbatim}
+und
+\begin{verbatim}
+  \includegraphics{\filename{meineGrafik.eps}}
+\end{verbatim}
+k�nnen dann Dateien bzw. Graphiken eingef�gt werden. Das Makro \verb|\filename| setzt dabei einen relativen Pfadnamen \textbf{bez�glich der Aufgabendatei} in einen relativen Pfadnamen \textbf{bez�glich der Hauptdatei} um. Diese Makro ist nur innerhalb der \verb|exercise|--Umgebung definiert.
+
+
+
+\section{Aufgabenverzeichnisse erstellen}
+
+Aufgabenverzeichnisse werden �hnlich wie Aufgabenbl�tter erstellt. Man erstellt dazu ein separates \LaTeX--Dokument, in dessen Pr�ambel man die Quelltextzeile
+\begin{verbatim}
+  \usepackage[catalogue]{exercises}
+\end{verbatim}
+einf�gt. Einzelne Aufgaben k�nnen danach �ber das Makro \verb|\inputexercise| in das Verzeichnis eingef�gt werden. Der Unterschied besteht in der Darstellung der Aufgaben. F�gt man beispielsweise die Beispielaufgabe in das Verzeichnis ein, so f�hrt dies zu der folgenden Ausgabe:
+
+\vspace*{2em}
+\hrule
+  \cataloguemode
+  \setcounter{exercise}{0}
+  \nocontentsline
+  \exerciseid{quadr-gleichung}
+  \begin{exercise}{Eine quadratische Gleichung}
+    \description{L�sen einer quadratischen Gleichung 
+      mit der Mitternachts--Formel}
+    \difficulty{leicht}
+    \source{unbekannt}
+    \utilization{WS06 (Arithmetik I)}
+
+    \begin{comments}
+      Der Umfang dieser Aufgabe ist zu gering und 
+      sollte erweitert werden.
+    \end{comments}
+
+    \begin{body}
+      F�r $x \in \mathbb{R}$ sei die folgende, 
+      quadratische Gleichung gegeben:
+        \[ x^2 - 7x + 12 = 0. \]
+      L�sen Sie diese Gleichung mit der
+      Mitternachts--Formel. 
+    \end{body}
+
+    \begin{solution}
+      Laut Mitternachts--Formel sind die L�sungen 
+      $x_1$ und $x_2$ der Gleichung durch
+        \[ x_{1,2} = \frac{7 \pm \sqrt{49 - 48}}{2} \]
+      gegeben. Man rechnet leicht nach dass
+        \[ x_1 = 4,\quad x_2 = 3. \]
+    \end{solution}
+  \end{exercise}
+\hrule
+\vspace*{2em}
+
+\noindent
+Man erkennt, dass in einem Verzeichnis alle Informationen zu einer Aufgabe gedruckt werden. Das Layout unterscheidet sich au�erdem grundlegend von dem Layout, welches f�r Aufgabenbl�tter verwendet wird. In Verzeichnissen bleiben die Makros \verb|\scorepoints|, \verb|\mandatory|, \verb|\voluntary| und \verb|\exercisetype| wirkungslos.
+

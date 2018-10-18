@@ -1,0 +1,52 @@
+\def\stitle{\theexercise\ - Boolsche Algebra}
+\section{\stitle}
+\begin{frame}[t]
+  \frametitle{\stitle}
+
+
+In Java repräsentiert der Basistyp \code{bool} eine Boolsche Algebra.
+Die Symbole $0, 1$ sind in Java als \code{false}, \code{true} definiert.
+Daneben gibt es das logische Und, logische Oder und das Komplement \code{\&\&}, \code{||} und \code{!}.
+Geben Sie das Ergebnis der nachfolgenden Java-Ausdrücke an
+\medskip
+
+\begin{minipage}{0.49\textwidth}
+\begin{itemize}
+\item[(a)] \code{true} \&\& \code{false}
+\item[(b)] \code{true} || \code{false}
+\item[(c)] \code{$(0 == 1) || (1 < 2)$}
+\item[(d)] \code{$(0 != 1) \&\& !(2 < 1)$}
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
+\begin{itemize}
+\item[(e)] \code{!!!true}
+\item[(f)] \code{(5 == 1)} || \code{false}
+\item[(g)] \code{(a == 0)} \&\& \code{(a != 0)}
+\item[(h)] \code{(a == 0)} || !\code{(a == 0)}
+\end{itemize}
+\end{minipage}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{\stitle\ -L\"osungsvorschlag}
+\begin{center}
+\begin{minipage}{0.49\textwidth}
+\begin{itemize}
+\item[(a)] \code{false}
+\item[(b)] \code{true}
+\item[(c)] \code{true}
+\item[(d)] \code{true}
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
+\begin{itemize}
+\item[(e)] \code{false}
+\item[(f)] \code{false}
+\item[(g)] \code{false}
+\item[(h)] \code{true}
+\end{itemize}
+\end{minipage}
+\end{center}
+
+\end{frame}

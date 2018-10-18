@@ -1,0 +1,70 @@
+\begin{exercise}{Ausdrücke}
+
+\begin{body}
+Nachfolgend finden Sie Beispiele von Java-Ausdrücken. Geben Sie jeweils das Ergebnis des Ausdrucks sowie den 
+Datentyp des Ergebnisses an. Mögliche Datentypen sind \code|int|, \code|double|, \code|bool|, \code|char| und \code|String|.
+\begin{center}
+\begin{minipage}{0.3\textwidth}
+\begin{itemize}
+\item[(a)] \code|12.3 + 1|
+\item[(b)] \code|0.5 * 4|
+\item[(c)] \code|2.0 / 4.0|
+\item[(d)] \code|(2-1.0)/5| 
+\item[(e)] \code|14.0 % 5|
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{itemize}
+\item[(f)] \code|3 / 6.0|
+\item[(g)] \code|(int) 1.23|
+\item[(h)] \code|2 / (int) 3.14|
+\item[(i)] \code|1.0 / 4|
+\item[(j)] \code|15 % 2|
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{itemize}
+\item[(k)] \code|1>2|
+\item[(l)] \code|'a' + 1|
+\item[(m)] \code|1 / 2|
+\item[(n)] \code|1 == 2|
+\item[(o)] \code|(1+1)>1|
+\end{itemize}
+\end{minipage}
+\end{center}
+\end{body}
+
+\begin{solution}
+
+\begin{center}
+\begin{minipage}{0.3\textwidth}
+\begin{itemize}
+\item[(a)] $13{,}3$  \\ \code|double|
+\item[(b)] $2$       \\ \code|double|
+\item[(c)] $0{,}5$   \\ \code|double|
+\item[(d)] $0{,}2$   \\ \code|double|
+\item[(e)] $4$ ($14 = 2\cdot 5 + \boldsymbol{4}$) \\ \code|double|
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{itemize}
+\item[(f)] $0{,}5$   \\ \code|double|
+\item[(g)] $1$ (ganzzahliger Anteil) \\ \code|int|
+\item[(h)] $0$               \\ \code|int|
+\item[(i)] $0{,}25$  \\ \code|double|
+\item[(j)] $1$ ($15 = 7\cdot 2 + \boldsymbol{1}$) \\ \code|int|
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{itemize}
+\item[(k)] \code|false|          \\ \code|bool|
+\item[(l)] $98$ (ANSI: `a' = $97$) \\ \code|int|
+\item[(m)] $0$  (Ganzzahldivision) \\ \code|int|
+\item[(n)] \code|false|      \\ \code|bool|
+\item[(o)] \code|true|            \\ \code|bool|
+\end{itemize}
+\end{minipage}
+\end{center}
+\end{solution}
+
+\end{exercise}

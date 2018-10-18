@@ -1,0 +1,504 @@
+\ProvidesClass{exercises}[2009/05/19]
+\NeedsTeXFormat{LaTeX2e}
+
+
+%----------------------------------------------------------------
+% Definition of global variables 
+%----------------------------------------------------------------
+
+% Mode of use.
+% 0 = worksheet, 1 = catalog.
+\def\@exercises@mode{0}
+
+% Path to repository.
+% For use with the \filename command
+\def\@exercises@path{./}
+
+
+
+% Default exercise language.
+\def\@exercises@defaultlang{english}
+
+\def\@exercises@atendbody{\bigskip}
+
+\def\@exercises@atendsolution{\bigskip}
+
+\def\@exercises@atendexercise{\bigskip}
+
+
+% Words.
+% For multilingual support.
+\def\@exercises@word@id{Bezeichner}
+\def\@exercises@word@exercise{Aufgabe}
+\def\@exercises@word@description{Beschreibung}
+\def\@exercises@word@topic{Themengebiet}
+\def\@exercises@word@difficulty{Schwierigkeit}
+\def\@exercises@word@source{Quelle}
+\def\@exercises@word@utilization{Verwendung}
+\def\@exercises@word@comments{Kommentare}
+\def\@exercises@word@body{Aufgabentext}
+\def\@exercises@word@solution{L�sung}
+\def\@exercises@word@hint{Hinweis}
+\def\@exercises@word@turnover{BITTE WENDEN}
+\def\@exercises@word@mandatory{Pflichtaufgabe}
+\def\@exercises@word@voluntary{freiwillig}
+\def\@exercises@word@points{Punkte}
+
+
+%----------------------------------------------------------------
+% Registers.
+% These variables are used to store exercise data.
+%----------------------------------------------------------------
+
+% Register for exercise identifiers.
+\def\@exercises@id{}
+
+% Register for the exercise's current path.
+\def\@exercises@folder{./}
+
+% Register for exercise titles.
+\def\@exercises@title{}
+
+% Register for exercise titles.
+\def\@exercises@pdftitle{}
+
+% Register for exercise descriptions.
+\def\@exercises@description{}
+
+% Register for exercise topics.
+\def\@exercises@topic{}
+
+% Register for exercise difficulties.
+\def\@exercises@difficulties{}
+
+% Register for exercise sources.
+\def\@exercises@source{}
+
+% Register for exercise utilizations.
+\long\def\@exercises@utilization{}
+
+% Register for exercise comments.
+\def\@exercises@comments{}
+
+% Register for exercise bodies.
+\def\@exercises@body{}
+
+% Register for exercise solutions.
+\def\@exercises@solution{}
+
+% Register for scorepoints
+\def\@exercises@scorepoints{}
+
+% Register for "mandatory" indicators.
+\def\@exercises@type{}
+
+% Register for "no solution" indicators.
+\def\@exercises@nosolution{0}
+
+
+%----------------------------------------------------------------
+% Option "english"
+% Change language and words.
+%----------------------------------------------------------------
+\DeclareOption{english}{%
+\def\@exercises@defaultlang{english}
+\def\@exercises@word@id{Identifier}
+\def\@exercises@word@exercise{Exercise}
+\def\@exercises@word@description{Description}
+\def\@exercises@word@topic{Topic}
+\def\@exercises@word@difficulty{Difficulty}
+\def\@exercises@word@source{Source}
+\def\@exercises@word@utilization{Utilization}
+\def\@exercises@word@comments{Comments}
+\def\@exercises@word@body{Body}
+\def\@exercises@word@solution{Solution}
+\def\@exercises@word@hint{Hint}
+\def\@exercises@word@turnover{PLEASE TURN OVER}
+\def\@exercises@word@mandatory{mandatory}
+\def\@exercises@word@voluntary{voluntary}
+\def\@exercises@word@points{Points}
+}
+
+
+%----------------------------------------------------------------
+% Option "worksheet"
+% Change mode to sheet mode.
+%----------------------------------------------------------------
+\DeclareOption{worksheet}{%
+\def\@exercises@mode{0}
+}
+
+
+%----------------------------------------------------------------
+% Option "catalog"
+% Change mode to catalog mode.
+%----------------------------------------------------------------
+\DeclareOption{catalog}{%
+\def\@exercises@mode{1}
+}
+
+
+%----------------------------------------------------------------
+% Option "list"
+% Change mode to list mode.
+%----------------------------------------------------------------
+\DeclareOption{sheet}{%
+\def\@exercises@mode{2}
+}
+
+\ProcessOptions\relax
+
+
+%----------------------------------------------------------------
+% Required packages
+%----------------------------------------------------------------
+\RequirePackage{babel}
+\RequirePackage{ifthen}
+
+
+%----------------------------------------------------------------
+% Counters
+%----------------------------------------------------------------
+\newcounter{exercise}
+
+\renewcommand{\theexercise}{\@exercises@word@exercise~\arabic{exercise}}
+
+% \newcommand{\thesolution}{\@exercises@word@solution~\arabic{exercise}}
+
+
+%----------------------------------------------------------------
+% Typesetting commands
+%----------------------------------------------------------------
+
+% Command \@exercises@worksheetheader.
+% Typesets the exercise header in a worksheet.
+\newcommand{\@exercises@worksheetheader}{%
+\par\vspace{0.5em}\noindent%
+\underline{\textbf{\theexercise}%
+\ifthenelse{\equal{\@exercises@type}{}}%
+  {}%
+  {~\textbf{(\@exercises@type)}}}%
+\hspace{1em}%
+\textit{\theexercisetitle}%
+\ifthenelse{\equal{\@exercises@scorepoints}{}}%
+  {}%
+  {\hfill(\@exercises@scorepoints~\@exercises@word@points)}%
+\nopagebreak[4]\vspace{0.8em}\nopagebreak[4]}
+
+
+% Command \@exercises@worksheetbody.
+% Typesets the body in a worksheet.
+\newcommand{\@exercises@worksheetbody}{%
+\noindent \@exercises@body%
+\@exercises@atendbody}
+
+% Command \getexercisefolder
+% Returns (relative) path to exercise directory
+\newcommand{\getexercisefolder}{%
+\@exercises@folder}
+
+
+% Command \@exercises@worksheetsolution.
+% Typesets the solution header in a worksheet.
+\newcommand{\@exercises@worksheetsolution}{%
+\par\vspace{0.5em}\noindent%
+\underline{\textbf{\thesolution}}%
+\hspace{1em}%
+\textit{\@exercises@title}%
+\nopagebreak[4]\vspace{0.8em}\nopagebreak[4]%
+\@exercises@solution%
+\@exercises@atendsolution}
+
+
+% Command \@exercises@catalogheader.
+% Typesets the exercise header in a catalog.
+\newcommand{\@exercises@catalogheader}{%
+\par\medskip\noindent%
+{\Large\textbf{\theexercise}}%
+\ifthenelse{\equal{\@exercises@title}{}}
+  {}
+  {\nopagebreak[4]\par\nopagebreak[4]\smallskip\noindent{\Large\textbf{\theexercisetitle}}}%
+\nopagebreak\medskip\nopagebreak}
+
+
+% Command \@exercises@catalogmeta.
+% Typesets the exercise's meta information in a catalog.
+\newcommand{\@exercises@catalogmeta}{%
+\def\sep{}
+\par\noindent
+\begin{tabular}[t]{|p{0.2\textwidth}l|}
+\hline & \\[-.8em]
+\parbox[t][]{0.2\textwidth}{\textit{\@exercises@word@id:}} &
+\parbox[t][]{0.7\textwidth}{\@exercises@id\vspace{0.3em}}
+\ifthenelse{\equal{\@exercises@description}{}}
+	{}   
+  {\\ \parbox[t][]{0.2\textwidth}{\textit{\@exercises@word@description:}} &
+   \parbox[t][]{0.7\textwidth}{\@exercises@description\vspace{0.5em}}}
+\ifthenelse{\equal{\@exercises@difficulty}{}}
+	{}
+  {\\ \parbox[t][]{0.2\textwidth}{\textit{\@exercises@word@difficulty:}} &
+   \parbox[t][]{0.7\textwidth}{\@exercises@difficulty\vspace{0.5em}}}
+\ifthenelse{\equal{\@exercises@source}{}}
+	{}
+	{\\ \parbox[t][]{0.2\textwidth}{\textit{\@exercises@word@source:}} &
+   \parbox[t][]{0.7\textwidth}{\@exercises@source\vspace{0.5em}}}
+\ifthenelse{\equal{\@exercises@utilization}{}}
+	{}
+	{\\ \parbox[t][]{0.2\textwidth}{\textit{\@exercises@word@utilization:}} &
+   \parbox[t][]{0.7\textwidth}{\@exercises@utilization\vspace{0.5em}}}
+\\ \hline
+\end{tabular}
+\par\vspace{1.5em}
+\ifthenelse{\equal{\@exercises@comments}{}}
+	{}
+	{\par\noindent\textbf{\textit{\@exercises@word@comments}}\nopagebreak\vspace{0.5em}\nopagebreak%
+	 \par\noindent\@exercises@comments\par\bigskip}
+}
+
+
+% Command \@exercises@catalogbody.
+% Typesets the exercise body in a catalog.
+\newcommand{\@exercises@catalogbody}{%
+\par\noindent\textbf{\textit{\@exercises@word@body}}\nopagebreak\vspace{0.5em}\nopagebreak
+\par\noindent\@exercises@body%
+\par\bigskip}
+
+
+% Command \@exercises@catalogsolution.
+% Typesets the solution in a catalog.
+\newcommand{\@exercises@catalogsolution}{%
+\par\noindent\textbf{\textit{\@exercises@word@solution}}%
+\nopagebreak[4]\vspace{0.5em}\nopagebreak[4]
+\par\noindent\@exercises@solution}
+
+
+
+%----------------------------------------------------------------
+% Commands and defined inside the exercise environment
+%----------------------------------------------------------------
+
+% Command \description = \@exercises@cmd@difficulty
+% Argument is stored in \@exercises@description
+\newcommand{\@exercises@cmd@description}[1]{\global\def\@exercises@description{#1}}
+
+
+% Command \difficulty = \@exercises@cmd@difficulty
+% Argument is stored in \@exercises@difficulty
+\newcommand{\@exercises@cmd@difficulty}[1]{\global\def\@exercises@difficulty{#1}}
+
+
+% Command \source = \@exercises@cmd@source
+% Argument is stored in \@exercises@source
+\newcommand{\@exercises@cmd@source}[1]{\global\def\@exercises@source{#1}}
+
+
+% Command \utilization = \@exercises@utilization.
+% Argument is stored in \@exercises@utilization.
+\long\def\@exercises@cmd@utilization#1{\global\long\def\@exercises@utilization{#1}}
+
+
+% Environment comments = @exercises@env@comments.
+% The content of the environment is stored in \@exercises@solution. 
+% The box register 202 is used.
+\newenvironment{@exercises@env@comments}
+{\global\setbox202=\vbox\bgroup%
+\noindent\ignorespaces}
+{\egroup\global\def\@exercises@comments{\unvbox202}}
+
+
+% Environment body = @exercises@env@body.
+% The content of the environment is stored in \@exercises@body. 
+% The box register 101 is used.
+\newenvironment{@exercises@env@body}
+{\global\setbox101=\vbox\bgroup%
+\noindent\ignorespaces}
+{\egroup\global\def\@exercises@body{\unvbox101\@exercises@atendbody}}
+
+
+% Environment solution = @exercises@env@solution.
+% The content of the environment is stored in \@exercises@solution. 
+% The box register 102 is used.
+\newenvironment{@exercises@env@solution}
+{\global\setbox102=\vbox\bgroup%
+\noindent\ignorespaces}
+{\egroup\global\def\@exercises@solution{\unvbox102\@exercises@atendsolution}}
+
+
+% Environment parts = @exercises@env@parts.
+% The content of the environment is stored in \@exercises@body. 
+% The box register 101 is used.
+\newenvironment{@exercises@env@parts}
+{\begin{enumerate}
+% \renewcommand{\labelenumi}{(\alph{enumi})}
+\let\part=\item}
+{\end{enumerate}}
+
+
+% Command \hint = \@exercises@cmd@hint.
+% The content of the environment is stored in \@exercises@body. 
+% The box register 101 is used.
+\newcommand{\@exercises@cmd@hint}{%
+\par\medskip\noindent\textbf{\@exercises@word@hint:}\hspace{1em}}
+
+
+% Command \filename = \@exercises@cmd@filename
+% Expands a filename.
+\newcommand{\@exercises@cmd@filename}[1]{\@exercises@folder#1}
+
+
+%----------------------------------------------------------------
+% Commands and environments 
+%----------------------------------------------------------------
+
+
+% Command \exercisespath.
+% Defines the relative path to the directory, where the exercise
+% folders reside.
+\newcommand{\exercisespath}[1]{\def\@exercises@path{#1}}
+\newcommand{\exercisedb}[1]{\def\@exercises@path{#1}}
+
+
+% Command \scorepoints.
+% Assigns scorepoints to the next exercise in a worksheet.
+\newcommand{\scorepoints}[1]{\def\@exercises@scorepoints{#1}}
+
+
+% Command \mandatory.
+% The type of the next exercise is set to "mandatory".
+\newcommand{\mandatory}{\def\@exercises@type{\@exercises@word@mandatory}}
+
+
+% Command \voluntary.
+% The type of the next exercise is set to "voluntary".
+\newcommand{\voluntary}{\def\@exercises@type{\@exercises@word@voluntary}}
+
+
+% Command \exercisetype.
+% The type of the next exercise is set to the argument value.
+\newcommand{\exercisetype}[1]{\def\@exercises@type{#1}}
+
+
+% Command \nosolution.
+% Prevents the solution of the next exercises from being printed.
+\newcommand{\nosolution}{\def\@exercises@nosolution{1}}
+
+
+% Command \theexercisetitle.
+% Returns the exercises title.
+\newcommand{\theexercisetitle}{\@exercises@title}
+
+
+% Command \theexercisepdftitle.
+% Returns the exercises PDF title.
+\newcommand{\theexercisepdftitle}{\@exercises@pdftitle}
+
+
+% Command \veryhard.
+% Returns the word for the difficulty lever "very hard".
+\newcommand{\veryhard}{sehr schwer}
+
+
+% Command \hard.
+% Returns the word for the difficulty lever "hard".
+\newcommand{\hard}{schwer}
+
+
+% Command \intermediate.
+% Returns the word for the difficulty lever very hard.
+\newcommand{\intermediate}{mittel}
+
+
+% Command \easy.
+% Returns the word for the difficulty lever very hard.
+\newcommand{\easy}{leicht}
+
+
+% Command \veryeasy.
+% Returns the word for the difficulty lever very hard.
+\newcommand{\veryeasy}{sehr leicht}
+
+
+% Environment exercise.
+% Defines an exercise.
+\newenvironment{exercise}[2][]{%
+% Define internal commands and environments
+\let\description=\@exercises@cmd@description
+\let\difficulty=\@exercises@cmd@difficulty
+\let\source=\@exercises@cmd@source
+\let\utilization=\@exercises@cmd@utilization
+\let\comments=\@exercises@env@comments
+\let\endcomments=\end@exercises@env@comments
+\let\body=\@exercises@env@body
+\let\endbody=\end@exercises@env@body
+\let\solution=\@exercises@env@solution
+\let\endsolution=\end@exercises@env@solution
+\let\parts=\@exercises@env@parts
+\let\endparts=\end@exercises@env@parts
+\let\filename=\@exercises@cmd@filename
+\let\hint=\@exercises@cmd@hint
+% Default values
+\global\def\@exercises@title{#2}
+\ifthenelse{\equal{#1}{}}
+{\global\def\@exercises@pdftitle{#2}}
+{\global\def\@exercises@pdftitle{#1}}
+% Set default values
+\global\def\@exercises@description{}
+\global\def\@exercises@difficulty{}
+\global\def\@exercises@source{}
+\global\def\@exercises@utilization{}
+\global\def\@exercises@comments{}
+\global\def\@exercises@body{}
+\global\def\@exercises@solution{}
+\refstepcounter{exercise}%
+% \addcontentsline{toc}{section}{\theexercise: \theexercisepdftitle}
+}
+{% 
+\ifnum\@exercises@mode=0
+% Worksheet mode: Show exercise's header and body.
+% Store solutions in the box register 103.
+\@exercises@worksheetheader%
+\@exercises@worksheetbody%
+\ifnum\@exercises@nosolution=0
+\global\setbox103=\vbox{\unvbox103%
+\@exercises@worksheetsolution}%
+\fi
+\@exercises@atendexercise%
+\fi
+\ifnum\@exercises@mode=1
+% Catalog mode: Show exercise's header, meta iformation, 
+% body and solution.
+\@exercises@catalogheader%
+\@exercises@catalogmeta%
+\@exercises@catalogbody%
+\ifnum\@exercises@nosolution=0
+\@exercises@catalogsolution%
+\fi
+\@exercises@atendexercise%
+\fi
+% Default settings
+\global\def\@exercises@id{}
+\global\def\@exercises@nosolution{0}
+\global\def\@exercises@type{}
+\global\def\@exercises@scorepoints{}
+}
+
+
+% Command \inputexercise.
+% 
+\newcommand{\inputexercise}{\@ifstar\@sinputexercise\@inputexercise}
+
+\newcommand{\@inputexercise}[2][]{%
+\global\def\@exercises@id{#2}
+\ifthenelse{\equal{#1}{}}
+  {\global\def\@exercises@folder{\@exercises@path#2/}}
+  {\global\def\@exercises@folder{#1#2/}}
+\input{\@exercises@folder\@exercises@id}}
+
+\newcommand{\@sinputexercise}[1]{%
+\global\def\@exercises@id{#1}
+\global\def\@exercises@folder{\@exercises@path#1/}
+\input{\@exercises@folder\@exercises@id}}
+
+
+% Command \printsolutions.
+\newcommand{\printsolutions}{\unvbox103}

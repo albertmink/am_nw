@@ -1,0 +1,27 @@
+\begin{exercise}{Seiteneffekte}
+\begin{body}
+Betrachten Sie das folgende Java-Programm mit den Klassenmethoden \code{computeNorm} die sich sowohl im Datentype des \"Ubergabeparameters und des R\"uckgabeparameters unterscheiden.
+
+\inputcode[frame=lines,title=FelderFunktionen.java,numbers=left]{\filename{FelderFunktionen.java}}
+
+\begin{parts}
+\item Die Klassenmethode \code{computeNorm} mit R\"uckgabewert \code{int} berechnet das Quadrat des \"Ubergabeparameters vom Datentyp \code{int}.
+In der Klassenmethode wird eine Kopie des \"Ubergabeparameters angelegt, damit wird der Wert von \code{a} nicht ver\"andert.
+Besser ist schlicht \code{return n*n;} auszuf\"uhren.
+\item Nun wird ein Feld an die Klassenmethode \code{computeNorm} \"ubergeben.
+Nach dem Aufruf der Klassenmethode ist auch der \"Ubergabeparameter ver\"andert.
+Erkl\"aren Sie dieses Verhalten, Stichwort \emph{Seiteneffekt}.
+\item Implementieren Sie eine sichere \code{computeNorm} die den \"Ubergabeparameter nicht ver\"andert.
+\end{parts}
+\end{body}
+
+\begin{solution}
+\begin{parts}
+\item Nichts zu tun.
+\item In Klassenmethode \code{computeNorm} mit \"Ubergabeparameter \code{int[]} wird keine Kopie angelegt.
+Das erlaubt es wiederrum direkt in das \"ubergebene Feld \code{d} zuschrieben und den urspr\"unglichen Wert zu ver\"andern.
+\item Sichere Implementierung ohne Seiteneffekte.
+\inputcode[frame=lines,title=FelderFunktionen.java,numbers=left]{\filename{FelderFunktionenSol.java}}
+\end{parts}
+\end{solution}
+\end{exercise}

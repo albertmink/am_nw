@@ -1,0 +1,59 @@
+\def\stitle{Wiederholung - Klassen}
+\section{\stitle}
+\begin{frame}%
+  \frametitle{\stitle}%
+\tableofcontents[current]
+\end{frame}
+
+
+\def\sstitle{Definiere neue Datenstruktur}
+\subsection{\sstitle}
+\begin{frame}%
+  \frametitle{\sstitle}%
+Eine Klasse \code{Person} mit Klassenvariablen \code{name, year, gender}.
+\lstinputlisting[style=JAVA]{wdh-klassen/Person.java}
+\begin{description}
+\item[Motivation]
+Erstelle speziellen Datentyp \code{Person} und b\"undle damit primitive Datentypen \code{String, int, char} in einer neuen Datenstruktur.
+\item[Nomenklatur] Instanzen der Klasse Person hei\ss en Objekte.
+\end{description}
+\end{frame}
+
+
+\def\sstitle{Erzeuge Objekte}
+\subsection{\sstitle}
+\begin{frame}%
+  \frametitle{\sstitle}%
+\lstinputlisting[style=JAVA]{wdh-klassen/MinimalExample.java}
+\end{frame}
+
+
+\def\sstitle{Greife auf Objekte zu}
+\subsection{\sstitle}
+\begin{frame}%
+  \frametitle{\sstitle}%
+\lstinputlisting[style=JAVA]{wdh-klassen/MinimalExampleZu.java}
+\begin{description}
+\item[Klassenvariablen] k\"onnen anstelle von \code{public} auch als \code{private} angelegt werden.
+\end{description}
+\end{frame}
+
+
+\def\sstitle{Der Konstruktor}
+\subsection{\sstitle}
+\begin{frame}%
+  \frametitle{\sstitle}%
+Konstruiere Klassen nach einem vorgegeben Muster, definiert als Klassenmethode.
+Der Konstruktor tr\"agt den Namen der Klasse -- hier: \code{PersonK} -- und dient zur Instanziierung von Klassen.
+\lstinputlisting[style=JAVA]{wdh-klassen/PersonK.java}
+\end{frame}
+
+
+\def\sstitle{Felder von Objekten}
+\subsection{\sstitle}
+\begin{frame}%
+  \frametitle{\sstitle}%
+Selbst definierte Datentypen k\"onnen wiederum als Felder bespeichert werden.
+Der Zugriff auf Feldeintr\"age erfolgt analog -- beachte allerdings den Datentyp.
+\lstinputlisting[style=JAVA]{wdh-klassen/MinimalExampleFelder.java}
+\end{frame}

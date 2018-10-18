@@ -1,0 +1,154 @@
+%\documentclass[9pt,trans]{beamer}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{beamerthemeKIT}
+\usepackage[utf8]{inputenc}
+% \usepackage[german]{babel}
+\usepackage{helvet}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Layout
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\EMPH[1]{\textcolor{blue}{#1}}%
+\newcommand\WARN[1]{\textcolor{red}{#1}}%
+\renewcommand{\rmdefault}{phv}
+\newlength{\movetitlegrafics}
+\setlength{\movetitlegrafics}{0.0\paperwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Counter
+\newcounter{ctlit}%
+\setcounter{ctlit}{1}%
+\newcounter{kap}
+%%% Colors
+\definecolor{blue}{rgb}{0.1,0.1,1.0}%
+\definecolor{green}{rgb}{0.0,0.58,0.49}%
+\definecolor{grey}{rgb}{0.4,0.4,0.4}%
+\definecolor{pink}{rgb}{0.8,0.1,0.2}%
+\definecolor{red}{rgb}{1.0,0.1,0.1}%
+\definecolor{steel blue}{rgb}{0.274510,0.509804,0.705882}
+\definecolor{steelblue}{rgb}{0.274510,0.509804,0.705882}
+\def\GREY#1{{\color{grey} #1}}%
+%%% Textfarben
+\newcommand\BLUE[1]{\textcolor{blue}{#1}}%
+\newcommand\BLACK[1]{\textcolor{black}{#1}}%
+\newcommand\GREEN[1]{\textcolor{green}{#1}}%
+\newcommand\LBLUE[1]{\textcolor{LightBlue}{#1}}%
+\newcommand\RED[1]{\textcolor{red}{#1}}%
+%%% Layout
+\def\cmt#1{\BLUE{#1}}%
+\def\code#1{\texttt{#1}}%
+\def\codeblock#1{\GREEN{\texttt{#1}}}%
+\def\ftext#1{\textbf{{#1}}}%
+\def\headline#1{\large\textbf{\GREEN{#1}}}%
+\def\KITitem{\KITBullet[2mm]\ }%
+\def\q{\quad}%
+\def\qq{\qquad}%
+\def\subtitle#1{{\small #1}}%
+\def\tab{\hspace*{0.5cm}}%
+\def\3{{\ss}}%
+\def\IM{\mathbb{M}}%
+\def\IN{\mathbb{N}}%
+\def\IR{\mathbb{R}}%
+\def\IZ{\mathbb{Z}}%
+\def\Id{Id}%
+\def\ie{{\rm i}}%
+\newcommand{\entspr}{$\stackrel{\wedge}{=}$}%
+\renewcommand{\Phi}{\varPhi}%
+\renewcommand{\Psi}{\varPsi}%
+%%% Standards
+%\input{D:/TeX/formate/mystyle/defs}%
+%\input{/home/ae01/tex/formate/mystyle/defs}%
+%%% Text
+\def\3{{\ss}}%
+%%% Symbols
+\def\bs{$\backslash$}%
+\def\hpm{\hphantom{$-$}}%
+\def\meps{\epsilon}%
+%%% code environment
+\lstset{
+  showstringspaces=false,
+  numbers=none,
+  keywordstyle=\color{green},  % coloring and formatting of keywords as public, class, import 
+  commentstyle=\color{blue}\small\ttfamily, % Color of comments
+  stringstyle=\color{pink},
+  breaklines=true
+}
+
+\lstdefinestyle{JAVA}
+{
+  language=Java,
+  basicstyle=\ttfamily, % defines text formatting
+  frame=tb  % print top and bottom lines, frame=single, L
+}
+
+\lstdefinestyle{JAVAsmall}
+{
+  language=Java,
+  basicstyle=\small\ttfamily, % defines text formatting
+  frame=tb  % print top and bottom lines, frame=single, L
+}
+
+\lstdefinestyle{JAVAlines}
+{
+  language=Java,
+  numbers=left,
+  numberstyle=\color{grey}\ttfamily,
+  numbersep=4pt, % distance between numbers and code1_1
+  xleftmargin=4pt, % distance from frame to listing
+  xrightmargin=4pt, % distance from frame to listing
+  basicstyle=\ttfamily, % defines text formatting
+  keywordstyle=\color{green},  % coloring and formatting of keywords as public, class, import 
+  commentstyle=\color{blue}\ttfamily, % Color of comments
+  frame=tb  % print top and bottom lines, frame=single, L
+}
+
+\lstdefinestyle{JAVAsmalllines}
+{
+  language=Java,
+  numbers=left,
+  numberstyle=\color{grey}\ttfamily,
+  numbersep=4pt, % distance between numbers and code1_1
+  xleftmargin=4pt, % distance from frame to listing
+  xrightmargin=4pt, % distance from frame to listing
+  basicstyle=\small\ttfamily, % defines text formatting
+  keywordstyle=\color{green},  % coloring and formatting of keywords as public, class, import 
+  commentstyle=\color{blue}\ttfamily, % Color of comments
+  frame=tb  % print top and bottom lines, frame=single, L
+}
+
+
+\lstdefinestyle{BASH}{
+  basicstyle=\Large\ttfamily, % defines text formatting
+  frame=none,
+  language=bash
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Titlepage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[Institut f\"ur Angewandte und Numerische Mathematik]%
+ {\fontsize{15}{15}\selectfont{}
+  \"Ubung:
+  \textit{Einstieg in die Informatik}\\[1.5mm]
+  \textit{\phantom{\"Ubung:}\; und algorithmische Mathematik}\\[1.5mm]
+  }%\hspace*{3cm}\normalsize{f\"ur Mathematiker}}
+\author{\fontsize{9}{9}\selectfont{}
+ Albert Mink\
+  }
+\institute[Institut f\"ur Angewandte und Numerische Mathematik]
+ {\fontsize{6}{6}\selectfont{}%
+  Institut f\"ur Angewandte und Numerische Mathematik}
+\date{Wintersemester 2018/19}%
+\subject{}%
+%\beamerdefaultoverlayspecification{<+->}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
