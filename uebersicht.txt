@@ -9,7 +9,6 @@ arbeitsblatt01
     grundl-literale
     grundl-ausdruecke
     zahldarst-stellenwertsystem
-    rm: zahldarst-binaereaddition
 
 arbeitsblatt02
   Online am Di 23.10.2018
@@ -17,11 +16,7 @@ arbeitsblatt02
     zahldarst-binaereaddition
     zahldarst-ganzzahl
     zahldarst-gleitkomma
-    zahldarst-bias
-    rm: zahldarst-binaerbruch
-    rm: zahldarst-norm
-    rm: zahldarst-dezbinaerbruch
-    rm: grundl-boolalg
+    grundl-boolalg
 
 arbeitsblatt03
   Online am Di 30.10.2018
