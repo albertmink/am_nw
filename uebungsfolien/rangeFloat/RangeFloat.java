@@ -6,7 +6,7 @@ import java.util.*;
 public class RangeFloat {
   public static void main (String[] args)
   {
-    // float can not represent 0.1 or 1/3 exactly
+    // float can not represent 0.1 exactly
     float f = 0.1f;
     System.out.format( "0.1f = %.11f\n", f);
     System.out.format( "0.1f+0.1f = %.11f\n", f+f);
