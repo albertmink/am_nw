@@ -1,0 +1,92 @@
+Autor: Albert Mink
+Inhalt: Inhaltliche und zeitliche Uebersicht der Arbeitsblaetter
+
+
+arbeitsblatt01
+  Online am Di 16.10.2018
+  Besprechung in der Uebung am Di 23.10.2018
+    grundl-java
+    grundl-literale
+    grundl-ausdruecke
+    zahldarst-stellenwertsystem
+    rm: zahldarst-binaereaddition
+
+arbeitsblatt02
+  Online am Di 23.10.2018
+  Besprechung in der Uebung am Di 30.10.2018
+    zahldarst-binaereaddition
+    zahldarst-ganzzahl
+    zahldarst-gleitkomma
+    zahldarst-bias
+    rm: zahldarst-binaerbruch
+    rm: zahldarst-norm
+    rm: zahldarst-dezbinaerbruch
+    rm: grundl-boolalg
+
+arbeitsblatt03
+  Online am Di 30.10.2018
+  Besprechung in der Uebung am Di 06.11.2018
+    grundl-boolalgnegation
+    anweis-1
+    anweis-2
+    schleifen-1
+    schleifen-2
+
+arbeitsblatt04
+  Online am Di 06.11.2018
+  Besprechung in der Uebung am Di 13.11.2018
+    rundf-epsilon
+    anweis-fehler
+    schleifen-2
+
+arbeitsblatt05
+  Online am Di 13.11.2018
+  Besprechung in der Uebung am Di 20.11.2018
+    felder-grundl
+    felder-binsearch
+    felder-felder
+
+arbeitsblatt06
+  Online am Di 20.11.2018
+  Besprechung in der Uebung am Di 27.11.2018
+    funktionen-grundl
+    funktionen-trapez
+    felder-sideEff
+
+arbeitsblatt07
+  Online am Di 27.11.2018
+  Besprechung in der Uebung am Di 04.12.2018
+    felder-matrix
+    rekursion-1
+    komplexitaet-eff
+    komplexitaet-1
+
+arbeitsblatt08
+  Online am Di 04.12.2018
+  Besprechung in der Uebung am Di 11.12.2018
+    komplexitaet-1
+    rekursion-3
+    vorwaertseinsetzen
+
+arbeitsblatt09
+  Online am Di 11.12.2018
+  Besprechung in der Uebung am Di 08.01.2019
+    funktionen-ss2018
+    strukt-artikel
+
+arbeitsblatt10
+  Online am Di 08.01.2019
+  Besprechung in der Uebung am Di 15.01.2019
+    klassen-komplex
+    klassen-hierarchie
+
+arbeitsblatt11
+  entfaellt zwecks Probeklausr
+
+arbeitsblatt12
+  Di 22.01.2019
+  Probleklausur
+
+arbeitsblatt13
+  Di 29.01.2019
+  Probleklausur - Besprechung, Schwerpunkt Programieraufgabe
