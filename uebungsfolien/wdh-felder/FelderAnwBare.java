@@ -9,9 +9,9 @@ public class FelderAnwBare {
     double[] x = new double[3];
 
     // compute norm^2 of vector
-    double norm = 0;
+    double norm2 = 0;
 
     System.out.println(Arrays.toString(x));
-    System.out.println("Norm: " + Math.sqrt(norm));
+    System.out.println("Norm: " + Math.sqrt(norm2));
   }
 }

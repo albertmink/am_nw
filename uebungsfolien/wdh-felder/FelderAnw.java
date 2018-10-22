@@ -11,11 +11,11 @@ public class FelderAnw {
       x[i] = in.nextDouble();
     }
     // compute norm^2 of vector
-    double norm = 0;
+    double norm2 = 0;
     for ( int i = 0; i<x.length; i++) {
-      norm = norm + x[i]*x[i];
+      norm2 = norm2 + x[i]*x[i];
     }
     System.out.println(Arrays.toString(x));
-    System.out.println("Norm: " + Math.sqrt(norm));
+    System.out.println("Norm: " + Math.sqrt(norm2));
   }
 }
