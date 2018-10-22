@@ -1,1 +1,9 @@
 latexmkrc
+*.class
+*.aux
+*.nav
+*.snm
+*.log
+*.toc
+*.vrb
+*.out
