@@ -44,9 +44,10 @@ arbeitsblatt05
 arbeitsblatt06
   Online am Di 20.11.2018
   Besprechung in der Uebung am Di 27.11.2018
+    Wdh. Felder und for-schleifen mit :
+    felder-sideEff
     funktionen-grundl
     funktionen-trapez
-    felder-sideEff
 
 arbeitsblatt07
   Online am Di 27.11.2018
