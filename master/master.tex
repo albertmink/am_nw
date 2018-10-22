@@ -12,11 +12,12 @@
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{hyperref}
+\usepackage{KITcolors}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Layout
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand\EMPH[1]{\textcolor{blue}{#1}}%
-\newcommand\WARN[1]{\textcolor{red}{#1}}%
+\newcommand\EMPH[1]{\textcolor{KITblue}{#1}}%
+\newcommand\WARN[1]{\textcolor{KITred}{#1}}%
 \renewcommand{\rmdefault}{phv}
 \newlength{\movetitlegrafics}
 \setlength{\movetitlegrafics}{0.0\paperwidth}
@@ -27,21 +28,13 @@
 \newcounter{ctlit}%
 \setcounter{ctlit}{1}%
 \newcounter{kap}
-%%% Colors
-\definecolor{blue}{rgb}{0.1,0.1,1.0}%
-\definecolor{green}{rgb}{0.0,0.58,0.49}%
-\definecolor{grey}{rgb}{0.4,0.4,0.4}%
-\definecolor{pink}{rgb}{0.8,0.1,0.2}%
-\definecolor{red}{rgb}{1.0,0.1,0.1}%
-\definecolor{steel blue}{rgb}{0.274510,0.509804,0.705882}
-\definecolor{steelblue}{rgb}{0.274510,0.509804,0.705882}
-\def\GREY#1{{\color{grey} #1}}%
+
 %%% Textfarben
-\newcommand\BLUE[1]{\textcolor{blue}{#1}}%
-\newcommand\BLACK[1]{\textcolor{black}{#1}}%
-\newcommand\GREEN[1]{\textcolor{green}{#1}}%
-\newcommand\LBLUE[1]{\textcolor{LightBlue}{#1}}%
-\newcommand\RED[1]{\textcolor{red}{#1}}%
+\newcommand\BLUE[1]{\textcolor{KITblue}{#1}}%
+\newcommand\BLACK[1]{\textcolor{KITblack}{#1}}%
+\newcommand\GREEN[1]{\textcolor{KITgreen}{#1}}%
+\newcommand\LBLUE[1]{\textcolor{KITblue15}{#1}}%
+\newcommand\RED[1]{\textcolor{KITred}{#1}}%
 %%% Layout
 \def\cmt#1{\BLUE{#1}}%
 \def\code#1{\texttt{#1}}%
@@ -76,9 +69,9 @@
 \lstset{
   showstringspaces=false,
   numbers=none,
-  keywordstyle=\color{green},  % coloring and formatting of keywords as public, class, import 
-  commentstyle=\color{blue}\small\ttfamily, % Color of comments
-  stringstyle=\color{pink},
+  keywordstyle=\color{KITgreen},  % coloring and formatting of keywords as public, class, import 
+  commentstyle=\color{KITblue}\small\ttfamily, % Color of comments
+  stringstyle=\color{KITred},
   breaklines=true
 }
 
@@ -100,13 +93,13 @@
 {
   language=Java,
   numbers=left,
-  numberstyle=\color{grey}\ttfamily,
+  numberstyle=\color{KITblack50}\ttfamily,
   numbersep=4pt, % distance between numbers and code1_1
   xleftmargin=4pt, % distance from frame to listing
   xrightmargin=4pt, % distance from frame to listing
   basicstyle=\ttfamily, % defines text formatting
-  keywordstyle=\color{green},  % coloring and formatting of keywords as public, class, import 
-  commentstyle=\color{blue}\ttfamily, % Color of comments
+  keywordstyle=\color{KITgreen},  % coloring and formatting of keywords as public, class, import 
+  commentstyle=\color{KITblue}\ttfamily, % Color of comments
   frame=tb  % print top and bottom lines, frame=single, L
 }
 
@@ -114,13 +107,13 @@
 {
   language=Java,
   numbers=left,
-  numberstyle=\color{grey}\ttfamily,
+  numberstyle=\color{KITblack50}\ttfamily,
   numbersep=4pt, % distance between numbers and code1_1
   xleftmargin=4pt, % distance from frame to listing
   xrightmargin=4pt, % distance from frame to listing
   basicstyle=\small\ttfamily, % defines text formatting
-  keywordstyle=\color{green},  % coloring and formatting of keywords as public, class, import 
-  commentstyle=\color{blue}\ttfamily, % Color of comments
+  keywordstyle=\color{KITgreen},  % coloring and formatting of keywords as public, class, import 
+  commentstyle=\color{KITblue}\ttfamily, % Color of comments
   frame=tb  % print top and bottom lines, frame=single, L
 }
 
