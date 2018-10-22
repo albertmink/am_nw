@@ -1,22 +1,47 @@
-\documentclass[9pt,german]{beamer}%
-\usepackage{master/templates/beamerthemeKIT}
-\usepackage{master/templates/exercises}
-\usepackage[java]{code}
+\documentclass[c,18pt]{beamer}
+\listfiles
 
-\input{master/master}
+\mode<presentation>
+{
+  \usetheme[deutsch,titlepage0]{KIT}
+  \setbeamercovered{transparent}
+  \setbeamertemplate{enumerate items}[ball]
+}
+\usepackage[utf8]{inputenc}
+\date{06.11.2018}
+
+\newlength{\Ku}
+\setlength{\Ku}{1.43375pt}
+
+\usepackage{templateSlide/exercises}
+\usepackage[java]{code}
 
 \makeatletter
 \def\input@path{{uebungsfolien/}}
 \graphicspath{{uebungsfolien/}}
 \makeatother
 
+%% title slide
+\title[Übung 03: Einstieg in die Informatik und algorithmische]
+  {Übung 03: Einstieg in die Informatik und algorithmische \\ Mathematik}
+\subtitle{Albert Mink | Wintersemester 2018/2019}
+
+\author[Albert Mink, ]{KIT}
+
+\AuthorTitleSep{\relax}
+
+\institute[Institut für Angewandte und Numerische Mathematik (IANM)]{Institut für Angewandte und Numerische Mathematik}
+
+\TitleImage[width=\titleimagewd]{logos/KIT-Titel}
+\logo{\includegraphics{logos/lbrg_logo}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Document
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-\maketitle%
-\addtocounter{framenumber}{-1}%
+\begin{frame}
+  \maketitle
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -44,9 +69,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\stitle{Beachtung der Priorität}
-\subsection{\stitle}\label{S:Priorität}
+\subsection{\stitle}\label{S:Prioritat}
 \begin{frame}[fragile]%
-  \frametitle{\ref{K:wdh}.\ref{S:Priorität} \stitle}%
+  \frametitle{\ref{K:wdh}.\ref{S:Prioritat} \stitle}%
 \medskip
 
 Gegeben sei der folgende Java--Ausdruck:
@@ -79,7 +104,7 @@ Welche der folgenden Ausdrücke ist die korrekte \textbf{Negation}?
 \begin{frame}[fragile]%
   \frametitle{\ref{K:wdh}.\ref{S:Dokumentation} \stitle}%
 %%source
-\url{docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html}
+\textcolor{KITblue}{\url{docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html}}
 
 \begin{center}
 \includegraphics[width=0.6\textwidth]{grundl-boolalgnegation/operatorPrecedence}
@@ -142,7 +167,7 @@ Allgemein \code{(Datentyp)(Ausdruck)}.
 
 \begin{frame}
 \centering
-\Huge\GREEN{Fragen?}
+\Huge\textcolor{KITgreen}{Fragen?}
 \vspace{2cm}
 
 {\LARGE

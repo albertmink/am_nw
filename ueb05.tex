@@ -1,21 +1,48 @@
-\documentclass[9pt,german]{beamer}%
-\usepackage{master/templates/beamerthemeKIT}
-\usepackage{master/templates/exercises}
+\documentclass[c,18pt]{beamer}
+\listfiles
 
-\input{master/master}
+\mode<presentation>
+{
+  \usetheme[deutsch,titlepage0]{KIT}
+  \setbeamercovered{transparent}
+  \setbeamertemplate{enumerate items}[ball]
+}
+\usepackage[utf8]{inputenc}
+\date{20.11.2018}
+
+\newlength{\Ku}
+\setlength{\Ku}{1.43375pt}
+
+\usepackage{templateSlide/exercises}
+\usepackage[java]{code}
 
 \makeatletter
 \def\input@path{{uebungsfolien/}}
 \graphicspath{{uebungsfolien/}}
 \makeatother
 
+%% title slide
+\title[Übung 05: Einstieg in die Informatik und algorithmische]
+  {Übung 05: Einstieg in die Informatik und algorithmische \\ Mathematik}
+\subtitle{Albert Mink | Wintersemester 2018/2019}
+
+\author[Albert Mink, ]{KIT}
+
+\AuthorTitleSep{\relax}
+
+\institute[Institut für Angewandte und Numerische Mathematik (IANM)]{Institut für Angewandte und Numerische Mathematik}
+
+\TitleImage[width=\titleimagewd]{logos/KIT-Titel}
+\logo{\includegraphics{logos/lbrg_logo}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Document
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-\maketitle%
-\addtocounter{framenumber}{-1}%
+\begin{frame}
+  \maketitle
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -120,7 +147,7 @@ Lese Vektor ein und berechne die Norm.
 
 \begin{frame}
 \centering
-\Huge\GREEN{Fragen?}
+\Huge\textcolor{KITgreen}{Fragen?}
 \vspace{2cm}
 
 {\LARGE
