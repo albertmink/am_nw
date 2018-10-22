@@ -23,3 +23,57 @@ extendedchars=true}
 \newcommand{\inputcode}[2][]{\lstinputlisting[style=std,language=\@codelanguage,#1]{#2}}
 
 \lstnewenvironment{displaycode}[1][]{\lstset{style=std,language=\@codelanguage,#1}}{}
+
+
+\lstdefinestyle{JAVA}
+{
+  language=Java,
+  basicstyle=\ttfamily, % defines text formatting
+  keywordstyle=\color{KITgreen},  % coloring and formatting of keywords as public, class, import
+  commentstyle=\color{KITblue}\ttfamily, % Color of comments
+  frame=tb  % print top and bottom lines, frame=single, L
+}
+
+\lstdefinestyle{JAVAsmall}
+{
+  language=Java,
+  basicstyle=\small\ttfamily, % defines text formatting
+  keywordstyle=\color{KITgreen},  % coloring and formatting of keywords as public, class, import
+  commentstyle=\color{KITblue}\ttfamily, % Color of comments
+  frame=tb  % print top and bottom lines, frame=single, L
+}
+
+\lstdefinestyle{JAVAlines}
+{
+  language=Java,
+  numbers=left,
+  numberstyle=\color{KITblack50}\ttfamily,
+  numbersep=4pt, % distance between numbers and code1_1
+  xleftmargin=4pt, % distance from frame to listing
+  xrightmargin=4pt, % distance from frame to listing
+  basicstyle=\ttfamily, % defines text formatting
+  keywordstyle=\color{KITgreen},  % coloring and formatting of keywords as public, class, import
+  commentstyle=\color{KITblue}\ttfamily, % Color of comments
+  frame=tb  % print top and bottom lines, frame=single, L
+}
+
+\lstdefinestyle{JAVAsmalllines}
+{
+  language=Java,
+  numbers=left,
+  numberstyle=\color{KITblack50}\ttfamily,
+  numbersep=4pt, % distance between numbers and code1_1
+  xleftmargin=4pt, % distance from frame to listing
+  xrightmargin=4pt, % distance from frame to listing
+  basicstyle=\small\ttfamily, % defines text formatting
+  keywordstyle=\color{KITgreen},  % coloring and formatting of keywords as public, class, import
+  commentstyle=\color{KITblue}\ttfamily, % Color of comments
+  frame=tb  % print top and bottom lines, frame=single, L
+}
+
+
+\lstdefinestyle{BASH}{
+  basicstyle=\Large\ttfamily, % defines text formatting
+  frame=none,
+  language=bash
+}
