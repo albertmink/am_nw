@@ -7,3 +7,5 @@ latexmkrc
 *.toc
 *.vrb
 *.out
+*.fls
+*.fdb_*
