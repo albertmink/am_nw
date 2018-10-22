@@ -29,19 +29,20 @@ Gegeben sei der folgende Ausschnitt eines Java-Programms.
 
 \begin{center}
 \begin{minipage}{0.7\textwidth}
-\codeblock{\noindent
-switch ( i ) \{\\
-\tab case 1:\\
-\tab case 2: \\
-\tab \tab System.out.println(''B'');\\
-\tab \tab break;\\
-\tab case 3:\\
-\tab \tab System.out.println(''C'');\\
-\tab \tab break;\\
-\tab default:\\
-\tab \tab System.out.println(''A'');\\
-\}
+\begin{lstlisting}
+switch ( i ) {
+  case 1:
+  case 2:\
+    System.out.println(''B'');
+    break;
+  case 3:
+    System.out.println(''C'');
+    break;
+  default:
+    System.out.println(''A'');
 }
+\end{lstlisting}
+
 \end{minipage}
 \medskip
 
