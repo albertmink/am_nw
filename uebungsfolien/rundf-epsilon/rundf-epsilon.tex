@@ -1,11 +1,11 @@
+\def\stitle{\theexercise\ - Maschinengenauigkeit}
+\section{\stitle}
+
 \begin{frame}[t]%
+    \frametitle{\stitle}
 \medskip
 %\end{frame}
 
-
-\begin{exercise}{Maschinengenauigkeit}
-
-\begin{body}
 Ist $fl(x)$ die Gleitkomma-Darstellung einer reellen Zahl $x$, dann ist der relative Rundungsfehler durch \[ e(x) := \frac{\lvert x - fl(x) \rvert }{\lvert x \rvert}  \] definiert.
 Die \emph{Maschinengenauigkeit} $\epsilon$ ist die kleinste, positive Zahl, für die \[ e(x) \leq \epsilon \quad\text{für alle } x \in \mathbb{R} \text{ mit } x_{Min} \leq x \leq x_{Max} \] gilt.
 Hierbei bezeichnen $x_{Min}$ und $x_{Max}$ die kleinste und die größte Maschinenzahl des betreffenden Datentyps.
@@ -21,12 +21,11 @@ Die Maschinengenauigkeit kann mit folgendem Algorithmus berechnet werden:
 \end{center}
 \bigskip
 Bearbeiten Sie die folgenden Aufgaben:
-\begin{parts}
+\begin{itemize}
 \item Schreiben Sie ein Java-Programm welches die Maschinengenauigkeit für den Datentyp \code{double} berechnet.
 \item Schreiben Sie ein Java-Programm welches die Maschinengenauigkeit für den Datentyp \code{int} berechnet.
-\end{parts}
-\end{body}
-\end{exercise}
+\end{itemize}
+
 \end{frame}
 
 \begin{frame}[fragile]%
