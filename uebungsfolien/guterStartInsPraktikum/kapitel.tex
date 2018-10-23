@@ -1,25 +1,17 @@
-\AtBeginSection{
-% \begin{frame}
-% \frametitle{\kap. Beispiel Kugelvolumen}
-% \tableofcontents[current]
-% \end{frame}
-}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Ausblick}
 \begin{frame}
 \frametitle{\kap. Ausblick}%
-\tableofcontents
+\tableofcontents[current]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\stitle{Guter Start ins Praktikum}%
 \subsection{\stitle}\label{S:Guter Start}
 \begin{frame}[t]%
   \frametitle{\kap.\ref{S:Guter Start} \stitle}%
-\medskip
 
 In dieser \"Ubung wird anhand eines Beispiels beschrieben wie ein Java-Programm \"ubersichtlich gestaltet werden kann.
 
-\pause
 \begin{itemize}
     \item Wichtig f\"ur eigenes Verst\"andnis des Programms
     \item Wichtig f\"ur Dokumentation des Programms
@@ -27,12 +19,12 @@ In dieser \"Ubung wird anhand eines Beispiels beschrieben wie ein Java-Programm 
     \item Unwichtig f\"ur den Computer
 \end{itemize}
 
-\pause \bigskip
+\bigskip
 \begin{block}{Programmierstil}
 Einr\"ucken, Kommentare, Klammerung, Namen
 \end{block}
 
-\pause \bigskip
+\bigskip
 \begin{block}{Hinweis}
 Aufgabe 1 (Pflichtaufgabe) und 2 lassen sich auf \"ahnliche Weise l\"osen
 \end{block}
@@ -43,7 +35,6 @@ Aufgabe 1 (Pflichtaufgabe) und 2 lassen sich auf \"ahnliche Weise l\"osen
 \subsection{\stitle}\label{S:Beispiel Obelisk}
 \begin{frame}[t]%
     \frametitle{\kap.\ref{S:Beispiel Obelisk} \stitle}%
-\medskip
 
 \begin{itemize}
  \item Ein \emph{Obelisk} ist ein Polyeder mit trapezf\"ormigen Seitenfl\"achen
@@ -58,24 +49,14 @@ Aufgabe 1 (Pflichtaufgabe) und 2 lassen sich auf \"ahnliche Weise l\"osen
 \begin{center}
 \includegraphics[width=0.5\textwidth]{guterStartInsPraktikum/bilder/obelisk}
 \end{center}
-
-%  \item Schreiben Sie ein Java-Programm, welches das Kugelvolumen einer beliebigen Kugel berechnet
-% \end{itemize}
-% \smallskip
-%
-% Ben"otigte Werkzeuge:
-% \begin{itemize}
-%  \item Standard Programmierger"ust
-%  \item Geeignete Variablen f"ur $r$ und $v$
-%  \item Einlesen von Variablen
-%  \item Wert von $\pi$
-%  \item Ausgeben des Ergebnisses
-% \end{itemize}
 \end{frame}
 
+
+\def\stitle{Hilfsvariablen und Formeln}%
+\subsection{\stitle}\label{S:Formeln}
 \begin{frame}[t]%
-    \frametitle{\kap.\ref{S:Beispiel Obelisk} \stitle}%
-\medskip
+    \frametitle{\kap.\ref{S:Formeln} \stitle}%
+
 Dann ist:
 \begin{itemize}
 \item $G_1 = ab$ der Fl\"acheninhalt der Grundfl\"ache.
@@ -90,386 +71,79 @@ der Fl\"acheninhalt der anderen beiden Mantelfl\"achen.
 \end{itemize}
 \medskip
 
-Schreiben Sie ein Java--Programm, welches die Seitenl\"angen $a$, $b$, $c$ und $d$ sowie
-die H\"ohe $h$ eines Obelisken von der Konsole einliest und anschlie\ss end den Fl\"acheninhalt
-der Mantelfl\"ache $M$, den der Oberfl\"ache $O$ sowie das Volumen $V$ ausgibt.
+Schreiben Sie ein Java--Programm, welches die Seitenl\"angen $a$, $b$, $c$ und $d$ sowie die H\"ohe $h$ eines Obelisken von der Konsole einliest und anschlie\ss end den Fl\"acheninhalt der Mantelfl\"ache $M$, den der Oberfl\"ache $O$ sowie das Volumen $V$ ausgibt.
 
 \end{frame}
 
-\begin{frame}[t]%
-    \frametitle{\kap.\ref{S:Beispiel Obelisk} \stitle}%
-\medskip
 
+\def\stitle{Programm: Schritt für Schritt}%
+\subsection{\stitle}\label{S:Code}
+\begin{frame}[fragile]%
+    \frametitle{\kap.\ref{S:Code} \stitle}%
 
-\codeblock{\noindent
-\cmt{
-/* Berechnung von\\
-\ * \ Mantelflaeche M\\
-\ * \ Oberflaeche O\\
-\ * \ Volumen V\\
-\ * eines Obelisken\\
-\ * \\
-\ * Eingabe: a,b,c,d (Seitenlaengen) h (Hoehe)\\
-\ * Ausgabe: M, O, V\\
-\ * Author: Stefan Findeisen 2016\\
-\ */\\[1em]
- }
-public class Obelisk \{\\
-\tab public static void main(String[] args) \{\\
-\tab \tab \cmt{/* Hier steht das Hauptprogramm */}\\
-\tab \tab ...\\
-\tab \}\\
-\}\\
+\begin{lstlisting}[style=java,title={Programmgerüst.}]
+/* Berechnung von
+ * \ Mantelflaeche M
+ * \ Oberflaeche O
+ * \ Volumen V
+ * eines Obelisken
+ *
+ * Eingabe: a,b,c,d (Seitenlaengen) h (Hoehe)
+ * Ausgabe: M, O, V
+ * Author: Stefan Findeisen 2016
+ */
+public class Obelisk {
+  public static void main(String[] args)
+  {
+  /* Hier steht das Hauptprogramm */
+  }
 }
+\end{lstlisting}
 \end{frame}
 
-\begin{frame}[t]%
-    \frametitle{\kap.\ref{S:Beispiel Obelisk} \stitle}%
-\medskip
 
-\codeblock{\noindent
-\cmt{
-/* Berechnung von\\
-\ * \ Mantelflaeche M\\
-\ * \ Oberflaeche O\\
-\ * \ Volumen V\\
-\ * eines Obelisken\\
-\ * \\
-\ * Eingabe: a,b,c,d (Seitenlaengen) h (Hoehe)\\
-\ * Ausgabe: M, O, V\\
-\ * Author: Stefan Findeisen 2016\\
-\ */\\[1em]
- }
-public class Obelisk \{\\
-\tab public static void main(String[] args) \{\\
-\tab \tab \cmt{/* Hier steht das Hauptprogramm */}\\
-\tab \tab \cmt{/* Setze die Standardeinstellungen */}\\
-\tab \tab {\color{red} Locale.setDefault(Locale.US);}\\
-\tab \tab ...\\
-\tab \}\\
-\}\\
+\begin{frame}[fragile]%
+    \frametitle{\kap.\ref{S:Code} \stitle}%
+
+\begin{lstlisting}[style=java, title={Lese Seitenlängen und Höhe ein.}]
+public class Obelisk {
+  public static void main(String[] args)
+  {
+    double a, b, c, d, h;
+    Scanner sc = new Scanner(System.in);
+    a = sc.nextDouble();
+    b = sc.nextDouble();
+    c = sc.nextDouble();
+    d = sc.nextDouble();
+    h = sc.nextDouble();
+
+  }
 }
+\end{lstlisting}
 \end{frame}
 
-\begin{frame}[t]%
-    \frametitle{\kap.\ref{S:Beispiel Obelisk} \stitle}%
-\medskip
 
-\codeblock{\noindent
-\cmt{
-\ ...\\
-\ * Eingabe: a,b,c,d (Seitenlaengen) h (Hoehe)\\
-\ * Ausgabe: M, O, V\\
-\ * Author: Stefan Findeisen 2016\\
-\ */\\[1em]
- }
-public class Obelisk \{\\
-\tab public static void main(String[] args) \{\\
-\tab \tab \cmt{/* Hier steht das Hauptprogramm */}\\
-\tab \tab \cmt{/* Setze die Standardeinstellungen */}\\
-\tab \tab Locale.setDefault(Locale.US);\\[1em]
-\tab \tab \cmt{/* Daten des Obelisken */}\\
-\tab \tab {\color{red} double a, b, c, d;} \cmt{// Seitenlaengen}\\
-\tab \tab {\color{red} double h;} \cmt{ // Hoehe}\\
-\tab \tab ...\\
-\tab \}\\
-\}\\
-}
-\end{frame}
+\begin{frame}[fragile]%
+    \frametitle{\kap.\ref{S:Code} \stitle}%
 
-\begin{frame}[t]%
-    \frametitle{\kap.\ref{S:Beispiel Obelisk} \stitle}%
-\medskip
+\begin{lstlisting}[style=java,frame=t, title={Berechne Hilfsvariablen.}]
+public class Obelisk {
+  public static void main(String[] args)
+  {
+    /* Fortsetzung */
+    double G1 = a * b;
+    double G2 = c * d;
+    double s1 = 0.5 * (a + c);
+    double s2 = 0.5 * (b + d);
+    double t1 = 0.5 * (b - d);
+    double t2 = 0.5 * (a - c);
+    double A1 = s1 * Math.sqrt(h * h + t1 * t1);
+    double A2 = s2 * Math.sqrt(h * h + t2 * t2);
+    double M = 2 * A1 + 2 * A2;
+    double O = M + G1 + G2;
+    double V = h / 6 * (G1 + (a + c) * (b + d) + G2);
 
-\codeblock{\noindent
-\cmt{...}\\[1em]
-public class Obelisk \{\\
-\tab public static void main(String[] args) \{\\
-\tab \tab \cmt{/* Hier steht das Hauptprogramm */}\\
-\tab \tab \cmt{/* Setze die Standardeinstellungen */}\\
-\tab \tab Locale.setDefault(Locale.US);\\[1em]
-\tab \tab \cmt{/* Daten des Obelisken */}\\
-\tab \tab {\color{red} double a, b, c, d;} \cmt{// Seitenlaengen}\\
-\tab \tab {\color{red} double h;} \cmt{ // Hoehe}\\[1em]
-\tab \tab \cmt{/* Eingabe */}\\
-\tab \tab \cmt{/* Hilfstext: */}\\
-\tab \tab {\color{red} System.out.println(''Geben Sie die Seitenlaengen (a,b,c,d) '' +\\
-\tab \tab \tab         ''sowie die Hoehe h eines Obelisken ein:'');}\\
-\tab \tab ...\\
-\tab \}\\
-\}\\
+  }
 }
-\end{frame}
-
-\begin{frame}[t]%
-    \frametitle{\kap.\ref{S:Beispiel Obelisk} \stitle}%
-\vspace{-1em}
-\codeblock{\noindent
-public class Obelisk \{\\
-\tab public static void main(String[] args) \{\\
-\tab \tab ...\\
-\tab \tab \cmt{/* Eingabe */}\\
-\tab \tab \cmt{/* Hilfstext: */}\\
-\tab \tab System.out.println(''Geben Sie die Seitenlaengen (a,b,c,d) '' +\\
-\tab \tab \tab         ''sowie die Hoehe h eines Obelisken ein:'');\\
-\tab \tab \cmt{/* Eigentliche Eingabe mit Hilfstexten */}\\
-\tab \tab {\color{red} Scanner sc = new Scanner(System.in);\\
-\tab \tab   System.out.print(''a = '');\\
-\tab \tab   a = sc.nextDouble();\\
-\tab \tab   System.out.print(''b = '');\\
-\tab \tab   b = sc.nextDouble();\\
-\tab \tab   System.out.print(''c = '');\\
-\tab \tab   c = sc.nextDouble();\\
-\tab \tab   System.out.print(''d = '');\\
-\tab \tab   d = sc.nextDouble();\\
-\tab \tab   System.out.print(''h = '');\\
-\tab \tab   h = sc.nextDouble();}\\
-\tab \tab ...\\
-\tab \}\\
-\}\\
-}
-\end{frame}
-
-\begin{frame}[t]%
-    \frametitle{\kap.\ref{S:Beispiel Obelisk} \stitle}%
-
-\codeblock{\noindent
-{\color{red} import java.util.*;}  \cmt{// wird wegen ''Scanner'' benoetigt}\\[1em]
-public class Obelisk \{\\
-\tab public static void main(String[] args) \{\\
-\tab \tab ...\\
-\tab \tab \cmt{/* Eingabe */}\\
-\tab \tab \cmt{/* Hilfstext: */}\\
-\tab \tab System.out.println(''Geben Sie die Seitenlaengen (a,b,c,d) '' +\\
-\tab \tab \tab         ''sowie die Hoehe h eines Obelisken ein:'');\\
-\tab \tab \cmt{/* Eigentliche Eingabe mit Hilfstexten */}\\
-\tab \tab {\color{red} Scanner sc = new Scanner(System.in);\\
-\tab \tab   ...}\\
-\tab \tab ...\\
-\tab \}\\
-\}\\
-}
-\end{frame}
-
-\begin{frame}[t]%
-    \frametitle{\kap.\ref{S:Beispiel Obelisk} \stitle}%
-
-\codeblock{\noindent
-import java.util.*;  \cmt{// wird wegen ''Scanner'' benoetigt}\\[1em]
-public class Obelisk \{\\
-\tab public static void main(String[] args) \{\\
-\tab \tab ...\\
-\tab \tab \cmt{/* Berechung */}\\
-}
-\begin{itemize}
-\item $G_1 = ab$ Fl\"acheninhalt der Grundfl\"ache:
-\end{itemize}
-\codeblock{\noindent
-\tab \tab {\color{red} double G1 = a * b;}\\
-}
-\begin{itemize}
-\item $G_2 = cd$ Fl\"acheninhalt der Deckfl\"ache:
-\end{itemize}
-\codeblock{\noindent
-\tab \tab {\color{red} double G2 = c * d;}\\
-\tab \tab ...\\
-\tab \}\\
-\}\\
-}
-\end{frame}
-
-\begin{frame}[t]%
-    \frametitle{\kap.\ref{S:Beispiel Obelisk} \stitle}%
-
-\codeblock{\noindent
-import java.util.*;  \cmt{// wird wegen ''Scanner'' benoetigt}\\[1em]
-public class Obelisk \{\\
-\tab public static void main(String[] args) \{\\
-\tab \tab ...\\
-\tab \tab \cmt{/* Berechung */}\\
-\tab \tab ...\\
-}
-\begin{itemize}
-\item $\displaystyle A_1 = \frac{a+c}{2} \sqrt{h^2 + \Bigl(\frac{b-d}{2}\Bigr)^2}$
-Fl\"acheninhalt zweier Mantelfl\"achen:
-\end{itemize}
-\codeblock{\noindent
-\tab \tab {\color{red} double s1 = 0.5 * (a + c);\\
-\tab \tab double t1 = 0.5 * (b - d);}\\
-\tab \tab double A1 = s1 * Math.sqrt(h * h + t1 * t1);\\
-}
-\begin{itemize}
-\item $\displaystyle A_2 = \frac{b+d}{2} \sqrt{h^2 + \Bigl(\frac{a-c}{2}\Bigr)^2}$
-Fl\"acheninhalt der anderen Mantelfl\"achen:
-\end{itemize}
-\codeblock{\noindent
-\tab \tab {\color{red} double s2 = 0.5 * (b + d);\\
-\tab \tab double t2 = 0.5 * (a - c);}\\
-\tab \tab double A2 = s2 * Math.sqrt(h * h + t2 * t2);\\
-\tab \tab ...\\
-\tab \}\\
-\}\\
-}
-\end{frame}
-
-\begin{frame}[t]%
-    \frametitle{\kap.\ref{S:Beispiel Obelisk} \stitle}%
-
-\codeblock{\noindent
-import java.util.*;  \cmt{// wird wegen ''Scanner'' benoetigt}\\[1em]
-public class Obelisk \{\\
-\tab public static void main(String[] args) \{\\
-\tab \tab ...\\
-\tab \tab \cmt{/* Berechung */}\\
-\tab \tab ...\\
-}
-\begin{itemize}
-\item $\displaystyle A_1 = \frac{a+c}{2} \sqrt{h^2 + \Bigl(\frac{b-d}{2}\Bigr)^2}$
-Fl\"acheninhalt zweier Mantelfl\"achen:
-\end{itemize}
-\codeblock{\noindent
-\tab \tab double s1 = 0.5 * (a + c);\\
-\tab \tab double t1 = 0.5 * (b - d);\\
-\tab \tab double A1 = s1 * {\color{red} Math.sqrt}(h * h + t1 * t1);\\
-}
-\begin{itemize}
-\item $\displaystyle A_2 = \frac{b+d}{2} \sqrt{h^2 + \Bigl(\frac{a-c}{2}\Bigr)^2}$
-Fl\"acheninhalt der anderen Mantelfl\"achen:
-\end{itemize}
-\codeblock{\noindent
-\tab \tab double s2 = 0.5 * (b + d);\\
-\tab \tab double t2 = 0.5 * (a - c);\\
-\tab \tab double A2 = s2 * {\color{red} Math.sqrt}(h * h + t2 * t2);\\
-\tab \tab ...\\
-\tab \}\\
-\}\\
-}
-\end{frame}
-
-\begin{frame}[t]%
-    \frametitle{\kap.\ref{S:Beispiel Obelisk} \stitle}%
-
-\codeblock{\noindent
-import java.util.*;  \cmt{// wird wegen ''Scanner'' benoetigt}\\[1em]
-public class Obelisk \{\\
-\tab public static void main(String[] args) \{\\
-\tab \tab ...\\
-\tab \tab \cmt{/* Berechung */}\\
-\tab \tab ...\\
-}
-\begin{itemize}
- \item $M = 2 A_1 + 2 A_2$ Fl\"acheninhalt der gesamten Mantelfl\"ache:
-\end{itemize}
-\codeblock{\noindent
-\tab \tab {\color{red} double M = 2 * A1 + 2 * A2;}\\
-}
-\begin{itemize}
- \item $O = M + G_1 + G_2$ Fl\"acheninhalt der Oberfl\"ache:
-\end{itemize}
-\codeblock{\noindent
-\tab \tab {\color{red} double O = M + G1 + G2;}\\
-}
-\begin{itemize}
- \item $\displaystyle V = \frac{h}{6}\bigl(G_1 + (a+c)(b+d) + G_2\bigr)$ Volumen:
-\end{itemize}
-\codeblock{\noindent
-\tab \tab {\color{red} double V = h / 6 * (G1 + (a + c) * (b + d) + G2);}\\
-\tab \tab ...\\
-\tab \}\\
-\}\\
-}
-\end{frame}
-
-\begin{frame}[t]%
-    \frametitle{\kap.\ref{S:Beispiel Obelisk} \stitle}%
-
-\codeblock{\noindent
-import java.util.*;  \cmt{// wird wegen ''Scanner'' benoetigt}\\[1em]
-public class Obelisk \{\\
-\tab public static void main(String[] args) \{\\
-\tab \tab ...\\
-\tab \tab \cmt{/* Ausgabe */}\\
-\tab \tab {\color{red} System.out.println(''Mantelflaeche = '' + M);\\
-\tab \tab System.out.println(''Oberflaeche = '' + O);\\
-\tab \tab System.out.println(''Volumen = '' + V);}\\
-\tab \}\\
-\}\\
-}
-\end{frame}
-
-\begin{frame}[t]%
-    \frametitle{\kap.\ref{S:Beispiel Obelisk} \stitle}%
-\tiny
-\codeblock{\noindent
-import java.util.*; \cmt{// wird wegen ''Scanner'' benoetigt}\\[1em]
-\cmt{
-/* Berechnung von Mantelflaeche M, Oberflaeche O, Volumen V, eines Obelisken\\
- * Eingabe: a,b,c,d (Seitenlaengen) h (Hoehe)\\
- * Ausgabe: M, O, V\\
- * Author: Stefan Findeisen 2016\\
- */}\\[1em]
-public class Obelisk \{\\
-\tab public static void main(String[] args) \{\\
-\tab \tab \cmt{/* Hier steht das Hauptprogramm */}\\
-\tab \tab \cmt{/* Setze die Standardeinstellungen */}\\
-\tab \tab Locale.setDefault(Locale.US);\\[1em]
-\tab \tab \cmt{/* Daten des Obelisken */}\\
-\tab \tab double a, b, c, d; \cmt{// Seitenlaengen}\\
-\tab \tab double h; \cmt{// Hoehe}\\
-\tab \tab \cmt{/* Eingabe */\\
-\tab \tab /* Hilfstext: */}\\
-\tab \tab System.out.println(''Geben Sie die Seitenlaengen (a,b,c,d) '' +\\
-\tab \tab \tab ''sowie die Hoehe h eines Obelisken ein:'');\\[1em]
-\tab \tab \cmt{/* Eigentliche Eingabe mit Hilfstexten */}\\
-\tab \tab Scanner sc = new Scanner(System.in);\\[1em]
-\tab \tab System.out.print(''a = '');\\
-\tab \tab a = sc.nextDouble();\\
-\tab \tab System.out.print(''b = '');\\
-\tab \tab b = sc.nextDouble();\\
-\tab \tab System.out.print(''c = '');\\
-\tab \tab c = sc.nextDouble();\\
-\tab \tab System.out.print(''d = '');\\
-\tab \tab d = sc.nextDouble();\\
-\tab \tab System.out.print(''h = '');\\
-\tab \tab h = sc.nextDouble();\\
-\tab \tab ...\\
-\tab \}\\
-\}
-}
-\end{frame}
-
-\begin{frame}[t]%
-    \frametitle{\kap.\ref{S:Beispiel Obelisk} \stitle}%
-\tiny
-\codeblock{\noindent
-import java.util.*; \cmt{// wird wegen ''Scanner'' benoetigt}\\[1em]
-\cmt{
-/* Berechnung von Mantelflaeche M, Oberflaeche O, Volumen V, eines Obelisken\\
- * Eingabe: a,b,c,d (Seitenlaengen) h (Hoehe)\\
- * Ausgabe: M, O, V\\
- * Author: Stefan Findeisen 2016\\
- */}\\[1em]
-public class Obelisk \{\\
-\tab public static void main(String[] args) \{\\
-\tab \tab \cmt{/* Hier steht das Hauptprogramm */}\\
-\tab \tab ...\\
-\tab \tab \cmt{/* Berechung */}\\
-\tab \tab double G1 = a * b;\\
-\tab \tab double G2 = c * d;\\
-\tab \tab double s1 = 0.5 * (a + c);\\
-\tab \tab double s2 = 0.5 * (b + d);\\
-\tab \tab double t1 = 0.5 * (b - d);\\
-\tab \tab double t2 = 0.5 * (a - c);\\
-\tab \tab double A1 = s1 * Math.sqrt(h * h + t1 * t1);\\
-\tab \tab double A2 = s2 * Math.sqrt(h * h + t2 * t2);\\[1em]
-\tab \tab double M = 2 * A1 + 2 * A2;\\
-\tab \tab double O = M + G1 + G2;\\
-\tab \tab double V = h / 6 * (G1 + (a + c) * (b + d) + G2);\\[1em]
-\tab \tab \cmt{/* Ausgabe */}\\
-\tab \tab System.out.println(''Mantelflaeche = '' + M);\\
-\tab \tab System.out.println(''Oberflaeche = '' + O);\\
-\tab \tab System.out.println(''Volumen = '' + V);\\
-\tab \}\\
-\}
-}
+\end{lstlisting}
 \end{frame}

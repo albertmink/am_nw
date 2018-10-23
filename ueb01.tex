@@ -45,8 +45,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-  \frametitle{Arbeitsblatt 1}%
-%\tableofcontents[hideallsubsections]
+  \frametitle{Übung zum Arbeitsblatt 01}%
+\tableofcontents[hideallsubsections]
 \end{frame}
 %TODO listings add linerange
 
@@ -64,7 +64,6 @@
 \subsection{\stitle}\label{S:Stellenwertsystem}
 \begin{frame}[fragile]%
   \frametitle{\ref{K:wdh}.\ref{S:Stellenwertsystem} \stitle}%
-\medskip
 
 Eine Zahl l\"asst sich in einem Stellenwertsystem zu einer Basis $b$ durch eine Ziffernfolge darstellen, die Basis wird dabei in der Regel als Index gegeben.
 Zum Beispiel die Zahl $426_8$, gegeben im Oktalsystem:
@@ -87,7 +86,6 @@ Beispiel Bin\"arsystem und Oktalsystem:
 \subsection{\stitle}\label{S:GrundlageninJava}
 \begin{frame}[fragile]%
   \frametitle{\ref{K:wdh}.\ref{S:GrundlageninJava} \stitle}%
-\medskip
 
 \begin{description}[leftmargin=*,style=nextline]
 \item[\textcolor{KITgreen}{\textbf{Datentypen}}]
@@ -113,90 +111,44 @@ Beispiel Bin\"arsystem und Oktalsystem:
 \subsection{\stitle}\label{S:CompilierenUexec}
 \begin{frame}[fragile]%
   \frametitle{\ref{K:wdh}.\ref{S:CompilierenUexec} \stitle}%
-\medskip
 
 Um das Programm Hello World auszuführen werden folgende Schritte auf dem Terminal durchgeführt.
 
 \begin{lstlisting}[style=BASH]
-javac HelloWorld.java
-java HelloWorld
-Hello World!
+$ javac HelloWorld.java
+$ java HelloWorld
+  Hello World!
 \end{lstlisting}
 
 \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Aufgabe 1}
+\setcounter{exercise}{1}
 \input{grundl-java/grundl-java}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Aufgabe 2}
+\setcounter{exercise}{2}
 \input{grundl-literale/grundl-literale}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[t]%
-  \frametitle{Aufgabe 2, Beispielprogramm}%
-\medskip
-
-\lstinputlisting[style=JAVAsmall]
-{grundl-literale/Literale.java}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Aufgabe 3}
+\setcounter{exercise}{3}
 \input{grundl-ausdruecke/grundl-ausdruecke} %% Java Bsp Code
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[t]%
-  \frametitle{Aufgabe 3, Beispielprogramm (1)}%
-\medskip
-
-\lstinputlisting[style=JAVAsmall]
-{grundl-ausdruecke/Ausdruecke1.java}
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[t]%
-  \frametitle{Aufgabe 3, Beispielprogramm (2)}%
-\medskip
-
-\lstinputlisting[style=JAVAsmall]
-{grundl-ausdruecke/Ausdruecke2.java}
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Aufgabe 4}
+\setcounter{exercise}{3}
 \input{zahldarst-stellenwertsystem/zahldarst-stellenwertsystem}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[t]%
-  \frametitle{Aufgabe 4, Lösungsweg}%
-\medskip
+\def\kap{2}%
+\input{guterStartInsPraktikum/kapitel}
 
-\input{zahldarst-stellenwertsystem/zahldarst-stellenwertsystem-lsg.tex}
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\kap{7}%
-%\input{guterStartInsPraktikum/kapitel}
-
+\section{Zusammenfassung}
 
 \begin{frame}
   \frametitle{Zusammenfassung}%
-\tableofcontents[current]
+\tableofcontents[hideallsubsections]
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

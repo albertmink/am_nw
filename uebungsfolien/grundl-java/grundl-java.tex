@@ -1,7 +1,13 @@
-\begin{frame}[t]%
-\frametitle{Programmentwicklung}
-%todo frametitle and numbering
-\smallskip
+\def\stitle{\theexercise\ - Programmentwicklung}
+\section{\stitle}
+\begin{frame}%
+  \frametitle{\stitle}%
+\tableofcontents[current]
+\end{frame}
+
+
+\begin{frame}%
+  \frametitle{\stitle}%
 
 \begin{itemize}
 \item Wozu dient der Java-Compiler, wozu der Java-Interpreter?
@@ -10,18 +16,17 @@
 
 \end{frame}
 
+
 \begin{frame}[t]%
-  \frametitle{Unterschiede zwischen Java und C++}%
+  \frametitle{\stitle\ Fortsetzung}%
 \centering
-\medskip
 
-\includegraphics[width=0.8\textwidth]{grundl-java/Java-Kompiler}\\[2em]
-
-\includegraphics[width=0.8\textwidth]{grundl-java/C++-Kompiler}
+\includegraphics[width=0.6\textwidth]{grundl-java/Java-Kompiler}\\[2em]
+\includegraphics[width=0.6\textwidth]{grundl-java/C++-Kompiler}
 
 \begin{itemize}
  \item Java-Bytecode ist plattformunabhängig und kann vom Java-Interpreter auf jedem System ausgeführt werden.
- \item C++ Programme können direket vom Betriebssystem ausgeführt werden, wenn sie für dieses kompiliert wurden.
+ \item C++ Programme können direkt vom Betriebssystem ausgeführt werden, wenn sie für dieses kompiliert wurden.
 \end{itemize}
 
 \end{frame}
