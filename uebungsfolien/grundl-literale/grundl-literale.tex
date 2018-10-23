@@ -1,46 +1,59 @@
+\def\stitle{\theexercise\ - Literale}
+\section{\stitle}
+\begin{frame}%
+  \frametitle{\stitle}%
+\tableofcontents[current]
+\end{frame}
+
 \begin{frame}[fragile]%
- \frametitle{Literale}
-% todo title and numbering
-\medskip
+  \frametitle{\stitle}%
 
 
-Nachfolgend finden Sie Beispiele von Java-\emph{Literalen}, d.h. von Zeichenfolgen die in einem Java-Quelltext konstante Werte repr\"asentieren.
+Nachfolgend finden Sie Beispiele von Java-\emph{Literalen}, d.h. von Zeichenfolgen die in einem Java-Quelltext konstante Werte repräsentieren.
 Geben Sie jeweils den Datentyp des Literals an.
-M\"ogliche Datentypen sind \code{int}, \code{long}, \code{double}, \code{float}, \code{boolean}, \code{char} und \code{String}.
+Mögliche Datentypen sind \code{int}, \code{long}, \code{double}, \code{float}, \code{boolean}, \code{char} und \code{String}.
 
 \begin{center}
 
 \begin{minipage}{0.3\textwidth}
-\begin{itemize}
-\item[(a)] \code{"Hello!"}
-\item[(b)] \code{-156}
-\item[(c)] \code{1E6}
-\item[(d)] \code{" "}
-\item[(e)] \code{0.5}
-\end{itemize}
+\begin{enumerate}
+\item \code{"Hello!"}
+\item \code{-156}
+\item \code{1E6}
+\item \code{" "}
+\item \code{0.5}
+\end{enumerate}
 \end{minipage}
-
+\hfill
 \begin{minipage}{0.3\textwidth}
-\begin{itemize}
-\item[(f)] \code{'0'}
-\item[(g)] \code{1.5e-1}
-\item[(h)] \code{124f}
-\item[(i)] \code{0341}
-\item[(j)] \code{"13"}
-\end{itemize}
+\begin{enumerate}
+\setcounter{enumi}{5}
+\item \code{'0'}
+\item \code{1.5e-1}
+\item \code{124f}
+\item \code{0341}
+\item \code{"13"}
+\end{enumerate}
 \end{minipage}
-
+\hfill
 \begin{minipage}{0.3\textwidth}
-\begin{itemize}
-\item[(k)] \code{true}
-\item[(l)] \code{'a'}
-\item[(m)] \code{0xABC}
-\item[(n)] \code{.2}
-\item[(o)] \code{0xCEL}
-\end{itemize}
+\begin{enumerate}
+\setcounter{enumi}{10}
+\item \code{true}
+\item \code{'a'}
+\item \code{0xABC}
+\item \code{.2}
+\item \code{0xCEL}
+\end{enumerate}
 \end{minipage}
 
 \end{center}
+\end{frame}
 
 
+\begin{frame}[t]%
+  \frametitle{\stitle\, Bsp Programm}%
+
+\lstinputlisting[style=JAVAsmall]
+{grundl-literale/Literale.java}
 \end{frame}
