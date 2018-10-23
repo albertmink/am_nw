@@ -22,8 +22,8 @@
 \makeatother
 
 %% title slide
-\title[Übung 03: Einstieg in die Informatik und algorithmische]
-  {Übung 03: Einstieg in die Informatik und algorithmische \\ Mathematik}
+\title[Übung 03: Einstieg in die Informatik und algorithmische Mathematik]
+  {Übung 03: Einstieg in die Informatik und algorithmische Mathematik}
 \subtitle{Albert Mink | Wintersemester 2018/2019}
 
 \author[Albert Mink, ]{KIT}
@@ -51,7 +51,6 @@
   \frametitle{Arbeitsblatt 3}%
 \tableofcontents[hideallsubsections]
 \end{frame}
-\setcounter{exercise}{8}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -76,21 +75,21 @@
 
 Gegeben sei der folgende Java--Ausdruck:
 \begin{center}
-\code{a || b \&\& c}
+\code{a || b && c}
 \end{center}
 Dabei seien \code{a, b, c} Variablen vom Typ \code{boolean}.
 \medskip
 
 Wie wird dieser Ausdruck abgearbeitet (engl. \emph{operator precedence})?
-\begin{itemize}
-  \item [a)] \code{(a || b) \&\& c}
-  \item[b)] \code{a || b( \&\& c)}
-\end{itemize}
+\begin{enumerate}
+  \item \code{(a || b) && c}
+  \item \code{ a || b( && c)}
+\end{enumerate}
 
 Welche der folgenden Ausdrücke ist die korrekte \textbf{Negation}?
-\begin{itemize}
-  \item [a)] \code{!a \&\& (!b || !c)}
-  \item [b)] \code{!a \&\& \ !b || !c}
+\begin{enumerate}
+  \item \code{!a && (!b || !c)}
+  \item \code{!a &&  !b || !c}
 \end{itemize}
 
 \end{frame}
@@ -107,7 +106,7 @@ Welche der folgenden Ausdrücke ist die korrekte \textbf{Negation}?
 \textcolor{KITblue}{\url{docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html}}
 
 \begin{center}
-\includegraphics[width=0.6\textwidth]{grundl-boolalgnegation/operatorPrecedence}
+\includegraphics[width=0.5\textwidth]{grundl-boolalgnegation/operatorPrecedence}
 \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -138,12 +137,15 @@ Vergleich Analysis I
 \end{description}
 
 \end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{exercise}{8}
 \input{grundl-boolalgnegation/grundl-boolalgnegation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{exercise}{9}
 \input{anweis-1/anweis-1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\stitle{Wdh. Typumwandlung}
 \subsection{\stitle}\label{S:Typumwandlung}
