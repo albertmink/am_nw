@@ -3,7 +3,7 @@
 
 
 %----------------------------------------------------------------
-% Definition of global variables 
+% Definition of global variables
 %----------------------------------------------------------------
 
 % Mode of use.
@@ -231,28 +231,28 @@
 \parbox[t][]{0.2\textwidth}{\textit{\@exercises@word@id:}} &
 \parbox[t][]{0.7\textwidth}{\@exercises@id\vspace{0.3em}}
 \ifthenelse{\equal{\@exercises@description}{}}
-	{}   
+  {}
   {\\ \parbox[t][]{0.2\textwidth}{\textit{\@exercises@word@description:}} &
    \parbox[t][]{0.7\textwidth}{\@exercises@description\vspace{0.5em}}}
 \ifthenelse{\equal{\@exercises@difficulty}{}}
-	{}
+  {}
   {\\ \parbox[t][]{0.2\textwidth}{\textit{\@exercises@word@difficulty:}} &
    \parbox[t][]{0.7\textwidth}{\@exercises@difficulty\vspace{0.5em}}}
 \ifthenelse{\equal{\@exercises@source}{}}
-	{}
-	{\\ \parbox[t][]{0.2\textwidth}{\textit{\@exercises@word@source:}} &
+  {}
+  {\\ \parbox[t][]{0.2\textwidth}{\textit{\@exercises@word@source:}} &
    \parbox[t][]{0.7\textwidth}{\@exercises@source\vspace{0.5em}}}
 \ifthenelse{\equal{\@exercises@utilization}{}}
-	{}
-	{\\ \parbox[t][]{0.2\textwidth}{\textit{\@exercises@word@utilization:}} &
+  {}
+  {\\ \parbox[t][]{0.2\textwidth}{\textit{\@exercises@word@utilization:}} &
    \parbox[t][]{0.7\textwidth}{\@exercises@utilization\vspace{0.5em}}}
 \\ \hline
 \end{tabular}
 \par\vspace{1.5em}
 \ifthenelse{\equal{\@exercises@comments}{}}
-	{}
-	{\par\noindent\textbf{\textit{\@exercises@word@comments}}\nopagebreak\vspace{0.5em}\nopagebreak%
-	 \par\noindent\@exercises@comments\par\bigskip}
+  {}
+  {\par\noindent\textbf{\textit{\@exercises@word@comments}}\nopagebreak\vspace{0.5em}\nopagebreak%
+   \par\noindent\@exercises@comments\par\bigskip}
 }
 
 
@@ -298,7 +298,7 @@
 
 
 % Environment comments = @exercises@env@comments.
-% The content of the environment is stored in \@exercises@solution. 
+% The content of the environment is stored in \@exercises@solution.
 % The box register 202 is used.
 \newenvironment{@exercises@env@comments}
 {\global\setbox202=\vbox\bgroup%
@@ -307,7 +307,7 @@
 
 
 % Environment body = @exercises@env@body.
-% The content of the environment is stored in \@exercises@body. 
+% The content of the environment is stored in \@exercises@body.
 % The box register 101 is used.
 \newenvironment{@exercises@env@body}
 {\global\setbox101=\vbox\bgroup%
@@ -316,7 +316,7 @@
 
 
 % Environment solution = @exercises@env@solution.
-% The content of the environment is stored in \@exercises@solution. 
+% The content of the environment is stored in \@exercises@solution.
 % The box register 102 is used.
 \newenvironment{@exercises@env@solution}
 {\global\setbox102=\vbox\bgroup%
@@ -325,7 +325,7 @@
 
 
 % Environment parts = @exercises@env@parts.
-% The content of the environment is stored in \@exercises@body. 
+% The content of the environment is stored in \@exercises@body.
 % The box register 101 is used.
 \newenvironment{@exercises@env@parts}
 {\begin{enumerate}
@@ -335,7 +335,7 @@
 
 
 % Command \hint = \@exercises@cmd@hint.
-% The content of the environment is stored in \@exercises@body. 
+% The content of the environment is stored in \@exercises@body.
 % The box register 101 is used.
 \newcommand{\@exercises@cmd@hint}{%
 \par\medskip\noindent\textbf{\@exercises@word@hint:}\hspace{1em}}
@@ -347,7 +347,7 @@
 
 
 %----------------------------------------------------------------
-% Commands and environments 
+% Commands and environments
 %----------------------------------------------------------------
 
 
@@ -452,7 +452,7 @@
 \refstepcounter{exercise}%
 % \addcontentsline{toc}{section}{\theexercise: \theexercisepdftitle}
 }
-{% 
+{%
 \ifnum\@exercises@mode=0
 % Worksheet mode: Show exercise's header and body.
 % Store solutions in the box register 103.
@@ -465,7 +465,7 @@
 \@exercises@atendexercise%
 \fi
 \ifnum\@exercises@mode=1
-% Catalog mode: Show exercise's header, meta iformation, 
+% Catalog mode: Show exercise's header, meta iformation,
 % body and solution.
 \@exercises@catalogheader%
 \@exercises@catalogmeta%
@@ -484,7 +484,7 @@
 
 
 % Command \inputexercise.
-% 
+%
 \newcommand{\inputexercise}{\@ifstar\@sinputexercise\@inputexercise}
 
 \newcommand{\@inputexercise}[2][]{%
