@@ -16,10 +16,7 @@
 \usepackage{templateSlide/exercises}
 \usepackage[java]{code}
 
-\makeatletter
-\def\input@path{{uebungsfolien/}}
-\graphicspath{{uebungsfolien/}}
-\makeatother
+\exercisespath{uebungsfolien/}
 
 %% title slide
 \title[Übung 01: Einstieg in die Informatik und algorithmische Mathematik]
@@ -125,24 +122,24 @@ $ java HelloWorld
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{exercise}{1}
-\input{grundl-java/grundl-java}
+\inputexercise{grundl-java}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{exercise}{2}
-\input{grundl-literale/grundl-literale}
+\inputexercise{grundl-literale}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{exercise}{3}
-\input{grundl-ausdruecke/grundl-ausdruecke} %% Java Bsp Code
+\inputexercise{grundl-ausdruecke} %% Java Bsp Code
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{exercise}{4}
-\input{zahldarst-stellenwertsystem/zahldarst-stellenwertsystem}
+\inputexercise{zahldarst-stellenwertsystem}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\kap{2}%
-\input{guterStartInsPraktikum/kapitel}
+\inputexercise{guterStartInsPraktikum}
 
 \section{Zusammenfassung}
 
@@ -158,7 +155,7 @@ $ java HelloWorld
 \vspace{2cm}
 
 {\LARGE
-N\"achste \"Ubung: 30. Oktober\\
+Nächste Übung: 30. Oktober\\
 Besprechung Arbeitsblatt 2
 }
 \end{frame}
