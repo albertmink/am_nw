@@ -1,11 +1,16 @@
 \def\stitle{\theexercise\ - Klassenhierarchien}
 \section{\stitle}
+\begin{frame}%
+  \frametitle{\stitle}%
+\tableofcontents[current]
+\end{frame}
+
 
 \begin{frame}[fragile]%
   \frametitle{\stitle}%
 Betrachten Sie die nachfolgenden Klassendefinitionen:
 
-\begin{lstlisting}
+\begin{lstlisting}[style=java]
 public class Wal {};
 public class Zahnwal extends Wal {};
 public class Pottwal extends Zahnwal {};
@@ -15,8 +20,7 @@ public class Grauwal extends Bartenwal {};
 \end{lstlisting}
 
 In der \code{main}-Methode eines Java-Programms findet man die Zeilen
-
-\begin{lstlisting}
+\begin{lstlisting}[style=java,frame=none]
 Wal w;
 Zahnwahl z;
 \end{lstlisting}
@@ -47,6 +51,8 @@ Entscheiden Sie, welche der folgenden Ausdr\"ucke g\"ultig sind.
 
 
 \begin{frame}[t]%
+  \frametitle{\theexercise}%
+
 F\"ur die L\"osung dieser Aufgabe ist das folgende Klassendiagramm hilfreich.
 Jeder Pfeil zeigt von einer Klasse auf deren Basisklasse.
 \begin{center}
@@ -55,6 +61,7 @@ Jeder Pfeil zeigt von einer Klasse auf deren Basisklasse.
 \end{frame}
 
 \begin{frame}[t]%
+  \frametitle{\theexercise}%
 
 \begin{enumerate}
 \item
@@ -81,6 +88,7 @@ Jeder Pfeil zeigt von einer Klasse auf deren Basisklasse.
 \end{frame}
 
 \begin{frame}[t]%
+  \frametitle{\theexercise}%
 
 \begin{enumerate}
 \setcounter{enumi}{5}

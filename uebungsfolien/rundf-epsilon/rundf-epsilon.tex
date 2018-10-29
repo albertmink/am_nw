@@ -1,25 +1,24 @@
 \def\stitle{\theexercise\ - Maschinengenauigkeit}
 \section{\stitle}
+\begin{frame}
+  \frametitle{\stitle}%
+\tableofcontents[current]
+\end{frame}
+
 
 \begin{frame}[t]%
     \frametitle{\stitle}
-\medskip
-%\end{frame}
 
 Ist $fl(x)$ die Gleitkomma-Darstellung einer reellen Zahl $x$, dann ist der relative Rundungsfehler durch \[ e(x) := \frac{\lvert x - fl(x) \rvert }{\lvert x \rvert}  \] definiert.
 Die \emph{Maschinengenauigkeit} $\epsilon$ ist die kleinste, positive Zahl, für die \[ e(x) \leq \epsilon \quad\text{für alle } x \in \mathbb{R} \text{ mit } x_{Min} \leq x \leq x_{Max} \] gilt.
 Hierbei bezeichnen $x_{Min}$ und $x_{Max}$ die kleinste und die größte Maschinenzahl des betreffenden Datentyps.
 Die Maschinengenauigkeit kann mit folgendem Algorithmus berechnet werden:
-\begin{center}
-\begin{minipage}{0.8\textwidth}
 \begin{enumerate}
 \item[(1)] Initialisiere $x$ mit $1$, und gehe zu (2).
 \item[(2)] Solange $x + 1 \neq 1$ gilt, halbiere $x$. Ansonsten gehe zu (3).
 \item[(3)] Die Maschinengenauigkeit $\epsilon$ ist $2x$.
 \end{enumerate}
-\end{minipage}
-\end{center}
-\bigskip
+
 Bearbeiten Sie die folgenden Aufgaben:
 \begin{itemize}
 \item Schreiben Sie ein Java-Programm welches die Maschinengenauigkeit für den Datentyp \code{double} berechnet.
@@ -29,7 +28,7 @@ Bearbeiten Sie die folgenden Aufgaben:
 \end{frame}
 
 \begin{frame}[fragile]%
- \frametitle{a) L\"osungsweg}%
+ \frametitle{\theexercise\ - a) L\"osungsweg}%
 
 \begin{center}
 \lstinputlisting[style=JAVAlines]{\getexercisefolder/EpsilonDouble.java}
@@ -37,7 +36,7 @@ Bearbeiten Sie die folgenden Aufgaben:
 \end{frame}
 
 \begin{frame}[fragile]%
- \frametitle{b) L\"osungsweg}%
+ \frametitle{\theexercise\ - b) L\"osungsweg}%
 
 \begin{center}
 \lstinputlisting[style=JAVAlines]{\getexercisefolder/EpsilonInt.java}

@@ -1,16 +1,20 @@
 \def\stitle{\theexercise\ - Rekursion}
+
 \section{\stitle}
+\begin{frame}
+  \frametitle{\stitle}%
+\tableofcontents[current]
+\end{frame}
+
 \begin{frame}%
   \frametitle{\stitle}%
 
-Nachfolgend ist die Definition einer Klassenmethode gegeben, die zu einer Zahl $n \in \mathbb{N}$ die Fakult\"at $n! := n (n-1) (n-2)  \dotsm 1$ rekursiv berechnet.
-\medskip
+Nachfolgend ist die Definition einer öffentliche Funktion gegeben, die zu einer Zahl $n \in \mathbb{N}$ die Fakultät $n! := n (n-1) (n-2)  \dotsm 1$ rekursiv berechnet.
 
 \lstinputlisting[style=JAVAsmall]{\getexercisefolder/RekursionFak.java}
 
 \begin{enumerate}
 \item Wie oft wird die Methode durch den Aufruf \code{fakultaet(4);} aufgerufen?
-
-\item Geben Sie eine \"aquivalente Definition der Methode ohne rekursiven Aufruf an.
+\item Geben Sie eine äquivalente Definition der Methode ohne rekursiven Aufruf an.
 \end{enumerate}
 \end{frame}

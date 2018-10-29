@@ -2,7 +2,13 @@
 \def\stitle{\theexercise\ - Effizienz}
 \def\sAtitle{\theexercise\ - Effizienz Teil A}
 \def\sBtitle{\theexercise\ - Effizienz Teil B}
+
 \section{\stitle}
+\begin{frame}
+  \frametitle{\stitle}%
+\tableofcontents[current]
+\end{frame}
+
 \subsection{\sAtitle}
 \begin{frame}%
   \frametitle{\sAtitle}%
@@ -12,13 +18,12 @@
 \item Charakterisieren Sie den Rechenaufwand des Ausschnittes mit Hilfe eines Ausdrucks in der Landau-Notation.
 \end{enumerate}
 
-\lstinputlisting[style=JAVA]{\getexercisefolder/Effizienz.java}
+\lstinputlisting[style=JAVAsmall]{\getexercisefolder/Effizienz.java}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}%
   \frametitle{\sAtitle\ - L\"osungsvorschlag}%
-\medskip
 
 \begin{enumerate}
   \item Beschreiben Sie das Ergebnis der Rechnung.
@@ -26,11 +31,11 @@
     \item Mit Hilfe von einer \code{for}-Schleife werden die Elemente des neuen Vektors \code{res} berechnet.
     \item Dabei wird mit der Hilfsvariablen \code{skp} und einer weiteren \code{for}-Schleife das Skalarprodukt der \code{mu}-ten Spalte der Matrix \code{a} und des Vektors \code{b} berechnet.
     \item Zum Schluss wird noch das jeweilige Element des Vektors \code{c} addiert.
-    \item Das enstpricht der Berechnung \code{d = a * b + c},
+    \item Das entspricht der Berechnung \code{d = a * b + c},
   \end{itemize}
   \item Charakterisieren Sie den Rechenaufwand des Ausschnittes mit Hilfe eines Ausdrucks in der Landau-Notation.
   \begin{itemize}
-  \item Die \"au\ss ere Schleife wird \code{n}-mal durchgelaufen, das entspicht $n$-mal die Anzahl der Operationen in der inneren Schleife.
+  \item Die \"au\ss ere Schleife wird \code{n}-mal durchgelaufen, das entspricht $n$-mal die Anzahl der Operationen in der inneren Schleife.
   \item Die innere Schleife wird auch \code{n}-mal durchgelaufen.
   Dort wird eine Addition und eine  Multiplikation durchgef\"uhrt.
   Dazu kommt noch eine Addition.
@@ -46,7 +51,6 @@
 \subsection{\sBtitle}
 \begin{frame}%
   \frametitle{\sBtitle}%
-\medskip
 
 Vereinfachen Sie die folgenden Ausdr\"ucke zur Komplexit\"at in der Landau-Notation, z.B.~$\mathcal{O}(n^3+n) = \mathcal{O}(n^3)$:
 \begin{enumerate}
@@ -60,7 +64,6 @@ Vereinfachen Sie die folgenden Ausdr\"ucke zur Komplexit\"at in der Landau-Notat
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}%
   \frametitle{\sBtitle\ - L\"osungsvorschlag}%
-\medskip
 
 \begin{enumerate}
   \item $\mathcal{O}(10n^3/(2n^2)+n^2) = \mathcal{O}(5n + n^2) = \mathcal{O}(n^2)$
