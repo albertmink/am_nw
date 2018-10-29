@@ -16,10 +16,7 @@
 \usepackage{templateSlide/exercises}
 \usepackage[java]{code}
 
-\makeatletter
-\def\input@path{{uebungsfolien/}}
-\graphicspath{{uebungsfolien/}}
-\makeatother
+\exercisespath{uebungsfolien/}
 
 %% title slide
 \title[Übung 02: Einstieg in die Informatik und algorithmische Mathematik]
@@ -52,32 +49,30 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{exercise}{5}
-\input{zahldarst-binaereaddition/zahldarst-binaereaddition}
-
+\inputexercise{zahldarst-binaereaddition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{exercise}{6}
-\input{zahldarst-ganzzahl/zahldarst-ganzzahl}
+\inputexercise{zahldarst-ganzzahl}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{uebungsfolien/range-integer/range-integer.tex}
+\inputexercise{range-integer}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{exercise}{7}
-\input{zahldarst-gleitkomma/zahldarst-gleitkomma}
+\inputexercise{zahldarst-gleitkomma}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{uebungsfolien/range-float/range-float.tex}
+\inputexercise{range-float}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{uebungsfolien/ausloeschung/ausloeschung.tex}
-
+\inputexercise{ausloeschung}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{exercise}{8}
-\input{grundl-boolalg/grundl-boolalg}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\inputexercise{grundl-boolalg}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Zusammenfassung}
 
 \begin{frame}

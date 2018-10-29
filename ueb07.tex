@@ -16,10 +16,7 @@
 \usepackage{templateSlide/exercises}
 \usepackage[java]{code}
 
-\makeatletter
-\def\input@path{{uebungsfolien/}}
-\graphicspath{{uebungsfolien/}}
-\makeatother
+\exercisespath{uebungsfolien/}
 
 %% title slide
 \title[Übung 07: Einstieg in die Informatik und algorithmische Mathematik]
@@ -65,53 +62,16 @@
 \end{frame}
 
 
-\def\kap{1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Wiederholung}\label{K:wdh}
-\begin{frame}
-  \frametitle{\ref{K:wdh} Wiederholung}%
-\tableofcontents[current]
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\stitle{Erzeugen von mehrdimensionalen Feldern}
-\subsection{\stitle}\label{S:Erzeugen}
-\begin{frame}[t]%
-  \frametitle{\ref{K:wdh}.\ref{S:Erzeugen} \stitle}
-\medskip
-
-Ein Feld kann mehrere Variablen vom selben Datentyp enthalten, hier \code{int} und \code{char}.
-\lstinputlisting[style=JAVA]{wdh-felderMehrdim/FelderErzeugen.java}
-
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\stitle{Zugreifen auf mehrdimensionale Felder}
-\subsection{\stitle}\label{S:Zugreifen}
-\begin{frame}[t]%
-  \frametitle{\ref{K:wdh}.\ref{S:Zugreifen} \stitle}
-\medskip
-
-Mit dem Operator \code{[]} wird auf bestimmte Feldkomponenten zu gegriffen.
-\lstinputlisting[style=JAVA]{wdh-felderMehrdim/FelderZugreifen.java}
-
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\def\kap{2}
+\inputexercise{wdh-felderMehrdim}
 \setcounter{exercise}{27}
-\input{felder-matrix/felder-matrix}
+\inputexercise{felder-matrix}
 \setcounter{exercise}{28}
-\input{rekursion-1/rekursion-1}
+\inputexercise{rekursion-1}
 \setcounter{exercise}{29}
-\input{komplexitaet-eff/komplexitaet-eff}
+\inputexercise{komplexitaet-eff}
 \setcounter{exercise}{30}
-\input{komplexitaet-1/komplexitaet-1}
+\inputexercise{komplexitaet-1}
 
 
 \begin{frame}

@@ -1,0 +1,72 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Wiederholung}\label{K:wdh}
+\begin{frame}
+  \frametitle{\kap. Wiederholung}%
+\tableofcontents[current]
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\sstitle{Beachtung der Priorität}
+\subsection{\sstitle}\label{S:Prioritat}
+\begin{frame}%
+  \frametitle{\kap.\ref{S:Prioritat} \sstitle}%
+
+Gegeben sei der folgende Java--Ausdruck:
+\begin{center}
+\code{a || b && c}
+\end{center}
+Dabei seien \code{a, b, c} Variablen vom Typ \code{boolean}.
+\medskip
+
+Wie wird dieser Ausdruck abgearbeitet (engl. \emph{operator precedence})?
+\begin{enumerate}
+  \item \code{(a || b) && c}
+  \item \code{ a || b( && c)}
+\end{enumerate}
+
+Welche der folgenden Ausdrücke ist die korrekte \textbf{Negation}?
+\begin{enumerate}
+  \item \code{!a && (!b || !c)}
+  \item \code{!a &&  !b || !c}
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Offizielle Dokumentation}
+\subsection{\stitle}\label{S:Dokumentation}
+\begin{frame}[fragile]%
+  \frametitle{\kap.\ref{S:Dokumentation} \stitle}%
+%%source
+\textcolor{KITblue}{\url{docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html}}
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{\getexercisefolder/operatorPrecedence}
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{De Morgansche Gesetze}
+\subsection{\stitle}\label{S:Morgansche}
+\begin{frame}[fragile]%
+  \frametitle{\kap..\ref{S:Morgansche} \stitle}%
+Vergleich Analysis I
+\medskip
+
+\begin{description}
+  \item[und bzw. oder]
+  \item $\neg \neg A = A$
+  \item $\neg (A \wedge B) = \neg A \vee \neg B$
+  \item $\neg (A \vee B) = \neg A \wedge \neg B$
+\end{description}
+\medskip
+
+\begin{description}
+  \item[Schnittmenge bzw. Vereinigung]
+  \item $(A^{\mathsf{c}})^{\mathsf{c}} = A$
+  \item $(A \cap B)^{\mathsf{c}} = A^{\mathsf{c}} \cup B^{\mathsf{c}}$
+  \item $(A \cup B)^{\mathsf{c}} = A^{\mathsf{c}} \cap B^{\mathsf{c}}$
+\end{description}
+
+\end{frame}
