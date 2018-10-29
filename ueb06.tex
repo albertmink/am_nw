@@ -16,10 +16,7 @@
 \usepackage{templateSlide/exercises}
 \usepackage[java]{code}
 
-\makeatletter
-\def\input@path{{uebungsfolien/}}
-\graphicspath{{uebungsfolien/}}
-\makeatother
+\exercisespath{uebungsfolien/}
 
 %% title slide
 \title[Übung 06: Einstieg in die Informatik und algorithmische Mathematik]
@@ -50,11 +47,11 @@
 \end{frame}
 
 \setcounter{exercise}{20}
-\input{felder-sideEff/felder-sideEff}
+\inputexercise{felder-sideEff}
 \setcounter{exercise}{21}
-\input{funktionen-grundl/funktionen-grundl}
+\inputexercise{funktionen-grundl}
 \setcounter{exercise}{22}
-\input{funktionen-trapez/funktionen-trapez}
+\inputexercise{funktionen-trapez}
 
 \begin{frame}
 \centering

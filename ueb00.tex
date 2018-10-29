@@ -16,10 +16,7 @@
 \usepackage{templateSlide/exercises}
 \usepackage[java]{code}
 
-\makeatletter
-\def\input@path{{uebungsfolien/}}
-\graphicspath{{uebungsfolien/}}
-\makeatother
+\exercisespath{uebungsfolien/}
 
 %% title slide
 \title[Übung 00: Einstieg in die Informatik und algorithmische Mathematik]
@@ -50,19 +47,19 @@
 \end{frame}
 
 \def\kap{1}%
-\input{einfuehrung/einfuehrung}
+\inputexercise{einfuehrung}
 \def\kap{2}%
-\input{praktikumSCC/praktikumSCC}
+\inputexercise{praktikumSCC}
 \def\kap{3}%
-\input{installationEditor/installationEditor}
+\inputexercise{installationEditor}
 \def\kap{4}%
-\input{helloWorld/helloWorld}
+\inputexercise{helloWorld}
 %% TODO kompilieren, mit Fehlern
 
 \def\kap{5}%
-\input{kugelVolumen/kugelVolumen}
+\inputexercise{kugelVolumen}
 \def\kap{6}%
-\input{javaDokumentation/javaDokumentation}
+\inputexercise{javaDokumentation}
 
 
 %\begin{frame}

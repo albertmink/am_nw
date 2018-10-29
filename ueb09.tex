@@ -16,10 +16,7 @@
 \usepackage{templateSlide/exercises}
 \usepackage[java]{code}
 
-\makeatletter
-\def\input@path{{uebungsfolien/}}
-\graphicspath{{uebungsfolien/}}
-\makeatother
+\exercisespath{uebungsfolien/}
 
 %% title slide
 \title[Übung 09: Einstieg in die Informatik und algorithmische Mathematik]
@@ -51,10 +48,10 @@
 
 
 \setcounter{exercise}{33}
-\input{funktionen-ss2017/funktionen-ss2017}
-\input{wdh-klassen/wdh-klassen}
+\inputexercise{funktionen-ss2017}
+\inputexercise{wdh-klassen}
 \setcounter{exercise}{34}
-\input{strukt-artikel/strukt-artikel}
+\inputexercise{strukt-artikel}
 
 
 \begin{frame}

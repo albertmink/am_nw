@@ -16,10 +16,7 @@
 \usepackage{templateSlide/exercises}
 \usepackage[java]{code}
 
-\makeatletter
-\def\input@path{{uebungsfolien/}}
-\graphicspath{{uebungsfolien/}}
-\makeatother
+\exercisespath{uebungsfolien/}
 
 %% title slide
 \title[Übung 03: Einstieg in die Informatik und algorithmische Mathematik]
@@ -55,116 +52,23 @@
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Wiederholung}\label{K:wdh}
-\begin{frame}
-  \frametitle{\ref{K:wdh} Wiederholung}%
-\tableofcontents[current]
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\kap{1}
+\inputexercise{wdh-boolAlg}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\stitle{Beachtung der Priorität}
-\subsection{\stitle}\label{S:Prioritat}
-\begin{frame}[fragile]%
-  \frametitle{\ref{K:wdh}.\ref{S:Prioritat} \stitle}%
-\medskip
-
-Gegeben sei der folgende Java--Ausdruck:
-\begin{center}
-\code{a || b && c}
-\end{center}
-Dabei seien \code{a, b, c} Variablen vom Typ \code{boolean}.
-\medskip
-
-Wie wird dieser Ausdruck abgearbeitet (engl. \emph{operator precedence})?
-\begin{enumerate}
-  \item \code{(a || b) && c}
-  \item \code{ a || b( && c)}
-\end{enumerate}
-
-Welche der folgenden Ausdrücke ist die korrekte \textbf{Negation}?
-\begin{enumerate}
-  \item \code{!a && (!b || !c)}
-  \item \code{!a &&  !b || !c}
-\end{enumerate}
-
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\stitle{Offizielle Dokumentation}
-\subsection{\stitle}\label{S:Dokumentation}
-\begin{frame}[fragile]%
-  \frametitle{\ref{K:wdh}.\ref{S:Dokumentation} \stitle}%
-%%source
-\textcolor{KITblue}{\url{docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html}}
-
-\begin{center}
-\includegraphics[width=0.5\textwidth]{grundl-boolalgnegation/operatorPrecedence}
-\end{center}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\stitle{De Morgansche Gesetze}
-\subsection{\stitle}\label{S:Morgansche}
-\begin{frame}[fragile]%
-  \frametitle{\ref{K:wdh}.\ref{S:Morgansche} \stitle}%
-Vergleich Analysis I
-\medskip
-
-\begin{description}
-  \item[und bzw. oder]
-  \item $\neg \neg A = A$
-  \item $\neg (A \wedge B) = \neg A \vee \neg B$
-  \item $\neg (A \vee B) = \neg A \wedge \neg B$
-\end{description}
-\medskip
-
-\begin{description}
-  \item[Schnittmenge bzw. Vereinigung]
-  \item $(A^{\mathsf{c}})^{\mathsf{c}} = A$
-  \item $(A \cap B)^{\mathsf{c}} = A^{\mathsf{c}} \cup B^{\mathsf{c}}$
-  \item $(A \cup B)^{\mathsf{c}} = A^{\mathsf{c}} \cap B^{\mathsf{c}}$
-\end{description}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{exercise}{8}
-\input{grundl-boolalgnegation/grundl-boolalgnegation}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\inputexercise{grundl-boolalgnegation}
 \setcounter{exercise}{9}
-\input{anweis-1/anweis-1}
+\inputexercise{anweis-1}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\stitle{Wdh. Typumwandlung}
-\subsection{\stitle}\label{S:Typumwandlung}
-\begin{frame}[fragile]%
-  \frametitle{\ref{K:wdh}.4 \stitle}%
-\medskip
-
-Allgemein \code{(Datentyp)(Ausdruck)}.
-\lstinputlisting[style=JAVAlines]{typumwandung/Typumwandlung.java}
-
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\kap{2}
+\inputexercise{wdh-typumw}
 \setcounter{exercise}{10}
-\input{anweis-2/anweis-2}
+\inputexercise{anweis-2}
 \setcounter{exercise}{11}
-\input{schleifen-1/schleifen-1}
+\inputexercise{schleifen-1}
 % TODO fix for loop
 \setcounter{exercise}{12}
-\input{schleifen-2/schleifen-2}
+\inputexercise{schleifen-2}
 
 
 \begin{frame}
