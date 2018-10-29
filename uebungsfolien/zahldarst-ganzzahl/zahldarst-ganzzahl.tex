@@ -1,22 +1,27 @@
 \def\stitle{\theexercise\ - Ganzzahl-Datentypen}
 \section{\stitle}
-\begin{frame}[t]
+\begin{frame}%
   \frametitle{\stitle}
+\tableofcontents[current]
+\end{frame}
 
+\begin{frame}[fragile]%
+    \frametitle{\stitle}%
+    
 In Java besitzen die Ganzzahl-Datentypen die folgenden Größen
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline
 \textbf{Datentyp} & \textbf{Größe} \\
 \hline
-\code{byte}       &  8 Bit         \\
-\code{short}      & 16 Bit         \\
-\code{int}        & 32 Bit         \\
-\code{long}       & 64 Bit         \\
+byte       &  8 Bit         \\
+short      & 16 Bit         \\
+int        & 32 Bit         \\
+long       & 64 Bit         \\
 \hline
 \end{tabular}
 \end{center}
-Das führende Bit jedes Datentyps gibt das Vorzeichen der Zahl an:
+Das führende Bit jedes Datentypen gibt das Vorzeichen der Zahl an:
 Ein 0-Bit zeigt eine nichtnegative Zahl an, ein 1-Bit eine negative Zahl.
 Jedem Bitmuster entspricht genau eine ganze Zahl.
 Ist das führende Bit ein 0-Bit (nichtnegative Zahl), repräsentieren die übrigen Bits die Ziffern der Binärdarstellung dieser Zahl.
@@ -41,7 +46,7 @@ Daher können mit den Datentypen \code{byte}, \code{short}, \code{int} und \code
 \item
 Welches sind jeweils die größten positiven, ganzen Zahlen, die mit den Datentypen \code{byte}, \code{short}, \code{int} und \code{long} dargestellt werden können?
 \item[Lsg]
-Der Datentyp \code{byte} mit 8 Bit kann maximal siebenstellige, positive Binärzahlen darstellen, das führende Bit bei solchen Zahlen ein 0-Bit sein muss.
+Der Datentyp \code{byte} mit 8 Bit kann maximal sieben-stellige, positive Binärzahlen darstellen, das führende Bit bei solchen Zahlen ein 0-Bit sein muss.
 Die größte positive, ganze Zahl lautet daher $1111111_2 = 127 = 128 - 1 = 2^7 - 1$.
 Für die Datentypen \code{short}, \code{int} und \code{long} erhält man in gleicher Weise $2^{15} - 1$, $2^{31} - 1$ bzw. $2^{63} - 1$ als größte darstellbare positive, ganze Zahl.
 \end{itemize}
