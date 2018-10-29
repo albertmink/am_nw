@@ -1,8 +1,13 @@
 \def\stitle{\theexercise\ - Exponentialreihe}
 \section{\stitle}
+\begin{frame}
+  \frametitle{\stitle}%
+\tableofcontents[current]
+\end{frame}
+
+
 \begin{frame}%
   \frametitle{\stitle}%
-
 
 Schreiben Sie ein kompilierbares Java-Programm zur Bestimmung der Funktionswerte der Exponentialfunktion $e^x$.
 Die Funktionswerte sollen durch endliche Summen
@@ -20,7 +25,7 @@ Die einzelnen Summanden $y_i := x^i/i! $ lassen sich dabei wie folgt berechnen:
 \begin{enumerate}
   \item Lesen Sie den Wert $x$ von der Konsole ein.
   \item Verwenden Sie zur Berechnung eine \code{do-while}-Schleife.
-        Brechen Sie die Summation ab, wenn sich zwei aufeinanderfolgende Summen $S(N)$ und $S(N+1)$ um weniger als $10^{-12}$ voneinander unterscheiden.
+        Brechen Sie die Summation ab, wenn sich zwei aufeinander folgende Summen $S(N)$ und $S(N+1)$ um weniger als $10^{-12}$ voneinander unterscheiden.
   \item Geben Sie den berechneten Wert und die Anzahl der zur Berechnung ben\"otigten Summanden auf dem Bildschirm aus.
         Vergleichen Sie den gen\"aherten Wert mit dem Wert der Standardfunktion, vgl. \code{Math.exp()}.
 \end{enumerate}
@@ -28,6 +33,6 @@ Die einzelnen Summanden $y_i := x^i/i! $ lassen sich dabei wie folgt berechnen:
 
 
 \begin{frame}%
-  \frametitle{\stitle\ - L\"osungsvorschlag}%
-\lstinputlisting[style=JAVAsmall]{\getexercisefolder/Expo.java}
+  \frametitle{\theexercise\ - L\"osungsvorschlag}%
+\lstinputlisting[style=JAVAfootnote]{\getexercisefolder/Expo.java}
 \end{frame}

@@ -1,5 +1,11 @@
 \def\stitle{\theexercise\ - Vorw\"artseinsetzen}
 \section{\stitle}
+\begin{frame}
+  \frametitle{\stitle}%
+\tableofcontents[current]
+\end{frame}
+
+
 \begin{frame}%
   \frametitle{\stitle}%
 Sei folgendes Gleichungssystem gegeben
@@ -37,6 +43,6 @@ y_i=\frac{1}{A_{ii}}\left(b_i-\sum_{k=1}^{i-1}A_{ik}y_k\right).
 
 
 \begin{frame}%
-  \frametitle{\stitle\ - L\"osungsvorschlag}%
-\lstinputlisting[style=JAVA]{\getexercisefolder/Vorwaerts.java}
+  \frametitle{\theexercise\ - L\"osungsvorschlag}%
+\lstinputlisting[style=JAVAsmall]{\getexercisefolder/Vorwaerts.java}
 \end{frame}
