@@ -1,4 +1,5 @@
 latexmkrc
+*.pdf
 *.class
 *.aux
 *.nav
