@@ -6,7 +6,7 @@ import java.util.*;
 public class RangeInt {
   public static void main (String[] args)
   {
-    int i = 2147483647;
+    int i = 2147483647; // 2^31-1
     System.out.println( i );
     i = i+1;
     System.out.println( i );
