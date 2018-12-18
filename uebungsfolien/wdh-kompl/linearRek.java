@@ -1,10 +1,9 @@
 // Aufwand linear O(n)
 static int methode(int n) {
-  int fak = 1;
   if ( n <= 1) {
-    return fak;
+    return n;
   } else {
-    return fak*methode(fak-1);
+    return n*methode(n-1);
   }
 
 }
