@@ -33,9 +33,8 @@ public class FelderMatrix{
       }
       double spaltenNorm = 0;
       for ( int i = 0; i < A.length; i++ ) {
-        spaltenNorm += spalte[i]*spalte[i];
+        spaltenNorm += Math.abs(spalte[i]);
       }
-      spaltenNorm = Math.sqrt(spaltenNorm);
       if (spaltenNorm>max) {
         max = spaltenNorm;
       }
@@ -43,13 +42,6 @@ public class FelderMatrix{
     return max;
   }
 
-  static double computeNorm(int [] x) {
-    double norm = 0;
-    for ( int i = 0; i < x.length; i++ ) {
-      norm += x[i]*x[i];
-    }
-    return Math.sqrt(norm);
-  }
   public static void main (String [] args){
     double[][] E = getIdentity();
     printMatrix(E);

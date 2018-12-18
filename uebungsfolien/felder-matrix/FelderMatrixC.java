@@ -9,9 +9,8 @@
       }
       double spaltenNorm = 0;
       for ( int i = 0; i < A.length; i++ ) {
-        spaltenNorm += spalte[i]*spalte[i];
+        spaltenNorm += Math.abs(spalte[i]);
       }
-      spaltenNorm = Math.sqrt(spaltenNorm);
       if (spaltenNorm>max) {
         max = spaltenNorm;
       }
