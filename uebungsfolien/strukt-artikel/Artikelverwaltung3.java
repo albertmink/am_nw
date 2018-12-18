@@ -4,11 +4,11 @@ public static void main ( String[] args ) {
   sc = new Scanner( System.in );
 
   System.out.print( "Bitte Anzahl der verschiedenen Artikel eingeben: " );
-  int AnzArtikel = sc.nextInt();
+  int anzArtikel = sc.nextInt();
 
   /*Lese alle Artikel von der Konsole ein*/
-  Artikel[] Artikelliste = liesListe( AnzArtikel );
+  Artikel[] artikelliste = liesListe( anzArtikel );
 
   /*Gebe alle Artikel auf der Konsole aus*/
-  zeigeListe( Artikelliste );
+  zeigeListe( artikelliste );
 }

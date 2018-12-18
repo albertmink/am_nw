@@ -4,43 +4,45 @@ public class Artikelverwaltung {
 
   /*Lese einen Artikel von der Konsole ein*/
   static Artikel liesArtikel () {
-    Artikel Ding = new Artikel();
+    Artikel ding = new Artikel();
     System.out.print( "Bitte Artikelname eingeben: " );
-    Ding.bezeichnung = sc.next();
+    ding.bezeichnung = sc.next();
     System.out.print( "Bitte vorhandene Einheiten eingeben: " );
-    Ding.anzahl = sc.nextInt();
+    ding.anzahl = sc.nextInt();
     System.out.print( "Bitte Preis pro Einheit eingeben: " );
-    Ding.preis = sc.nextDouble();
-    return Ding;
+    ding.preis = sc.nextDouble();
+    return ding;
   }
 
   /*Lese alle Artikel von der Konsole ein*/
-  static Artikel[] liesListe ( int AnzArtikel ) {
-    Artikel[] Artikelliste = new Artikel[AnzArtikel];
-    for ( int i = 0; i < AnzArtikel; ++i ) {
-      Artikelliste[i] = liesArtikel();
+  static Artikel[] liesListe ( int anzArtikel ) {
+    Artikel[] artikelliste = new Artikel[anzArtikel];
+    for ( int i = 0; i < anzArtikel; ++i ) {
+      artikelliste[i] = liesArtikel();
     }
-    return Artikelliste;
+    return artikelliste;
   }
 
   /*Gebe einen Artikel auf der Konsole aus*/
-  static void zeigeArtikel ( Artikel Ding ) {
-    double Gesamtwert = Ding.anzahl * Ding.preis;
+  static void zeigeArtikel ( Artikel ding ) {
+    double gesamtwert = ding.anzahl * ding.preis;
     System.out.printf( "%10.2f %10.2f %6s %20s \n",
-                       Gesamtwert, Ding.preis, Ding.anzahl, Ding.bezeichnung );
+                       gesamtwert, ding.preis, ding.anzahl,
+                       ding.bezeichnung );
   }
 
   /*Gebe eine Artikelliste auf der Konsole aus*/
-  static void zeigeListe ( Artikel[] Artikelliste ) {
+  static void zeigeListe ( Artikel[] artikelliste ) {
     System.out.printf( "%10s %10s %6s %20s \n",
-                       "Gesamtwert", "Preis", "Anzahl", "Bezeichnung" );
-    double Gesamtwert = 0.0;
-    for ( int i = 0; i < Artikelliste.length; ++i ) {
-      zeigeArtikel( Artikelliste[i] );
-      Gesamtwert += Artikelliste[i].anzahl
-                    * Artikelliste[i].preis;
+                       "Gesamtwert", "Preis", "Anzahl",
+                       "Bezeichnung" );
+    double gesamtwert = 0.0;
+    for ( int i = 0; i < artikelliste.length; ++i ) {
+      zeigeArtikel( artikelliste[i] );
+      gesamtwert +=   artikelliste[i].anzahl
+                    * artikelliste[i].preis;
     }
-    System.out.printf( "----------\n%10.2f\n", Gesamtwert );
+    System.out.printf( "----------\n%10.2f\n", gesamtwert );
   }
 
   /*Hauptprogramm*/
@@ -49,12 +51,12 @@ public class Artikelverwaltung {
     sc = new Scanner( System.in );
 
     System.out.print( "Bitte Anzahl der verschiedenen Artikel eingeben: " );
-    int AnzArtikel = sc.nextInt();
+    int anzArtikel = sc.nextInt();
 
     /*Lese alle Artikel von der Konsole ein*/
-    Artikel[] Artikelliste = liesListe( AnzArtikel );
+    Artikel[] artikelliste = liesListe( anzArtikel );
 
     /*Gebe alle Artikel auf der Konsole aus*/
-    zeigeListe( Artikelliste );
+    zeigeListe( artikelliste );
   }
 }
