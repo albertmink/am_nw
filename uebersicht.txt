@@ -65,13 +65,13 @@ arbeitsblatt08
 
 arbeitsblatt09
   Online am Di 11.12.2018
-  Besprechung in der Uebung am Di 08.01.2019
+  Besprechung in der Uebung am Di 18.12.2018
     funktionen-ss2018
     strukt-artikel
 
 arbeitsblatt10
-  Online am Di 08.01.2019
-  Besprechung in der Uebung am Di 15.01.2019
+  Online am Di 18.12.2019
+  Besprechung in der Uebung am Di 08.01.2019
     klassen-komplex
     klassen-hierarchie
 
