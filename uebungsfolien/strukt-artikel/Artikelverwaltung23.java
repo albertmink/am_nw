@@ -1,12 +1,7 @@
-/*Gebe eine Artikelliste auf der Konsole aus*/
-static void zeigeListe ( Artikel[] Artikelliste ) {
-  System.out.printf( "%10s %10s %6s %20s \n",
-                     "Gesamtwert", "Preis", "Anzahl", "Bezeichnung" );
-  double Gesamtwert = 0.0;
-  for ( int i = 0; i < Artikelliste.length; ++i ) {
-    zeigeArtikel( Artikelliste[i] );
-    Gesamtwert += Artikelliste[i].anzahl
-                  * Artikelliste[i].preis;
-  }
-  System.out.printf( "----------\n%10.2f\n", Gesamtwert );
+/*Gebe einen Artikel auf der Konsole aus*/
+static void zeigeArtikel ( Artikel ding ) {
+  double gesamtwert = ding.anzahl * ding.preis;
+  System.out.printf( "%10.2f %10.2f %6s %20s \n",
+                     gesamtwert, ding.preis, ding.anzahl,
+                     ding.bezeichnung );
 }
