@@ -1,3 +1,6 @@
-Aufgab rekursion-3 aka fibonacci
+Aufgabe rekursion-3 aka fibonacci
   gebe Komplexitaet in Landau Notation an
   durch ausprobieren, fib(10) und fib(20) vergleichen.
+
+Aufabe funktion-ss2017
+  abbruch kriterium macht probleme beim vortragen und verstehen
