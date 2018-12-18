@@ -15,7 +15,7 @@ public class Expo{
       yi = x/i *yi;
       exp = exp_alt + yi;
       i++;
-    } while ( Math.abs(exp-exp_alt) >= 10e-12 );
+    } while ( Math.abs(exp-exp_alt) >= 1e-12 );
     System.out.println("exp(x) = " + exp);
     System.out.println("Abbruch nach " +i+ " Schleifendurchlaeufen");
     System.out.println("Differenz " + (Math.exp(x)-exp));
