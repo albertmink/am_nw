@@ -1,0 +1,76 @@
+\documentclass[c,18pt]{beamer}
+\listfiles
+
+\mode<presentation>
+{
+  \usetheme[deutsch,titlepage0]{KIT}
+  \setbeamercovered{transparent}
+  \setbeamertemplate{enumerate items}[ball]
+}
+\usepackage[utf8]{inputenc}
+\date{15.01.2019}
+
+\newlength{\Ku}
+\setlength{\Ku}{1.43375pt}
+
+\usepackage{templateSlide/exercises}
+\usepackage[java]{code}
+
+\exercisespath{uebungsfolien/}
+
+%% title slide
+\title[Übung 10.5: Einstieg in die Informatik und algorithmische Mathematik]
+  {Übung 10.5: Einstieg in die Informatik und algorithmische Mathematik}
+\subtitle{Albert Mink | Wintersemester 2018/2019}
+
+\author[Albert Mink, ]{KIT}
+
+\AuthorTitleSep{\relax}
+
+\institute[Institut für Angewandte und Numerische Mathematik (IANM)]{Institut für Angewandte und Numerische Mathematik}
+
+\TitleImage[width=\titleimagewd]{logos/KIT-Titel}
+\logo{\includegraphics{logos/lbrg_logo}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{frame}
+  \maketitle
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{Übung zum Arbeitsblatt 10.5}%
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\setcounter{exercise}{33}
+\inputexercise{klassen-wal}
+
+\setcounter{exercise}{34}
+\inputexercise{klassen-bild}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Zusammenfassung}
+\begin{frame}
+  \frametitle{Zusammenfassung}%
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\begin{frame}
+\centering
+\Huge\textcolor{KITgreen}{Fragen?}
+\vspace{2cm}
+
+{\LARGE
+N\"achste \"Ubung: 22. Januar\\
+Probeklausur
+}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
