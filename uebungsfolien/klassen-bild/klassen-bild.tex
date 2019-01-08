@@ -1,0 +1,109 @@
+\def\stitle{\theexercise\ - Klassen-Bild}
+\section{\stitle}
+\begin{frame}%
+  \frametitle{\stitle}%
+\tableofcontents[current]
+\end{frame}
+
+%\source{Albert Mink}
+%\utilization{SS17 Nachklausur}
+
+
+\begin{frame}%
+  \frametitle{\theexercise\ - Aufgabenstellung}%
+
+Schreiben Sie ein kompilier- und ausf"uhrbares Java-Programm, welches ein Bild bestehend aus einzelnen Pixeln repr"asentiert.
+\bigskip
+
+Verwenden Sie dazu zwei Klassen.
+\begin{enumerate}
+\item
+Die Klasse \code{Pixel} besteht aus einer x- und y-Koordinate \mbox{sowie} einem Feld.
+Letzteres enth"alt drei Farbwerte f"ur die Farben Rot, Gr"un und Blau und wird \emph{RGB-Wert} genannt.
+\item
+Die Klasse \code{Bild} besteht aus einem zwei dimensionalen Feld von \mbox{Pixeln} und au"serdem aus der Pixelanzahl in \mbox{x-Richtung}.
+Da das Bild quadratisch sein soll, gen"ugt die Betrachtung einer Richtung.
+\end{enumerate}
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}%
+  \frametitle{\theexercise\ - Klasse \code{Pixel} }%
+
+Gehen Sie wie folgt f"ur die Klasse \code{Pixel} vor:
+\begin{enumerate}
+\item Schreiben Sie eine "offentliche Klasse \code{Pixel} die private, ganzzahlige Instanzvariablen f"ur die x- und y-Position besitzt.
+  Legen Sie au"serdem eine private Instanzvariable vom Typ \code{int[]} f"ur den RGB-Wert an.
+\item Im n"achsten Schritt implementieren Sie einen Konstruktor, der mittels formalen Para\-metern f"ur die x-Position, y-Position und dem RGB-Wert, die privaten Instanzvariablen initialisiert.
+\item Zuletzt, schreiben Sie eine "offentliche Instanzfunktion \code{write} vom Typ \code{void} und ohne formalen Parameter, die zu der Position des Pixels auch den RGB-Wert auf der Konsole ausgibt.
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}%
+  \frametitle{\theexercise\ - Klasse \code{Pixel} Lsg }%
+%\lstinputlisting[style=JAVAfootnote]{\getexercisefolder/Pixel.java}
+\end{frame}
+
+\begin{frame}%
+  \frametitle{\theexercise\ - Klasse \code{Bild}}%
+
+Gehen Sie wie folgt f"ur die Klasse \code{Bild} vor:
+\begin{enumerate}
+\item[1.] Schreiben Sie eine "offentliche Klasse \code{Bild} mit einer "offentlichen, ganzzahligen Variable \code{size} f"ur die Anzahl der Pixel entlang der x-Richtung.
+  Legen Sie au"serdem ein "offentliches Feld mit Variablennamen \code{pixels} (vom Typ \code{Pixel[][]}) an, welches das Bild darstellt.
+  Beide Variablen sollen Instanzvariablen sein.
+\end{enumerate}
+\pause
+  \frametitle{\theexercise\ - Klasse \code{Pixel} }%
+%\lstinputlisting[style=JAVAfootnote]{\getexercisefolder/Bild1.java}
+\end{frame}
+
+
+
+\begin{frame}%
+  \frametitle{\theexercise\ - Klasse \code{Bild}}%
+
+Fortsetzung
+\begin{enumerate}
+\item[2.] Implementieren Sie einen Konstruktor ohne formalen Parameter, der zun"achst die gew"unschte Gr"o"se des Bildes vom Terminal einliest - mit begleitenden Text.
+  Danach erzeugen Sie das Bild, indem Sie die einzelnen Pixel des Feldes \code{pixels} per Konstruktoraufruf erstellen.
+  \mbox{Fragen} Sie jeweils nach den gew"unschten Farbwerten und lesen Sie diese von der Konsole ein.
+\end{enumerate}
+\pause
+  \frametitle{\theexercise\ - Klasse \code{Pixel} }%
+%\lstinputlisting[style=JAVAfootnote,frame=t]{\getexercisefolder/Bild2.java}
+\end{frame}
+
+\begin{frame}%
+  \frametitle{\theexercise\ - Klasse \code{Bild}}%
+
+Fortsetzung
+\begin{enumerate}
+\item[3.] Schreiben Sie eine "offentliche Klassenfunktion \code{write} mit formalen Parameter vom Typ \code{Bild}, die das Bild Pixel f"ur Pixel auf dem Terminal ausgibt.
+  Nutzen Sie die Instanzfunktion \code{write} der Klasse \code{Pixel}.
+\end{enumerate}
+\pause
+  \frametitle{\theexercise\ - Klasse \code{Pixel} }%
+%\lstinputlisting[style=JAVAfootnote]{\getexercisefolder/Bild3.java}
+\end{frame}
+
+
+\begin{frame}%
+  \frametitle{\theexercise\ - Hauptprogramm}%
+
+Schreiben Sie nun in der Klasse \code{Bild} das Hauptprogramm:
+\begin{enumerate}
+\item Im Hauptprogramm legen Sie zun"achst ein Bild mit Namen \code{beltracchi} und dann ein weiteres mit Namen \code{mattise} an.
+  Anschlie"send geben Sie beide Bilder, mittels der \mbox{obigen} \code{write} Funktion, auf der Konsole aus.
+\end{enumerate}
+\pause
+  \frametitle{\theexercise\ - Klasse \code{Pixel} }%
+%\lstinputlisting[style=JAVAfootnote]{\getexercisefolder/BildMain.java}
+\end{frame}
