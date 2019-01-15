@@ -4,3 +4,6 @@ Aufgabe rekursion-3 aka fibonacci
 
 Aufabe funktion-ss2017
   abbruch kriterium macht probleme beim vortragen und verstehen
+
+Aufgabe struct
+  liesArtikel() warum nicht als Konstruktor?
