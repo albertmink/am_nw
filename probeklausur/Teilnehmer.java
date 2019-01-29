@@ -16,11 +16,11 @@ class Teilnehmer {
     speicher = "keine Nachricht";
   }
 
-  public void sendeNachricht(int nummer_, Betreiber bt_) {
-    System.out.println("\nSendernummer " + name);
-    System.out.println("Empfaengernummer " + bt_.tn[nummer_].name);
-    System.out.println("Nachricht:");
-    bt_.tn[nummer_].speicher = in.next();
+  public void sendeNachricht(int empfaengerNr, Betreiber empfaengerBt) {
+    System.out.println("\nTeilnehmer " + name);
+    System.out.println("sendet an " + empfaengerBt.tn[empfaengerNr].name);
+    System.out.println("folgende Nachricht:");
+    empfaengerBt.tn[empfaengerNr].speicher = in.next();
   }
 
   public String toString() {
