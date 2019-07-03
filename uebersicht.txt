@@ -3,24 +3,24 @@ Inhalt: Inhaltliche und zeitliche Uebersicht der Arbeitsblaetter
 
 
 arbeitsblatt01
-  Online am Di 16.10.2018
-  Besprechung in der Uebung am Di 23.10.2018
+  Online am Di 15.10.2018
+  Besprechung in der Uebung am Di 22.10.2018
     grundl-java
     grundl-literale
     grundl-ausdruecke
     zahldarst-stellenwertsystem
 
 arbeitsblatt02
-  Online am Di 23.10.2018
-  Besprechung in der Uebung am Di 30.10.2018
+  Online am Di 22.10.2018
+  Besprechung in der Uebung am Di 29.10.2018
     zahldarst-binaereaddition
     zahldarst-ganzzahl
     zahldarst-gleitkomma
     grundl-boolalg
 
 arbeitsblatt03
-  Online am Di 30.10.2018
-  Besprechung in der Uebung am Di 06.11.2018
+  Online am Di 29.10.2018
+  Besprechung in der Uebung am Di 05.11.2018
     grundl-boolalgnegation
     anweis-1
     anweis-2
@@ -28,63 +28,63 @@ arbeitsblatt03
     schleifen-2
 
 arbeitsblatt04
-  Online am Di 06.11.2018
-  Besprechung in der Uebung am Di 13.11.2018
+  Online am Di 05.11.2018
+  Besprechung in der Uebung am Di 12.11.2018
     rundf-epsilon
     anweis-fehler
     schleifen-2
 
 arbeitsblatt05
-  Online am Di 13.11.2018
-  Besprechung in der Uebung am Di 20.11.2018
+  Online am Di 12.11.2018
+  Besprechung in der Uebung am Di 19.11.2018
     felder-grundl
     felder-binsearch
     felder-felder
 
 arbeitsblatt06
-  Online am Di 20.11.2018
-  Besprechung in der Uebung am Di 27.11.2018
+  Online am Di 19.11.2018
+  Besprechung in der Uebung am Di 26.11.2018
     felder-sideEff
     funktionen-grundl
     funktionen-trapez
 
 arbeitsblatt07
-  Online am Di 27.11.2018
-  Besprechung in der Uebung am Di 04.12.2018
+  Online am Di 26.11.2018
+  Besprechung in der Uebung am Di 03.12.2018
     felder-matrix
     rekursion-1
     komplexitaet-eff
     komplexitaet-1
 
 arbeitsblatt08
-  Online am Di 04.12.2018
-  Besprechung in der Uebung am Di 11.12.2018
+  Online am Di 03.12.2018
+  Besprechung in der Uebung am Di 10.12.2018
     komplexitaet-1
     rekursion-3
     vorwaertseinsetzen
 
 arbeitsblatt09
-  Online am Di 11.12.2018
-  Besprechung in der Uebung am Di 18.12.2018
+  Online am Di 10.12.2018
+  Besprechung in der Uebung am Di 17.12.2018
     funktionen-ss2018
     strukt-artikel
 
 arbeitsblatt10
-  Online am Di 18.12.2018
-  Besprechung in der Uebung am Di 08.01.2019
+  Online am Di 17.12.2018
+  Besprechung in der Uebung am Di 07.01.2019
     klassen-komplex
     klassen-hierarchie
 
 arbeitsblatt11
-  Online am Di 08.01.2019
-  Besprechung in der Uebung am Di 15.01.2019
+  Online am Di 07.01.2019
+  Besprechung in der Uebung am Di 14.01.2019
     klassen-wal
     klassen-bild
 
 arbeitsblatt12
-  Di 22.01.2019
+  Di 21.01.2019
   Probleklausur
 
 arbeitsblatt13
-  Di 29.01.2019
+  Di 28.01.2019
   Probleklausur - Besprechung, Schwerpunkt Programieraufgabe
