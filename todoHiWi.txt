@@ -1,0 +1,6 @@
+Umlaute ausschreiben
+  Status
+
+Datum anpassen in allen arbeitsblatt*.tex und ueb*.tex, gemaess uebersicht.txt
+  Status
+
