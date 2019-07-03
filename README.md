@@ -15,3 +15,11 @@
 # Compile your latex arbeitsblatt
 
 * latexmk -pdf arbeitsblatt01.tex
+
+# Details on latexmk
+
+* Remove all tmp files from previous latex compilation
+__latexmk -c__
+
+* Compile all .tex files in current directory
+__latexmk -pdf__
