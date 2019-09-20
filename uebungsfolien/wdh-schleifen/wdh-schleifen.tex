@@ -1,0 +1,28 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Wiederholung}\label{K:wdh}
+\begin{frame}
+  \frametitle{\kap. Wiederholung}%
+\tableofcontents[current]
+\end{frame}
+
+\begin{frame}[fragile]%
+  \frametitle{\ref{K:wdh}.\thesubsection\ \stitle}%
+
+\begin{lstlisting}[style=java]
+for(Initialisierung; Abbruch; Update) {
+    Anweisung_1;
+    ...
+    Anweisung_n;
+}
+\end{lstlisting}
+\begin{itemize}
+\item Der \textbf{\textcolor{KITblue}{Initialisierungsteil}}  wird einmal ausgef\"uhrt und dient zur
+    Deklaration von (lokalen) Variablen. \\ Bsp.: \lstinline|int i=0|
+\item Der \textbf{\textcolor{KITblue}{Abbruchsteil}}  ist ein Ausdruck vom Typ
+    \textcolor{KITgreen}{\lstinline|bool|}. Solange sich der Wert
+    \textcolor{KITgreen}{\lstinline|true|} ergibt, wird die Verbundanweisung und
+    anschlie\ss{}end der Updateteil wiederholt. Die Schleife wird beendet, wenn
+    der Ausdruck \textcolor{KITgreen}{\lstinline|false|} ist.
+\item Der \textbf{\textcolor{KITblue}{Updateteil}}  enth\"alt in der Regel einen Inkrement Operator, welcher einen Wert f\"ur den n\"achsten Schleifendurchlauf ver\"andert. \\ Bsp.: \lstinline|i++| oder \lstinline|i+=5|
+\end{itemize}
+\end{frame}
