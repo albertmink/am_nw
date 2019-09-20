@@ -57,28 +57,6 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\stitle{Stellenwertsystem}
-\subsection{\stitle}\label{S:Stellenwertsystem}
-\begin{frame}[fragile]%
-  \frametitle{\ref{K:wdh}.\ref{S:Stellenwertsystem} \stitle}%
-
-Eine Zahl l\"asst sich in einem Stellenwertsystem zu einer Basis $b$ durch eine Ziffernfolge darstellen, die Basis wird dabei in der Regel als Index gegeben.
-Zum Beispiel die Zahl $426_8$, gegeben im Oktalsystem:
-\begin{equation*}
-426_8 = 4*8^2 + 2*8^1 + 6*8^0 = 256 + 16 + 6 = 278_{10} = 278
-\end{equation*}
-M\"ochte man nicht in oder von dem Dezimalsystem umrechnen, ist oft dennoch ein Umweg dar\"uber notwendig, au\ss er die Basis des einen Systems ist eine Potenz der Basis eines anderen Systems ($b_1 = b_2^n$).
-In diesem Fall lassen sich die Zahlen in Bl\"ocke unterteilen.
-Beispiel Bin\"arsystem und Oktalsystem:
-\begin{align*}
-426_8 \rightarrow \quad & \quad   4 & | & \quad   2 & | & \quad   6 & \\
-                        & \quad 100 & | & \quad 010 & | & \quad 110 & \quad \rightarrow 100010110_2
-\end{align*}
-
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\stitle{Grundlagen in Java}
 \subsection{\stitle}\label{S:GrundlageninJava}
 \begin{frame}[fragile]%
@@ -99,6 +77,15 @@ Beispiel Bin\"arsystem und Oktalsystem:
 \item[Definition] \code{int n = -1;}
 \item[Wertzuweisung] \code{int a = n;}
 \end{description}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]%
+  \frametitle{\ref{K:wdh}.\ref{S:GrundlageninJava} \stitle}%
+
+\textcolor{KITgreen}{\heading{Variablen}} \code{int, for, const, double, else, final, import, class, this, short, while, ...}
 
 \end{frame}
 
@@ -131,11 +118,6 @@ $ java HelloWorld
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{exercise}{3}
 \inputexercise{grundl-ausdruecke} %% Java Bsp Code
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setcounter{exercise}{4}
-\inputexercise{zahldarst-stellenwertsystem}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\kap{2}%

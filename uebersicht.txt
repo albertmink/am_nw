@@ -8,43 +8,40 @@ arbeitsblatt01
     grundl-java
     grundl-literale
     grundl-ausdruecke
-    zahldarst-stellenwertsystem
 
 arbeitsblatt02
   Online am Di 22.10.2019
   Besprechung in der Uebung am Di 29.10.2019
+    zahldarst-stellenwertsystem
     zahldarst-binaereaddition
     zahldarst-ganzzahl
-    zahldarst-gleitkomma
-    grundl-boolalg
 
 arbeitsblatt03
   Online am Di 29.10.2019
   Besprechung in der Uebung am Di 05.11.2019
+    grundl-boolalg
     grundl-boolalgnegation
     anweis-1
     anweis-2
     schleifen-1
-    schleifen-2
 
 arbeitsblatt04
   Online am Di 05.11.2019
   Besprechung in der Uebung am Di 12.11.2019
+    schleifen-2
     rundf-epsilon
     anweis-fehler
-    schleifen-2
 
 arbeitsblatt05
   Online am Di 12.11.2019
   Besprechung in der Uebung am Di 19.11.2019
     felder-grundl
-    felder-binsearch
     felder-felder
+    felder-sideEff
 
 arbeitsblatt06
   Online am Di 19.11.2019
   Besprechung in der Uebung am Di 26.11.2019
-    felder-sideEff
     funktionen-grundl
     funktionen-trapez
 
