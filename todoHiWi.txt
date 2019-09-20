@@ -4,3 +4,11 @@ Umlaute ausschreiben
 Datum anpassen in allen arbeitsblatt*.tex und ueb*.tex, gemaess uebersicht.txt
   Status
 
+ueb01.tex
+  Literale (a) "Hello" umschreiben zu a) "Hello" -> String; dann ist die Loesung mit auf der Folie
+
+ersetzen in allen uebXY:
+\title[Übung 01: Einstieg in die Informatik und algorithmische Mathematik]
+  {Übung 01: Einstieg in die Informatik und algorithmische Mathematik}
+mit
+\title{Übung 01: Einstieg in die Informatik und algorithmische Mathematik}

@@ -10,3 +10,26 @@ Aufgabe struct
 
 Kann ein zentrales DatumDokument eingerichtet werden, wo die richtigen Termine hinterlegt sind?
   Einfaches Uebertragen von Jahr zu Jahr
+
+Ueb01
+  Add kleine Aufgabe
+    FOR, WHILE
+  Add kleine Aufgabe
+    Kommentare, Keywords, float, int, &&
+
+
+Ueb02
+  Aufgabe mit import Math
+
+Ueb03
+  TODO: Wdh boolsche Algebra
+
+Ueb04
+  
+
+Ueb05
+  Bessere Felder Aufgabe mit Schleifen
+    Suche Min/Max
+    Berechne Norm l2
+  Kleine Veranschaulichung
+    Funktionsargumente, Referenz int[], Value int
