@@ -1,0 +1,153 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Wiederholung Schleifen}
+\section{Wiederholung}\label{K:wdh}
+\begin{frame}
+  \frametitle{\ref{K:wdh} Wiederholung}%
+\tableofcontents[current]
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Grundlagen in Java}
+\subsection{\stitle}\label{S:GrundlageninJava}
+\begin{frame}[fragile]%
+  \frametitle{\ref{K:wdh}.\ref{S:GrundlageninJava} \stitle}%
+
+\begin{description}[leftmargin=*,style=nextline]
+\item[\textcolor{KITgreen}{\textbf{Datentypen}}]
+\item[Ganzzahlige Typen]  \code{byte, short, int, long}
+\item[Gleitkomma Typen]   \code{float, double}
+\item[Zeichen]            \code{char, String}
+\item[Boolscher Typen]    \code{boolean}
+\end{description}
+\medskip
+
+\begin{description}[leftmargin=*,style=nextline]
+\item[\textcolor{KITgreen}{\textbf{Variablen}}]
+\item[Deklaration] \code{double x;}
+\item[Definition] \code{int n = -1;}
+\item[Wertzuweisung] \code{int a = n;}
+\end{description}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]%
+  \frametitle{\ref{K:wdh}.\ref{S:GrundlageninJava} \stitle}%
+
+\textcolor{KITgreen}{\heading{Keywords}} \code{int, for, const, double, else, final, import, class, this, short, while, ...}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Rechner Demo}
+\subsection{\stitle}\label{S:RechnerDemo0}
+\begin{frame}[fragile]%
+  \frametitle{\ref{K:wdh}.\ref{S:RechnerDemo0} \stitle}%
+
+\lstinputlisting[style=java,frame=single]{./uebungsfolien/helloWorld/HelloWorldWDH.java}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Kompilieren und Ausführen}
+\subsection{\stitle}\label{S:CompilierenUexec}
+\begin{frame}[fragile]%
+  \frametitle{\ref{K:wdh}.\ref{S:CompilierenUexec} \stitle}%
+
+Um das Programm Hello World auszuführen werden folgende Schritte auf dem Terminal durchgeführt.
+
+\begin{lstlisting}[style=BASH]
+$ javac HelloWorld.java
+$ java HelloWorld
+  Hello World!
+\end{lstlisting}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Rechner Demo, FOR Schleife}
+\subsection{\stitle}\label{S:RechnerDemo}
+\begin{frame}[fragile]%
+  \frametitle{\ref{K:wdh}.\ref{S:RechnerDemo} \stitle}%
+
+
+\begin{lstlisting}[title={Beispiel Programm},style=java, frame=single]
+for( int i = 0; i < 3; i++ ) {
+  System.out.println(i);
+}
+\end{lstlisting}
+\bigskip
+
+\begin{lstlisting}[title=output,style=java, frame=single]
+0
+1
+2
+\end{lstlisting}
+\hfill
+
+\begin{itemize}
+\item Unendliche Schleife
+\item Inkrement
+\item \textbf{Verändere nicht die Zählvariable}
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Rechner Demo, WHILE Schleife}
+\subsection{\stitle}\label{S:RechnerDemo2}
+\begin{frame}[fragile]%
+  \frametitle{\ref{K:wdh}.\ref{S:RechnerDemo2} \stitle}%
+
+
+\begin{lstlisting}[title={Beispiel Programm},style=java, frame=single]
+int i = 0;
+while( i < 3 ) {
+  i++;
+  System.out.println(i);
+}
+\end{lstlisting}
+\bigskip
+
+\begin{lstlisting}[title=output,style=java, frame=single]
+0
+1
+2
+\end{lstlisting}
+\hfill
+
+\begin{itemize}
+\item Unendliche Schleife
+\item Inkrement
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Rechner Demo, Nested Loops}
+\subsection{\stitle}\label{S:RechnerDemo3}
+\begin{frame}[fragile]%
+  \frametitle{\ref{K:wdh}.\ref{S:RechnerDemo3} \stitle}%
+
+
+\begin{lstlisting}[title={Beispiel Programm},style=java, frame=single]
+for( int i = 0; i < 4; i++ ) {
+  for( int j = 0; j < i; j++ ) {
+    System.out.print("*");
+  }
+  System.out.println(); // new line
+}
+\end{lstlisting}
+\bigskip
+\pause
+
+\begin{lstlisting}[title=output,style=java, frame=single]
+*
+**
+***
+\end{lstlisting}
+\end{frame}
