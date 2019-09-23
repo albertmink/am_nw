@@ -9,51 +9,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\sstitle{Logische Operatoren}
 \subsection{\sstitle}\label{S:LogiOperatoren}
-\begin{frame}%
+\begin{frame}[fragile]%
   \frametitle{\kap.\ref{S:LogiOperatoren} \sstitle}%
 
-TODO: Einfuehrung \&\& etc
+Prüfe in welchem Quadranten ein Punkt mit den Koordinaten $x$ und $y$ liegt.
 
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\sstitle{Beachtung der Priorität}
-\subsection{\sstitle}\label{S:Prioritat}
-\begin{frame}%
-  \frametitle{\kap.\ref{S:Prioritat} \sstitle}%
-
-Gegeben sei der folgende Java--Ausdruck:
-\begin{center}
-\code{a || b && c}
-\end{center}
-Dabei seien \code{a, b, c} Variablen vom Typ \code{boolean}.
-\medskip
-
-Wie wird dieser Ausdruck abgearbeitet (engl. \emph{operator precedence})?
-\begin{enumerate}
-  \item \code{(a || b) && c}
-  \item \code{ a || b( && c)}
-\end{enumerate}
-
-Welche der folgenden Ausdrücke ist die korrekte \textbf{Negation}?
-\begin{enumerate}
-  \item \code{!a && (!b || !c)}
-  \item \code{!a &&  !b || !c}
-\end{enumerate}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\stitle{Offizielle Dokumentation}
-\subsection{\stitle}\label{S:Dokumentation}
-\begin{frame}[fragile]%
-  \frametitle{\kap.\ref{S:Dokumentation} \stitle}%
-%%source
-\textcolor{KITblue}{\url{docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html}}
-
-\begin{center}
-\includegraphics[width=0.5\textwidth]{\getexercisefolder/operatorPrecedence}
-\end{center}
+\begin{lstlisting}[style=java, frame=single]
+// Punkt liegt im III Quadrant falls
+if( x < 0 && y < 0 )
+\end{lstlisting}
+\begin{lstlisting}[style=java, frame=single]
+// Punkt liegt in den Quadranten I, II, IV falls
+if( x > 0 || y > 0 )
+// equivalent zu 'nicht in III Quadrant'
+if( !(x < 0 && y < 0) )
+\end{lstlisting}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -78,5 +48,52 @@ Vergleich Analysis I
   \item $(A \cap B)^{\mathsf{c}} = A^{\mathsf{c}} \cup B^{\mathsf{c}}$
   \item $(A \cup B)^{\mathsf{c}} = A^{\mathsf{c}} \cap B^{\mathsf{c}}$
 \end{description}
+\end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\sstitle{Priorität der Operatoren}
+\subsection{\sstitle}\label{S:Prioritat}
+\begin{frame}[fragile]
+  \frametitle{\kap.\ref{S:Prioritat} \sstitle}%
+
+\begin{lstlisting}[style=java, frame=single]
+// Punkt for Strich
+System.out.println(1+4/2); // Klammern 1+(4/2)
+System.out.println(2+3%2); // Klammern 2+(3%2)
+System.out.println(2*3%2); // Von links nach rechts
+\end{lstlisting}
+\hfill
+
+Gegeben sei der folgende Java--Ausdruck:
+\begin{center}
+\code{a || b && c}
+\end{center}
+Dabei seien \code{a, b, c} Variablen vom Typ \code{boolean}.
+\medskip
+
+Wie wird dieser Ausdruck abgearbeitet (engl. \emph{operator precedence})?
+\pause
+\begin{enumerate}
+  \item \code{ a || (b && c)}
+\end{enumerate}
+\pause
+Welche der folgenden Ausdrücke ist die korrekte \textbf{Negation}?
+\begin{enumerate}
+  \item \code{!a && (!b || !c)}
+  \item \code{!a &&  !b || !c}
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Offizielle Dokumentation}
+\subsection{\stitle}\label{S:Dokumentation}
+\begin{frame}[fragile]%
+  \frametitle{\kap.\ref{S:Dokumentation} \stitle}%
+%%source
+\textcolor{KITblue}{\url{docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html}}
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{\getexercisefolder/operatorPrecedence}
+\end{center}
 \end{frame}
