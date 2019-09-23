@@ -85,8 +85,18 @@
 \begin{frame}[fragile]%
   \frametitle{\ref{K:wdh}.\ref{S:GrundlageninJava} \stitle}%
 
-\textcolor{KITgreen}{\heading{Variablen}} \code{int, for, const, double, else, final, import, class, this, short, while, ...}
+\textcolor{KITgreen}{\heading{Keywords}} \code{int, for, const, double, else, final, import, class, this, short, while, ...}
 
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Rechner Demo}
+\subsection{\stitle}\label{S:RechnerDemo0}
+\begin{frame}[fragile]%
+  \frametitle{\ref{K:wdh}.\ref{S:RechnerDemo0} \stitle}%
+
+\lstinputlisting[style=java,frame=single]{./uebungsfolien/helloWorld/HelloWorldWDH.java}
 \end{frame}
 
 
@@ -105,6 +115,66 @@ $ java HelloWorld
 \end{lstlisting}
 
 \end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Rechner Demo, FOR Schleife}
+\subsection{\stitle}\label{S:RechnerDemo}
+\begin{frame}[fragile]%
+  \frametitle{\ref{K:wdh}.\ref{S:RechnerDemo} \stitle}%
+
+
+\begin{lstlisting}[title={Beispiel Programm},style=java, frame=single]
+for( int i = 0; i < 3; i++ ) {
+  System.out.println(i);
+}
+\end{lstlisting}
+\bigskip
+
+\begin{lstlisting}[title=output,style=java, frame=single]
+0
+1
+2
+\end{lstlisting}
+\hfill
+
+\begin{itemize}
+\item Unendliche Schleife
+\item Inkrement
+\item \textbf{Verändere nicht die Zählvariable}
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stitle{Rechner Demo, WHILE Schleife}
+\subsection{\stitle}\label{S:RechnerDemo2}
+\begin{frame}[fragile]%
+  \frametitle{\ref{K:wdh}.\ref{S:RechnerDemo2} \stitle}%
+
+
+\begin{lstlisting}[title={Beispiel Programm},style=java, frame=single]
+int i = 0;
+while( i < 3 ) {
+  i++;
+  System.out.println(i);
+}
+\end{lstlisting}
+\bigskip
+
+\begin{lstlisting}[title=output,style=java, frame=single]
+0
+1
+2
+\end{lstlisting}
+\hfill
+
+\begin{itemize}
+\item Unendliche Schleife
+\item Inkrement
+\end{itemize}
+\end{frame}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
