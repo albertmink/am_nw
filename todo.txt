@@ -12,17 +12,13 @@ Kann ein zentrales DatumDokument eingerichtet werden, wo die richtigen Termine h
   Einfaches Uebertragen von Jahr zu Jahr
 
 Ueb01
-  Add kleine Aufgabe
-    FOR, WHILE
-  Add kleine Aufgabe
-    Kommentare, Keywords, float, int, &&
 
 
 Ueb02
   Aufgabe mit import Math
 
 Ueb03
-  TODO: Wdh boolsche Algebra
+
 
 Ueb04
   
