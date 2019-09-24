@@ -2,8 +2,9 @@
 public class FelderFunktionen{
   static int computeNorm(int n) {
     n = n*n;
-    return n;
+    return Math.sqrt(n);
   }
+  // Ueberladung, overload
   static double computeNorm(int[] x) {
     x[0] = x[0]*x[0] + x[1]*x[1];
     return Math.sqrt(x[0]);

@@ -1,14 +1,40 @@
 \def\stitle{\theexercise\ - Seiteneffekte}
 \section{\stitle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
   \frametitle{\stitle}%
 \tableofcontents[current]
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[t]%
     \frametitle{\stitle}
 
-Betrachten Sie das folgende Java-Programm.
-  \lstinputlisting[style=JAVAsmalllines]{\getexercisefolder/FelderFunktionen.java}
+  \lstinputlisting[style=JAVAfootnotelines]{\getexercisefolder/FelderFunktionen.java}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]%
+\frametitle{\theexercise - Pass by value}
+
+Primitive Datentypen wie \code{int, double, char, ...} werden als Kopie an Funktionen übergeben.
+Das bedeutet hier, dass die Variable \code{a} durch den Funktionsaufruf nicht geändert wird.
+
+\lstinputlisting[style=JAVAfootnote,frame=single,linerange={2-6,12-16,20}]{\getexercisefolder/FelderFunktionen.java}
+Liste der primitiven Datentypen in Java \textcolor{KITblue}{\url{https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html}}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[t]%
+\frametitle{\theexercise - Pass by value}
+
+Ein array ist kein primitiver Datentyp sondern ein (Kontainer) Objekt.
+Bei der uhrsprüngliche Werte kann bei Funktionsaufrufen verändert werden.
+\emph{Achtung!}
+\lstinputlisting[style=JAVAfootnote,frame=single,linerange={2-2,8-11,12-12,17-20}]{\getexercisefolder/FelderFunktionen.java}
+
+Dokumentation des Datentyps array \textcolor{KITblue}{\url{https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html}}
 
 \end{frame}
