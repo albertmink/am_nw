@@ -1,0 +1,26 @@
+\def\stitle{\theexercise\ - Reihen}
+\section{\stitle}
+\begin{frame}
+  \frametitle{\stitle}%
+\tableofcontents[current]
+\end{frame}
+
+\begin{frame}[t]%
+    \frametitle{\stitle}
+
+Die Kreiszahl $\pi$ kann als geometrische Reihe formuliert werden:
+$$
+\sum_{n=1}^\infty  \frac{1}{n^2} = \frac{\pi^2}{6}
+$$
+
+Berechne die endliche Reihe $\sum_{n=1}^N \frac{1}{n^2}$ für ein $N\in\mathbb{N}$ und bestimme den Fehler zur obigen Formel.
+
+\pause
+\lstinputlisting[style=JAVAsmalllines,linerange=5-12]{\getexercisefolder/SchleifenZeta.java}
+\end{frame}
+
+
+\begin{frame}[fragile]%
+ \frametitle{\theexercise\ - Lösungsweg}%
+\lstinputlisting[style=JAVA,title={Ohne Nummern für copy\&paste}]{\getexercisefolder/SchleifenZeta.java}
+\end{frame}
