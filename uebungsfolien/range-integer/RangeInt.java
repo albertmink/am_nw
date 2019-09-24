@@ -9,6 +9,6 @@ public class RangeInt {
     int i = 2147483647; // 2^31-1
     System.out.println( i );
     i = i+1;
-    System.out.println( i );
+    System.out.println( i ); // prints -2147483648
   }
 }
