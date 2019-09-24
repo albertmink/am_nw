@@ -7,24 +7,23 @@
 
 \begin{frame}[fragile]%
     \frametitle{\stitle}%
-    
+
 In Java besitzen die Ganzzahl-Datentypen die folgenden Größen
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline
 \textbf{Datentyp} & \textbf{Größe} \\
 \hline
-byte       &  8 Bit         \\
-short      & 16 Bit         \\
-int        & 32 Bit         \\
-long       & 64 Bit         \\
+byte  &  8 Bit \\
+short & 16 Bit \\
+int   & 32 Bit \\
+long  & 64 Bit \\
 \hline
 \end{tabular}
 \end{center}
-Das führende Bit jedes Datentypen gibt das Vorzeichen der Zahl an:
+Das führende Bit jedes Datentypen gibt das Vorzeichen der Zahl an.
 Ein 0-Bit zeigt eine nichtnegative Zahl an, ein 1-Bit eine negative Zahl.
-Jedem Bitmuster entspricht genau eine ganze Zahl.
-Ist das führende Bit ein 0-Bit (nichtnegative Zahl), repräsentieren die übrigen Bits die Ziffern der Binärdarstellung dieser Zahl.
+Zum Beispiel ist $0111 1111_2=127$ und $11111111_2 = -128$ die kleinste und größte darstellbare Zahl des Datentyps \code{byte}.
 \begin{itemize}
 \item Wie viele verschiedene ganze Zahlen können mit den Datentypen \code{byte}, \code{short}, \code{int} und \code{long} dargestellt werden?
 

@@ -1,6 +1,5 @@
-import java.util.Scanner;
-
 /* Author: Albert Mink, Sep 2019 */
+import java.util.Scanner;
 public class SchleifenFakt {
   public static void main (String[] args) {
     int fakultat = 1;
