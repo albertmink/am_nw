@@ -11,7 +11,7 @@ public class Ausdruecke1 {
     System.out.println( "5: 3 / 6.0 = " + (3 / 6.0) );
     System.out.println( "9: 1.0 / 4 = " + (1.0 / 4) );
     System.out.println( "4: (2-1.0) / 5 = "+((2-1.0) / 5) );
-    System.out.println( "13: 1 / 2 = " +(1 / 2) + " (int)" );
+    System.out.println( "12: 1 / 2 = " +(1 / 2) + " (int)" );
     System.out.println( "8: 2/(int)3.14 = " + (2/(int)3.14) );
   }
 }

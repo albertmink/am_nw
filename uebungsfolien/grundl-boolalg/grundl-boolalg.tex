@@ -20,36 +20,32 @@ Geben Sie das Ergebnis der nachfolgenden Java-Ausdrücke an
 \item[(a)] \code{true && false}
 \item[(b)] \code{true || false}
 \item[(c)] \code{(0 == 1) || (1 < 2)}
-\item[(d)] \code{(0 != 1) && !(2 < 1)}
 \end{itemize}
 \end{minipage}
 \begin{minipage}{0.49\textwidth}
 \begin{itemize}
+\item[(d)] \code{(0 != 1) && !(2 < 1)}
 \item[(e)] \code{!!!true}
 \item[(f)] \code{(5 == 1) || false}
-\item[(g)] \code{(a == 0) && (a != 0)}
-\item[(h)] \code{(a == 0) || !(a == 0)}
 \end{itemize}
 \end{minipage}
 \end{frame}
 
 \begin{frame}[t]
-  \frametitle{\stitle\ -L\"osungsvorschlag}
+  \frametitle{\stitle\ - L\"osungsvorschlag}
 \begin{center}
 \begin{minipage}{0.49\textwidth}
 \begin{itemize}
-\item[(a)] \code{false}
-\item[(b)] \code{true}
-\item[(c)] \code{true}
-\item[(d)] \code{true}
+\item[(a)]{\code{true && false} \rightarrow \code{false}}\\
+\item[(b)]{\code{true || false} \rightarrow \code{true}}\\
+\item[(c)]{\code{(0 == 1) || (1 < 2)} \rightarrow \code{true}}\\
 \end{itemize}
 \end{minipage}
 \begin{minipage}{0.49\textwidth}
 \begin{itemize}
-\item[(e)] \code{false}
-\item[(f)] \code{false}
-\item[(g)] \code{false}
-\item[(h)] \code{true}
+\item[(d)]{\code{(0 != 1) && !(2 < 1)} \rightarrow \code{true}}\\
+\item[(e)]{\code{!!!true} \rightarrow \code{false}}\\
+\item[(f)]{\code{(5 == 1) || false} \rightarrow \code{false}}\\
 \end{itemize}
 \end{minipage}
 \end{center}
