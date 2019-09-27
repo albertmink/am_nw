@@ -29,27 +29,9 @@ Betrachten Sie die folgenden Ausschnitte eines Java-Programms:
 
 \item
 \begin{displaycode}
-    int[] feld = {1, 0, 4, 2, 3};
-    for (int i = 0; i < feld.length; i++) {
-        feld[i] = feld[feld[i]];
-    }
-\end{displaycode}
-
-\item
-\begin{displaycode}
     int[] feld = {1, 2, 3, 4, 5};
     for (int i = 0; i < feld.length; i++) {
         feld[i] *= (i+1);
-    }
-\end{displaycode}
-
-\item
-\begin{displaycode}
-    int[] feld = {5, 4, 3, 2, 1};
-    for (int i = feld.length-1; i >= 0; i--) {
-        int k = feld[i];
-        feld[i] = feld[feld.length-i-1];
-        feld[feld.length-i-1] = k;
     }
 \end{displaycode}
 \end{parts}
