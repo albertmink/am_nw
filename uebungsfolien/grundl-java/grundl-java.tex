@@ -9,24 +9,26 @@
 \begin{frame}%
   \frametitle{\stitle}%
 
+\heading{Wozu dient der Java-Compiler, wozu der Java-Interpreter?}
+
 \begin{itemize}
-\item Wozu dient der Java-Compiler, wozu der Java-Interpreter?
-\item Erläutern Sie die Aussage \glqq Java ist plattformunabhängig\grqq.
+\item Der Java-Compiler übersetzt den Quelltext in einen sogenannten \emph{Bytecode}.
+\item Der Java-Interpreter auch Laufzeitumgebung genannt, lädt den Bytecode und führt in in der Java Virtual Machine (JVM) aus.
 \end{itemize}
+\includegraphics[width=\textwidth]{\getexercisefolder funktion}
 
 \end{frame}
 
 
 \begin{frame}[t]%
   \frametitle{\stitle\ Fortsetzung}%
-\centering
 
-\includegraphics[width=0.6\textwidth]{\getexercisefolder Java-Kompiler}\\[2em]
-\includegraphics[width=0.6\textwidth]{\getexercisefolder C++-Kompiler}
+\heading{Erläutern Sie die Aussage \glqq Java ist plattformunabhängig\grqq.}
 
 \begin{itemize}
- \item Java-Bytecode ist plattformunabhängig und kann vom Java-Interpreter auf jedem System ausgeführt werden.
- \item C++ Programme können direkt vom Betriebssystem ausgeführt werden, wenn sie für dieses kompiliert wurden.
+\item Der Bytecode kann von jedem Java-Interpreter (JVM) ausgeführt werden.
+\item Also ist der Bytecode nur an die JVM gebunden aber nicht an ein bestimmtes Betriebssystem oder bestimmte Hardware.
 \end{itemize}
+\includegraphics[width=0.6\textwidth]{\getexercisefolder compiler}
 
 \end{frame}

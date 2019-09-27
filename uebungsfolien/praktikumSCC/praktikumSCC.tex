@@ -17,13 +17,13 @@
 
 Praktikumsrechner des SCC
 \begin{itemize}
-  \item Verwendetes Betriebssystem: Linux
-  \item Ben\"otigte Software:
+  \item Linux Betriebssystem
+  \item Software
   \begin{itemize}
     \item Eingabefenster (Shell, Terminal oder Konsole)
-    \item Editor mit Syntax-Hervorhebung (z.B. Kate oder GEdit)
-    \item Internet-Browser (Firefox, Iceweasel oder Konquerer)
-    \item pdf-Betrachter (Adobe-Reader, Xpdf oder Okular)
+    \item Editor mit Syntax-Hervorhebung (z.B. Kate oder Gedit)
+    \item Internet-Browser
+    \item pdf-Betrachter
   \end{itemize}
   \item Kurze Einf\"uhrung: \emph{Anleitung und Informationen zum Praktikum mit den Sprachen C++ und Java} (auf ILIAS)
 \end{itemize}
@@ -35,9 +35,8 @@ Praktikumsrechner des SCC
 \subsection{\stitle}\label{S:Anleitung}
 \begin{frame}[t]%
 \frametitle{\kap.\ref{S:Anleitung} \stitle\ (1)}%
-\medskip
 
-\textbf{Generelle Bemerkungen zur Konsole}
+\heading{Generelle Bemerkungen zur Konsole}
 \begin{itemize}
   \item Laufende Programme bzw. Befehlsausf\"uhrungen k\"onnen durch die Tastenkombination \textbf{Strg+c} abgebrochen werden
   \item F\"ur Autovervollst\"andigung von Dateinamen und Pfaden in der Konsole zwei Mal \textbf{Tab}
@@ -81,9 +80,8 @@ Praktikumsrechner des SCC
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[t]%
 \frametitle{\kap.\ref{S:Anleitung} \stitle\ (3)}%
-\medskip
 
-\textbf{Die wichtigsten UNIX-Kommandos zum erstellen und l\"oschen von Verzeichnissen}
+\heading{Die wichtigsten UNIX-Kommandos zum erstellen und l\"oschen von Verzeichnissen}
 \begin{itemize}
   \setlength{\itemsep}{4pt}
   \item Neues Verzeichnis anlegen: \textbf{mkdir (make directory)}
@@ -114,9 +112,8 @@ Praktikumsrechner des SCC
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[t]%
 \frametitle{\kap.\ref{S:Anleitung} \stitle\ (4)}%
-\medskip
 
-\textbf{Die wichtigsten UNIX-Kommandos zum kopieren}
+\heading{Die wichtigsten UNIX-Kommandos zum kopieren}
 \begin{itemize}
   \setlength{\itemsep}{4pt}
   \item Befehl \textbf{cp (copy) [OPTION] <SOURCE> <DESTINATION>}
@@ -133,26 +130,26 @@ Praktikumsrechner des SCC
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\stitle{Programmentwicklung}%
 \subsection{\stitle}\label{S:Progentw}
-\begin{frame}[t]%
+\begin{frame}[fragile]%
 \frametitle{\kap.\ref{S:Progentw} \stitle}%
-\medskip
 
-\textbf{\"Ubersetzen des Programms}
+\heading{\"Ubersetzen des Programms}
 \begin{itemize}
-  \item \textbf{Wichtig!:} Java Programme m\"ussen mit .java enden
-  \item Java-Quelltext wird durch Aufruf des Java-Compilers in Java-Bytecode \textbf{javac <Dateiname>.java} \"ubersetzt
-  \item Zur Ausf\"uhrung muss der Java-Interpreter ohne Angabe einer Extension aufgerufen werden
-  \item[] \textbf{java <Dateiname>}
+  \item \textbf{Wichtig:} Java Programme m\"ussen mit .java enden
+  \item Java-Quelltext wird durch Aufruf des Java-Compilers in Java-Bytecode übersetzt \code{javac Dateiname.java}
+  \item Zur Programm Ausf\"uhrung muss der Java-Interpreter aufgerufen werden \code{java Dateiname}
 \end{itemize}
-\medskip
 
-\textbf{Beispiel: Kugelvolumen}
+\heading{Beispiel: Kugelvolumen}
 \begin{itemize}
-  \item Das Programm wurde unter \textbf{KugelVolumen.java} abgespeichert
-  \item Befehl \textbf{javac KugelVolumen.java} kompiliert das Programm und \textbf{java KugelVolumen} f\"uhrt es aus
-  \item Auf dem Bildschirm erscheint folgende Ausgabe: \\
-  \code{Bitte Kugelradius eingeben:\\
-  > 1 \\
-  Das Volumen betr\"agt v = 4.1887902047863905}
+  \item Der Java-Quelltext befindet sich in der Datei \code{KugelVolumen.java}
+  \item Mit \code{javac KugelVolumen.java} wird der Quelltext in Bytecode übersetzt
+  \item Der Aufruf \code{java KugelVolumen} startet das Programm in der Java Virtual Machine
+  \item Auf dem Bildschirm erscheint folgende Ausgabe:
+  \begin{lstlisting}[style=bash]
+  Bitte Kugelradius eingeben:
+  > 1
+  Das Volumen betreagt v = 4.1887902047863905
+  \end{lstlisting}
 \end{itemize}
 \end{frame}
