@@ -15,6 +15,8 @@ arbeitsblatt02
     zahldarst-stellenwertsystem
     zahldarst-binaereaddition
     zahldarst-ganzzahl
+    schleifen-fakt
+    schleifen-zetaFkt
 
 arbeitsblatt03
   Online am Di 29.10.2019
@@ -23,7 +25,7 @@ arbeitsblatt03
     grundl-boolalgnegation
     anweis-1
     anweis-2
-    schleifen-1
+    ausdruck
 
 arbeitsblatt04
   Online am Di 05.11.2019
@@ -36,6 +38,7 @@ arbeitsblatt05
   Online am Di 12.11.2019
   Besprechung in der Uebung am Di 19.11.2019
     felder-grundl
+    felder-berechnungen
     felder-felder
     felder-sideEff
 
