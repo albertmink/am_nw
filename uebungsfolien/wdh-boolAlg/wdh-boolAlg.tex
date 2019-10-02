@@ -12,18 +12,30 @@
 \begin{frame}[fragile]%
   \frametitle{\kap.\ref{S:LogiOperatoren} \sstitle}%
 
+\begin{minipage}[c][6.5cm][t]{0.55\textwidth}
 Prüfe in welchem Quadranten ein Punkt mit den Koordinaten $x$ und $y$ liegt.
+\vfill
 
 \begin{lstlisting}[style=java, frame=single]
-// Punkt liegt im III Quadrant falls
+// Punkt liegt in III
 if( x < 0 && y < 0 )
 \end{lstlisting}
 \begin{lstlisting}[style=java, frame=single]
-// Punkt liegt in den Quadranten I, II, IV falls
+// Punkt liegt in  I, II oder IV
 if( x > 0 || y > 0 )
-// equivalent zu 'nicht in III Quadrant'
+// aequivalent zu 'nicht in III'
 if( !(x < 0 && y < 0) )
 \end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[c][6cm][t]{0.4\textwidth}
+\begin{center}
+\includegraphics[width=\textwidth]{\getexercisefolder/quadraten.png}
+\vfill
+
+Quadranten sind gegen den Uhrzeigersinn nummeriert.
+\end{center}
+\end{minipage}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
