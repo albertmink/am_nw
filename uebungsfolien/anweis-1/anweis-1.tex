@@ -5,49 +5,43 @@
 \tableofcontents[current]    
 \end{frame}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[t]%
     \frametitle{\stitle}
 
-Gegeben sei der folgende Ausschnitt eines Java-Programms. Sei \code{n} vom Typ \code{int}.
-
-\lstinputlisting[style=JAVAsmalllines]{\getexercisefolder/Anweis1_snippet.java}
-
 \begin{itemize}
-\item[a)] Welcher Buchstabe wird auf dem Bildschirm ausgegeben, falls \code{n} den Wert $1$, $2$, $3$ bzw. $4$ besitzt?
+\item[a)] Welcher Buchstabe wird auf dem Bildschirm ausgegeben, falls \code{int n} den Wert $1$, $2$, $3$ bzw. $4$ besitzt?
 \end{itemize}
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]%
- \frametitle{a) Struktogramm mit Java-Editor}%
+\lstinputlisting[style=JAVAsmalllines]{\getexercisefolder/Anweis1_snippet.java}
+\pause
 
 \begin{center}
-\lstinputlisting[style=JAVAlines]{\getexercisefolder/Anweis1_snippet.java}
-\includegraphics[width=0.8\textwidth]{\getexercisefolder/Bilder/Struktogramm_a}
+\begin{minipage}{0.4\textwidth}
+\begin{itemize}
+\item n = 1; B
+\item n = 2;
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{itemize}
+\item n = 3;
+\item n = 4:
+\end{itemize}
+\end{minipage}
 \end{center}
 
 \end{frame}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[t]%
     \frametitle{\stitle}
 
-Gegeben sei der folgende Ausschnitt eines Java-Programms. Sei \code{n} vom Typ \code{int}.
-
-\lstinputlisting[style=JAVAsmalllines]{\getexercisefolder/Anweis1_snippet.java}
-
 \begin{itemize}
-\item[b)] Welcher Buchstabe wird auf dem Bildschirm ausgegeben, falls \code{n} den Wert $1$, $2$, $3$ bzw. $4$ besitzt und \textbf{jeder} Boolsche Ausdruck in dem Programmabschnitt durch seine Negation ersetzt wurde?
+\item[b)] Welcher Buchstabe wird auf dem Bildschirm ausgegeben, falls \code{int n} den Wert $1$, $2$, $3$ bzw. $4$ besitzt und \textbf{jeder} Boolesche Ausdruck in dem Programm\-abschnitt durch seine Negation ersetzt wurde?
 \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]%
-\frametitle{b) Strukturprogramm mit Java-Editor}%
-\begin{center}
-\lstinputlisting[style=JAVAlines]{\getexercisefolder/Anweis1_snippet.java}
-\includegraphics[width=0.8\textwidth]{\getexercisefolder/Bilder/Struktogramm_b}
-\end{center}
+\lstinputlisting[style=JAVAsmalllines]{\getexercisefolder/Anweis1_snippet.java}
 
 \end{frame}
 
