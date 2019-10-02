@@ -1,6 +1,6 @@
-Autor: Albert Mink
+Autor: Albert Mink, Nico Wipfler
 Inhalt: Inhaltliche und zeitliche Uebersicht der Arbeitsblaetter
-
+Aufgabe mit Stern sind nicht als Arbeitsblatt Aufgaben vorhanden.
 
 arbeitsblatt01
   Online am Di 15.10.2019
@@ -8,6 +8,7 @@ arbeitsblatt01
     grundl-java
     grundl-literale
     grundl-ausdruecke
+    *guterStartInsPraktikum
 
 arbeitsblatt02
   Online am Di 22.10.2019
@@ -15,8 +16,8 @@ arbeitsblatt02
     zahldarst-stellenwertsystem
     zahldarst-binaereaddition
     zahldarst-ganzzahl
-    schleifen-fakt
-    schleifen-zetaFkt
+    *schleifen-fakt
+    *schleifen-zetaFkt
 
 arbeitsblatt03
   Online am Di 29.10.2019
@@ -25,7 +26,7 @@ arbeitsblatt03
     grundl-boolalgnegation
     anweis-1
     anweis-2
-    ausdruck
+    *ausdruck
 
 arbeitsblatt04
   Online am Di 05.11.2019
