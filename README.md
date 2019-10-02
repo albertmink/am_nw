@@ -6,7 +6,7 @@
 * local KIT latex templates in texmf
 * special exercise.sty for slides in templatesSlide/ dir
 
-* latexmkrc defines relative path for templates
+* latexmkrc defines relative path for latex templates
 
 # Compile your latex slide
 
@@ -17,6 +17,8 @@
 * latexmk -pdf arbeitsblatt01.tex
 
 # Details on latexmk
+
+* The ouput of the latex compilation is written in directory __out/__
 
 * Remove all tmp files from previous latex compilation
 __latexmk -c__
