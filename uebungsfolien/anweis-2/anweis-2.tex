@@ -7,21 +7,25 @@
 
 \begin{frame}[t]%
     \frametitle{\stitle}
-
-Gegeben sei der folgende Ausschnitt eines Java-Programms.
+    
+Welcher Buchstabe wird auf dem Bildschirm ausgegeben, falls \code{i} den Wert $1$, $2$, $3$ bzw. $4$ besitzt?
 \lstinputlisting[style=JAVAsmalllines]{\getexercisefolder/Anweis2.java}
-
-\begin{itemize}
-\item[(a)] Welcher Buchstabe wird auf dem Bildschirm ausgegeben, falls \code{i} den Wert $1$, $2$, $3$ bzw. $4$ besitzt?
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}[fragile]%
- \frametitle{a) Strukturprogramm mit Java-Editor}%
+\pause
 
 \begin{center}
-\lstinputlisting[style=JAVAlines]{\getexercisefolder/Anweis2_snippet.java}
-\includegraphics[width=1\textwidth]{\getexercisefolder/Bilder/Struktogramm_a}
+\begin{minipage}{0.4\textwidth}
+\begin{itemize}
+\item i = 1; B
+\item i = 2; B
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{itemize}
+\item i = 3; C
+\item i = 4: A
+\end{itemize}
+\end{minipage}
 \end{center}
+
+
 \end{frame}
