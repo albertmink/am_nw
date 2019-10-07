@@ -13,19 +13,18 @@
 \subsection{\stitle}\label{S:PraktikumSCC}
 \begin{frame}[t]%
   \frametitle{\kap.\ref{S:PraktikumSCC} \stitle}%
-\medskip
 
-Praktikumsrechner des SCC
+\heading{Praktikumsrechner am SCC}
 \begin{itemize}
   \item Linux Betriebssystem
   \item Software
   \begin{itemize}
     \item Eingabefenster (Shell, Terminal oder Konsole)
-    \item Editor mit Syntax-Hervorhebung (z.B. Kate oder Gedit)
+    \item Editor mit Syntax-Hervorhebung z.B. Gedit)
     \item Internet-Browser
     \item pdf-Betrachter
   \end{itemize}
-  \item Kurze Einf\"uhrung: \emph{Anleitung und Informationen zum Praktikum mit den Sprachen C++ und Java} (auf ILIAS)
+  \item Kurze Einführung: \emph{Anleitung und Informationen zum Praktikum mit den Sprachen C++ und Java} (auf ILIAS)
 \end{itemize}
 \end{frame}
 
@@ -38,20 +37,18 @@ Praktikumsrechner des SCC
 
 \heading{Generelle Bemerkungen zur Konsole}
 \begin{itemize}
-  \item Laufende Programme bzw. Befehlsausf\"uhrungen k\"onnen durch die Tastenkombination \textbf{Strg+c} abgebrochen werden
-  \item F\"ur Autovervollst\"andigung von Dateinamen und Pfaden in der Konsole zwei Mal \textbf{Tab}
-  \item F\"ur Hilfestellungen und Dokumentation \textbf{man} bzw. \textbf{-{}-help} und \textbf{google}
+  \item Laufende Programme bzw. Befehlsausführungen können durch die Tastenkombination \textbf{Strg+c} abgebrochen werden
+  \item Für Autovervollständigung von Dateinamen und Pfaden in der Konsole zwei Mal \textbf{Tab}
+  \item Für Hilfestellungen und Dokumentation \textbf{man} bzw. \textbf{-{}-help} und \textbf{google}
 \end{itemize}
-
 \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[t]%
 \frametitle{\kap.\ref{S:Anleitung} \stitle\ (2)}%
-\medskip
 
-\textbf{Die wichtigsten UNIX-Kommandos zum navigieren}
+\heading{Die wichtigsten UNIX-Kommandos zum navigieren}
 \begin{itemize}
   \setlength{\itemsep}{4pt}
   \item Aktuelles Verzeichnis ausgeben: \textbf{pwd (print working directory)}
@@ -61,19 +58,18 @@ Praktikumsrechner des SCC
     \item \textbf{cd /tmp} Wechsel in das Verzeichnis /tmp (absoluter Pfad)
     \item \textbf{cd work/dat} Wechsel in das Unterverzeichnis dat von work (relativer Pfad)
     \item \textbf{cd} Wechsel in Ihr Home-Verzeichnis
-    \item \textbf{cd ..} Wechsel in das \"ubergeordnete Verzeichnis
+    \item \textbf{cd ..} Wechsel in das übergeordnete Verzeichnis
   \end{itemize}
   \item Inhalt des aktuellen Verzeichnisses auflisten: \textbf{ls (list)}
   \begin{itemize}
     \setlength{\itemsep}{2pt}
     \item \textbf{ls -{}- help} anzeigen der Dokumenation, alt. \textbf{man ls}
-    \item \textbf{ls -l} zeigt Inhalt als Liste an. Verzeichnisse, Archive und ausf\"uhrbare Dateien werden eingef\"arbt
-    \item \textbf{ls -lh} zeigt Inhalt zus\"atzlich als human readable an
-    \item \textbf{ls -lhS} zeigt Inhalt zus\"atzlich der Gr\"o\ss e nach geordnet an
+    \item \textbf{ls -l} zeigt Inhalt als Liste an. Verzeichnisse, Archive und ausführbare Dateien werden eingefärbt
+    \item \textbf{ls -lh} zeigt Inhalt zusätzlich als human readable an
+    \item \textbf{ls -lhS} zeigt Inhalt zusätzlich der Grö\ss e nach geordnet an
     \item $\ldots$
   \end{itemize}
 \end{itemize}
-
 \end{frame}
 
 
@@ -81,7 +77,7 @@ Praktikumsrechner des SCC
 \begin{frame}[t]%
 \frametitle{\kap.\ref{S:Anleitung} \stitle\ (3)}%
 
-\heading{Die wichtigsten UNIX-Kommandos zum erstellen und l\"oschen von Verzeichnissen}
+\heading{Die wichtigsten UNIX-Kommandos zum erstellen und löschen von Verzeichnissen}
 \begin{itemize}
   \setlength{\itemsep}{4pt}
   \item Neues Verzeichnis anlegen: \textbf{mkdir (make directory)}
@@ -92,20 +88,19 @@ Praktikumsrechner des SCC
   \begin{itemize}
     \item \textbf{touch helloworld.java} erstellt die Datei helloworld.java
   \end{itemize}
-  \item L\"oschen einer Datei: \textbf{rm (remove)}
+  \item Löschen einer Datei: \textbf{rm (remove)}
   \begin{itemize}
     \setlength{\itemsep}{2pt}
-    \item \textbf{rm helloworld.java} l\"oscht die Datei helloworld.java
-    \item \textbf{rm -r helloworld.java} l\"oscht rekursiv, also auch gesamte Verzeichnisse
-    \item \textbf{rm -f helloworld.java} erzwingt das L\"oschen
-    \item \textbf{rm -v helloworld.java} aktiviert die Erkl\"arung was der Befehl bewirkt
+    \item \textbf{rm helloworld.java} löscht die Datei helloworld.java
+    \item \textbf{rm -r helloworld.java} löscht rekursiv, also auch gesamte Verzeichnisse
+    \item \textbf{rm -f helloworld.java} erzwingt das Löschen
+    \item \textbf{rm -v helloworld.java} aktiviert die Erklärung was der Befehl bewirkt
   \end{itemize}
   \item Abrufen der Dokumentation: \textbf{man}
   \begin{itemize}
-    \item \textbf{man rm} ruft die Dokumentation des Befehls \textbf{rm} auf. Mit \textbf{q (quit)} gelangt man zur\"uck.
+    \item \textbf{man rm} ruft die Dokumentation des Befehls \textbf{rm} auf. Mit \textbf{q (quit)} gelangt man zurück.
   \end{itemize}
 \end{itemize}
-
 \end{frame}
 
 
@@ -133,11 +128,11 @@ Praktikumsrechner des SCC
 \begin{frame}[fragile]%
 \frametitle{\kap.\ref{S:Progentw} \stitle}%
 
-\heading{\"Ubersetzen des Programms}
+\heading{Übersetzen des Programms}
 \begin{itemize}
-  \item \textbf{Wichtig:} Java Programme m\"ussen mit .java enden
+  \item \textbf{Wichtig:} Java Programme müssen mit .java enden
   \item Java-Quelltext wird durch Aufruf des Java-Compilers in Java-Bytecode übersetzt \code{javac Dateiname.java}
-  \item Zur Programm Ausf\"uhrung muss der Java-Interpreter aufgerufen werden \code{java Dateiname}
+  \item Zur Programm Ausführung muss der Java-Interpreter aufgerufen werden \code{java Dateiname}
 \end{itemize}
 
 \heading{Beispiel: Kugelvolumen}
@@ -149,7 +144,7 @@ Praktikumsrechner des SCC
   \begin{lstlisting}[style=bash]
   Bitte Kugelradius eingeben:
   > 1
-  Das Volumen betreagt v = 4.1887902047863905
+  Das Volumen betraegt v = 4.1887902047863905
   \end{lstlisting}
 \end{itemize}
 \end{frame}
