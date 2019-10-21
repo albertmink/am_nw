@@ -24,11 +24,6 @@ In dieser \"Ubung wird anhand eines Beispiels beschrieben wie ein Java-Programm 
 Einr\"ucken, Kommentare, Klammerung, Namen
 \end{block}
 
-\bigskip
-\begin{block}{Hinweis}
-Aufgabe 1 (Pflichtaufgabe) und 2 lassen sich auf \"ahnliche Weise l\"osen
-\end{block}
-
 \end{frame}
 
 \def\stitle{Beispiel Obelisk}%
@@ -80,8 +75,9 @@ Schreiben Sie ein Java--Programm, welches die Seitenl\"angen $a$, $b$, $c$ und $
 \subsection{\stitle}\label{S:Code}
 \begin{frame}[fragile]%
     \frametitle{\kap.\ref{S:Code} \stitle}%
+\heading{Programmgerüst}
 
-\begin{lstlisting}[style=java,title={Programmgerüst.}]
+\begin{lstlisting}[style=java]
 /* Berechnung von
  * \ Mantelflaeche M
  * \ Oberflaeche O
@@ -104,8 +100,9 @@ public class Obelisk {
 
 \begin{frame}[fragile]%
     \frametitle{\kap.\ref{S:Code} \stitle}%
+\heading{Lese Seitenlängen und Höhe ein}
 
-\begin{lstlisting}[style=java, title={Lese Seitenlängen und Höhe ein.}]
+\begin{lstlisting}[style=java]
 public class Obelisk {
   public static void main(String[] args)
   {
@@ -124,8 +121,9 @@ public class Obelisk {
 
 \begin{frame}[fragile]%
     \frametitle{\kap.\ref{S:Code} \stitle}%
+\heading{Berechne Hilfsvariablen}
 
-\begin{lstlisting}[style=java, title={Berechne Hilfsvariablen.}]
+\begin{lstlisting}[style=java]
 public class Obelisk {
   public static void main(String[] args)
   {
