@@ -1,7 +1,7 @@
-# Content 
+# Content
 
 * java latex slides, uebXY.tex
-* java latex din A4 arbeitsblattXY.tex
+* java latex din A4 uebungsblatttXY.tex
 
 * local KIT latex templates in texmf
 * special exercise.sty for slides in templatesSlide/ dir
@@ -12,9 +12,9 @@
 
 * latexmk -pdf ueb01.tex
 
-# Compile your latex arbeitsblatt
+# Compile your latex uebungsblatt
 
-* latexmk -pdf arbeitsblatt01.tex
+* latexmk -pdf uebungsblatt01.tex
 
 # Details on latexmk
 
