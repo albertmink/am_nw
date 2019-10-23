@@ -7,7 +7,7 @@
 \def\@language{german}
 
 % Word variables
-\def\@lang@worksheet{Arbeitsblatt}
+\def\@lang@worksheet{Übungsblatt}
 \def\@lang@exam{Klausur}
 \def\@lang@timeforcompletion{Hinweis}
 \def\@lang@totalscore{Gesamtpunktzahl}
@@ -51,7 +51,7 @@
 \def\@passingscore{}
 \def\@instructions{}
 \def\@scorechart{\begin{tabular}{lp{1.5cm}p{1.5cm}lp{5cm}}
-\textbf{\@lang@score}    & \hrulefill 
+\textbf{\@lang@score}    & \hrulefill
 \end{tabular}}
 
 
@@ -66,7 +66,7 @@
 % Option courier: Use Courier font
 \DeclareOption{courier}{\def\@otherfont{pcr}}
 
-% Option english: Use english language 
+% Option english: Use english language
 \DeclareOption{english}{
 \def\@language{english}
 \def\@lang@worksheet{Worksheet}
@@ -237,7 +237,7 @@ bookmarksopen=false}
 \hspace{3.2mm}\rule[2.05pt]{1.0pt}{10.6mm}\hspace{3.2mm}%
 \raisebox{20.44pt}{\href{http://www.math.kit.edu/ianm/}{%
 \parbox[t]{55mm}{\raggedright\fontfamily{phv}\fontsize{12}{15.30pt}\selectfont%
-Institut f\"ur Angewandte und\\Numerische Mathematik}}}%
+Institut für Angewandte und\\Numerische Mathematik}}}%
 \ifthenelse{\equal{\@language}{german}}{\selectlanguage{german}}{}%
 \ifthenelse{\equal{\@language}{english}}{\selectlanguage{english}}{}%
 }
@@ -270,7 +270,7 @@ Institut f\"ur Angewandte und\\Numerische Mathematik}}}%
 \begin{tabular}{lp{4cm}}
 \textbf{Bearbeitungszeit} & \textbf{\@timeforcompletion} \\[2mm]
 \textbf{Gesamtpunktzahl}  & \textbf{\@totalscore} \\[2mm]
-\multicolumn{2}{l}{\textbf{Zum Bestehen dieser Klausur m�ssen mindestens \@passingscore\ erreicht werden.}}
+\multicolumn{2}{l}{\textbf{Zum Bestehen dieser Klausur müssen mindestens \@passingscore\ erreicht werden.}}
 \end{tabular}%
 \par\vspace{6mm}\noindent%
 \begin{tabular}{lp{7cm}}
