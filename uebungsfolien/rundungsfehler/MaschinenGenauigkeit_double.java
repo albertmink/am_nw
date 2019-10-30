@@ -1,13 +1,13 @@
 public class MaschinenGenauigkeit_double {
-  public static void main(String[] args) {
-    double x = 2.3;
-    double y = 2.0;
-    if( x == y ) {
-      System.out.println("x==y");
-      System.out.println("ist wahr (double)\n");
-    } else {
-      System.out.println("x==y");
-      System.out.println("ist nicht wahr (double)\n");
-    }
+  public static void main(String[] args)
+  {
+    // false, doubles are not equal
+    System.out.println(3.1d==3.0d);
+    // false, wrong datatype
+    System.out.println(3.1d==3.1f);
+    // true, cast double to float
+    System.out.println((float)3.1d==3.1f);
+    // true, cast double/float to int
+    System.out.println((int)3.1d==(int)3.1f);
   }
 }
