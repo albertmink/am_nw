@@ -1,0 +1,45 @@
+\documentclass[11pt,helvet,german,worksheet]{ianmdoc_javaarbeitsblatt}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{dsfont}
+\usepackage[java]{code}
+\usepackage{exercises}
+\usepackage{JAVA1718ws}
+
+
+\date{\today}
+\sheetnumber{98}
+
+
+\begin{document}
+\exercisespath{./uebungsblaetter/}
+\setcounter{exercise}{98}
+
+\begin{exercise}{Ergänzung zur Diskussion um Aufgabe 6}
+\begin{body}
+Der Datentyp \code{byte} kann Ganzzahlen von -128 bis 127 darstellen.
+Soweit war ja noch alles klar.
+Irreführend war dann der Teil der die Aufgabe gar nicht abdeckte, wir uns aber in der Übungs fragten.
+Wenn $01111111$ die Zahl 127 ist, wie schreibt sich dann $-127$?
+Grob gesagt: Die Darstellung negativer Zahlen und das führende bit.
+
+\textbf{Ein Bespiel:}
+Die Zahl 3 in lautet in binär Darstellung $11_2$ bzw. in 8 Bits $00000011$.
+Für den negativen Ausdruck werden die Bits geflippt und 1 drauf addiert, d.h. die Zahl -3 schreibt sich dann $11111101$ (\textbf{Zweierkomplement}).
+
+\begin{itemize}
+\item[] Java-Code, vorangestellte \code{0b} zeigt binär Darstellung an.
+\item \code{byte b = (byte)(0b00000011); // 3}
+\item \code{byte h = (byte)(0b11111101); //-3}
+\item \code{byte h = (byte)(0b01111111); // 127}
+\item \code{byte h = (byte)(0b10000001); // -127}
+\item \code{byte h = (byte)(0b00000000); // 0}
+\item \code{byte h = (byte)(0b11111111); // -128}
+\end{itemize}
+
+Dieser Sachverhalt wird in der Vorlesung noch behandelt.
+Da wir aber so wissbergierdig waren, haben uns in der Übung diese spannenden Fragen gestellt, deswegen an dieser Stelle die Antwort.
+\end{body}
+\end{exercise}
+\end{document}
