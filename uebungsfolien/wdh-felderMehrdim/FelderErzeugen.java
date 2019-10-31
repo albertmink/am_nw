@@ -8,5 +8,7 @@ public class FelderErzeugen {
     char[][] c = new char[][]{{'a','b','c'},{'d','e','f'}};
     // alternative initialization
     char[][] d = {{'a','b','c'},{'d','e','f'}};
+    // dimension must not be the same
+    char[][] d = {{'a'},{'b','c'}};
   }
 }
