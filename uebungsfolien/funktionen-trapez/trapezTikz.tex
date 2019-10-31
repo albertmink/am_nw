@@ -1,0 +1,33 @@
+\pgfplotsset{
+    integral axis/.style={
+        axis lines=middle,
+        enlarge y limits=upper,
+        xlabel=$x$, ylabel=$y$,
+        ytick=\empty,
+        xticklabel style={font=\small, text height=1.5ex, anchor=north},
+        samples=100
+    }
+}
+\begin{tikzpicture}
+[
+    % The function that is used for all the plots
+    declare function={f=-x*x+4;}
+]
+\begin{axis}
+[
+    integral axis,
+    xmin=-1, xmax=4,
+    domain=-0.5:3.5,
+    xtick={0,1,2,3},
+    xticklabels={$a=0$,$a+h$,$a+2h$,$b=3$},
+]
+% The function
+\addplot [very thick, KITgreen] {f} node [anchor=south] {$f(x)$};
+
+% The filled area under the approximate integral
+\addplot [domain=0:3,samples=4,draw=none, on layer=axis background, fill=KITgreen30] {f} \closedcycle;
+
+% The vertical lines between the segments
+\addplot [domain=0:3,samples=4, ycomb] {f};
+\end{axis}
+\end{tikzpicture}
