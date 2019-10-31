@@ -33,7 +33,45 @@ mit Gewicht $h = \frac{b-a}{N}$ und Integrationsgrenzen $a=0$ und $b=3$.
 
 
 \begin{frame}[t]%
+  \frametitle{\theexercise\ - Graph}%
+\heading{Trapezregel} für N=3 und $f(x)=-x^2+4$
+
+\input{\getexercisefolder/trapezTikz.tex}
+
+\end{frame}
+
+
+\begin{frame}[t]%
   \frametitle{\theexercise\ - Beispiel Programm}%
 
 \lstinputlisting[style=JAVAsmall]{\getexercisefolder/Trapez.java}
+\end{frame}
+
+
+\begin{frame}[t]%
+  \frametitle{\theexercise\ - Konvergenz des Verfahrens}%
+\heading{Frage:}
+Um welchen Faktor wird die numerische Berechnung genauer, wenn Anzahl der Stützstellen verdoppelt wird?
+
+\begin{equation*}
+\int_a^b f(x)dx
+\simeq
+h \left[\frac{1}{2}f(a)+\frac{1}{2}f(b)+\sum_{n=1}^{N-1}f\left(a+nh \right)\right]
+\end{equation*}
+
+\begin{table}
+\caption{Fehleranalyse}
+\begin{tabular}{r|r}
+N   & absoluter Fehler \\ \hline \hline
+10  &  0.0450\\
+20  &  0.01125\\
+40  &  0.00281249\\
+80  &  7.031249E-4\\
+160 &  1.7578125E-4\\
+320 &  4.39453125E-5\\
+\end{tabular}
+\end{table}
+\hfill
+
+Quadratische Konvergenz  (verdopple Auflösung - verringere Fehler um Faktor 4)
 \end{frame}
