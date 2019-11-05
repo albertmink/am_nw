@@ -74,26 +74,25 @@ System.out.println(1+4/2); // Klammern 1+(4/2)
 System.out.println(2+3%2); // Klammern 2+(3%2)
 System.out.println(2*3%2); // Von links nach rechts
 \end{lstlisting}
-\hfill
+\vfill
 
 Gegeben sei der folgende Java--Ausdruck:
 \begin{center}
 \code{a || b && c}
 \end{center}
 Dabei seien \code{a, b, c} Variablen vom Typ \code{boolean}.
-\medskip
+\vfill
 
 Wie wird dieser Ausdruck abgearbeitet (engl. \emph{operator precedence})?
 \pause
-\begin{enumerate}
+\begin{itemize}
   \item \code{ a || (b && c)}
-\end{enumerate}
+\end{itemize}
+Wie lautet die korrekte \textbf{Negation}?
 \pause
-Welche der folgenden Ausdrücke ist die korrekte \textbf{Negation}?
-\begin{enumerate}
+\begin{itemize}
   \item \code{!a && (!b || !c)}
-  \item \code{!a &&  !b || !c}
-\end{enumerate}
+\end{itemize}
 
 \end{frame}
 
