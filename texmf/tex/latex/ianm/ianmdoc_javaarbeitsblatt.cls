@@ -7,7 +7,7 @@
 \def\@language{german}
 
 % Word variables
-\def\@lang@worksheet{Übungsblatt}
+\def\@lang@worksheet{\"{U}bungsblatt}
 \def\@lang@exam{Klausur}
 \def\@lang@timeforcompletion{Hinweis}
 \def\@lang@totalscore{Gesamtpunktzahl}
@@ -143,7 +143,7 @@
 %*************** Package requirements ***************
 
 \RequirePackage[utf8]{inputenc}
-\RequirePackage[OT1]{fontenc}
+%\RequirePackage[OT1]{fontenc}
 \RequirePackage[german,english]{babel}
 \RequirePackage{geometry}
 \RequirePackage[dvips]{graphicx}
