@@ -1,7 +1,7 @@
 import java.util.*;
 public class RekursionFib {
   // function computes fib rec
-  static int i = 1;
+  static int i = 0;
   public static int fibonacci(int n) {
     i += 1;
     if ( n <= 1 ) {
