@@ -8,33 +8,82 @@
 \end{frame}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}%
   \frametitle{\stitle}%
 
-Geben Sie jeweils den \emph{asymptotischen Rechenaufwand} der Methoden in Abh\"angigkeit von $n$ als \emph{Landau-Symbol} an.
-M\"ogliche Landau-Symbole sind $\mathcal{O}(1)$, $\mathcal{O}(\log n)$, $\mathcal{O}(n)$, $\mathcal{O}(n \log n)$, $\mathcal{O}(n^2)$, $\mathcal{O}(n^3)$, $\mathcal{O}(b^n)$, $\mathcal{O}(n!)$.
-\medskip
+\heading{Zähle die Rechenoperationen in Abhängigkeit von $n$}
+
+Geben Sie jeweils den \emph{asymptotischen Rechenaufwand} der Methoden in Abhängigkeit von $n$ als \emph{Landau-Symbol} an.
+Mögliche Landau-Symbole sind $\mathcal{O}(1)$, $\mathcal{O}(\log n)$, $\mathcal{O}(n)$, $\mathcal{O}(n \log n)$, $\mathcal{O}(n^2)$, $\mathcal{O}(n^3)$, $\mathcal{O}(b^n)$, $\mathcal{O}(n!)$.
 
 \lstinputlisting[style=JAVA,frame=l]{\getexercisefolder/a.java}
 
+\pause
+Einfache For-Schleife die n-mal durchlaufen wird.
+Pro Schleifendurchlauf findet eine Multiplikation statt.
+\begin{itemize}
+    \item $\mathcal{O}(n)$
+\end{itemize}
 \end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}%
   \frametitle{\stitle\ - Teilaufgaben}%
 \lstinputlisting[style=JAVA,frame=l]{\getexercisefolder/b.java}
-\lstinputlisting[style=JAVA,frame=l]{\getexercisefolder/c.java}
+\pause
+Pro Methodenaufruf ($n>0$) wird eine Multiplikation durchgeführt und zwei rekursive Methodenaufrufe.
+\begin{itemize}
+    \item $\mathcal{O}(2^n -1) = \mathcal{O}(2^n)$
+\end{itemize}
 \end{frame}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[t]%
+\begin{frame}%
   \frametitle{\stitle\ - Teilaufgaben}%
-\lstinputlisting[style=JAVAsmall,frame=l]{\getexercisefolder/d.java}
-\lstinputlisting[style=JAVAsmall,frame=l]{\getexercisefolder/e.java}
+\lstinputlisting[style=JAVA,frame=l]{\getexercisefolder/c.java}
+\pause
+Zwei geschachtelte For-Schleifen die jeweils n-mal durchlaufen werden mit einer Multiplikation.
+\begin{itemize}
+    \item $\mathcal{O}(n*n)$
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}%
+  \frametitle{\stitle\ - Teilaufgaben}%
+\lstinputlisting[style=JAVA,frame=l]{\getexercisefolder/d.java}
+\pause
+Pro Methodenaufruf wird eine Multiplikation und ein weiterer Methodenaufruf mit~$n/2$ durchgeführt.
+Da Integerdivision $n/2 = \lfloor n/2 \rfloor$.
+\begin{itemize}
+    \item $\mathcal{O}( \lfloor \ln(n) \rfloor+2)= \mathcal{O}(\ln(n))$
+\end{itemize}
+Wir haben die Berechnung $n/2$ nicht mitgezählt.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[t]%
+\begin{frame}%
+  \frametitle{\stitle\ - Teilaufgaben}%
+\lstinputlisting[style=JAVA,frame=l]{\getexercisefolder/e.java}
+\pause
+Pro Methodenaufruf mit $n$ wird die Schleife n-mal durchlaufen.
+In jedem Schleifendurchlauf findet eine Multiplikation statt und ein Methodenaufruf mit~$n-1$.
+\begin{itemize}
+    \item $\mathcal{O}(n!)$
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}%
   \frametitle{\stitle\ - Teilaufgaben}%
 \lstinputlisting[style=JAVA,frame=l]{\getexercisefolder/f.java}
+\pause
+Pro Methodenaufruf findet eine Multiplikation und ein rekursiver Aufruf mit $n-1$ statt.
+\begin{itemize}
+    \item $\mathcal{O}(n)$
+\end{itemize}
 \end{frame}
